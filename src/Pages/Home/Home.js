@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { siteName } from '../../App';
+import About from '../About/About';
 import HouseCards from '../HouseCards/HouseCards';
 import Testimonials from '../Testimonials/Testimonials';
 const Home = () => {
@@ -10,8 +11,10 @@ const Home = () => {
 				<title>Home - {siteName}</title>
 			</Helmet>
              <div>
+                <About></About>
                 <HouseCards></HouseCards>
                 <Testimonials></Testimonials>
+
                 
             </div>
         </HelmetProvider>
