@@ -1,7 +1,7 @@
 import React from 'react';
 import about from '../../../src/assetes/about.png'
 import home from '../../../src/assetes/home.png'
-import loc1 from '../../../src/assetes/loc1.png'
+// import loc1 from '../../../src/assetes/loc1.png'
 import loc2 from '../../../src/assetes/loc2.png'
 import men from '../../../src/assetes/men.png'
 
