@@ -16,7 +16,7 @@ const HouseCards = () => {
                         </div>
                         </div>
                         <div className="h-1/2">
-                        <p className="text-white pb-4 opacity-0 transition duration-500 group-hover:opacity-100">El Salvador plans to build a Bitcoin city at the base of a volcano, with the cryptocurrency used to fund the project.</p>
+                        <p className="text-white pb-4 opacity-0 transition duration-500 group-hover:opacity-100"> Salvador plans to build a Bitcoin city at the base of a volcano, with the cryptocurrency used to fund the project.</p>
                         <button className="bg-white text-black text-sm px-3 py-1 font-semibold opacity-0 transition duration-500 group-hover:opacity-100 border-2 border-white focus:border-black focus:bg-gray-300">Read More</button>
                         </div>
                     </div>
