@@ -81,7 +81,7 @@ nav {
 }
 header nav a{
     text-align: left !important;
-    color:red;
+    color:#fff;
 }
 	header .responsive_nav {
 		transform: none;
