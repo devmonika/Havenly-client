@@ -2,7 +2,7 @@ import React from 'react';
 import { useRef } from "react";
 import { FaBars, FaTimes, FaUserAlt } from "react-icons/fa";
 import './Header.css'
-import logo from '../../../images/house.png'
+import logo from '../../../images/logo2.png'
 import { Link } from 'react-router-dom';
 const Header = () => {
     const navRef = useRef();
@@ -14,8 +14,9 @@ const Header = () => {
 	return (
 		<header>
 			<div className='logo '>
-			<img src={logo} alt="logo" />
-			<h3 className='font-bold text-3xl text-[#28C667]'>Havenly</h3>
+			<a href="">
+            <img src={logo} alt="logo" />
+            </a>
 			</div>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
@@ -30,11 +31,11 @@ const Header = () => {
 					<FaTimes />
 				</button>
 			</nav>
-			<div className='userInfo -mr-36'>
+			<div className='userInfo -mr-40'>
 				
-				<Link className='mr-3 hover:text-[#09BE51]' >Login </Link>
+				<p className='mr-3 hover:text-[#DB8C23]' >Login </p>
 				<FaUserAlt className='mr-3'/>
-				<p className='hover:text-[#09BE51] hiddenUser'>Ibrahim Sikder</p>
+				<p className='hover:text-[#DB8C23] hiddenUser'>Ibrahim Sikder</p>
 			</div>
 			<button className="nav-btn showBtn" onClick={showNavbar}>
 				<FaBars />
