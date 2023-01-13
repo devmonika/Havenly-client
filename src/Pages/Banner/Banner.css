@@ -83,7 +83,7 @@ body {
         line-height: 28px;
     }
 .swiper-button-next, .swiper-button-prev{
-    background:#28C667;
+    background:#224265;
     color: white !important;
     font-size: 20px !important;
     width: 42px !important;
@@ -91,7 +91,7 @@ body {
     padding: 10px;
 }
 .swiper-button-prev:hover{
-    background:#FF9524;
+    background:#DB8C23;
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -99,7 +99,7 @@ body {
     -o-transition: all .5s ease;
 }
 .swiper-button-next:hover{
-    background:#FF9524;
+    background:#DB8C23;
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
