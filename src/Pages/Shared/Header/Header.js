@@ -13,7 +13,7 @@ const Header = () => {
 
 	return (
 		<header>
-			<div className='logo'>
+			<div className='logo '>
 			<img src={logo} alt="logo" />
 			<h3 className='font-bold text-3xl text-[#28C667]'>Havenly</h3>
 			</div>

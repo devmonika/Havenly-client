@@ -33,6 +33,9 @@ nav a {
 nav a:hover {
 	color: var(--secondaryColor);
 }
+.logo{
+    margin-left: -3px;
+}
 
 header .nav-btn {
 	padding: 5px;
@@ -99,14 +102,18 @@ header nav a{
 }
 @media only screen and (max-width: 768px){
 	.showBtn{
-		margin-right: -50px;
+		margin-right: 0px;
 	}
+    .logo{
+        margin-left: 0px;
+    }
 	
 }
 @media only screen and (max-width: 500px){
 	.hiddenUser{
 		display:none;
 	}
+   
 	.logo h3{
 		font-size: 22px;
 	}
