@@ -13,7 +13,7 @@ const Header = () => {
 
 	return (
 		<header>
-			<div>
+			<div className='logo'>
 			<img src={logo} alt="logo" />
 			<h3 className='font-bold text-3xl text-[#28C667]'>Havenly</h3>
 			</div>
@@ -30,13 +30,13 @@ const Header = () => {
 					<FaTimes />
 				</button>
 			</nav>
-			<div>
+			<div className='userInfo -mr-36'>
 				
-				<Link className='mr-3' >Login </Link>
+				<Link className='mr-3 hover:text-[#09BE51]' >Login </Link>
 				<FaUserAlt className='mr-3'/>
-				<p>Ibrahim Sikder</p>
+				<p className='hover:text-[#09BE51] hiddenUser'>Ibrahim Sikder</p>
 			</div>
-			<button className="nav-btn" onClick={showNavbar}>
+			<button className="nav-btn showBtn" onClick={showNavbar}>
 				<FaBars />
 			</button>
 		</header>

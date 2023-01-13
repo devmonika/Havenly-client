@@ -9,14 +9,14 @@
 :root {
 	--mainColor: #FFFFFF;
 	--mainColorLight: #5767aa;
-	--secondaryColor: #db2b39;
+	--secondaryColor: #09BE51;
 	--textColor: #black;
 }
 
 header {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	height: 80px;
 	padding: 0 2rem;
 	background-color: var(--mainColor);
@@ -69,12 +69,16 @@ nav {
 		align-items: center;
 		justify-content: center;
 		gap: .5rem;
-		background-color:#28C667;
+		background-color:#0C1923;
 		transition: 1s;
 		transform: translateY(-100vh);
-        color:#fff;
+		color:#fff;
 		z-index: 10;
-	}
+		-webkit-transform: translateY(-100vh);
+		-moz-transform: translateY(-100vh);
+		-ms-transform: translateY(-100vh);
+		-o-transform: translateY(-100vh);
+}
 
 	header .responsive_nav {
 		transform: none;
@@ -89,4 +93,29 @@ nav {
 	nav a {
 		font-size: 1.5rem;
 	}
+}
+@media only screen and (max-width: 768px){
+	.showBtn{
+		margin-right: -50px;
+	}
+	
+}
+@media only screen and (max-width: 500px){
+	.hiddenUser{
+		display:none;
+	}
+	.logo h3{
+		font-size: 22px;
+	}
+	.logo img{
+		width: 50px;
+	}
+	.userInfo{
+		margin-right:0px;
+	}
+	.showBtn{
+		margin-right: -30px;
+	}
+	
+	
 }

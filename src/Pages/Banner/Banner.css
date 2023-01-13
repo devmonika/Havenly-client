@@ -59,6 +59,7 @@ body {
     position: relative;
     z-index: 1;
   }
+ 
 .slideContent{
     position: absolute;
     text-align: left;
@@ -81,6 +82,22 @@ body {
     .slideContent p{
         font-size: 18px;
         line-height: 28px;
+    }
+    .slideContent button:first-child:hover{
+        background:#28C667;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+}
+    .slideContent button:last-child:hover{
+        background:#FF9524;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
     }
 .swiper-button-next, .swiper-button-prev{
     background:#28C667;
@@ -112,6 +129,8 @@ body {
     font-weight: bold !important;
     color: #fff !important;
 }
+
+
 @media only screen and (max-width: 992px){
     .slideContent{
         width: 500px;
@@ -129,22 +148,24 @@ body {
         padding: 8px 18px ;
         margin-top: 0px;
     }
+    
+
 }
 
-@media only screen and (max-width: 756px){
+@media only screen and (max-width: 768px){
     .slideContent{
-        width: 350px;
+        width: 400px;
         
     }
     .slideContent h2{
-        font-size:21px;
+        font-size:18px;
         margin-bottom: 3px;
         color: #09BE51;
         font-weight: bold;
     }
     .slideContent p{
-        font-size: 16px;
-        line-height: 23px;
+        font-size: 15px ;
+        line-height: 22px;
     }
     .swiper-button-next, .swiper-button-prev{
         background:#28C667;
@@ -160,6 +181,33 @@ body {
     }
     .slideBtn{
         margin-top: 8px;
+    }
+
+}
+@media only screen and (max-width: 500px){
+    .slideContent{
+        width: 300px;
+        
+    }
+    .swiper-button-next, .swiper-button-prev{
+        background:#28C667;
+        color: white !important;
+        font-size: 10px !important;
+        width: 25px !important;
+        height:25px !important;
+        padding: 5px;
+    }
+    .slideContent h2{
+        font-size:15px;
+       
+    }
+    .slideContent p{
+        font-size: 12px ;
+        line-height: 17px;
+    }
+    .slideContent button{
+        padding: 3px 10px ;
+        font-size: 10px;
     }
 
 }
