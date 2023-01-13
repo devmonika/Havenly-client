@@ -28,8 +28,8 @@ const Banner = () => {
             <h2 className="text-3xl md:text-sm font-bold mb-3 ">WELCOME TO OUR HOUSE RENT</h2>
             <p className="text-xl sm:text-sm ">As your vacation specialist, our goal is to help you find the perfect Crested Butte rental to fit your needs (and budget). All of our properties are fully furnished, maintained with the utmost care, and ready for your visit. As your vacation rental management specialist, our full-service team will provide you the assurance you need to know your home is in the best care.</p>
            <div className="mt-5 slideBtn">
-           <button className="bg-[#FF9524] px-8 py-3 mr-3">Property</button>
-            <button className="bg-[#09BE51] px-8 py-3">Contact Us</button>
+           <button className="bg-[#224265] px-8 py-3 mr-3">Property</button>
+            <button className="bg-[#DB8C23] px-8 py-3">Contact Us</button>
            </div>
           </div>
         </SwiperSlide>

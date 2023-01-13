@@ -4,6 +4,12 @@ body {
   position: relative;
   height: 100%;
 }
+:root {
+	--mainColor: #224265;
+	--mainColorLight: #fff;
+	--secondaryColor: #DB8C23;
+	
+}
 
 body {
   background: #eee;
@@ -84,7 +90,7 @@ body {
         line-height: 28px;
     }
     .slideContent button:first-child:hover{
-        background:#28C667;
+        background:var(--secondaryColor);
         transition: all .5s ease;
         -webkit-transition: all .5s ease;
         -moz-transition: all .5s ease;
@@ -92,7 +98,7 @@ body {
         -o-transition: all .5s ease;
 }
     .slideContent button:last-child:hover{
-        background:#FF9524;
+        background:var(--mainColor);
         transition: all .5s ease;
         -webkit-transition: all .5s ease;
         -moz-transition: all .5s ease;
@@ -100,7 +106,7 @@ body {
         -o-transition: all .5s ease;
     }
 .swiper-button-next, .swiper-button-prev{
-    background:#28C667;
+    background:var(--mainColor);
     color: white !important;
     font-size: 20px !important;
     width: 42px !important;
