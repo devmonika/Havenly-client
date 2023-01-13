@@ -82,6 +82,22 @@ body {
         font-size: 18px;
         line-height: 28px;
     }
+    .slideContent button:first-child:hover{
+        background:#28C667;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+}
+    .slideContent button:last-child:hover{
+        background:#FF9524;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+    }
 .swiper-button-next, .swiper-button-prev{
     background:#28C667;
     color: white !important;
@@ -112,6 +128,16 @@ body {
     font-weight: bold !important;
     color: #fff !important;
 }
+
+.swiper-wrapper{
+    transform: translate3d(0px, 0px, 0px) !important;
+    transition-duration: 0ms;
+    -webkit-transform: translate3d(0px, 0px, 0px) !important;
+    -moz-transform: translate3d(0px, 0px, 0px) !important;
+    -ms-transform: translate3d(0px, 0px, 0px) !important;
+    -o-transform: translate3d(0px, 0px, 0px) !important;
+}
+
 @media only screen and (max-width: 992px){
     .slideContent{
         width: 500px;
@@ -160,6 +186,33 @@ body {
     }
     .slideBtn{
         margin-top: 8px;
+    }
+
+}
+@media only screen and (max-width: 500px){
+    .slideContent{
+        width: 300px;
+        
+    }
+    .swiper-button-next, .swiper-button-prev{
+        background:#28C667;
+        color: white !important;
+        font-size: 10px !important;
+        width: 25px !important;
+        height:25px !important;
+        padding: 5px;
+    }
+    .slideContent h2{
+        font-size:15px;
+       
+    }
+    .slideContent p{
+        font-size: 12px ;
+        line-height: 17px;
+    }
+    .slideContent button{
+        padding: 3px 10px ;
+        font-size: 10px;
     }
 
 }
