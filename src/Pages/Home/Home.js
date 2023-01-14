@@ -4,6 +4,7 @@ import { siteName } from '../../App';
 import About from '../About/About';
 import HouseCards from '../HouseCards/HouseCards';
 import Testimonials from '../Testimonials/Testimonials';
+import Banner from '../Banner/Banner';
 const Home = () => {
     return (
         <HelmetProvider>
