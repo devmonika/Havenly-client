@@ -7,7 +7,7 @@ import men from '../../../src/assetes/men.png'
 
 const About = () => {
     return (
-        <div className='max-w-[1240px] mx-auto my-10'>
+        <div className='max-w-[1240px] mx-auto my-10 mt-24'>
         <h3 className='text-center text-2xl font-semibold mb-8 text-primary'>About Us</h3>
         <div className='grid gap-10 grid-cols-1 lg:grid-cols-2 px-10 lg:px-0'>
             <img src={about} alt="about" className='' />

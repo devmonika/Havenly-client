@@ -2,7 +2,7 @@ import React from 'react';
 import { useRef } from "react";
 import { FaBars, FaTimes, FaUserAlt } from "react-icons/fa";
 import './Header.css'
-import logo from '../../../images/house.png'
+import logo from '../../../assetes/logo.png'
 import { Link } from 'react-router-dom';
 const Header = () => {
     const navRef = useRef();
@@ -14,8 +14,8 @@ const Header = () => {
 	return (
 		<header>
 			<div>
-			<img src={logo} alt="logo" />
-			<h3 className='font-bold text-3xl text-[#28C667]'>Havenly</h3>
+			<img src={logo} alt="logo" className='h-52 mt-16'/>
+			{/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
 			</div>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
@@ -23,7 +23,7 @@ const Header = () => {
 				<a href="/#">Blog</a>
 				<a href="/#">Testimonial</a>
 				<a href="/#">About us</a>
-				<a href="/#">Contact our</a>
+				<a href="/#">Contact Us</a>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>

@@ -3,13 +3,13 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Titillium Web", sans-serif;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 
 :root {
 	--mainColor: #FFFFFF;
 	--mainColorLight: #5767aa;
-	--secondaryColor: #db2b39;
+	--secondaryColor: #224265;
 	--textColor: #black;
 }
 
