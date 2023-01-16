@@ -5,7 +5,7 @@ const HouseCards = () => {
     return (
         <div className=" min-h-screen mt-24">
             <p className='text-xl text-primary font-bold text-center mb-4'>Options</p>
-            <h1 className='text-5xl font-bold text-center'>House For Rent!</h1>
+            <h1 className='text-5xl font-bold text-center'>House For Rent!!</h1>
             <div className="max-w-screen-xl mx-auto px-4 pt-16">
                 <div className="flex flex-col flex-wrap md:flex-row md:-mx-2">
                 <div className="h-72 md:h-96 w-full md:w-1/2 lg:w-1/4 mb-4 lg:mb-0">
