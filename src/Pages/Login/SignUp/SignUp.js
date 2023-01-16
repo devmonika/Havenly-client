@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginImage from '../../../assetes/login.jpg';
 
-const Login = () => {
+const SignUp = () => {
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full '>
             <div>
@@ -10,15 +10,27 @@ const Login = () => {
             </div>
             <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900'>
                 <div className='mb-8 text-center'>
-                    <h1 className='my-3 text-4xl font-bold'>Login Now!</h1>
+                    <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
                     <p className='text-sm  text-gray-400'>
-                        Login to access your account
+                        Create a new Account
                     </p>
                 </div>
 
 
                 <form className='space-y-6 ng-untouched ng-pristine ng-valid' >
                     {/* <h1 className="text-4xl font-bold text-center my-4">Login now!</h1> */}
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="name" name="name" placeholder="Your Name" className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Select image</span>
+                        </label>
+                        <input type="file" name="image" placeholder="Select image" className="input input-bordered" />
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -35,7 +47,7 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-4">
-                        <input className="btn bg-slate-900 " type="submit" value="login" />
+                        <input className="btn bg-slate-900 " type="submit" value="SignUp" />
 
                     </div>
                 </form>
@@ -80,12 +92,12 @@ const Login = () => {
                     </div>
                 </div>
                 <div>
-                    <p className='px-6 text-sm text-center text-gray-400'>Don't have an account yet? {' '}
-                        <Link to='/signup' className='hover:underline text-gray-600'>Sign Up</Link></p>
+                    <p className='px-6 text-sm text-center text-gray-400'>Already have an Login Please!!  {'   '}
+                        <Link to='/login' className='hover:underline text-gray-600'>Login</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;

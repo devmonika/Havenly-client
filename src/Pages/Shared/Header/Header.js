@@ -5,7 +5,7 @@ import './Header.css'
 import logo from '../../../assetes/logo.png'
 import { Link } from 'react-router-dom';
 const Header = () => {
-    const navRef = useRef();
+	const navRef = useRef();
 
 	const showNavbar = () => {
 		navRef.current.classList.toggle("responsive_nav");
@@ -14,8 +14,8 @@ const Header = () => {
 	return (
 		<header>
 			<div>
-			<img src={logo} alt="logo" className='h-52 mt-16'/>
-			{/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
+				<img src={logo} alt="logo" className='h-52 mt-16' />
+				{/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
 			</div>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
@@ -31,9 +31,9 @@ const Header = () => {
 				</button>
 			</nav>
 			<div>
-				
-				<Link className='mr-3' >Login </Link>
-				<FaUserAlt className='mr-3'/>
+
+				<Link to='/login' className='mr-3' >Login </Link>
+				<FaUserAlt className='mr-3' />
 				<p>Ibrahim Sikder</p>
 			</div>
 			<button className="nav-btn" onClick={showNavbar}>
