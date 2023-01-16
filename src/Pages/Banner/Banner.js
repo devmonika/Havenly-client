@@ -11,7 +11,12 @@ const Banner = () => {
   return (
     <div>
         <>
-      <Swiper
+      <Swiper 
+      loop={true}
+      autoplay={{
+        delay: 500,
+        disableOnInteraction: false
+    }}
       slidesPerView={1}
         pagination={{
           type: "fraction",
