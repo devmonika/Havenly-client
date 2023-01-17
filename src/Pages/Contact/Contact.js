@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import phone from "../../assetes/call.png";
+import Iframe from "react-iframe";
 const Contact = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
@@ -82,7 +83,7 @@ const Contact = () => {
             {/* message field  */}
             <div className="form-control ">
               <textarea
-                className="my-5 border border-solid p-5 border-gray-300 rounded-lg  focus:bg-white focus:border-red-500 focus:ring-1 focus:ring-sky-500"
+                className="my-5 border border-solid p-5 border-gray-300 rounded-lg  focus:bg-white  focus:outline-gray-300"
                 name=""
                 id=""
                 cols="20"
@@ -100,11 +101,21 @@ const Contact = () => {
         {/* From end */}
         <div className="relative">
           <img
-            className=" h-[600px] lg:w-4/6 md:w-full md:px-5 px-0 w-auto inline-block py-10 lg:-mt-28 mt-0"
+            className=" h-[600px] lg:w-4/6 md:w-full md:px-5 p-5 w-auto inline-block lg:-mt-28 mt-0"
             src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
             alt=""
           />
         </div>
+      </section>
+      {/* map section */}
+      <section className=" flex flex-row justify-center items-center">
+        <Iframe
+          url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27407670906!2d-118.69192215515307!3d34.02016130272217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1673787121342!5m2!1sen!2sbd"
+          style={{ border: 0 }}
+          allowfullscreen=""
+          loading="lazy"
+          className="lg:h-[500px] md:h-[600px] sm:h-[400px] sm-w-[400px] xl:w-[500px] lg:w-[700px] md:w-[700px]  px-0 w-auto py-10"
+        ></Iframe>
       </section>
     </div>
   );
