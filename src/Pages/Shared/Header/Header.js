@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useRef } from "react";
 import { FaBars, FaRegSun, FaSun, FaTimes, FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
 import './Header.css'
@@ -12,9 +12,9 @@ const Header = () => {
     const dispatch = useDispatch();
 	const navRef = useRef();
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle("responsive_nav");
-	};
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
 
 	return (
 		<header>
