@@ -37,6 +37,27 @@ const SignUp = () => {
                 //upload image into imgbb
                 // console.log(data.data.display_url)
 
+                //storeData into mongodb
+                const users = {
+                    name: name,
+                    email: email,
+                    image: data.data.display_url,
+                    user: user
+
+                }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(users)
+                })
+                .then(res=>res.json())
+                .then(result=>{
+                      console.log(result);
+                            toast.success('Added user successfully');
+                            navigate('/home')
+                })
 
                 //createuser
                 createUser(email, password)
