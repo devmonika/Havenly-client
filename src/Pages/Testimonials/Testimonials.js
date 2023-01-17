@@ -3,11 +3,11 @@ import React from 'react';
 const Testimonials = () => {
     return (
         <div>
-            <div className='text-center py-10'>
+            <div className='text-center py-10 mb-10'>
                 <h1 className='text-xl text-primary font-bold text-center mb-4'>Testimonial</h1>
                 <h1 className='text-4xl w-96 mx-auto leading-normal font-bold mb-12'>Read What others have to say
                 </h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto gap-8 group'>
+                <div className='px-8 lg:px-0 text-gray-700 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto gap-8 group'>
                     {/* <div className='shadow-xl p-8 rounded-xl mix-blend-luminosity cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500'>
                         <img className='h-20 mx-auto rounded-full' src={profile} alt="" />
                         <h4 className='uppercase text-xl font-bold'>Jhon Doe</h4>

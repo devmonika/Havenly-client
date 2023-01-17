@@ -5,8 +5,7 @@ import LoginImage from '../../../assetes/login.jpg';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const SignUp = () => {
-    const { createUser, updateUserProfile, verifyEmail, signInWithGoogle, loading,
-        setLoading } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail, signInWithGoogle, } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();

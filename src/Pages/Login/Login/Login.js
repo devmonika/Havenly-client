@@ -5,7 +5,7 @@ import LoginImage from '../../../assetes/login.jpg';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Login = () => {
-    const { signin, loading, setLoading, signInWithGoogle, resetPassword } = useContext(AuthContext);
+    const { signin, setLoading, signInWithGoogle, resetPassword } = useContext(AuthContext);
     const [userEmail, setUserEmail] = useState('');
 
 
