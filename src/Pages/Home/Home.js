@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { siteName } from '../../App';
-import Testimonials from '../Testimonials/Testimonials';
 const Home = () => {
     return (
         <HelmetProvider>
@@ -9,7 +8,7 @@ const Home = () => {
 				<title>Home - {siteName}</title>
 			</Helmet>
              <div>
-                <Testimonials></Testimonials>
+                This is home
             </div>
         </HelmetProvider>
        
