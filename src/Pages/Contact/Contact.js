@@ -1,9 +1,9 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React from "react";
+import { useForm } from "react-hook-form";
 import phone from "../../assetes/call.png";
 const Contact = () => {
-        const { register, handleSubmit } = useForm();
-        const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
     <div className="min-h-screen bg-color-primary">
       {/* Contact Upper part */}
@@ -47,24 +47,20 @@ const Contact = () => {
             {/* name field  */}
             <div className="flex lg:flex-row flex-col gap-3">
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-black">Name</span>
-                </label>
                 <input
                   type="text"
-                  className="input input-bordered lg:w-full md:w-96 "
+                  placeholder="Name"
+                  className="input input-bordered lg:w-full md:w-96 mt-5 "
                   {...register("name", {
                     required: "Name is required",
                   })}
                 />
               </div>
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-black">Phone</span>
-                </label>
                 <input
                   type="text"
-                  className="input input-bordered md:w-96 lg:w-full"
+                  placeholder="Phone"
+                  className="input input-bordered mt-5 md:w-96 lg:w-full"
                   {...register("phone", {
                     required: "Phone is required",
                   })}
@@ -73,24 +69,26 @@ const Contact = () => {
             </div>
             {/* email field  */}
             <div className="form-control ">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
               <input
                 type="email"
-                className="input input-bordered "
+                placeholder="Email"
+                className="mt-5 input input-bordered "
                 {...register("email", {
                   required: "Email is required",
                 })}
               />
             </div>
 
-            {/* password field  */}
+            {/* message field  */}
             <div className="form-control ">
-              <label className="label">
-                <span className="label-text">Your message</span>
-              </label>
-              <textarea name="" id="" cols="20" rows="5"></textarea>
+              <textarea
+                className="my-5 border border-solid p-5 border-gray-300 rounded-lg  focus:bg-white focus:border-red-500 focus:ring-1 focus:ring-sky-500"
+                name=""
+                id=""
+                cols="20"
+                rows="5"
+                placeholder="Your message"
+              ></textarea>
             </div>
             <input
               className="btn btn-primary bg-gradient-to-r from-lime to-black text-white w-full mt-4"
@@ -109,7 +107,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
-    );
+  );
 };
 
 export default Contact;
