@@ -19,8 +19,8 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	background-color: var(--mainColor);
-	color: var(--textColor);
+	/* background-color: var(--mainColor);
+	color: var(--textColor); */
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
