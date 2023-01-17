@@ -1,8 +1,86 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoginImage from '../../../assetes/login.jpg';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const SignUp = () => {
+    const { createUser, updateUserProfile, verifyEmail, signInWithGoogle, loading,
+        setLoading } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathName || '/';
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const image = form.image.files[0];
+        const email = form.email.value;
+        const password = form.password.value;
+        const user = form.user.value;
+        console.log(name, image, email, password, user)
+
+
+        //image upload to imgbb
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=87c47e4a9562b277d4d4cdd9c60b2681`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                //upload image into imgbb
+                // console.log(data.data.display_url)
+
+
+                //createuser
+                createUser(email, password)
+                    .then(result => {
+                        // console.log(result.user)
+                        updateUserProfile(name, data.data.display_url)
+                            .then(
+                                verifyEmail()
+                                    .then(() => {
+                                        toast.success('Please check your email for verification');
+                                        navigate(from, { replace: true });
+                                    })
+                            )
+                            .catch(error => console.log(error))
+                    })
+                    .catch(error => {
+                        console.log(error)
+                        // setLoading(false)
+                    })
+            })
+            .catch(err => console.log(err))
+
+
+
+        // console.log(name, image, email, password)
+
+
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                navigate(from, { replace: true });
+
+            })
+            .catch(err => console.log(err))
+    }
+
+
+
+
+
+
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full '>
             <div>
@@ -17,8 +95,11 @@ const SignUp = () => {
                 </div>
 
 
-                <form className='space-y-6 ng-untouched ng-pristine ng-valid' >
-                    {/* <h1 className="text-4xl font-bold text-center my-4">Login now!</h1> */}
+                <form className='space-y-6 ng-untouched ng-pristine ng-valid'
+                    onSubmit={handleSubmit}
+
+                >
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>
@@ -30,6 +111,15 @@ const SignUp = () => {
                             <span className="label-text">Select image</span>
                         </label>
                         <input type="file" name="image" placeholder="Select image" className="input input-bordered" />
+                    </div>
+                    <div>
+
+                        <select name="user" id="" className='my-2 text-xl font-semibold'>
+                            <option value="Seller">Seller</option>
+                            <option value="Bayer">Bayer</option>
+                        </select>
+
+
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -57,7 +147,11 @@ const SignUp = () => {
                 </div>
                 <div className='flex justify-center  '>
                     <div className=' mb-4'>
-                        <button aria-label='Log in with Google' className='p-3 rounded-sm'>
+                        <button
+                            onClick={handleGoogleSignIn}
+                            aria-label='Log in with Google'
+                            className='p-3 rounded-sm'
+                        >
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 viewBox='0 0 32 32'

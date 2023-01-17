@@ -6,8 +6,8 @@ import image from '../../../assetes/contact_hero.jpg';
 
 const Footer = () => {
     return (
-        <footer className='text-white' style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
-            <div className='sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-24  justify-evenly gap-8 '>
+        <footer className='text-white mt-4 ' style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
+            <div className='sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-24  justify-evenly   gap-8 '>
                 <div className=''>
                     <h2 className='text-2xl'>About Us</h2>
                     <p className='text-start mt-3 leading-loose'>House rendering is the process of applying a coating such as cement or lime to a façade exterior brickwork, blueboard, etc. with the aim of creating a smooth or sometimes textured surface.</p>
