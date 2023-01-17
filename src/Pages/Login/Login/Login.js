@@ -1,8 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoginImage from '../../../assetes/login.jpg';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Login = () => {
+    const { signin, loading, setLoading, signInWithGoogle, resetPassword } = useContext(AuthContext);
+    const [userEmail, setUserEmail] = useState('');
+
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathName || '/';
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+
+        const email = form.email.value;
+        const password = form.password.value;
+
+        // console.log(email, password);
+        signin(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('user loged in successfully...!!!!');
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error);
+                setLoading(false)
+            })
+
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                navigate(from, { replace: true });
+
+            })
+            .catch(err => console.log(err))
+    }
+
+    //reset password
+    const handleResetPassword = () => {
+        resetPassword(userEmail)
+            .then(() => {
+                toast.success('Please check your email for reset password')
+            })
+            .catch(error => console.log(error))
+    }
+
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full '>
             <div>
@@ -17,13 +67,20 @@ const Login = () => {
                 </div>
 
 
-                <form className='space-y-6 ng-untouched ng-pristine ng-valid' >
+                <form
+                    onSubmit={handleSubmit}
+                    className='space-y-6 ng-untouched ng-pristine ng-valid'
+                >
                     {/* <h1 className="text-4xl font-bold text-center my-4">Login now!</h1> */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name="email" placeholder="email" className="input input-bordered" />
+                        <input
+                            type="email"
+                            name="email"
+                            onBlur={event => setUserEmail(event.target.value)}
+                            placeholder="email" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -31,7 +88,13 @@ const Login = () => {
                         </label>
                         <input type="password" name="password" placeholder="password" className="input input-bordered" />
                         <label className="label">
-                            <p className="label-text-alt link link-hover">Forgot password?</p>
+                            {/* <p className="label-text-alt link link-hover">Forgot password?</p> */}
+                            <button
+                                onClick={handleResetPassword}
+                                className='text-xs hover:underline text-gray-400'
+                            >
+                                Forgot password?
+                            </button>
                         </label>
                     </div>
                     <div className="form-control mt-4">
@@ -45,7 +108,10 @@ const Login = () => {
                 </div>
                 <div className='flex justify-center  '>
                     <div className=' mb-4'>
-                        <button aria-label='Log in with Google' className='p-3 rounded-sm'>
+                        <button
+
+                            onClick={handleGoogleSignIn}
+                            aria-label='Log in with Google' className='p-3 rounded-sm'>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 viewBox='0 0 32 32'
