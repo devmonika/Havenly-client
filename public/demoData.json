@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "city": "New York",
+    "propertyNumber": "307 Properties",
+    "img": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "id": 2,
+    "city": "Los Angeles",
+    "propertyNumber": "500 Properties",
+    "img": "https://images.unsplash.com/photo-1638059957884-2faffe7b6943?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=817&q=80"
+  },
+  {
+    "id": 3,
+    "city": "San Francisco",
+    "propertyNumber": "300 Properties",
+    "img": "https://plus.unsplash.com/premium_photo-1670103704048-cdc2a3f2146a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+  },
+  {
+    "id": 4,
+    "city": "Miami",
+    "propertyNumber": "700 Properties",
+    "img": "https://images.unsplash.com/photo-1506966953602-c20cc11f75e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=864&q=80"
+  },
+  {
+    "id": 5,
+    "city": "Chicago",
+    "propertyNumber": "100 Properties",
+    "img": "https://images.unsplash.com/photo-1533658280853-e4a10c25a30d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=726&q=80"
+  },
+  {
+    "id": 6,
+    "city": "Houston",
+    "propertyNumber": "300 Properties",
+    "img": "https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+  }
+]
