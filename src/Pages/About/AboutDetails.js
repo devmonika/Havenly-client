@@ -8,7 +8,7 @@ const AboutDetails = () => {
             <div className='grid gap-8 grid-cols-1 md:grid-cols-2 justify-items-center content-center mx-8'>
                 <img src='https://i.ibb.co/GdD9ktf/about-img.jpg' alt="about" className='' />
 
-                {/* about right side start here*/}
+                {/* about details right side start here*/}
                 <div className='flex flex-col justify-center items-center '>
                     <div className='' >
                         <h3 className='text-left text-2xl mb-5 text-primary'>WHO WE ARE</h3>
@@ -23,7 +23,7 @@ const AboutDetails = () => {
                 {/* about details right side end here */}
             </div>
 
-                
+                {/* about bottom section start here */}
             <div className='grid gap-8 grid-cols-1 md:grid-cols-4 mt-16 mx-8 text-center'>
                 <div>
                     <h2 className='text-5xl mb-4 font-semibold text-secondary'>51</h2>
