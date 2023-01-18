@@ -3,7 +3,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { siteName } from "../../App";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
-// import Contact from "../Contact/Contact";
 import Cta from "../Cta/Cta";
 import HouseCards from "../HouseCards/HouseCards";
 import Testimonials from "../Testimonials/Testimonials";
