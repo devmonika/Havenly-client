@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRef } from "react";
 import { FaBars, FaPoll, FaRegSun, FaSun, FaTimes, FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
 import './Header.css'
 import logo from '../../../assetes/logo.png'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {toggleDarkMode} from '../../../app/features/darkModeSlice';
+import { toggleDarkMode } from '../../../app/features/darkModeSlice';
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
+	const { user, logout } = useContext(AuthContext);
 	const { mode } = useSelector((state) => state.darkMode);
-    const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const navRef = useRef();
 
-  const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
-  };
+	const showNavbar = () => {
+		navRef.current.classList.toggle("responsive_nav");
+	};
+	const handleLogOut = () => {
+		logout()
+			.then(() => { })
+			.catch(error => console.error(error))
+	}
 
 	return (
 		<header>
@@ -38,16 +45,38 @@ const Header = () => {
 				</button>
 			</nav>
 			<div>
+				{
+					user?.uid ?
 
-				<Link to='/login' className='mr-3' >Login </Link>
-				<FaUserAlt className='mr-3' />
-				<p className='mr-3'>Ibrahim Sikder</p>
-				<button className='text-xl' onClick={()=>dispatch(toggleDarkMode())}>
+						<button onClick={handleLogOut} className="mr-3">LogOut</button>
+						:
+						<><Link to='/login' className='mr-3' >Login </Link></>
+				}
+				{/* <Link to='/login' className='mr-3' >Login </Link> */}
+				{
+					user?.displayName ?
+						<p className='mr-3'>{user?.displayName}</p>
+						:
+						<p className='mr-3'>Web Titans</p>
+				}
+				{
+					user?.photoURL ?
+						<>
+							<img src={user.photoURL} className="w-12 h-12  rounded-2xl" alt="" />
+						</>
+						:
+						<FaUserAlt className='mr-3' />
+
+				}
+
+				{/* <FaUserAlt className='mr-3' /> */}
+				{/* <p className='mr-3'>Ibrahim Sikder</p> */}
+				<button className='text-xl ml-3' onClick={() => dispatch(toggleDarkMode())}>
 					{
-					mode?
-					<FaToggleOff/>
-					:
-					<FaToggleOn/>
+						mode ?
+							<FaToggleOff />
+							:
+							<FaToggleOn />
 					}
 				</button>
 				{/* <label htmlFor="my-drawer-2" className="nav-btn drawer-button lg:hidden"><FaBars /></label> */}
