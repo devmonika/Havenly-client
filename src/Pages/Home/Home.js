@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { siteName } from "../../App";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
-import Contact from "../Contact/Contact";
+import PopulerPlaces from "../../componentes/populerPlaces/PopulerPlaces";
 import Cta from "../Cta/Cta";
 import HouseCards from "../HouseCards/HouseCards";
 import Testimonials from "../Testimonials/Testimonials";
@@ -18,6 +18,7 @@ const Home = () => {
         <About></About>
         <HouseCards></HouseCards>
         <Cta></Cta>
+        <PopulerPlaces></PopulerPlaces>
         <Testimonials></Testimonials>
       </div>
     </HelmetProvider>
