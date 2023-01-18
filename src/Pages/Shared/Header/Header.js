@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import { FaBars, FaTimes, FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
+import { FaBars, FaPoll, FaRegSun, FaSun, FaTimes, FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
 import './Header.css'
 import logo from '../../../assetes/logo.png'
 import { Link } from 'react-router-dom';
@@ -19,7 +19,8 @@ const Header = () => {
 	return (
 		<header>
 			<div>
-				<img src={logo} alt="logo" className='h-52 mt-16' />
+			<label htmlFor="my-drawer-2" className="nav-btn drawer-button lg:hidden"><FaBars /></label>
+				<img src={logo} alt="logo" className='h-32 lg:h-52 mt-16 -ml-5 lg:ml-0 mb-7 lg:mb-0' />
 				{/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
 			</div>
 			<nav ref={navRef}>
@@ -29,6 +30,7 @@ const Header = () => {
 				<a href="/#">Testimonial</a>
 				<a href="/#">About us</a>
 				<a href="/contactus">Contact Us</a>
+				<a href="/dashboard">Dashboard</a>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
@@ -48,7 +50,7 @@ const Header = () => {
 							<FaToggleOn />
 					}
 				</button>
-
+				{/* <label htmlFor="my-drawer-2" className="nav-btn drawer-button lg:hidden"><FaBars /></label> */}
 			</div>
 			<button className="nav-btn" onClick={showNavbar}>
 				<FaBars />
