@@ -5,19 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './contexts/AuthProvider';
 import { Provider } from 'react-redux';
+import { Toaster } from 'react-hot-toast'
 import { store } from './app/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-    <Provider store={store}>
-      <App />
-    </Provider>
+      <Provider store={store}>
+        <Toaster />
+        <App />
+      </Provider>
     </AuthProvider>
   </React.StrictMode>
-    
-  
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function
