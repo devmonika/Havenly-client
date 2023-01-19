@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 // import toast, { Toaster } from 'react-hot-toast';
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoginImage from '../../../assetes/login.jpg';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useToken from '../../../hooks/useToken';
 
 const SignUp = () => {
     const { createUser, updateUserProfile, verifyEmail, signInWithGoogle, } = useContext(AuthContext);
@@ -12,6 +13,11 @@ const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathName || '/';
+    const [createdUserEmail, setCretedUserEmail] = useState('');
+    const [token] = useToken(createdUserEmail);
+    if (token) {
+        navigate('/')
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -52,6 +58,9 @@ const SignUp = () => {
                     .then(res => res.json())
                     .then(result => {
                         console.log(result);
+                        setCretedUserEmail(email);
+                        //accessToken
+                        // getuserToken(email)
                         toast.success('user added successfully')
                     })
 
@@ -77,7 +86,17 @@ const SignUp = () => {
 
 
 
-
+        // const getuserToken = email => {
+        //     //getUser token
+        //     fetch(`http://localhost:5000/jwt?email=${email}`)
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             if (data.accessToken) {
+        //                 localStorage.setItem('accessToken', data.accessToken)
+        //                 navigate('/');
+        //             }
+        //         })
+        // }
 
 
 
@@ -92,7 +111,11 @@ const SignUp = () => {
 
             })
             .catch(err => console.log(err))
+
+
+
     }
+
 
 
 
