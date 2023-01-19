@@ -1,4 +1,3 @@
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -6,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBsndaIwjXsNJm5zV1V96rRDSsTM_uCvi4",
-    authDomain: "house-renter-42195.firebaseapp.com",
-    projectId: "house-renter-42195",
-    storageBucket: "house-renter-42195.appspot.com",
-    messagingSenderId: "757236873945",
-    appId: "1:757236873945:web:92956a57d3a568368d9cc8"
+  apiKey: "AIzaSyDaDLXag1Vm61NjlFrUQkvInSWo8FCG01w",
+  authDomain: "havenly-de0a6.firebaseapp.com",
+  projectId: "havenly-de0a6",
+  storageBucket: "havenly-de0a6.appspot.com",
+  messagingSenderId: "1083060262159",
+  appId: "1:1083060262159:web:fa6852877f8d787b2a5a7a"
 };
 
 // Initialize Firebase
