@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
-import { FaBars, FaPoll, FaRegSun, FaSun, FaTimes, FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
+import { FaBars, FaTimes, FaToggleOff, FaToggleOn, FaUserAlt } from "react-icons/fa";
 import './Header.css'
 import logo from '../../../assetes/logo.png'
 import { Link } from 'react-router-dom';
@@ -36,7 +36,7 @@ const Header = () => {
 				<a href="/#">Blog</a>
 				<a href="/#">Testimonial</a>
 				<a href="/#">About us</a>
-				<a href="/contactus">Contact Us</a>
+				<a href="/contactus">Contact</a>
 				<a href="/dashboard">Dashboard</a>
 				<button
 					className="nav-btn nav-close-btn"

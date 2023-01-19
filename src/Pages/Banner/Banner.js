@@ -28,10 +28,10 @@ const Banner = () => {
         <SwiperSlide>
           <img src={slide} alt="" />
           <div className="slideContent">
-            <h2 className="text-3xl md:text-sm font-bold mb-3 ">WELCOME TO OUR HOUSE RENT</h2>
-            <p className="text-xl sm:text-sm ">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec ac nec. Nam vel eu amet, nisl imperdiet nec ad morbi, sodales ipsum, consequat purus vitae integer maecenas. Arcu sit, sit velit at ut eu phasellus, tincidunt risus risus scelerisque donec, euismod mollis sit elementum lobortis fermentum lacus.</p>
+            <h2 className="text-3xl md:text-sm font-bold mb-3 ">WELCOME TO <span>HAVENLY!</span></h2>
+            <p className="text-xl sm:text-sm ">Where You can rent your prefer houses at budget friendly rate.</p>
            <div className="mt-5 slideBtn">
-           <button className="bg-secondary px-8 py-3 mr-3">Property</button>
+           <button className="bg-secondary px-8 py-3 mr-3">Appertments</button>
             <button className="bg-primary px-8 py-3">Contact Us</button>
            </div>
           </div>
@@ -39,10 +39,10 @@ const Banner = () => {
         <SwiperSlide>
           <img src={slide} alt="" />
           <div className="slideContent">
-            <h2 className="text-3xl font-bold mb-3 ">WELCOME TO OUR HOUSE RENT</h2>
-            <p className="text-xl ">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec ac nec. Nam vel eu amet, nisl imperdiet nec ad morbi, sodales ipsum, consequat purus vitae integer maecenas. Arcu sit, sit velit at ut eu phasellus, tincidunt risus risus scelerisque donec, euismod mollis sit elementum lobortis fermentum lacus.</p>
+            <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
+            <p className="text-xl ">Where You can rent your prefer houses at budget friendly rate.</p>
            <div className="mt-5">
-           <button className="bg-secondary px-8 py-3 mr-3">Property</button>
+           <button className="bg-secondary px-8 py-3 mr-3">Appertments</button>
             <button className="bg-primary px-8 py-3">Contact Us</button>
            </div>
           </div>
