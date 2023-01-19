@@ -47,7 +47,7 @@ const Reviews = () => {
                     }
                     {/* <div className='transform duration-500 hover:-translate-y-2 cursor-pointer max-h-190 rounded-md group'>
                         <img
-                            alt="Woman"
+                            alt=""
                             src="https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                             className="mx-auto h-28 w-28 rounded-full object-cover shadow-xl transform  group-hover:scale-110 duration-500"
                         />

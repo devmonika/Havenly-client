@@ -20,7 +20,7 @@ const Testimonials = () => {
                     <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
                         <div className="bg-white block rounded-lg shadow-lg">
                             <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt='asd' className="w-full rounded-t-lg" />
+                                <img src="https://i.postimg.cc/C5bnSN0L/477973067.jpg" alt='asd' className="w-full rounded-t-lg" />
                                 <a href="#!">
                                     <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                 </a>
@@ -88,7 +88,7 @@ const Testimonials = () => {
                     <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
                         <div className="bg-white block rounded-lg shadow-lg">
                             <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt='asd' className="w-full rounded-t-lg" />
+                                <img src="https://i.postimg.cc/636qZXCR/Professional-Headshot-Poses-Blog-Post-7.jpg" alt='asd' className="w-full rounded-t-lg" />
                                 <a href="#!">
                                     <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                 </a>
@@ -156,7 +156,7 @@ const Testimonials = () => {
                     <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
                         <div className="bg-white block rounded-lg shadow-lg">
                             <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt='asd' className="w-full rounded-t-lg" />
+                                <img src="https://i.postimg.cc/R074GDvR/Adobe-Stock-94026210-1-e1492095156447.jpg" alt='asd' className="w-full rounded-t-lg" />
                                 <a href="#!">
                                     <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                 </a>

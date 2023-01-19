@@ -39,7 +39,8 @@ const Header = () => {
 				<a href="/reviews">Reviews</a>
 				<a href="/#">About us</a>
 				<a href="/contactus">Contact</a>
-				<a href="/dashboard">Dashboard</a>
+				
+				
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
@@ -50,11 +51,15 @@ const Header = () => {
 				{
 					user?.uid ?
 
-						<button onClick={handleLogOut} className="mr-3">LogOut</button>
+						<>
+						<Link to="/dashboard"  className="mr-3">Dashboard</Link> 
+						<button onClick={handleLogOut} className="mr-3 font-bold">Logout</button>
+						
+						</>
 						:
 						<><Link to='/login' className='mr-3' >Login </Link></>
 				}
-				{/* <Link to='/login' className='mr-3' >Login </Link> */}
+				
 				{
 					user?.displayName ?
 						<p className='mr-3'>{user?.displayName}</p>
@@ -70,9 +75,8 @@ const Header = () => {
 						<FaUserAlt className='mr-3' />
 
 				}
+	
 
-				{/* <FaUserAlt className='mr-3' /> */}
-				{/* <p className='mr-3'>Ibrahim Sikder</p> */}
 				<button className='text-xl ml-3' onClick={() => dispatch(toggleDarkMode())}>
 					{
 						mode ?
@@ -81,8 +85,8 @@ const Header = () => {
 							<FaToggleOn />
 					}
 				</button>
-				{/* <label htmlFor="my-drawer-2" className="nav-btn drawer-button lg:hidden"><FaBars /></label> */}
-			</div >
+				
+			</div>
 			<button className="nav-btn" onClick={showNavbar}>
 				<FaBars />
 			</button>
