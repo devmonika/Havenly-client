@@ -20,11 +20,10 @@ const Header = () => {
 			</div>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
-				<a href="/#">Services</a>
-				<a href="/#">Blog</a>
-				<a href="/#">Testimonial</a>
-				<a href="/#">About us</a>
-				<a href="/#">Contact our</a>
+				<a href="/#">Apartments</a>
+				<a href="/#">Reviews</a>
+				<a href="/#">About Us</a>
+				<a href="/#">Contact Us</a>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
