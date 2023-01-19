@@ -8,9 +8,9 @@ module.exports = {
       {
         havenly: {
         
-      "primary": "#006F91",
+      "primary": "#224265",
               
-      "secondary": "#00ABE0",
+      "secondary": "#DB8C23",
               
       "accent": "#37CDBE",
               

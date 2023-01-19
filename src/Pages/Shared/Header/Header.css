@@ -16,20 +16,18 @@
 header {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	background-color: var(--mainColorLight);
-	color: var(--mainColor);
+	/* background-color: var(--mainColor);
+	color: var(--textColor); */
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 nav a {
 	margin: 0 1rem;
-	color: var(--mainColo);
+	color: var(--textColor);
 	text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
 }
 
 nav a:hover {
@@ -101,7 +99,14 @@ header nav a{
     text-align: left !important;
     color:#fff;
     font-size: 16px;
-}
+
+		background-color:#28C667;
+		transition: 1s;
+		transform: translateY(-100vh);
+        color:#fff;
+		z-index: 10;
+	}
+
 	header .responsive_nav {
 		transform: none;
 	}
