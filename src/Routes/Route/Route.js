@@ -6,6 +6,9 @@ import SignUp from "../../Pages/Login/SignUp/SignUp";
 import Contact from "../../Pages/Contact/Contact";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
+import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +41,18 @@ export const router = createBrowserRouter([
             path:'/dashboard',
             element:<Dashboard></Dashboard>
            
+        },
+        {
+          path: '/dashboard/allsellers',
+          element: <AllSeller></AllSeller>
+        },
+        {
+          path: '/dashboard/allbuyers',
+          element: <AllBuyer></AllBuyer>
+        },
+        {
+          path: '/dashboard/reporteditems',
+          element: <ReportedItems></ReportedItems>
         }
     ]
 }
