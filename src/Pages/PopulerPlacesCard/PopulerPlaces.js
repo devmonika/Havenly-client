@@ -10,8 +10,12 @@ const PopulerPlaces = () => {
   }, []);
   return (
     <div className="p-8">
-      <h1 className="text-3xl text-center mt-10">Popular Places</h1>
-      <p className="text-center text-lg">Properties In Most Popular Places.</p>
+      <h1 className="text-xl text-primary font-bold text-center mb-4">
+        Popular Places
+      </h1>
+      <p className="text-center text-4xl font-bold leading-normal">
+        Apartments In Most Popular Places
+      </p>
       <div className="">
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-8">
           {places.map((place) => (
