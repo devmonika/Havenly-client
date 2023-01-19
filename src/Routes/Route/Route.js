@@ -7,6 +7,8 @@ import Contact from "../../Pages/Contact/Contact";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
+import Reviews from "../../Pages/Reviews/Reviews";
+
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "/contactus",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/reviews",
+        element: <Reviews></Reviews>
       },
     ],
   },
