@@ -130,24 +130,14 @@
     display: flex;
     justify-content: space-between !important;
     position: absolute;
-    bottom: -180px;
+    bottom: -50px;
     
 }
 .propertyCardImgIcons{
     position: relative;
-    transition:transform .3s;
-    -webkit-transition:transform .3s;
-    -moz-transition:transform .3s;
-    -ms-transition:transform .3s;
-    -o-transition:transform .3s;
 }
 .propertyCardImgIcons:hover .propertyIcons{
     display: block;
-    transition:transform .3s;
-    -webkit-transition:transform .3s;
-    -moz-transition:transform .3s;
-    -ms-transition:transform .3s;
-    -o-transition:transform .3s;
 }
 .propertyIcons{
    position: absolute;
@@ -155,6 +145,11 @@
    right: 10px;
    z-index: 10;
    display: none;
+   transition:transform .3s;
+   -webkit-transition:transform .3s;
+   -moz-transition:transform .3s;
+   -ms-transition:transform .3s;
+   -o-transition:transform .3s;
 }
 .propertyIcons li a{
     display: block;
@@ -226,7 +221,7 @@
         left: 370px;
     }
     .propertyPrice{
-        bottom: -20px;
+        bottom: 100px;
         
     }
     .propertyIcons{

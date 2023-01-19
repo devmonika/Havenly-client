@@ -8,6 +8,8 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
+import Property from "../../Pages/Porperty/Property";
+import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
 
 
 export const router = createBrowserRouter([
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
         path: "/reviews",
         element: <Reviews></Reviews>
       },
+      {
+        path:'/apartments',
+        element: <Property></Property>
+      },
+      {
+        path:'/singleapartment',
+        element: <DetailsProperty></DetailsProperty>
+      }
     ],
   },
   {
