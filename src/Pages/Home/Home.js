@@ -6,6 +6,7 @@ import Banner from "../Banner/Banner";
 import PopulerPlaces from "../PopulerPlacesCard/PopulerPlaces";
 import Cta from "../Cta/Cta";
 import HouseCards from "../HouseCards/HouseCards";
+import Reviews from "../Reviews/Reviews";
 import Testimonials from "../Testimonials/Testimonials";
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <Cta></Cta>
         <PopulerPlaces></PopulerPlaces>
         <Testimonials></Testimonials>
+        <Reviews></Reviews>
       </div>
     </HelmetProvider>
   );
