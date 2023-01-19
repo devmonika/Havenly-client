@@ -23,10 +23,12 @@ const Header = () => {
 			.catch(error => console.error(error))
 	}
 
+
+
 	return (
 		<header>
 			<div>
-			<label htmlFor="my-drawer-2" className="nav-btn drawer-button lg:hidden"><FaBars /></label>
+				<label htmlFor="my-drawer-2" className="nav-btn drawer-button lg:hidden"><FaBars /></label>
 				<img src={logo} alt="logo" className='h-32 lg:h-52 mt-16 -ml-5 lg:ml-0 mb-7 lg:mb-0' />
 				{/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
 			</div>
@@ -88,8 +90,9 @@ const Header = () => {
 			<button className="nav-btn" onClick={showNavbar}>
 				<FaBars />
 			</button>
-		</header>
+		</header >
 	);
 };
+
 
 export default Header;
