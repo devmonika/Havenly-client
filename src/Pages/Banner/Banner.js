@@ -31,7 +31,7 @@ const Banner = () => {
             <h2 className="text-3xl md:text-sm font-bold mb-3 ">WELCOME TO <span>HAVENLY!</span></h2>
             <p className="text-xl sm:text-sm ">Where You can rent your prefer houses at budget friendly rate.</p>
            <div className="mt-5 slideBtn">
-           <button className="bg-secondary px-8 py-3 mr-3">Appertments</button>
+           <button className="bg-secondary px-8 py-3 mr-3">Apartments</button>
             <button className="bg-primary px-8 py-3">Contact Us</button>
            </div>
           </div>
@@ -42,7 +42,7 @@ const Banner = () => {
             <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
             <p className="text-xl ">Where You can rent your prefer houses at budget friendly rate.</p>
            <div className="mt-5">
-           <button className="bg-secondary px-8 py-3 mr-3">Appertments</button>
+           <button className="bg-secondary px-8 py-3 mr-3">Apartments</button>
             <button className="bg-primary px-8 py-3">Contact Us</button>
            </div>
           </div>

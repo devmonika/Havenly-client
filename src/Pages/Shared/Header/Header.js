@@ -32,7 +32,7 @@ const Header = () => {
 			</div>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
-				<a href="/#">Apertments</a>
+				<a href="/#">Apartment</a>
 				{/* <a href="/#">Blog</a> */}
 				<a href="/reviews">Reviews</a>
 				<a href="/#">About us</a>
