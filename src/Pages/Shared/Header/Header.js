@@ -32,9 +32,9 @@ const Header = () => {
 			</div>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
-				<a href="/#">Services</a>
-				<a href="/#">Blog</a>
-				<a href="/#">Testimonial</a>
+				<a href="/#">Apertments</a>
+				{/* <a href="/#">Blog</a> */}
+				<a href="/reviews">Reviews</a>
 				<a href="/#">About us</a>
 				<a href="/contactus">Contact</a>
 				<a href="/dashboard">Dashboard</a>
