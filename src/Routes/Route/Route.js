@@ -9,6 +9,9 @@ import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
 import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
+import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
+import Reviews from "../../Pages/Reviews/Reviews";
+
 
 export const router = createBrowserRouter([
   {
@@ -31,31 +34,26 @@ export const router = createBrowserRouter([
         path: "/contactus",
         element: <Contact></Contact>,
       },
+      {
+        path: "/reviews",
+        element: <Reviews></Reviews>
+      },
     ],
   },
   {
-    path:'/dashboard',
-    element:<DashboardLayout></DashboardLayout>,
-    children:[
-        {
-            path:'/dashboard',
-            element:<Dashboard></Dashboard>
-           
-        },
-        {
-          path: '/dashboard/allsellers',
-          element: <AllSeller></AllSeller>
-        },
-        {
-          path: '/dashboard/allbuyers',
-          element: <AllBuyer></AllBuyer>
-        },
-        {
-          path: '/dashboard/reporteditems',
-          element: <ReportedItems></ReportedItems>
-        }
-    ]
-}
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
+  },
 ]);
 
 export default router;
