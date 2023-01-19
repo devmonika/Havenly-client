@@ -12,7 +12,7 @@ const About = () => {
         <div className='grid gap-10 grid-cols-1 lg:grid-cols-2 px-10 lg:px-0'>
             <img src={about} alt="about" className='' />
 
-            {/* about right side start here*/}
+            {/* about right side*/}
             <div>
                 <div>
                     <div className='' >
