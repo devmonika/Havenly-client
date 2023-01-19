@@ -1,6 +1,37 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const AllSeller = () => {
+    const { user } = useContext(AuthContext);
+    const [sellers, setSellers] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/users/sellers')
+            .then(res => res.json())
+            .then(data => setSellers(data))
+    }, []);
+
+
+    const handleVerify = email =>{
+        fetch (`http://localhost:5000/users/admin/${email}`,{
+           method: 'PUT',
+            headers: {
+             authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res=>res.json())
+        .then(data=>{
+         console.log(data)
+           toast.success('verify seller successful.')
+     
+     
+        });
+     }
+
     return (
         <div>
             <h2 className='text-left text-3xl font-semibold my-10 ml-10 text-secondary'>All Sellers</h2>
@@ -17,21 +48,24 @@ const AllSeller = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {
-          sellers.map((seller, i) => <tr key={seller._id}>
-            <th>{i + 1}</th>
-            <td>{seller.name}</td>
-            <td>{seller.email}</td>
-            <td>{seller.role}</td> */}
-                        {/* <td><button onClick={() => handleVerify(seller.email)} className='btn btn-xs btn-primary'>{seller?.isVerified ==='verified' ? 'verified' :'verify seller'} </button></td> */}
+                        {
+                            sellers?.map((seller, i) => <tr key={seller._id}>
+                                <th>{i + 1}</th>
+                                <td>{seller.name}</td>
+                                <td>{seller.email}</td>
+                                <td>{seller.user}</td>
+                                <td><button onClick={() => handleVerify(seller.email)} className='btn btn-xs btn-primary'>{seller?.isVerified === 'verified' ? 'verified' : 'verify seller'} </button></td>
 
-                        {/* <td><button className='btn btn-xs btn-warning'>Delete</button>
-            </td> */}
-                        {/* <td><button onClick={()=>handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>
-            </td> */}
+                                <td>
+                                    <button className='btn btn-xs btn-warning'>Delete</button>
+                                </td>
 
-                        {/* </tr>)
-        } */}
+                                {/* <td>
+                    <button onClick={()=>handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>
+                </td>  */}
+
+                            </tr>)
+                        }
 
                     </tbody>
                 </table>

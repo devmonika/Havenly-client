@@ -48,8 +48,21 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
       },
+      {
+        path: "/dashboard/allsellers",
+        element: <AllSeller></AllSeller>
+      },
+      {
+        path: "/dashboard/allbuyers",
+        element: <AllBuyer></AllBuyer>
+      },
+      {
+        path: "/dashboard/reporteditems",
+        element: <ReportedItems></ReportedItems>
+      },
     ],
   },
+  
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
