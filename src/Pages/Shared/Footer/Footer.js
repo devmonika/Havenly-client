@@ -6,7 +6,7 @@ import image from '../../../assetes/contact_hero.jpg';
 
 const Footer = () => {
     return (
-        <footer className='text-white mt-4 ' style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
+        <footer className='text-white' style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
             <div className='sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-24  justify-evenly   gap-8 '>
                 <div className=''>
                     <h2 className='text-2xl'>About Us</h2>
