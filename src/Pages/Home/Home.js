@@ -20,7 +20,6 @@ const Home = () => {
         <Cta></Cta>
         <PopulerPlaces></PopulerPlaces>
         <Testimonials></Testimonials>
-        
       </div>
     </HelmetProvider>
   );
