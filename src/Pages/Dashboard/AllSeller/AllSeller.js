@@ -45,6 +45,7 @@ const AllSeller = () => {
      };
 
 
+
     return (
         <div>
             <h2 className='text-left text-3xl font-semibold my-10 ml-10 text-secondary'>All Sellers</h2>
