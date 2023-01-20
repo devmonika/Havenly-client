@@ -4,6 +4,12 @@ body {
   position: relative;
   height: 100%;
 }
+:root {
+	--mainColor: #224265;
+	--mainColorLight: #fff;
+	--secondaryColor: #DB8C23;
+	
+}
 
 body {
   background: #eee;
@@ -12,6 +18,13 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+}
+.liveChate{
+    width: 50px;
+    bottom:20px;
+    right: 20px;
+    position: fixed;
+    z-index: 15;
 }
 
 .swiper {
@@ -59,6 +72,7 @@ body {
     position: relative;
     z-index: 1;
   }
+ 
 .slideContent{
     position: absolute;
     text-align: left;
@@ -82,8 +96,24 @@ body {
         font-size: 18px;
         line-height: 28px;
     }
+    .slideContent button:first-child:hover{
+        background:var(--secondaryColor);
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+}
+    .slideContent button:last-child:hover{
+        background:var(--mainColor);
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+    }
 .swiper-button-next, .swiper-button-prev{
-    background:#224265;
+    background:var(--mainColor);
     color: white !important;
     font-size: 20px !important;
     width: 42px !important;
@@ -112,6 +142,16 @@ body {
     font-weight: bold !important;
     color: #fff !important;
 }
+
+/* .swiper-wrapper{
+    transform: translate3d(0px, 0px, 0px) !important;
+    transition-duration: 0ms;
+    -webkit-transform: translate3d(0px, 0px, 0px) !important;
+    -moz-transform: translate3d(0px, 0px, 0px) !important;
+    -ms-transform: translate3d(0px, 0px, 0px) !important;
+    -o-transform: translate3d(0px, 0px, 0px) !important;
+} */
+
 @media only screen and (max-width: 992px){
     .slideContent{
         width: 500px;
@@ -129,17 +169,18 @@ body {
         padding: 8px 18px ;
         margin-top: 0px;
     }
+    
+
 }
 
-@media only screen and (max-width: 756px){
+@media only screen and (max-width: 768px){
     .slideContent{
-        width: 350px;
+        width: 400px;
         
     }
     .slideContent h2{
-        font-size:21px;
+        font-size:18px;
         margin-bottom: 3px;
-        color: #09BE51;
         font-weight: bold;
     }
     .slideContent p{
@@ -160,6 +201,33 @@ body {
     }
     .slideBtn{
         margin-top: 8px;
+    }
+
+}
+@media only screen and (max-width: 500px){
+    .slideContent{
+        width: 300px;
+        
+    }
+    .swiper-button-next, .swiper-button-prev{
+        background:var(--mainColor);
+        color: white !important;
+        font-size: 10px !important;
+        width: 25px !important;
+        height:25px !important;
+        padding: 5px;
+    }
+    .slideContent h2{
+        font-size:15px;
+       
+    }
+    .slideContent p{
+        font-size: 12px ;
+        line-height: 17px;
+    }
+    .slideContent button{
+        padding: 3px 10px ;
+        font-size: 10px;
     }
 
 }
