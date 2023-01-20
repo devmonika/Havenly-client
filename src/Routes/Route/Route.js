@@ -9,6 +9,7 @@ import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AboutDetails from "../../Pages/About/AboutDetails";
 
 
 export const router = createBrowserRouter([
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "/reviews",
         element: <Reviews></Reviews>
+      },
+      {
+        path: "/about",
+        element: <AboutDetails></AboutDetails>
       },
     ],
   },

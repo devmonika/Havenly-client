@@ -37,7 +37,7 @@ const Header = () => {
 				<a href="/#">Apartment</a>
 				{/* <a href="/#">Blog</a> */}
 				<a href="/reviews">Reviews</a>
-				<a href="/#">About us</a>
+				<a href="/about">About us</a>
 				<a href="/contactus">Contact</a>
 				
 				

@@ -11,7 +11,7 @@ const AboutDetails = () => {
                 {/* about details right side start here*/}
                 <div className='flex flex-col justify-center items-center '>
                     <div className='' >
-                        <h3 className='text-left text-2xl mb-5 text-primary'>WHO WE ARE</h3>
+                        <h3 className='text-left text-2xl mb-5 text-primary'>WHO WE ARE!</h3>
                         <h2 className='text-left text-5xl font-semibold mb-10 leading-[60px] text-primary'>
                             30 YEARS OF<br /> LEADERSHIP IN REAL<br /> ESTATE SECTOR
                         </h2>
