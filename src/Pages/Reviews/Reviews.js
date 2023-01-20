@@ -5,6 +5,7 @@ import { siteName } from '../../App';
 import Loading from '../Shared/Footer/Loading/Loading';
 import AddReview from './AddReview';
 import ReviewCard from './ReviewCard';
+import propertys from '../../images/propery-bg.jpg';
 
 const Reviews = () => {
 
@@ -27,6 +28,12 @@ const Reviews = () => {
                 <title>Reviews - {siteName}</title>
             </Helmet>
             <section className="">
+                <div className="property">
+                    <img src={propertys} alt="" />
+                    <div className='propertyContent'>
+                        <h2>Reviews</h2>
+                    </div>
+                </div>
                 <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
                     <div className="flex justify-end">
                         <label
