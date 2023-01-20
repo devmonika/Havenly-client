@@ -3,15 +3,21 @@ import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoginImage from '../../../assetes/login.jpg';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     const { signin, setLoading, signInWithGoogle, resetPassword } = useContext(AuthContext);
     const [userEmail, setUserEmail] = useState('');
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const [token] = useToken(loginUserEmail);
 
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathName || '/';
+    if (token) {
+        navigate(from, { replace: true });
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,7 +32,8 @@ const Login = () => {
                 console.log(result.user);
                 toast.success('User Login successfully')
                 toast.success('user loged in successfully...!!!!');
-                navigate(from, { replace: true });
+                // navigate(from, { replace: true });
+                setLoginUserEmail(email)
             })
             .catch(error => {
                 console.log(error);
