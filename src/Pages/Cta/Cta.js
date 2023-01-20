@@ -22,8 +22,9 @@ const Cta = () => {
                 Act Before It’s Too Late!
               </h1>
               <p className="text-lg leading-6 text-white xl:w-5/12 lg:w-8/12 md:w-10/12  2xl:pr-12 mt-4">
-                A good idiom for kids is "It's raining cats and dogs." Kids know
-                what both cats and dogs are from an early age.
+                The key is to act before compelling data is widely available, a
+                challenge that is complicated by the lack of information in
+                periods of uncertainty.
               </p>
             </div>
             <div className="md:mt-12 mt-20">
