@@ -3,7 +3,7 @@ import React from 'react';
 const AboutDetails = () => {
     return (
         <div className='max-w-[1240px] mx-auto my-10'>
-            <h2 className='text-center text-8xl font-semibold mb-16 text-primary '>OVERVIEW</h2>
+            <h2 className='text-center text-8xl font-semibold mb-16 text-primary '>Overview</h2>
 
             <div className='grid gap-8 grid-cols-1 md:grid-cols-2 justify-items-center content-center mx-8'>
                 <img src='https://i.ibb.co/GdD9ktf/about-img.jpg' alt="about" className='' />

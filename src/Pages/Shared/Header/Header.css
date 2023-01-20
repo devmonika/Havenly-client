@@ -3,14 +3,14 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Titillium Web", sans-serif;
-	/* overflow-x: hidden; */
+	
 }
 
 :root {
-	--mainColor: #FFFFFF;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #224265;
-	--textColor: #black;
+	--mainColor: #224265;
+	--mainColorLight: #fff;
+	--secondaryColor: #DB8C23;
+	
 }
 
 header {
@@ -33,6 +33,17 @@ nav a {
 nav a:hover {
 	color: var(--secondaryColor);
 }
+.logo{
+    margin-left: -3px;
+   
+}
+.logo a img {
+    width:100px;
+   
+}
+.logo a{
+    color: var(--mainColorLight) !important;
+}
 
 header .nav-btn {
 	padding: 5px;
@@ -50,6 +61,10 @@ header div,
 nav {
 	display: flex;
 	align-items: center;
+}
+.userInfo p{
+    font-size: 16px;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -69,12 +84,30 @@ nav {
 		align-items: center;
 		justify-content: center;
 		gap: .5rem;
-		background-color:#28C667;
+		background-color:#224265;
 		transition: 1s;
 		transform: translateY(-100vh);
-        color:#fff;
+		color:#fff;
+        font-size: 16px;
 		z-index: 10;
-	}
+		-webkit-transform: translateY(-100vh);
+		-moz-transform: translateY(-100vh);
+		-ms-transform: translateY(-100vh);
+		-o-transform: translateY(-100vh);
+}
+header nav a{
+		text-align: left !important;
+		color:#fff;
+		font-size: 16px;
+		transition: 1s;
+		transform: translateY(50%);
+		color:#fff;
+		z-index: 10;
+		-webkit-transform: translateY(50%);
+		-moz-transform: translateY(50%);
+		-ms-transform: translateY(50%);
+		-o-transform: translateY(50%);
+}
 
 	header .responsive_nav {
 		transform: none;
@@ -84,9 +117,39 @@ nav {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
+        font-size: 25px;
 	}
 
 	nav a {
 		font-size: 1.5rem;
 	}
+}
+@media only screen and (max-width: 768px){
+	.showBtn{
+		margin-right: 0px;
+	}
+    .logo{
+        margin-left: 0px;
+    }
+	
+}
+@media only screen and (max-width: 500px){
+	.hiddenUser{
+		display:none;
+	}
+   
+	.logo h3{
+		font-size: 22px;
+	}
+	.logo img{
+		width: 50px;
+	}
+	.userInfo{
+		margin-right:0px;
+	}
+	.showBtn{
+		margin-right: -30px;
+	}
+	
+	
 }
