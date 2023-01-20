@@ -8,6 +8,8 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import slide from '../../images/slide2.jpg';
 import slide2 from '../../images/slide1.jpg';
+import slide3 from '../../images/slider3.jpg';
+import slide4 from '../../images/slider4.jpg';
 import whateShapp from '../../images/whatshap.jpg'
 const Banner = () => {
   return (
@@ -44,6 +46,28 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide} alt="" />
+          <div className="slideContent">
+            <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
+            <p className="text-xl ">Where You can rent your prefer houses at budget friendly rate.</p>
+           <div className="mt-5">
+           <button className="bg-secondary px-8 py-3 mr-3">Apartments</button>
+            <button className="bg-primary px-8 py-3">Contact Us</button>
+           </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide3} alt="" />
+          <div className="slideContent">
+            <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
+            <p className="text-xl ">Where You can rent your prefer houses at budget friendly rate.</p>
+           <div className="mt-5">
+           <button className="bg-secondary px-8 py-3 mr-3">Apartments</button>
+            <button className="bg-primary px-8 py-3">Contact Us</button>
+           </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide4} alt="" />
           <div className="slideContent">
             <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
             <p className="text-xl ">Where You can rent your prefer houses at budget friendly rate.</p>

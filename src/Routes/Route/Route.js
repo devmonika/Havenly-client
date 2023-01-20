@@ -11,9 +11,18 @@ import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
+<<<<<<< HEAD
 import Property from "../../Pages/Porperty/Property";
 import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+=======
+<<<<<<< HEAD
+import Property from "../../Pages/Porperty/Property";
+import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
+=======
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+>>>>>>> 93ac0196f84472666c7a4e710e3f02fdfbb820d9
+>>>>>>> e5c84867ed06d42e58e327361c020f410e03d491
 
 
 export const router = createBrowserRouter([
