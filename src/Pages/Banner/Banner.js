@@ -8,9 +8,29 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import slide from '../../images/slide2.jpg';
 import slide2 from '../../images/slide1.jpg';
+import whateShapp from '../../images/whatshap.jpg'
 const Banner = () => {
+const WhWidgetSendButton= (text, message)=>{}
+    (function () {
+        var options = {
+            facebook: "100075727662790", // Facebook page ID
+            call_to_action: "Message us", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+
+
   return (
     <div>
+      {/* <div className="liveChate"><a href="https://wa.me/01825445033"><img src={whateShapp} alt="" /></a></div> */}
+      <div>
+        
+      </div>
         <>
       <Swiper 
       loop={true}

@@ -503,6 +503,8 @@ const Property = () => {
                     <input className='bg-[#102637;] text-white px-3 py-3 text-center uppercase w-full' value="SEARCH"/>
                   </div>
                     </div>
+
+                    
                   </div>
                 </div>
             </div>

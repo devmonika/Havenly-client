@@ -19,6 +19,13 @@ body {
   margin: 0;
   padding: 0;
 }
+.liveChate{
+    width: 50px;
+    bottom:20px;
+    right: 20px;
+    position: fixed;
+    z-index: 15;
+}
 
 .swiper {
   width: 100%;
