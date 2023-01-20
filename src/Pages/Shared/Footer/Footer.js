@@ -39,7 +39,7 @@ const Footer = () => {
             </li>
             <br />
             <li className="text-start">
-              <Link>Contact us</Link>
+              <Link to="/contactus">Contact us</Link>
             </li>
             <br />
           </ul>

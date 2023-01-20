@@ -27,7 +27,7 @@ const Contact = () => {
         }}
       >
         <div className="relative grid lg:grid-cols-2 sm:grid-cols-1 gap-4 items-center w-full h-full justify-center md:p-8 p-0">
-          <div className="text-white lg:ml-10">
+          <div className="text-white lg:ml-10 p-5">
             <span className="font-bold text-4xl">
               <span className="text-lime">Looking</span> For More?
             </span>
@@ -39,8 +39,8 @@ const Contact = () => {
           <div className="lg:max-w-sm w-auto p-8 flex flex-row items-center justify-center gap-4 animate-pulse">
             <img className="md:w-28 w-20" src={phone} alt="" />
             <div className="">
-              <p className="text-white text-sm font-medium whitespace-nowrap">
-                RESERVE YOUR SLOT
+              <p className="text-white text-xl font-medium whitespace-nowrap">
+                Need assistance? call us 24/7
               </p>
               <p className="text-white text-lg font-medium whitespace-nowrap mt-2">
                 +880 800 555 123
@@ -125,7 +125,7 @@ const Contact = () => {
       <section className="container mx-auto flex flex-row justify-center items-center lg:my-5 sm:my-2 p-5">
         <Iframe
           className="lg:h-[600px] sm:h-48"
-          url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423283.4355586711!2d-118.69192291460362!3d34.020730496147415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1673952449032!5m2!1sen!2sbd"
+          url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.702714087243!2d-118.24379858493394!3d34.05149622521712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c648957fbb05%3A0x8c6c875a0069f4c9!2s26%20N%20Los%20Angeles%20St%2C%20Los%20Angeles%2C%20CA%2090012%2C%20USA!5e0!3m2!1sen!2sbd!4v1674159891667!5m2!1sen!2sbd"
           width="100%"
           style={{ border: 0 }}
           allowFullScreen=""
