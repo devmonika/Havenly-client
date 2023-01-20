@@ -14,11 +14,17 @@ import property9 from '../../images/property9.jpg';
 import ibrahim from '../../images/ibrahim.png';
 import { FaStar,FaFileImage, FaWarehouse, FaBed, FaCarSide, FaBorderNone, FaArrowRight, FaMapMarkerAlt, FaRegEye, FaHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { siteName } from '../../App';
 
 
 const Property = () => {
    
     return (
+      <HelmetProvider>
+        <Helmet>
+            <title>Apertments - {siteName}</title>
+        </Helmet>
         <div className='mb-5'>
             <div className="property">
                 <img src={propertys} alt="" />
@@ -511,6 +517,7 @@ const Property = () => {
            </div>
           
         </div>
+        </HelmetProvider>
     );
 };
 
