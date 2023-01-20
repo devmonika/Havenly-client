@@ -10,6 +10,7 @@ import slide2 from "../../images/slide1.jpg";
 import slide3 from "../../images/slider3.jpg";
 import slide4 from "../../images/slider4.jpg";
 import whateShapp from "../../images/whatshap.jpg";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
@@ -40,10 +41,8 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate.
               </p>
               <div className="mt-5 slideBtn">
-                <button className="bg-secondary px-8 py-3 mr-3">
-                  Apartments
-                </button>
-                <button className="bg-primary px-8 py-3">Contact Us</button>
+              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+                <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link>
               </div>
             </div>
           </SwiperSlide>
@@ -55,10 +54,8 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate.
               </p>
               <div className="mt-5">
-                <button className="bg-secondary px-8 py-3 mr-3">
-                  Apartments
-                </button>
-                <button className="bg-primary px-8 py-3">Contact Us</button>
+              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+                <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link>
               </div>
             </div>
           </SwiperSlide>

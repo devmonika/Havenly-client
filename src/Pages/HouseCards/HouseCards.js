@@ -79,7 +79,7 @@ const HouseCards = () => {
                 </div>
             </div>
             <div className="md:mt-12 mt-20 px-8 lg:px-0 flex justify-center">
-                <button className="text-base font-bold leading-4 text-white bg-secondary sm:w-auto w-full rounded px-4 py-6 focus:outline-none hover:bg-primary hover:text-white focus:ring-2 focus:ring-offset-2 focus:ring-white">See All Appertments</button>
+                <Link to='/apartments'><button className="text-base font-bold leading-4 text-white bg-secondary sm:w-auto w-full rounded px-4 py-6 focus:outline-none hover:bg-primary hover:text-white focus:ring-2 focus:ring-offset-2 focus:ring-white">See All Appertments</button></Link>
             </div>
         </div>
     );
