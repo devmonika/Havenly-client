@@ -96,16 +96,18 @@ nav {
 		-o-transform: translateY(-100vh);
 }
 header nav a{
-    text-align: left !important;
-    color:#fff;
-    font-size: 16px;
-
-		background-color:#28C667;
+		text-align: left !important;
+		color:#fff;
+		font-size: 16px;
 		transition: 1s;
-		transform: translateY(-100vh);
-        color:#fff;
+		transform: translateY(50%);
+		color:#fff;
 		z-index: 10;
-	}
+		-webkit-transform: translateY(50%);
+		-moz-transform: translateY(50%);
+		-ms-transform: translateY(50%);
+		-o-transform: translateY(50%);
+}
 
 	header .responsive_nav {
 		transform: none;
