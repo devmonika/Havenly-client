@@ -11,6 +11,7 @@ import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
       {
         path: "/dashboard",
