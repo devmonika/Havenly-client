@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
         path: "/reviews",
         element: <Reviews></Reviews>
       },
-    ],
+    ]
   },
   {
     path: "/dashboard",
@@ -60,7 +60,8 @@ export const router = createBrowserRouter([
         path: "/dashboard/reporteditems",
         element: <ReportedItems></ReportedItems>
       },
-    ],
+
+    ]
   },
   
   {
