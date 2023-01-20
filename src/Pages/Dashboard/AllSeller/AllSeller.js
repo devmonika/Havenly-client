@@ -4,16 +4,28 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useQuery } from '@tanstack/react-query';
+
 
 const AllSeller = () => {
     const { user } = useContext(AuthContext);
-    const [sellers, setSellers] = useState([])
+    // const [sellers, setSellers] = useState([])
 
-    useEffect(() => {
-        fetch('http://localhost:5000/users/sellers')
-            .then(res => res.json())
-            .then(data => setSellers(data))
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/users/sellers')
+    //         .then(res => res.json())
+    //         .then(data => setSellers(data))
+    // }, []);
+
+    const {data: sellers = [], refetch} = useQuery({
+        queryKey: ['seller'],
+        queryFn: async ()=>{
+            const res = await fetch('http://localhost:5000/users/sellers');
+            const data = await res.json();
+            return data;
+
+        }
+    });
 
 
     const handleVerify = email =>{
@@ -26,11 +38,12 @@ const AllSeller = () => {
         .then(res=>res.json())
         .then(data=>{
          console.log(data)
-           toast.success('verify seller successful.')
-     
+           toast.success('verify seller successfull.')
+           refetch();
      
         });
-     }
+     };
+
 
     return (
         <div>
