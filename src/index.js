@@ -9,8 +9,7 @@ import { Toaster } from 'react-hot-toast'
 import { store } from './app/store';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const queryClient = new QueryClient()
-
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
