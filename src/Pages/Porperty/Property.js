@@ -23,7 +23,7 @@ const Property = () => {
             <div className="property">
                 <img src={propertys} alt="" />
                 <div className='propertyContent'>
-                    <h2>Apartsments</h2>
+                    <h2>Apartments</h2>
                 </div>
             </div>
             {/* Search options */}

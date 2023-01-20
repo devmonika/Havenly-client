@@ -47,10 +47,10 @@ const Header = () => {
       </div>
       <nav ref={navRef}>
         <Link to="/">Home</Link>
-        <Link to="/#">Apartment</Link>
+        <Link to="/apartments">Apartment</Link>
         {/* <a href="/#">Blog</a> */}
         <Link to="/reviews">Reviews</Link>
-        <Link to="/#">About us</Link>
+        <Link to="/about">About us</Link>
         <Link to="/contactus">Contact</Link>
 
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
