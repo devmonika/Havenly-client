@@ -5,21 +5,12 @@ const Testimonials = () => {
     <div>
       <div className="text-center py-10 mb-10">
         <h1 className="text-xl text-primary font-bold text-center mb-4">
-          Testimonial
+          Reviews
         </h1>
         <h1 className="text-4xl w-96 mx-auto leading-normal font-bold mb-12">
           Read What others have to say
         </h1>
         <div className="px-8 lg:px-0 text-gray-700 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto gap-8 group">
-          {/* <div className='shadow-xl p-8 rounded-xl mix-blend-luminosity cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500'>
-                        <img className='h-20 mx-auto rounded-full' src={profile} alt="" />
-                        <h4 className='uppercase text-xl font-bold'>Jhon Doe</h4>
-                        <p className='text-sm leading-7 my-3 opacity-50'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores, illum sed dolorum expedita corrupti optio
-                        </p>
-                        <button className='py-2.5 px-8 rounded-full bg-purple-400'>
-                            Get in Touch
-                        </button>
-                    </div> */}
           <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
             <div className="bg-white block rounded-lg shadow-lg h-full">
               <div className="relative overflow-hidden bg-no-repeat bg-cover">
