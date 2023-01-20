@@ -1,6 +1,10 @@
 import React from 'react';
+import { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../contexts/AuthProvider';
 
-const AddReview = ({ loading, user, userMatch }) => {
+const AddReview = ({ loading, refetch }) => {
+    const { user } = useContext(AuthContext);
 
     const handleModalSubmit = event => {
         event.preventDefault();
@@ -8,8 +12,30 @@ const AddReview = ({ loading, user, userMatch }) => {
         const ratings = form.ratings.value;
         const reviews = form.reviews.value;
 
-        console.log(ratings, reviews);
+        const review = {
+            reviewer: user?.displayName,
+            reviewerImage: user?.photoURL,
+            reviewerEmail: user?.email,
+            reviews,
+            ratings
+        };
 
+        // save review post information in database
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Review added');
+                    form.reset();
+                    refetch();
+                }
+            })
     }
 
     return (
@@ -23,35 +49,11 @@ const AddReview = ({ loading, user, userMatch }) => {
                     >
                         ✕
                     </label>
-
+                    <h3 className='text-lg font-bold text-center m-2'>Add A Review</h3>
                     <form
                         onSubmit={handleModalSubmit}
                         className="space-y-6 ng-untouched ng-pristine ng-valid"
                     >
-                        {/* <div className="space-y-3 text-sm ">
-                            <label className="block text-sm">User Name</label>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Full Name"
-                                className="w-full px-4 py-3 rounded-md bg-gray-100  text-gray-900 "
-                                defaultValue={user?.displayName}
-                            />
-                        </div> */}
-
-                        {/* <div className="space-y-3 text-sm">
-                            <label className="block text-sm">Email</label>
-                            <input
-                                disabled
-                                defaultValue={user?.email}
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="Email"
-                                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                            />
-                        </div> */}
-                        
                         <div className="space-y-3 text-sm">
                             <label className="block text-sm">Ratings</label>
                             <input
@@ -59,7 +61,6 @@ const AddReview = ({ loading, user, userMatch }) => {
                                 name="ratings"
                                 placeholder="Rate our Service Out of 5"
                                 className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                                defaultValue={userMatch?.university}
                             />
                         </div>
 
@@ -70,7 +71,6 @@ const AddReview = ({ loading, user, userMatch }) => {
                                 name="reviews"
                                 placeholder="Give your valuable review"
                                 className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
-                                defaultValue={userMatch?.address}
                             />
                         </div>
                         <div>

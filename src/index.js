@@ -7,19 +7,22 @@ import AuthProvider from './contexts/AuthProvider';
 import { Provider } from 'react-redux';
 import { Toaster } from 'react-hot-toast'
 import { store } from './app/store';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <Provider store={store}>
-        <Toaster />
-        <App />
-      </Provider>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <Provider store={store}>
+          <Toaster />
+          <App />
+        </Provider>
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>
-
-
 );
 
 // If you want to start measuring performance in your app, pass a function

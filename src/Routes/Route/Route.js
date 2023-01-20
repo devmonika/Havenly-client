@@ -6,10 +6,17 @@ import SignUp from "../../Pages/Login/SignUp/SignUp";
 import Contact from "../../Pages/Contact/Contact";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
+import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
+<<<<<<< HEAD
 import Property from "../../Pages/Porperty/Property";
 import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
+=======
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+>>>>>>> 93ac0196f84472666c7a4e710e3f02fdfbb820d9
 
 
 export const router = createBrowserRouter([
@@ -49,14 +56,27 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
       },
+      {
+        path: "/dashboard/allsellers",
+        element: <AllSeller></AllSeller>
+      },
+      {
+        path: "/dashboard/allbuyers",
+        element: <AllBuyer></AllBuyer>
+      },
+      {
+        path: "/dashboard/reporteditems",
+        element: <ReportedItems></ReportedItems>
+      },
     ],
   },
+  
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,

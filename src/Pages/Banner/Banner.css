@@ -181,7 +181,6 @@ body {
     .slideContent h2{
         font-size:18px;
         margin-bottom: 3px;
-        color: #09BE51;
         font-weight: bold;
     }
     .slideContent p{
@@ -211,7 +210,7 @@ body {
         
     }
     .swiper-button-next, .swiper-button-prev{
-        background:#28C667;
+        background:var(--mainColor);
         color: white !important;
         font-size: 10px !important;
         width: 25px !important;
