@@ -73,7 +73,8 @@ export const router = createBrowserRouter([
         path: "/dashboard/reporteditems",
         element: <ReportedItems></ReportedItems>
       },
-    ],
+
+    ]
   },
   
   {
