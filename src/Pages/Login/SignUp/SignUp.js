@@ -45,7 +45,7 @@ const SignUp = () => {
                     name: name,
                     email: email,
                     image: data.data.display_url,
-                    user: user
+                    role: user
                 }
                 //storedata into mongodb
                 fetch('http://localhost:5000/users', {
@@ -156,8 +156,8 @@ const SignUp = () => {
                     <div>
 
                         <select name="user" id="" className='my-2 text-xl font-semibold'>
-                            <option value="Seller">Seller</option>
-                            <option value="Bayer">Bayer</option>
+                            <option value="seller">Seller</option>
+                            <option value="buyer">Buyer</option>
                         </select>
 
 
