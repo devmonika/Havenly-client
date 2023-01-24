@@ -15,6 +15,7 @@ import Property from "../../Pages/Porperty/Property";
 import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
+import MyOrders from "../../Pages/Dashboard/Buyers/MyOrders/MyOrders";
 
 export const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/reporteditems",
         element: <ReportedItems></ReportedItems>,
+      },
+      {
+        path: "/dashboard/myOrders",
+        element: <MyOrders></MyOrders>,
       },
     ],
   },
