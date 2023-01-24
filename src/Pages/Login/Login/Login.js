@@ -64,7 +64,7 @@ const Login = () => {
     return (
         <div className='grid grid-cols-1  sm:grid-cols-2 h-screen w-full  '>
             <div>
-                <img src={LoginImage} className="w-full h-full object-cover" alt="" />
+                <img src='https://i.postimg.cc/Ghn6D5Jh/photo-1568605114967-8130f3a36994.jpg' className="w-full h-full object-cover" alt="" />
             </div>
             <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900'>
                 <div className='mb-8 text-center'>

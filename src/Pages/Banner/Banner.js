@@ -55,7 +55,7 @@ const Banner = () => {
               </p>
               <div className="mt-5">
               <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
-                <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link>
+                <Link to="/contactus"><button className="bg-primary px-8 py-3 ">Contact Us</button></Link>
               </div>
             </div>
           </SwiperSlide>
