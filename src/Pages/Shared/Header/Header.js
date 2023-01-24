@@ -52,7 +52,7 @@ const Header = () => {
         <Link to="/apartments">Apartment</Link>
         {/* <a href="/#">Blog</a> */}
         <Link to="/reviews">Reviews</Link>
-        <Link to="/aboutus">About us</Link>
+        <Link to="/about">About us</Link>
         <Link to="/contactus">Contact</Link>
 
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>

@@ -12,7 +12,7 @@ const AllSeller = () => {
     // const [sellers, setSellers] = useState([])
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/users/sellers')
+    //     fetch('https://havenly-server.vercel.app/users/sellers')
     //         .then(res => res.json())
     //         .then(data => setSellers(data))
     // }, []);
@@ -20,7 +20,7 @@ const AllSeller = () => {
     const {data: sellers = [], refetch} = useQuery({
         queryKey: ['seller'],
         queryFn: async ()=>{
-            const res = await fetch('http://localhost:5000/users/sellers');
+            const res = await fetch('https://havenly-server.vercel.app/users/sellers');
             const data = await res.json();
             return data;
 
@@ -29,7 +29,7 @@ const AllSeller = () => {
 
 
     const handleVerify = email =>{
-        fetch (`http://localhost:5000/users/admin/${email}`,{
+        fetch (`https://havenly-server.vercel.app/users/admin/${email}`,{
            method: 'PUT',
             headers: {
              authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -43,6 +43,7 @@ const AllSeller = () => {
      
         });
      };
+
 
 
     return (

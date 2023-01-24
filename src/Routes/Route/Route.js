@@ -14,7 +14,6 @@ import Reviews from "../../Pages/Reviews/Reviews";
 import Property from "../../Pages/Porperty/Property";
 import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import About from "../../Pages/About/About";
 import AboutDetails from "../../Pages/About/AboutDetails";
 
 export const router = createBrowserRouter([
@@ -43,7 +42,7 @@ export const router = createBrowserRouter([
         element: <Reviews></Reviews>,
       },
       {
-        path: "/aboutus",
+        path: "/about",
         element: <AboutDetails></AboutDetails>,
       },
       {
@@ -53,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "/singleapartment",
         element: <DetailsProperty></DetailsProperty>,
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },

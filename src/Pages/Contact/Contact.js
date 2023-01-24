@@ -2,6 +2,8 @@ import React from "react";
 import phone from "../../assetes/call.png";
 import Iframe from "react-iframe";
 import { useSelector } from "react-redux";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { siteName } from "../../App";
 
 window.onbeforeunload = () => {
   for (const form of document.getElementsByTagName("form")) {
@@ -12,6 +14,10 @@ window.onbeforeunload = () => {
 const Contact = () => {
   const { mode } = useSelector((state) => state.darkMode);
   return (
+    <HelmetProvider>
+        <Helmet>
+            <title>Contact - {siteName}</title>
+        </Helmet>
     <div
       className="min-h-screen bg-base-100"
       style={{
@@ -135,6 +141,7 @@ const Contact = () => {
         ></Iframe>
       </section>
     </div>
+    </HelmetProvider>
   );
 };
 
