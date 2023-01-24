@@ -14,9 +14,8 @@ import Reviews from "../../Pages/Reviews/Reviews";
 import Property from "../../Pages/Porperty/Property";
 import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-
-
-
+import About from "../../Pages/About/About";
+import AboutDetails from "../../Pages/About/AboutDetails";
 
 export const router = createBrowserRouter([
   {
@@ -41,21 +40,29 @@ export const router = createBrowserRouter([
       },
       {
         path: "/reviews",
-        element: <Reviews></Reviews>
+        element: <Reviews></Reviews>,
       },
       {
-        path:'/apartments',
-        element: <Property></Property>
+        path: "/aboutus",
+        element: <AboutDetails></AboutDetails>,
       },
       {
-        path:'/singleapartment',
-        element: <DetailsProperty></DetailsProperty>
-      }
+        path: "/apartments",
+        element: <Property></Property>,
+      },
+      {
+        path: "/singleapartment",
+        element: <DetailsProperty></DetailsProperty>,
+      },
     ],
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
@@ -63,20 +70,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/allsellers",
-        element: <AllSeller></AllSeller>
+        element: <AllSeller></AllSeller>,
       },
       {
         path: "/dashboard/allbuyers",
-        element: <AllBuyer></AllBuyer>
+        element: <AllBuyer></AllBuyer>,
       },
       {
         path: "/dashboard/reporteditems",
-        element: <ReportedItems></ReportedItems>
+        element: <ReportedItems></ReportedItems>,
       },
-
-    ]
+    ],
   },
-  
+
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,

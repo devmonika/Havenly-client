@@ -29,33 +29,70 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
 
-	return (
-		<header>
-			<div>
+  return (
+    <header>
+      <div>
+        <label
+          htmlFor="my-drawer-2"
+          className="nav-btn drawer-button lg:hidden"
+        >
+          <FaBars />
+        </label>
+        <Link to="/">
+          <img
+            src={logo}
+            alt="logo"
+            className="h-32 lg:h-52 mt-16 -ml-5 lg:ml-0 mb-7 lg:mb-0"
+          />
+        </Link>
+        {/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
+      </div>
+      <nav ref={navRef}>
+        <Link to="/">Home</Link>
+        <Link to="/apartments">Apartment</Link>
+        {/* <a href="/#">Blog</a> */}
+        <Link to="/reviews">Reviews</Link>
+        <Link to="/aboutus">About us</Link>
+        <Link to="/contactus">Contact</Link>
 
-				<label htmlFor="my-drawer-2" className="nav-btn drawer-button lg:hidden"><FaBars /></label>
-				<img src={logo} alt="logo" className='h-32 lg:h-52 mt-16 -ml-5 lg:ml-0 mb-7 lg:mb-0' />
+        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+          <FaTimes />
+        </button>
+      </nav>
+      <div>
+        {user?.uid ? (
+          <>
+            <Link to="/dashboard" className="mr-3">
+              Dashboard
+            </Link>
+            <button onClick={handleLogOut} className="mr-3 font-bold">
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="mr-3">
+              Login{" "}
+            </Link>
+          </>
+        )}
 
-				{/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
-			</div>
-			<nav ref={navRef}>
-				<a href="/#">Home</a>
-				<a href="/apartments">Apartment</a>
-				{/* <a href="/#">Blog</a> */}
-				<a href="/reviews">Reviews</a>
-				<a href="/#">About us</a>
-				<a href="/contactus">Contact</a>
-				
-				
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
-			</nav>
-			<div>
-				{
-					user?.uid ?
+        {user?.displayName ? (
+          <p className="mr-3">{user?.displayName}</p>
+        ) : (
+          <p className="mr-3">Web Titans</p>
+        )}
+        {user?.photoURL ? (
+          <>
+            <img
+              src={user.photoURL}
+              className="w-12 h-12  rounded-2xl"
+              alt=""
+            />
+          </>
+        ) : (
+          <FaUserAlt className="mr-3" />
+        )}
 
         <button
           className="text-xl ml-3"
@@ -63,7 +100,6 @@ const Header = () => {
         >
           {mode ? <FaToggleOff /> : <FaToggleOn />}
         </button>
-
       </div>
       <button className="nav-btn" onClick={showNavbar}>
         <FaBars />
