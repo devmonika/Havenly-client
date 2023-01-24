@@ -89,7 +89,7 @@ const Header = () => {
             />
           </>
         ) : (
-          <FaUserAlt className="mr-3" />
+          <FaUserAlt className="mr-3 userProfile" />
         )}
 
         <button

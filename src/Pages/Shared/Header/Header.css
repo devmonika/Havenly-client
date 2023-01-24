@@ -75,7 +75,7 @@ nav {
 
 	header nav {
 		position: fixed;
-		top: 0;
+		top: -9px;
 		left: 0;
 		height: 100%;
 		width: 100%;
@@ -150,6 +150,32 @@ header nav a{
 	.showBtn{
 		margin-right: -30px;
 	}
+	header nav {
+		top:-60px
+	}
 	
 	
 }
+@media only screen and (max-width:300px){
+	header nav {
+		position: fixed;
+		top: -250px;
+		left: -52px;
+		
+}
+header .nav-btn {
+	margin-top: 9px;
+	font-size: 21px;	
+}
+nav .nav-close-btn {
+	top: 17rem;
+    right: 5.3rem;
+}
+.userProfile{
+	display: none;
+}
+
+
+
+}
+

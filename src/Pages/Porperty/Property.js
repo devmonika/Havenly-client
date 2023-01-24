@@ -67,7 +67,7 @@ const Property = () => {
                        </div>
                         <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
                       </div>
-                      <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
+                      <h2 className='my-3 text-xl font-bold text-[#004274] headlineSingleContent'>Ready Resort For Sell </h2>
                       <div className='propertySpace'>
                         <span><FaWarehouse></FaWarehouse></span>
                         <span>03</span>

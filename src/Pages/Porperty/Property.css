@@ -228,4 +228,51 @@
         left:330px !important;
        
      }
+     .propertyPrice {
+        bottom: -232px;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .propertyPrice {
+        bottom: -160px;
+    }
+}
+@media only screen and (max-width:300px){
+    .propertyPrice {
+        bottom: 140px;
+        left:-11px;
+    }
+    .peroperyCardContent {
+        display: block;
+        margin-left:40px;
+        
+    }
+    .peroperyCardContent h2{
+        margin-left: 30px;
+        text-align: center;
+    }
+    .headlineSingleContent{
+        margin-left: 40px;
+    }
+    .propertySpace {
+        width: 80%;
+        align-items: center;
+        padding: 5px;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .reviews {
+        display: block;
+       margin-left: 50px;
+    }
+    .rightSide select, .keyword {
+        width: 100%;
+        background: #102637;
+        color: #fff;
+        padding: 12px 5px;
+        display: block;
+        margin-bottom: 18px;
+    }
 }

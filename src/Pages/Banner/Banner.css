@@ -76,6 +76,7 @@ body {
 .slideContent{
     position: absolute;
     text-align: left;
+    margin-left:100px;
     width: 1000px;
     color:#fff;
     z-index: 12;
@@ -176,7 +177,7 @@ body {
 @media only screen and (max-width: 768px){
     .slideContent{
         width: 400px;
-        
+        margin: 0 auto;     
     }
     .slideContent h2{
         font-size:18px;
@@ -199,15 +200,17 @@ body {
         padding: 5px 15px ;
         margin-top: 0px;
     }
-    .slideBtn{
-        margin-top: 8px;
+    .slideBtn {
+        margin-top: 18px;
+        text-align: left;
     }
 
 }
 @media only screen and (max-width: 500px){
     .slideContent{
         width: 300px;
-        
+        text-align: center;
+        margin: auto;
     }
     .swiper-button-next, .swiper-button-prev{
         background:var(--mainColor);
@@ -217,17 +220,42 @@ body {
         height:25px !important;
         padding: 5px;
     }
-    .slideContent h2{
-        font-size:15px;
-       
+    .slideContent h2 {
+        font-size: 22px;
+        text-align: center;
     }
     .slideContent p{
-        font-size: 12px ;
+        font-size: 15px ;
         line-height: 17px;
+        text-align: center;
+        margin: 20px 0px;
     }
     .slideContent button{
         padding: 3px 10px ;
         font-size: 10px;
+    }
+    .slideBtn {
+        margin-top: 18px;
+        text-align: center;
+    }
+   
+
+}
+
+@media only screen and (max-width: 300px){
+    .slideContent {
+        width: 300px;
+        text-align: center;
+        margin: auto;
+    }
+    .slideContent p {
+        line-height: 20px;
+        text-align: center;
+        width: 207px;
+        margin: 20px auto;
+    }
+    .slideContent button {
+        font-size: 15px;
     }
 
 }
