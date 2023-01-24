@@ -37,9 +37,10 @@ const AllSeller = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-         console.log(data)
-           toast.success('verify seller successfull.')
-           refetch();
+ 
+            toast.success('verify seller successfull.')
+            refetch();
+            console.log(data);
      
         });
      };
@@ -50,10 +51,10 @@ const AllSeller = () => {
         <div>
             <h2 className='text-left text-3xl font-semibold my-10 ml-10 text-secondary'>All Sellers</h2>
             <div className="overflow-x-auto">
-                <table className="table w-full ">
+                <table className="table w-full text-center">
                     <thead>
-                        <tr>
-                            <th></th>
+                        <tr> 
+                            <th>No.</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
