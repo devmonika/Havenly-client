@@ -1,26 +1,18 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
 
 
 const AllSeller = () => {
     const { user } = useContext(AuthContext);
-    // const [sellers, setSellers] = useState([])
 
-    // useEffect(() => {
-    //     fetch('https://havenly-server.vercel.app/users/sellers')
-    //         .then(res => res.json())
-    //         .then(data => setSellers(data))
-    // }, []);
 
     const {data: sellers = [], refetch} = useQuery({
         queryKey: ['seller'],
         queryFn: async ()=>{
-            const res = await fetch('https://havenly-server.vercel.app/users/sellers');
+            const res = await fetch('http://localhost:5000/users/sellers');
             const data = await res.json();
             return data;
 
@@ -29,7 +21,7 @@ const AllSeller = () => {
 
 
     const handleVerify = email =>{
-        fetch (`https://havenly-server.vercel.app/users/admin/${email}`,{
+        fetch (`https://localhost:5000/users/admin/${email}`,{
            method: 'PUT',
             headers: {
              authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +29,6 @@ const AllSeller = () => {
         })
         .then(res=>res.json())
         .then(data=>{
- 
             toast.success('verify seller successfull.')
             refetch();
             console.log(data);

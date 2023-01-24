@@ -15,7 +15,7 @@ const AllBuyer = () => {
     });
 
     const handleDeleteBuyer = (id, name) =>{
-        fetch(`http://localhost:5000/buyers/${id}`,{
+        fetch(`http://localhost:5000/users/${id}`,{
             method: 'DELETE',
             headers:{
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -23,8 +23,8 @@ const AllBuyer = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            if(data.deleteCount > 0 ){
-                toast.success(`${name}`, 'is delete successfuly')
+            if(data.deletedCount > 0 ){
+                toast.success(`${name} is delete successfuly`)
                 refetch();
             }
             console.log(data);
