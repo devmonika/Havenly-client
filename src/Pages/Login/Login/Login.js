@@ -14,7 +14,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathName || '/';
+    const from = location.state?.from?.pathname || '/';
     if (token) {
         navigate(from, { replace: true });
     }
@@ -31,7 +31,6 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('User Login successfully')
-                toast.success('user loged in successfully...!!!!');
                 // navigate(from, { replace: true });
                 setLoginUserEmail(email)
             })

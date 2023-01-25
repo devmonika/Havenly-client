@@ -19,9 +19,25 @@ const AllSeller = () => {
         }
     });
 
+    const handleDeleteSeller= (id, name) =>{
+        fetch(`http://localhost:5000/users/${id}`,{
+            method: 'DELETE',
+            headers:{
+              authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if (data.deletedCount > 0){
+                toast.success(`${name} is delete successfully`)
+                refetch();
+            }
+            console.log(data);
+        })
+    }
 
     const handleVerify = email =>{
-        fetch (`https://localhost:5000/users/admin/${email}`,{
+        fetch (`http://localhost:5000/users/admin/${email}`,{
            method: 'PUT',
             headers: {
              authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -29,9 +45,11 @@ const AllSeller = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            toast.success('verify seller successfull.')
-            refetch();
-            console.log(data);
+            if(data.result.modifiedCount > 0){
+                toast.success('verify seller successfull')
+                refetch();
+            }
+            console.log(data);      
      
         });
      };
@@ -62,13 +80,13 @@ const AllSeller = () => {
                                 <td>{seller.user}</td>
                                 <td><button onClick={() => handleVerify(seller.email)} className='btn btn-xs btn-primary'>{seller?.isVerified === 'verified' ? 'verified' : 'verify seller'} </button></td>
 
-                                <td>
-                                    <button className='btn btn-xs btn-warning'>Delete</button>
-                                </td>
-
                                 {/* <td>
+                                    <button className='btn btn-xs btn-warning'>Delete</button>
+                                </td> */}
+
+                                <td>
                     <button onClick={()=>handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>
-                </td>  */}
+                </td> 
 
                             </tr>)
                         }
