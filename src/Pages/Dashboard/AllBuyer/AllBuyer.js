@@ -39,7 +39,7 @@ const AllBuyer = () => {
                 <table className="table w-full text-center">
                     <thead>
                         <tr>
-                            <th>No.</th>
+                            <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>

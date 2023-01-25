@@ -63,7 +63,7 @@ const AllSeller = () => {
                 <table className="table w-full text-center">
                     <thead>
                         <tr> 
-                            <th>No.</th>
+                            <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
@@ -78,7 +78,7 @@ const AllSeller = () => {
                                 <td>{seller.name}</td>
                                 <td>{seller.email}</td>
                                 <td>{seller.user}</td>
-                                <td><button onClick={() => handleVerify(seller.email)} className='btn btn-xs btn-primary'>{seller?.isVerified === 'verified' ? 'verified' : 'verify seller'} </button></td>
+                                <td><button onClick={() => handleVerify(seller.email)} className='btn btn-xs btn-primary'>{seller?.isVerified === 'verified' ? 'Verified' : 'Verify Seller'} </button></td>
 
                                 {/* <td>
                                     <button className='btn btn-xs btn-warning'>Delete</button>
