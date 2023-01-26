@@ -19,6 +19,9 @@ body {
   margin: 0;
   padding: 0;
 }
+.banner{
+    position:relative;
+}
 .liveChate{
     width: 50px;
     bottom:20px;

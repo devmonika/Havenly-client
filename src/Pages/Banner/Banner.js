@@ -13,15 +13,15 @@ import whateShapp from "../../images/whatshap.jpg";
 import { Link } from "react-router-dom";
 const Banner = () => {
   return (
-    <div>
+    <div className="banner">
       {/* <div className="liveChate"><a href="https://wa.me/01825445033"><img src={whateShapp} alt="" /></a></div> */}
       <div></div>
       <>
         <Swiper
           loop={true}
           autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
+            delay: 500,
+            disableOnInteraction: true,
           }}
           slidesPerView={1}
           pagination={{

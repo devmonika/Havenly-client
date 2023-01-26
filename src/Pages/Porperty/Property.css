@@ -29,16 +29,47 @@
     -ms-transform:translate(-50%, -50%);
     -o-transform:translate(-50%, -50%);
 }
-
+.searchProperty{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap:5px;
+    place-items: center;
+    justify-content: center;
+    place-content: center;
+}
 
 .searchProperty input{
-    border: 1px solid black;
-    padding:15px 15px;
-    border-radius: 1;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 1;
-    -ms-border-radius: 1;
-    -o-border-radius: 1;
+    width:100%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px !important;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding:15px;
+    grid-column: span 2 / span 2;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.searchProperty select{
+    width:300px;
+    margin: auto;
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:15px;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    -ms-border-radius:15px;
+    -o-border-radius:15px;
+}
+.search{
+    position: absolute;
+    right: 420px;
+    top: 15px;
+    font-size: 24px;
 }
 
 .wrapProperty{
@@ -51,11 +82,12 @@
 }
 .leftSide{
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap:20px;
 }
 .propertyCard{
     width:400px;
-    margin: 15px auto;
+    margin: auto;
     overflow: hidden;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 20px 15px;
@@ -130,7 +162,7 @@
     display: flex;
     justify-content: space-between !important;
     position: absolute;
-    bottom: -50px;
+    bottom: -200px;
     
 }
 .propertyCardImgIcons{
@@ -138,6 +170,7 @@
 }
 .propertyCardImgIcons:hover .propertyIcons{
     display: block;
+    
 }
 .propertyIcons{
    position: absolute;
@@ -172,7 +205,7 @@
     -o-transition:transform .3s !important;
 }
 .propertyIcons li a:hover{
-    background-color: #004274;
+    background: #FF8C35;
     color: #fff;
 }
 
@@ -203,39 +236,107 @@
     text-align: left;
 }
 
+@media only screen and (max-width:1024px){
+    .leftSide{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap:20px;
+    }
+    .propertyPrice{ 
+        bottom: -500px; 
+    }
+
+}
 
 @media only screen and (max-width:768px){
+    .leftSide{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap:20px;
+    }
+    .searchProperty{
+        display: block;
+        text-align: center;
+        margin: 20px;
+    }
+    .searchProperty input{
+        width:100%;
+        align-items: center;
+        margin-left: 0px !important;
+       
+    }
+    .searchProperty select{
+        width:100%;
+        margin: auto;
+        border:1px solid #ddd;
+        padding:15px;
+        border-radius:15px;
+        -webkit-border-radius:15px;
+        -moz-border-radius:15px;
+        -ms-border-radius:15px;
+        -o-border-radius:15px;
+        margin-top: 20px;
+    }
+    .search{
+        right:33px;
+    }
+    
+    .propertyCard{
+        width:350px;
+      
+    }
+    .propertyPrice{ 
+        bottom: -600px; 
+    }
     .singleProperty{
         display:block;
     }
-    .leftSide{
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
+  
     .singleProperty{
         margin-left: 0px;
     }
     .propertyIcons{
         position: absolute;
         bottom: -200px;
-        left: 370px;
+        left: 285px;
     }
-    .propertyPrice{
-        bottom: 100px;
-        
-    }
-    .propertyIcons{
-        left:330px !important;
-       
-     }
-     .propertyPrice {
-        bottom: -232px;
-    }
+    
+
 }
 
 @media only screen and (max-width:500px){
     .propertyPrice {
         bottom: -160px;
+    }
+    .leftSide{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+   
+    }
+    .propertyPrice{ 
+        bottom: -520px; 
+    }
+    .peroperyCardContent {
+        display: block;
+        margin-left:0px;
+        
+    }
+    .reviews {
+        display: block;
+       margin-left: 0px;
+    }
+    .propertySpace {
+        width: 100%;
+        padding: 15px 5px;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+        align-items: center;
+    }
+    .propertyIcons{
+        position: absolute;
+        bottom: -200px;
+        left: 220px;
     }
 }
 @media only screen and (max-width:300px){
@@ -243,9 +344,25 @@
         bottom: 140px;
         left:-11px;
     }
+    .propertySpace {
+    width: 100%;
+    padding: 15px 5px;
+    margin: auto;
+    display: flex;
+    border: 1px solid #ddd;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+}
+    .propertyPrice{ 
+        bottom: -835px; 
+        z-index: 99;
+        left:10px;
+    }
     .peroperyCardContent {
         display: block;
-        margin-left:40px;
+        margin-left:0px;
         
     }
     .peroperyCardContent h2{
@@ -253,7 +370,7 @@
         text-align: center;
     }
     .headlineSingleContent{
-        margin-left: 40px;
+        margin-left: 0px;
     }
     .propertySpace {
         width: 80%;
@@ -265,7 +382,7 @@
     }
     .reviews {
         display: block;
-       margin-left: 50px;
+       margin-left: 0px;
     }
     .rightSide select, .keyword {
         width: 100%;
