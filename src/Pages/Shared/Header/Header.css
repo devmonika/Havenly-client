@@ -34,13 +34,13 @@ header {
 	margin-left:-15px !important;
 }
 .darkIcon{
-	width:40px;
+	width:35px;
 }
 .dasboard{
-	font-size:19px
+	font-size:18px
 }
 header nav a{
-	font-size: 19px;
+	font-size: 18px;
 	font-weight: bold;
 }
 .sticky{
@@ -163,7 +163,7 @@ header nav a{
         margin-left: 0px;
     }
 	.darkIcon{
-		width:30px;
+		width:35px;
 	}
 	
 }

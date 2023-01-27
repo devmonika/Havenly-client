@@ -162,7 +162,7 @@
     display: flex;
     justify-content: space-between !important;
     position: absolute;
-    bottom: -200px;
+    bottom: -180px;
     
 }
 .propertyCardImgIcons{
@@ -243,7 +243,7 @@
         gap:20px;
     }
     .propertyPrice{ 
-        bottom: -500px; 
+        bottom: -480px; 
     }
 
 }
@@ -286,7 +286,7 @@
       
     }
     .propertyPrice{ 
-        bottom: -600px; 
+        bottom: -453px; 
     }
     .singleProperty{
         display:block;
@@ -314,7 +314,7 @@
    
     }
     .propertyPrice{ 
-        bottom: -520px; 
+        bottom: -365px; 
     }
     .peroperyCardContent {
         display: block;
@@ -336,7 +336,7 @@
     .propertyIcons{
         position: absolute;
         bottom: -200px;
-        left: 220px;
+        left: 270px;
     }
 }
 @media only screen and (max-width:300px){
@@ -344,21 +344,12 @@
         bottom: 140px;
         left:-11px;
     }
-    .propertySpace {
-    width: 100%;
-    padding: 15px 5px;
-    margin: auto;
-    display: flex;
-    border: 1px solid #ddd;
-    text-align: center;
-    justify-content: center;
-    margin-top: 20px;
-    align-items: center;
-}
+
     .propertyPrice{ 
         bottom: -835px; 
         z-index: 99;
         left:10px;
+        display: none;
     }
     .peroperyCardContent {
         display: block;
@@ -373,13 +364,11 @@
         margin-left: 0px;
     }
     .propertySpace {
-        width: 80%;
-        align-items: center;
-        padding: 5px;
-        text-align: center;
-        justify-content: center;
-        margin-top: 20px;
+        width: 77%;
+        padding: 15px 5px;
+
     }
+ 
     .reviews {
         display: block;
        margin-left: 0px;
@@ -391,5 +380,8 @@
         padding: 12px 5px;
         display: block;
         margin-bottom: 18px;
+    }
+    .propertyIcons{
+        left: 220px;
     }
 }

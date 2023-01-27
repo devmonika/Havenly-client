@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import slide from "../../images/slide2.jpg";
 import slide2 from "../../images/slide1.jpg";
+import slider from "../../images/5.jpg";
 import slide3 from "../../images/slider3.jpg";
 import slide4 from "../../images/slider4.jpg";
 import whateShapp from "../../images/whatshap.jpg";
@@ -60,7 +61,7 @@ const Banner = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={slide3} alt="" />
+            <img src={slider} alt="" />
             <div className="slideContent">
               <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
               <p className="text-xl ">
