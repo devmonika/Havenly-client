@@ -37,7 +37,10 @@ const Header = () => {
   })
 
   return (
-    <header>
+    <header style={{
+      background: mode ? "#18191A" : "white",
+      color: mode ? "white" : "black",
+    }}>
       <div>
         {/* <label
           htmlFor="my-drawer-2"
