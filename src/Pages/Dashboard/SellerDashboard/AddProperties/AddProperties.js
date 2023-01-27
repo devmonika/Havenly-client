@@ -76,7 +76,7 @@ const AddProperties = () => {
         // add property info at mongodb
         try {
             setMessage("");
-            const url = "http://localhost:5000/properties";
+            const url = "https://havenly-server1.vercel.app/properties";
             const option = {
                 method: "POST",
                 body: JSON.stringify(property),
@@ -111,7 +111,7 @@ const AddProperties = () => {
     const { data: categories = [], isLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/categories');
+            const res = await fetch('https://havenly-server1.vercel.app/categories');
             const data = await res.json();
             return data;
         }

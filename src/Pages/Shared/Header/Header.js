@@ -53,7 +53,7 @@ const Header = () => {
         {/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
       </div>
       <nav ref={navRef}>
-        <Link to="/" className="text-black">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/apartments">Apartment</Link>
         {/* <a href="/#">Blog</a> */}
         <Link to="/reviews">Reviews</Link>

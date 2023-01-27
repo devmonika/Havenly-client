@@ -48,7 +48,7 @@ const SignUp = () => {
                     role: user
                 }
                 //storedata into mongodb
-                fetch('https://havenly-server.vercel.app/users', {
+                fetch('https://havenly-server1.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -88,7 +88,7 @@ const SignUp = () => {
 
         // const getuserToken = email => {
         //     //getUser token
-        //     fetch(`https://havenly-server.vercel.app/jwt?email=${email}`)
+        //     fetch(`https://havenly-server1.vercel.app/jwt?email=${email}`)
         //         .then(res => res.json())
         //         .then(data => {
         //             if (data.accessToken) {
