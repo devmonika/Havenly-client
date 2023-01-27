@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
+import darkmood from '../../../images/light.png'
+import darkmood2 from '../../../images/night.png'
 import {
   FaBars,
   FaTimes,
   FaToggleOff,
   FaToggleOn,
+  FaRegMoon,
   FaUserAlt,
 } from "react-icons/fa";
 import "./Header.css";
@@ -28,25 +31,29 @@ const Header = () => {
       .then(() => {})
       .catch((error) => console.error(error));
   };
+  window.addEventListener('scroll', function(){
+    var header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0 )
+  })
 
   return (
     <header>
       <div>
-        <label
+        {/* <label
           htmlFor="my-drawer-2"
           className="nav-btn drawer-button lg:hidden"
         >
           <FaBars />
-        </label>
+        </label> */}
         <img
           src={logo}
           alt="logo"
-          className="h-32 lg:h-52 mt-16 -ml-5 lg:ml-0 mb-7 lg:mb-0"
+          className="h-32 lg:h-52 mt-16 logo mb-7 lg:mb-0"
         />
         {/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
       </div>
       <nav ref={navRef}>
-        <Link to="/">Home</Link>
+        <Link to="/" className="text-black">Home</Link>
         <Link to="/apartments">Apartment</Link>
         {/* <a href="/#">Blog</a> */}
         <Link to="/reviews">Reviews</Link>
@@ -60,26 +67,26 @@ const Header = () => {
       <div>
         {user?.uid ? (
           <>
-            <Link to="/dashboard" className="mr-3">
+            <Link to="/dashboard" className="mr-3 dasboard">
               Dashboard
             </Link>
-            <button onClick={handleLogOut} className="mr-3 font-bold">
+            <button onClick={handleLogOut} className="mr-3 font-bold dasboard">
               Logout
             </button>
           </>
         ) : (
           <>
-            <Link to="/login" className="mr-3">
+            <Link to="/login" className="mr-3 dasboard">
               Login{" "}
             </Link>
           </>
         )}
 
-        {user?.displayName ? (
+        {/* {user?.displayName ? (
           <p className="mr-3">{user?.displayName}</p>
         ) : (
           <p className="mr-3">Web Titans</p>
-        )}
+        )} */}
         {user?.photoURL ? (
           <>
             <img
@@ -89,14 +96,14 @@ const Header = () => {
             />
           </>
         ) : (
-          <FaUserAlt className="mr-3" />
+          <FaUserAlt className="mr-3 userProfile" />
         )}
 
         <button
           className="text-xl ml-3"
           onClick={() => dispatch(toggleDarkMode())}
         >
-          {mode ? <FaToggleOff /> : <FaToggleOn />}
+          {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>}
         </button>
       </div>
       <button className="nav-btn" onClick={showNavbar}>

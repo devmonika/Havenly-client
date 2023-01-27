@@ -14,3 +14,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media only screen and (max-width:500px){
+  #gb-widget-273 > * {
+  
+    margin-right: 30px;
+
+  }
+}
+@media only screen and (max-width:300px){
+  #gb-widget-273 > * {
+  
+    margin-right: 50px;
+
+  }
+}
