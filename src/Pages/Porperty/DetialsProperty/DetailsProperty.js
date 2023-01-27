@@ -8,23 +8,91 @@ import latest2 from '../../../images/latest2.jpg';
 import latest3 from '../../../images/latest3.jpg';
 import latest4 from '../../../images/latest4.jpg';
 import latest5 from '../../../images/latest5.jpg';
+import slide from '../../../images/1.jpg';
+import slide2 from '../../../images/2.jpg';
+import slide3 from '../../../images/3.jpg';
+import slide4 from '../../../images/4.jpg';
+import slide5 from '../../../images/5.jpg';
+import slide6 from '../../../images/6.jpg';
+import slide7 from '../../../images/7.jpg';
+import slide8 from '../../../images/8.jpg';
+import slide9 from '../../../images/9.jpg';
+import slide10 from '../../../images/10.jpg';
 import jon from '../../../images/jon.jpg';
 import tour from '../../../images/tour.jpg';
 import map from '../../../images/map.png';
-import './DetailsProperty.css'
+import './DetailsProperty.css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
 import { FaMapMarkerAlt,FaCalendarMinus,FaEye,FaInfinity,FaRegHeart,FaLongArrowAltRight,FaFacebook,FaLinkedinIn,FaInstagramSquare } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 const DetailsProperty = () => {
     return (
         <div>
              <div className='propertyTop'>
-             <img className='h-full' src={property} alt="" />
-             <div className='image_Gallery'>
-                <div className='image_Gallery_left'><img src={property2} alt="" /></div>
-                <div className="image_Gallery_Right">
-                <div><img src={property3} alt="" /></div>
-                <div><img src={property4} alt="" /></div>
+             <img className='fullHeight' src={property} alt="" />
+             <div className=''>
+             
+                <div className="">
+                {/* <div><img src={property3} alt="" /></div>
+                <div><img src={property4} alt="" /></div> */}
+                
+    
+
+                <>
+      <Swiper
+        slidesPerView={4}
+        autoplay={{
+          delay: 500,
+          disableOnInteraction: true,
+        }}
+        centeredSlides={true}
+        spaceBetween={30}
+        grabCursor={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src={slide} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide3} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide4} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide5} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide6} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide8} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide9} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide10} alt="" />
+        </SwiperSlide>
+      </Swiper>
+    </>
+   
                 </div>
              </div>
              </div>
@@ -81,7 +149,7 @@ const DetailsProperty = () => {
                     <td>$25,235.00</td>
                   </tr>
                 </table>
-                <h2 className='propertyHeadline text-3xl text-[#004274] '>Amenities</h2>
+                {/* <h2 className='propertyHeadline text-3xl text-[#004274] '>Amenities</h2>
                 <div className="anemities">
                   <div>
                     <span> <span><FaLongArrowAltRight className='icons'></FaLongArrowAltRight></span> Tve Cable</span>
@@ -90,8 +158,8 @@ const DetailsProperty = () => {
                     <span><span><FaLongArrowAltRight className='icons'></FaLongArrowAltRight></span> Gym</span>
                     <span><span><FaLongArrowAltRight className='icons'></FaLongArrowAltRight></span> Washer</span>
                   </div>
-                </div>
-                <div className="anemities mt-5">
+                </div> */}
+                {/* <div className="anemities mt-5">
                   <div>
                     <span> <span><FaLongArrowAltRight className='icons'></FaLongArrowAltRight></span> Sauna</span>
                     <span><span><FaLongArrowAltRight className='icons'></FaLongArrowAltRight></span> Microwave</span>
@@ -99,16 +167,16 @@ const DetailsProperty = () => {
                     <span><span><FaLongArrowAltRight className='icons'></FaLongArrowAltRight></span> Laundry</span>
                     <span><span><FaLongArrowAltRight className='icons'></FaLongArrowAltRight></span> Swimming Pool</span>
                   </div>
-                </div>
+                </div> */}
                 <div className="location mt-5">
                 <h2 className='propertyHeadline text-2xl text-[#004274] '> Locations </h2> 
                 <img src={map} alt="map" />
                 </div>
-              
+{/*               
                 <div className="Tours mt-5">
                 <h2 className='propertyHeadline text-2xl text-[#004274] '> 360 Virtual Tour </h2> 
                 <img src={tour} alt="" />
-                </div>
+                </div> */}
                 </div>
                 </div>
                 <div className="detialsPropertyRight">

@@ -17,6 +17,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
 import MyOrders from "../../Pages/Dashboard/Buyers/MyOrders/MyOrders";
 import WishList from "../../Pages/Dashboard/Buyers/WishList/WishList";
+import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/AddProperties";
+import Profile from "../../Pages/Dashboard/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -92,6 +94,14 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/myWishList",
         element: <WishList></WishList>,
+      },
+      {
+        path: "/dashboard/addproperties",
+        element: <AddProperties></AddProperties>,
+      },
+      {
+        path: "/dashboard/profile",
+        element: <Profile></Profile>,
       },
     ],
   },
