@@ -35,7 +35,7 @@ const AllSeller = () => {
             console.log(data);
         })
     }
-
+        
     const handleVerify = email =>{
         fetch (`https://havenly-server1.vercel.app/users/admin/${email}`,{
            method: 'PUT',
