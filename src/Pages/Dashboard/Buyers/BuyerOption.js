@@ -1,19 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BuyerOption = () => {
   return (
     <>
-      <li>
-        <NavLink
-          to="/dashboard/myOrders"
-          className={({ isActive }) =>
-            isActive ? "text-primary" : "text-secondary"
-          }
-        >
-          My Orders
-        </NavLink>
-      </li>
+      <Link to="/dashboard/myOrders">My Orders</Link>
+      <Link to="/dashboard/myWishList">My WishList</Link>
     </>
   );
 };

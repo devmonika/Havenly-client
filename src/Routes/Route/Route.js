@@ -6,9 +6,9 @@ import SignUp from "../../Pages/Login/SignUp/SignUp";
 import Contact from "../../Pages/Contact/Contact";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
-import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
-import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
-import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
+import AllSeller from "../../Pages/Dashboard/Admin/AllSeller/AllSeller";
+import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer/AllBuyer";
+import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
 import Property from "../../Pages/Porperty/Property";
@@ -16,6 +16,7 @@ import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsPropert
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
 import MyOrders from "../../Pages/Dashboard/Buyers/MyOrders/MyOrders";
+import WishList from "../../Pages/Dashboard/Buyers/WishList/WishList";
 
 export const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/myOrders",
         element: <MyOrders></MyOrders>,
+      },
+      {
+        path: "/dashboard/myWishList",
+        element: <WishList></WishList>,
       },
     ],
   },
