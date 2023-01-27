@@ -6,7 +6,7 @@ const HouseCards = () => {
     const { data: categories = [], refetch } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/categories');
+            const res = await fetch('https://havenly-server1.vercel.app/categories');
             const data = await res.json();
             return data;
 

@@ -33,7 +33,7 @@ const SignUp = () => {
         //upload image into imgbb
         const formData = new FormData();
         formData.append('image', image);
-        const url = `https://api.imgbb.com/1/upload?key=87c47e4a9562b277d4d4cdd9c60b2681`;
+        const url = `https://api.imgbb.com/1/upload?key=5fe8f21565e313f421a85537d88c8f49`;
         fetch(url, {
             method: 'POST',
             body: formData
@@ -48,7 +48,7 @@ const SignUp = () => {
                     role: user
                 }
                 //storedata into mongodb
-                fetch('https://havenly-server.vercel.app/users', {
+                fetch('https://havenly-server1.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -61,7 +61,7 @@ const SignUp = () => {
                         setCretedUserEmail(email);
                         //accessToken
                         // getuserToken(email)
-                        toast.success('user added successfully')
+                        // toast.success('user added successfully')
                     })
 
                 //create user
@@ -88,7 +88,7 @@ const SignUp = () => {
 
         // const getuserToken = email => {
         //     //getUser token
-        //     fetch(`https://havenly-server.vercel.app/jwt?email=${email}`)
+        //     fetch(`https://havenly-server1.vercel.app/jwt?email=${email}`)
         //         .then(res => res.json())
         //         .then(data => {
         //             if (data.accessToken) {

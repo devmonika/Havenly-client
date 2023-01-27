@@ -16,6 +16,7 @@ import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsPropert
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
 import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/AddProperties";
+import Profile from "../../Pages/Dashboard/Profile/Profile";
 
 
 
@@ -52,11 +53,11 @@ export const router = createBrowserRouter([
         element: <AboutDetails></AboutDetails>
       },
       {
-        path:'/apartments',
+        path: '/apartments',
         element: <Property></Property>
       },
       {
-        path:'/singleapartment',
+        path: '/singleapartment',
         element: <DetailsProperty></DetailsProperty>
       },
       {
@@ -69,10 +70,10 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
-      {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
-      },
+      // {
+      //   path: "/dashboard",
+      //   element: <Dashboard></Dashboard>,
+      // },
       {
         path: "/dashboard/allsellers",
         element: <AllSeller></AllSeller>
@@ -88,11 +89,15 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/addproperties",
         element: <AddProperties></AddProperties>
-      },  
+      },
+      {
+        path: "/dashboard/profile",
+        element: <Profile></Profile>
+      },
     ]
   },
-  
-  
+
+
 ]);
 
 export default router;
