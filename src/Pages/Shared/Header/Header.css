@@ -19,9 +19,39 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	/* background-color: var(--mainColor);
-	color: var(--textColor); */
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	/* background:rgba(185, 68, 68, 0.2); */
+	background:#1C82AD;
+	color:var(--mainColorLight);
+	/* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	width: 100%;
+	z-index: 99;
+}
+.logo{
+	margin-left:-15px !important;
+}
+.darkIcon{
+	width:35px;
+}
+.dasboard{
+	font-size:18px
+}
+header nav a{
+	font-size: 18px;
+	font-weight: bold;
+}
+.sticky{
+	background-color: #03C988;
+	color:#fff;
+	height:60px;
+	transition: .3s;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
 }
 
 nav a {
@@ -75,7 +105,7 @@ nav {
 
 	header nav {
 		position: fixed;
-		top: 0;
+		top: -9px;
 		left: 0;
 		height: 100%;
 		width: 100%;
@@ -94,6 +124,7 @@ nav {
 		-moz-transform: translateY(-100vh);
 		-ms-transform: translateY(-100vh);
 		-o-transform: translateY(-100vh);
+		height:100vh;
 }
 header nav a{
 		text-align: left !important;
@@ -131,6 +162,9 @@ header nav a{
     .logo{
         margin-left: 0px;
     }
+	.darkIcon{
+		width:35px;
+	}
 	
 }
 @media only screen and (max-width: 500px){
@@ -150,6 +184,33 @@ header nav a{
 	.showBtn{
 		margin-right: -30px;
 	}
+	header nav {
+		/* top:-60px; */
+		height:100vh;
+	}
 	
 	
 }
+@media only screen and (max-width:300px){
+	header nav {
+		position: fixed;
+		top: -250px;
+		left: -52px;
+		
+}
+header .nav-btn {
+	margin-top: 9px;
+	font-size: 21px;	
+}
+nav .nav-close-btn {
+	top: 17rem;
+    right: 5.3rem;
+}
+.userProfile{
+	display: none;
+}
+
+
+
+}
+

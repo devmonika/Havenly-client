@@ -12,8 +12,7 @@ const Profile = () => {
                 </div>
                 <div className='text-center mt-2'>
                     <h5 className='my-2'>Ariana Grande</h5>
-                    <p className='my-2 leading-8'>Lorem ipsum is placeholder text commonly used in the graphic,<br />
-                        print, and publishing industries for previewing layouts and visual mockups</p>
+                    <p className='my-2 leading-8'>responsible for building customer relationships and developing business with existing and prospective customers</p>
                     <h5 className='my-2'>ariana@gmail.com</h5>
                     <h5>+264 813345387</h5>
                 </div>
