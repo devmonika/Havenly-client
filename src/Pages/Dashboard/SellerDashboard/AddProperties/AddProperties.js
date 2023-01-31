@@ -69,6 +69,7 @@ const AddProperties = () => {
             bathrooms: bathroomsRef.current.value,
             status: statusRef.current.value,
             contact: contactRef.current.value,
+            date: new Date()
         };
 
         console.log(property, "this is property");
