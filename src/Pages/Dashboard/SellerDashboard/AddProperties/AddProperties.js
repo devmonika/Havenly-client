@@ -1,9 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const AddProperties = () => {
+    const { user } = useContext(AuthContext);
     const [isUploading, setIsUpLoading] = useState(false);
     const [message, setMessage] = useState("");
     const [imageUrl1, setImageUrl1] = useState("");
@@ -11,9 +13,6 @@ const AddProperties = () => {
     const [imageUrl3, setImageUrl3] = useState("");
 
     // catch input value by using useRef hook
-    const photoRef1 = useRef();
-    const photoRef2 = useRef();
-    const photoRef3 = useRef();
     const addressRef = useRef();
     const categoryRef = useRef();
     const countryRef = useRef();
@@ -53,6 +52,8 @@ const AddProperties = () => {
         e.preventDefault();
 
         const property = {
+            seller_name: user?.displayName,
+            seller_email: user?.email,
             img1: imageUrl1,
             img2: imageUrl2,
             img3: imageUrl3,
@@ -69,6 +70,7 @@ const AddProperties = () => {
             bathrooms: bathroomsRef.current.value,
             status: statusRef.current.value,
             contact: contactRef.current.value,
+            date: new Date()
         };
 
         console.log(property, "this is property");
