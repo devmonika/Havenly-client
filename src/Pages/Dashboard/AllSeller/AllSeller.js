@@ -77,7 +77,7 @@ const AllSeller = () => {
 
                                 {/* <td>
                     <button onClick={()=>handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>
-                </td>  */}
+                     </td>  */}
 
                             </tr>)
                         }

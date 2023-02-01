@@ -84,7 +84,13 @@ const Header = () => {
           <>
             <img
               src={user.photoURL}
-              className="w-12 h-12  rounded-2xl"
+
+              style={{
+                width:"50px",
+                height:"50px",
+                borderRadius:"50%"
+              }}
+              // className="w-12 h-12  rounded-2xl"
               alt=""
             />
           </>

@@ -16,7 +16,10 @@ import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsPropert
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
 import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/AddProperties";
-import Profile from "../../Pages/Dashboard/Profile/Profile";
+// import Profile from "../../Pages/Dashboard/Profile/Profile";
+// import Edit from "../../Pages/Dashboard/Edit/Edit";
+// import UpdateProfile from "../../Pages/Dashboard/UpdateProfile/UpdateProfile";
+
 
 
 
@@ -90,10 +93,14 @@ export const router = createBrowserRouter([
         path: "/dashboard/addproperties",
         element: <AddProperties></AddProperties>
       },
-      {
-        path: "/dashboard/profile",
-        element: <Profile></Profile>
-      },
+      // {
+      //   path: "/dashboard/profile",
+      //   element: <Profile></Profile>,
+
+      // },
+
+
+
     ]
   },
 
