@@ -17,6 +17,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
 import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/AddProperties";
 import Profile from "../../Pages/Dashboard/Profile/Profile";
+import MyProperties from "../../Pages/Dashboard/SellerDashboard/MyProperties/MyProperties";
 
 
 
@@ -89,6 +90,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/addproperties",
         element: <AddProperties></AddProperties>
+      },
+      {
+        path: "/dashboard/myproperties",
+        element: <MyProperties></MyProperties>
       },
       {
         path: "/dashboard/profile",
