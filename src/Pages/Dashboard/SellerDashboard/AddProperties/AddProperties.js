@@ -244,7 +244,7 @@ const AddProperties = () => {
                                                     })}
                                                 />
                                             </div>
-
+//i am
                                             <div className="md:col-span-2">
                                                 <label>Images3</label>
                                                 <input
