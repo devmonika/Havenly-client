@@ -14,7 +14,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathName || '/';
+    const from = location.state?.from?.pathame || '/';
     if (token) {
         navigate(from, { replace: true });
     }
@@ -31,7 +31,6 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('User Login successfully')
-                toast.success('user loged in successfully...!!!!');
                 // navigate(from, { replace: true });
                 setLoginUserEmail(email)
             })
@@ -66,7 +65,7 @@ const Login = () => {
             <div>
                 <img src='https://i.postimg.cc/Ghn6D5Jh/photo-1568605114967-8130f3a36994.jpg' className="w-full h-full object-cover" alt="" />
             </div>
-            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900'>
+            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900 mt-24'>
                 <div className='mb-8 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Login Now!</h1>
                     <p className='text-sm  text-gray-400'>

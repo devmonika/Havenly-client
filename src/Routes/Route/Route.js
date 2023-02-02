@@ -11,15 +11,12 @@ import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
-import Property from "../../Pages/Porperty/Property";
-import DetailsProperty from "../../Pages/Porperty/DetialsProperty/DetailsProperty";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
 import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/AddProperties";
-// import Profile from "../../Pages/Dashboard/Profile/Profile";
-// import Edit from "../../Pages/Dashboard/Edit/Edit";
-// import UpdateProfile from "../../Pages/Dashboard/UpdateProfile/UpdateProfile";
-
+import Profile from "../../Pages/Dashboard/Profile/Profile";
+import AllProperty from "../../Pages/Porperty/AllProperty";
+import SingleApartment from "../../Pages/Porperty/DetialsProperty/SingleApartment";
 
 
 
@@ -57,11 +54,13 @@ export const router = createBrowserRouter([
       },
       {
         path: '/apartments',
-        element: <Property></Property>
+        element: <AllProperty></AllProperty>
+
       },
       {
-        path: '/singleapartment',
-        element: <DetailsProperty></DetailsProperty>
+        path: '/singleapartment/:id',
+        element: <SingleApartment></SingleApartment>,
+        loader: ({ params }) => fetch(` http://localhost:5000/properties/${params.id}`)
       },
       {
         path: "*",
@@ -93,11 +92,11 @@ export const router = createBrowserRouter([
         path: "/dashboard/addproperties",
         element: <AddProperties></AddProperties>
       },
-      // {
-      //   path: "/dashboard/profile",
-      //   element: <Profile></Profile>,
+      {
+        path: "/dashboard/profile",
+        element: <Profile></Profile>,
 
-      // },
+      },
 
 
 
