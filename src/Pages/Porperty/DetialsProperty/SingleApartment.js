@@ -35,6 +35,8 @@ import { toast } from 'react-hot-toast';
 
 
 const SingleApartment = () => {
+  const [owner, setOwner] = useState([])
+ 
   const { user } = useContext(AuthContext);
   const { address, bathrooms, bedrooms, category,
     city, contact, country, description, img1,seller_img,seller_name,seller_email,
