@@ -35,7 +35,7 @@ const MyProperties = () => {
     };
     return (
         <div className='mt-32'>
-            <h2 className="text-3xl text-center mb-4">My Products: {properties.length}</h2>
+            <h2 className="text-3xl text-center mb-4">All Apertment List: {properties.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
