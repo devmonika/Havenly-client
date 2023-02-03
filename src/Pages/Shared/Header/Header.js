@@ -40,7 +40,85 @@ const Header = () => {
       background: mode ? "#2B2C30" : "white",
       color: mode ? "white" : "black",
     }}>
-      
+      <div>
+        {/* <label
+          htmlFor="my-drawer-2"
+          className="nav-btn drawer-button lg:hidden"
+        >
+          <FaBars />
+        </label> */}
+        <img
+          src={logo}
+          alt="logo"
+          className="h-32 lg:h-52 mt-16 logo mb-7 lg:mb-0"
+        />
+        {/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
+      </div>
+      <nav ref={navRef}>
+        <Link to="/">Home</Link>
+        <Link to="/apartments">Apartment</Link>
+        {/* <a href="/#">Blog</a> */}
+        <Link to="/reviews">Reviews</Link>
+        <Link to="/about">About us</Link>
+        <Link to="/contactus">Contact</Link>
+
+        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+          <FaTimes />
+        </button>
+      </nav>
+      <div>
+        {user?.uid ? (
+          <>
+            <Link to="/dashboard" className="mr-3 dasboard">
+              Dashboard
+            </Link>
+            <button onClick={handleLogOut} className="mr-3 font-bold dasboard">
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="mr-3 dasboard">
+              Login{" "}
+            </Link>
+          </>
+        )}
+
+        {/* {user?.displayName ? (
+          <p className="mr-3">{user?.displayName}</p>
+        ) : (
+          <p className="mr-3">Web Titans</p>
+        )} */}
+        {user?.photoURL ? (
+          <>
+            <img
+              src={user.photoURL}
+
+              style={{
+                width:"50px",
+                height:"50px",
+                borderRadius:"50%"
+              }}
+              // className="w-12 h-12  rounded-2xl"
+              alt=""
+            />
+          </>
+        ) : (
+          <FaUserAlt className="mr-3 userProfile" />
+        )}
+
+        <button
+          className="text-xl ml-3"
+          onClick={() => dispatch(toggleDarkMode())}
+        >
+          {mode ? 
+          <img src={darkmood2} className='darkIcon' ></img> : 
+          <img src={darkmood} className='darkIcon' ></img>}
+        </button>
+      </div>
+      <button className="nav-btn" onClick={showNavbar}>
+        <FaBars />
+      </button>
     </header>
   );
 };
