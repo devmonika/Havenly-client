@@ -37,7 +37,7 @@ import { toast } from 'react-hot-toast';
 const SingleApartment = () => {
   const { user } = useContext(AuthContext);
   const { address, bathrooms, bedrooms, category,
-    city, contact, country, description, img1,
+    city, contact, country, description, img1,seller_img,seller_name,seller_email,
     img2, img3, price, sqft, status, year, zip, date,
     _id } = useLoaderData();
 
@@ -196,9 +196,9 @@ const SingleApartment = () => {
           <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
           <div className="">
             <div className="jonDetails">
-              <img className='mr-5' src={jon} alt="" />
+              <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
               <div className=''>
-                <h3 className='text-[#004274] text-2xl font-bold '>Jane Cooper </h3>
+                <h3 className='text-[#004274] text-2xl font-bold '>{seller_name} </h3>
                 <a href="" className='my-3 underline block'>Vew Website </a>
                 <div className='socialIcons'>
                   <a href=""> <FaFacebook></FaFacebook> </a>
