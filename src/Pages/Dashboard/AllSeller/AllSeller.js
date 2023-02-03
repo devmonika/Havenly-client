@@ -12,7 +12,7 @@ const AllSeller = () => {
     const {data: sellers = [], refetch} = useQuery({
         queryKey: ['seller'],
         queryFn: async ()=>{
-            const res = await fetch('http://localhost:5000/users/sellers');
+            const res = await fetch('https://havenly-server1.vercel.app/users/sellers');
             const data = await res.json();
             return data;
 
@@ -20,7 +20,7 @@ const AllSeller = () => {
     });
 
     const handleDeleteSeller= (id, name) =>{
-        fetch(`http://localhost:5000/users/${id}`,{
+        fetch(`https://havenly-server1.vercel.app/users/${id}`,{
             method: 'DELETE',
             headers:{
               authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -35,9 +35,9 @@ const AllSeller = () => {
             console.log(data);
         })
     }
-
+        
     const handleVerify = email =>{
-        fetch (`http://localhost:5000/users/admin/${email}`,{
+        fetch (`https://havenly-server1.vercel.app/users/admin/${email}`,{
            method: 'PUT',
             headers: {
              authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -58,7 +58,7 @@ const AllSeller = () => {
 
     return (
         <div>
-            <h2 className='text-left text-3xl font-semibold my-10 ml-10 text-secondary'>All Sellers</h2>
+            <h2 className='text-left text-3xl font-semibold pt-28 ml-10 text-secondary'>All Sellers</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     <thead>

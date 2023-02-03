@@ -21,7 +21,7 @@ const AddReview = ({ loading, refetch }) => {
         };
 
         // save review post information in database
-        fetch('https://havenly-server.vercel.app/reviews', {
+        fetch('https://havenly-server1.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

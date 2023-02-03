@@ -48,7 +48,7 @@ const SignUp = () => {
                     role: user
                 }
                 //storedata into mongodb
-                fetch('https://havenly-server.vercel.app/users', {
+                fetch('https://havenly-server1.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -88,7 +88,7 @@ const SignUp = () => {
 
         // const getuserToken = email => {
         //     //getUser token
-        //     fetch(`https://havenly-server.vercel.app/jwt?email=${email}`)
+        //     fetch(`https://havenly-server1.vercel.app/jwt?email=${email}`)
         //         .then(res => res.json())
         //         .then(data => {
         //             if (data.accessToken) {
@@ -127,7 +127,7 @@ const SignUp = () => {
             <div>
                 <img src='https://i.postimg.cc/Ghn6D5Jh/photo-1568605114967-8130f3a36994.jpg' className="w-full h-full object-cover" alt="" />
             </div>
-            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900'>
+            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900  mt-24'>
                 <div className='mb-8 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
                     <p className='text-sm  text-gray-400'>

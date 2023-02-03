@@ -36,7 +36,10 @@ const Header = () => {
   })
 
   return (
-    <header>
+    <header style={{
+      background: mode ? "#2B2C30" : "white",
+      color: mode ? "white" : "black",
+    }}>
       <div>
         {/* <label
           htmlFor="my-drawer-2"
@@ -52,7 +55,7 @@ const Header = () => {
         {/* <h3 className='font-bold text-3xl text-[#28C667]'></h3> */}
       </div>
       <nav ref={navRef}>
-        <Link to="/" className="text-black">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/apartments">Apartment</Link>
         {/* <a href="/#">Blog</a> */}
         <Link to="/reviews">Reviews</Link>
@@ -79,7 +82,13 @@ const Header = () => {
         <a>
         <img
               src={user.photoURL}
-              className="w-12 h-12  rounded-2xl"
+
+              style={{
+                width:"50px",
+                height:"50px",
+                borderRadius:"50%"
+              }}
+              // className="w-12 h-12  rounded-2xl"
               alt=""
             />
             

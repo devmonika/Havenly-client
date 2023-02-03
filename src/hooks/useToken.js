@@ -6,7 +6,7 @@ const useToken = (email) => {
     const [token, setToken] = useState('');
     useEffect(() => {
         if (email) {
-            fetch(`https://havenly-server.vercel.app/jwt?email=${email}`)
+            fetch(`https://havenly-server1.vercel.app/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.accessToken) {

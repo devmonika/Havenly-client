@@ -1,9 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const AddProperties = () => {
+    const { user } = useContext(AuthContext);
     const [isUploading, setIsUpLoading] = useState(false);
     const [message, setMessage] = useState("");
     const [imageUrl1, setImageUrl1] = useState("");
@@ -11,9 +13,6 @@ const AddProperties = () => {
     const [imageUrl3, setImageUrl3] = useState("");
 
     // catch input value by using useRef hook
-    const photoRef1 = useRef();
-    const photoRef2 = useRef();
-    const photoRef3 = useRef();
     const addressRef = useRef();
     const categoryRef = useRef();
     const countryRef = useRef();
@@ -53,6 +52,9 @@ const AddProperties = () => {
         e.preventDefault();
 
         const property = {
+            seller_name: user?.displayName,
+            seller_email: user?.email,
+            seller_img: user?.photoURL,
             img1: imageUrl1,
             img2: imageUrl2,
             img3: imageUrl3,
@@ -69,6 +71,7 @@ const AddProperties = () => {
             bathrooms: bathroomsRef.current.value,
             status: statusRef.current.value,
             contact: contactRef.current.value,
+            date: new Date()
         };
 
         console.log(property, "this is property");
@@ -76,7 +79,7 @@ const AddProperties = () => {
         // add property info at mongodb
         try {
             setMessage("");
-            const url = "http://localhost:5000/properties";
+            const url = "https://havenly-server1.vercel.app/properties";
             const option = {
                 method: "POST",
                 body: JSON.stringify(property),
@@ -111,13 +114,13 @@ const AddProperties = () => {
     const { data: categories = [], isLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/categories');
+            const res = await fetch('https://havenly-server1.vercel.app/categories');
             const data = await res.json();
             return data;
         }
     });
     return (
-        <div>
+        <div className='mt-20'>
             <div className="min-h-screen p-6 flex items-center justify-center">
                 <div className="container max-w-screen-lg mx-auto">
                     <div>
@@ -242,7 +245,7 @@ const AddProperties = () => {
                                                     })}
                                                 />
                                             </div>
-
+//i am
                                             <div className="md:col-span-2">
                                                 <label>Images3</label>
                                                 <input

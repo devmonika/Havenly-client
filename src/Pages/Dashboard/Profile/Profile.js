@@ -1,21 +1,32 @@
-import React from 'react';
-import image from '../../../images/profile.png'
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider';
+import image from '../../../images/profile.png';
+import { MdEditCalendar } from "react-icons/md";
 
 const Profile = () => {
-    return (
+    const { user } = useContext(AuthContext);
+    const[userInfo, setuserInfo] = useState([]);
+    console.log(userInfo)
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/user?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data => setuserInfo(data[0]))
+    },[user?.email]);
+    return ( 
         <div>
             <div className='border-t-indigo-500 border-4 mt-2 border-x-0 border-b-0 py-10 bg-white shadow-2xl'>
                 <div className=' flex justify-center items-center  mt-4'>
-                    <img src={image} alt="" className='' /> <br />
+                    <img src={userInfo.image} alt="" className='' /> <br />
 
 
                 </div>
                 <div className='text-center mt-2'>
-                    <h5 className='my-2'>Ariana Grande</h5>
-                    <p className='my-2 leading-8'>Lorem ipsum is placeholder text commonly used in the graphic,<br />
-                        print, and publishing industries for previewing layouts and visual mockups</p>
-                    <h5 className='my-2'>ariana@gmail.com</h5>
-                    <h5>+264 813345387</h5>
+                    <h5 className='my-2'>{userInfo.name}</h5>
+                    
+                    <p className='my-2 leading-8'>responsible for building customer relationships <br/> and developing business with existing and prospective customers <span><MdEditCalendar></MdEditCalendar></span> </p>
+                    <h5 className='my-2'>{userInfo.email}</h5>
+                    <h5>{user?.phoneNumber}</h5>
                 </div>
             </div>
             <div className='border-t-indigo-500 border-4 mt-4 border-x-0 border-b-0 py-10 bg-white shadow-2xl'>
