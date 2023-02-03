@@ -19,8 +19,8 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	/* background:rgba(185, 68, 68, 0.2); */
-	background:#1C82AD;
+	background:rgba(28, 125, 166, 0.4);
+	/* background:#1C82AD; */
 	color:var(--mainColorLight);
 	/* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 	position:fixed;
