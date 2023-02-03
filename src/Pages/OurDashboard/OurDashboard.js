@@ -25,8 +25,12 @@ import {
   Legend,
   Scatter,
   ResponsiveContainer,
-  PieChart, Pie, Sector, Cell 
+   Pie, 
+   Sector,
+    Cell,
+  PieChart,
 } from 'recharts';
+
 
 
 
@@ -85,13 +89,25 @@ const data = [
   }
 ];
 
-const data2 = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
+const data01 = [
+  { name: "Group A", value: 400 },
+  { name: "Group B", value: 300 },
+  { name: "Group C", value: 300 },
+  { name: "Group D", value: 200 }
 ];
-
+const data02 = [
+  { name: "A1", value: 100 },
+  { name: "A2", value: 300 },
+  { name: "B1", value: 100 },
+  { name: "B2", value: 80 },
+  { name: "B3", value: 40 },
+  { name: "B4", value: 30 },
+  { name: "B5", value: 50 },
+  { name: "C1", value: 100 },
+  { name: "C2", value: 200 },
+  { name: "D1", value: 150 },
+  { name: "D2", value: 50 }
+];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const RADIAN = Math.PI / 180;
@@ -237,7 +253,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
                 <div className="dashBoardRight  col-span-9">
                    <div className="nameWrap px-3 py-3">
                    <div className="projectName">
-                      <h2>Havenly</h2>
+                      <h2>Seller Dashboard </h2>
                     </div>
                     <div className="dashBoardIcons">
                       <div className="iconsWrap flex">
@@ -332,26 +348,30 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
       <Line type="monotone" dataKey="uv" stroke="#ff7300" />
       <Scatter dataKey="cnt" fill="red" />
     </ComposedChart>
-    <h2 className='text-xl centerText font-bold text-[#6D28D9]'>Bar Chart </h2>
+    <h2 className='text-xl centerText font-bold text-[#6D28D9]'>Appartments Rent Chart </h2>
                     </div>
                     <div className="pieChart">
-                    <PieChart width={500} height={500}>
+                    <PieChart width={400} height={400}>
       <Pie
-        data={data2}
-        cx={300}
-        cy={300}
-        labelLine={false}
-        label={renderCustomizedLabel}
-        outerRadius={160}
-        fill="#8884d8"
+        data={data01}
         dataKey="value"
-      >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-        ))}
-      </Pie>
+        cx={200}
+        cy={200}
+        outerRadius={100}
+        fill="#8884d8"
+      />
+      <Pie
+        data={data02}
+        dataKey="value"
+        cx={200}
+        cy={200}
+        innerRadius={100}
+        outerRadius={120}
+        fill="#82ca9d"
+        label
+      />
     </PieChart>
-    <h2 className='text-xl centerText center font-bold text-[#6D28D9]'>Pie Chart </h2>
+    <h2 className='text-xl centerText center font-bold text-[#6D28D9]'>All Viewer Chart </h2>
                     </div>
                    </div>
                   
