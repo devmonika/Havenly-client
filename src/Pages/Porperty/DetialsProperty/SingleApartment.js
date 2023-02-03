@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -28,16 +28,61 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { FaMapMarkerAlt, FaCalendarMinus, FaEye, FaInfinity, FaRegHeart, FaLongArrowAltRight, FaFacebook, FaLinkedinIn, FaInstagramSquare } from "react-icons/fa";
+import { HiCheck } from "react-icons/hi";
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 
 const SingleApartment = () => {
   const [owner, setOwner] = useState([])
+ 
+  const { user } = useContext(AuthContext);
   const { address, bathrooms, bedrooms, category,
     city, contact, country, description, img1,
-    img2, img3, price, sqft, status, year, zip, date,
-    _id, seller_img } = useLoaderData();
+    img2, img3, price, sqft, status, year, zip, date,seller_img,
+    _id } = useLoaderData();
 
+  const [added, setAdded] = useState(false);
+
+  // const handleClick = () => {
+    
+  // };
+
+  const handleWishList = id => {
+    setAdded(true);
+    const wishData = {
+      userName: user?.displayName,
+      email: user?.email,
+      propertyId: id,
+      address,
+      img1,
+      category,
+      country,
+      price,
+      added
+    };
+
+    console.log(wishData);
+
+    fetch("http://localhost:5000/wishlist", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem('accessToken')}`
+      },
+      body: JSON.stringify(wishData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Added to wishlist");
+        }
+        else {
+          toast.error(data.message);
+        }
+      })
+  }
 
   return (
     <div>
@@ -99,7 +144,11 @@ const SingleApartment = () => {
               <h3 className='text-[#004274] text-3xl'>${price}</h3>
               <div className="priceIcons">
                 <span> <FaInfinity></FaInfinity> </span>
-                <span> <FaRegHeart></FaRegHeart> </span>
+                {added ? (
+                  <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
+                ) : (
+                  <button onClick={() => handleWishList(_id)}><span> <FaRegHeart></FaRegHeart> </span></button>
+                )}
               </div>
             </div>
           </div>

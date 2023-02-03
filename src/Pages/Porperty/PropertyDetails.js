@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import ibrahim from '../../images/ibrahim.png';
 import SingleApartment from './DetialsProperty/SingleApartment';
 
-const PropertyDetails = ({property}) => {
+const PropertyDetails = ({ property, searchItem }) => {
 
-    const { address,bathrooms,bedrooms, category,
+    const { address, bathrooms, bedrooms, category,
         city, contact, country, desdcription, img1,
         img2, img3, price, sqft, status, year, zip, date,
-        _id} = property;
-        // console.log(property)
+        _id } = property;
+    // console.log(property)
 
     return (
         <div className='propertyCard '>
@@ -53,11 +53,11 @@ const PropertyDetails = ({property}) => {
                     <span className='mt-5'>Ibrahim Sikder</span>
                 </div>
                 <div className='mt-5 viewDetails'>
-                    <Link to= {`/singleapartment/${_id}`}> <span>View Details </span> </Link>
+                    <Link to={`/singleapartment/${_id}`}> <span>View Details </span> </Link>
                     <span className='mt-1'><FaArrowRight></FaArrowRight></span>
                 </div>
             </div>
-           
+
         </div>
     );
 };
