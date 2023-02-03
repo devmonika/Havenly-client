@@ -21,8 +21,8 @@ const Banner = () => {
         <Swiper
           loop={true}
           autoplay={{
-            delay: 500,
-            disableOnInteraction: true,
+            delay: 200,
+            disableOnInteraction: false,
           }}
           slidesPerView={1}
           pagination={{
