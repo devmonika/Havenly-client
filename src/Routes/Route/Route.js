@@ -57,11 +57,12 @@ export const router = createBrowserRouter([
       {
         path: '/apartments',
         element: <AllProperty></AllProperty>
+
       },
       {
         path: '/singleapartment/:id',
         element: <SingleApartment></SingleApartment>,
-        loader: ({params})=> fetch (` http://localhost:5000/properties/${params.id}`)
+        loader: ({ params }) => fetch(` http://localhost:5000/properties/${params.id}`)
       },
       {
         path: "*",
@@ -103,8 +104,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/profile",
-        element: <Profile></Profile>
+        element: <Profile></Profile>,
+
       },
+
+
+
     ]
   },
 
