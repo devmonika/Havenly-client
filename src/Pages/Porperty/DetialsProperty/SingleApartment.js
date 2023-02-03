@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -32,11 +32,11 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 
 const SingleApartment = () => {
+  const [owner, setOwner] = useState([])
   const { address, bathrooms, bedrooms, category,
     city, contact, country, description, img1,
     img2, img3, price, sqft, status, year, zip, date,
-    _id } = useLoaderData();
-
+    _id, seller_img } = useLoaderData();
 
 
   return (
@@ -149,7 +149,7 @@ const SingleApartment = () => {
           <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
           <div className="">
             <div className="jonDetails">
-              <img className='mr-5' src={jon} alt="" />
+              <img className='mr-5 w-[120px] h-[110px] rounded' src={seller_img} alt="" />
               <div className=''>
                 <h3 className='text-[#004274] text-2xl font-bold '>Jane Cooper </h3>
                 <a href="" className='my-3 underline block'>Vew Website </a>
