@@ -23,19 +23,19 @@ const Footer = () => {
           <h2 className="text-2xl text-start">Useful Links</h2>
           <ul className="mt-3">
             <li className="text-start ">
-              <Link>Blog</Link>
+              <Link to='#'>Blog</Link>
             </li>
             <br />
             <li className="text-start ">
-              <Link>Success</Link>
+              <Link to='#'>Success</Link>
             </li>
             <br />
             <li className="text-start">
-              <Link>Terms and Conditions</Link>
+              <Link to='#'>Terms and Conditions</Link>
             </li>
             <br />
             <li className="text-start">
-              <Link>Privacy & App Privacy Policy</Link>
+              <Link to='#'>Privacy & App Privacy Policy</Link>
             </li>
             <br />
             <li className="text-start">
