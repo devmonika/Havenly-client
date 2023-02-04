@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
+import darkmood from '../../../images/light.png'
+import darkmood2 from '../../../images/night.png'
 import {
   FaBars,
   FaTimes,
   FaToggleOff,
   FaToggleOn,
   FaRegMoon,
-  FaMoon,
   FaUserAlt,
 } from "react-icons/fa";
 import "./Header.css";
 import logo from "../../../assetes/logo.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleDarkMode} from "../../../app/features/darkModeSlice";
+import { toggleDarkMode } from "../../../app/features/darkModeSlice";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
@@ -111,9 +112,7 @@ const Header = () => {
           className="text-xl ml-3"
           onClick={() => dispatch(toggleDarkMode())}
         >
-          {mode ? 
-          <img src={darkmood2} className='darkIcon' ></img> : 
-          <img src={darkmood} className='darkIcon' ></img>}
+          {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>}
         </button>
       </div>
       <button className="nav-btn" onClick={showNavbar}>
