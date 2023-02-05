@@ -27,7 +27,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
-import { FaMapMarkerAlt, FaCalendarMinus, FaEye, FaInfinity, FaRegHeart, FaLongArrowAltRight, FaFacebook, FaLinkedinIn, FaInstagramSquare } from "react-icons/fa";
+import { FaMapMarkerAlt, FaCalendarMinus, FaEye, FaInfinity, FaRegHeart, FaLongArrowAltRight, FaFacebook, FaLinkedinIn, FaInstagramSquare, FaBook, FaBuyNLarge } from "react-icons/fa";
 import { Link, useLoaderData } from 'react-router-dom';
 
 
@@ -98,6 +98,7 @@ const SingleApartment = () => {
             <div className="detialsPrice">
               <h3 className='text-[#004274] text-3xl'>${price}</h3>
               <div className="priceIcons">
+                <button>Booking Now <span><FaBuyNLarge></FaBuyNLarge> </span></button>
                 <span> <FaInfinity></FaInfinity> </span>
                 <span> <FaRegHeart></FaRegHeart> </span>
               </div>
