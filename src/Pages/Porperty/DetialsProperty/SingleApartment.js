@@ -63,7 +63,7 @@ const SingleApartment = () => {
 
     console.log(wishData);
 
-    fetch("http://localhost:5000/wishlist", {
+    fetch("https://havenly-server-new.vercel.app/wishlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",
