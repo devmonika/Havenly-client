@@ -30,7 +30,7 @@ const HouseCards = () => {
 
                     {
                         categories?.map(category => <div className="h-72 md:h-96 w-full md:w-1/2 lg:w-1/4 mb-4 lg:mb-0" key={category._id}>
-                            <Link  to='#'className="h-72 md:h-96 block group relative mx-2 overflow-hidden shadow-lg border-b-8 border-secondary">
+                            <Link to="#" className="h-72 md:h-96 block group relative mx-2 overflow-hidden shadow-lg border-b-8 border-secondary">
                                 <img src={category.img} className="absolute z-0 object-cover w-full h-72 md:h-96 transform duration-500 group-hover:scale-150" alt='' />
                                 <div className="absolute gradient transition duration-500 group-hover:bg-primary group-hover:opacity-90 w-full h-72 md:h-96 z-100"></div>
                                 <div className="absolute left-0 right-0 bottom-0 p-6 z-30 transform translate-y-1/2 transition duration-500 h-full group-hover:translate-y-0 delay-100">
@@ -49,6 +49,7 @@ const HouseCards = () => {
                     }
 
 
+                  
                 </div>
             </div>
             <div className="md:mt-12 mt-20 px-8 lg:px-0 flex justify-center">
