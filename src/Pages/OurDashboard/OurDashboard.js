@@ -1,5 +1,5 @@
 import React from 'react';
-import './OurDashBoard.css';
+// import './OurDashBoard.css';
 import { FaHouseDamage, FaGripHorizontal, FaBookmark, FaUserAlt,FaScribd, FaSearch, FaStripeS} from "react-icons/fa";
 import dolar from '../../images/dolar2.jpg';
 import user from '../../images/user.png';
