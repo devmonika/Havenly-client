@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
+import darkmood from '../../../images/light.png'
+import darkmood2 from '../../../images/night.png'
 import {
   FaBars,
   FaTimes,
   FaToggleOff,
   FaToggleOn,
   FaRegMoon,
-  FaMoon,
   FaUserAlt,
 } from "react-icons/fa";
 import "./Header.css";
 import logo from "../../../assetes/logo.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleDarkMode} from "../../../app/features/darkModeSlice";
+import { toggleDarkMode } from "../../../app/features/darkModeSlice";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
@@ -66,8 +67,23 @@ const Header = () => {
           <FaTimes />
         </button>
       </nav>
-      <ul>
-        
+      <div>
+        {user?.uid ? (
+          <>
+            <Link to="/dashboard" className="mr-3 dasboard">
+              Dashboard
+            </Link>
+            <button onClick={handleLogOut} className="mr-3 font-bold dasboard">
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="mr-3 dasboard">
+              Login{" "}
+            </Link>
+          </>
+        )}
 
         {/* {user?.displayName ? (
           <p className="mr-3">{user?.displayName}</p>
@@ -76,11 +92,7 @@ const Header = () => {
         )} */}
         {user?.photoURL ? (
           <>
-           <ul className="menu menu-horizontal px-1">
-  
-      <li tabIndex={0}>
-        <a>
-        <img
+            <img
               src={user.photoURL}
 
               style={{
@@ -91,54 +103,18 @@ const Header = () => {
               // className="w-12 h-12  rounded-2xl"
               alt=""
             />
-            
-        </a>
-        <ul className="p-2 bg-[#03C988]">
-          <li><a> <Link to="/dashboard" className="mr-3 dasboard">
-              Dashboard
-            </Link></a></li>
-          <li><a><button onClick={handleLogOut} className="mr-3 font-bold dasboard">
-              Logout
-            </button></a></li>
-            <li className=" font-bold "><a><button
-          className="text-xl ml-3"
-          onClick={() => dispatch(toggleDarkMode())}
-        >
-          {mode ? <FaRegMoon className="text-white" /> : <FaMoon className="text-black" />}
-        </button></a></li>
-        </ul>
-      </li>
-      
-    </ul>
-           
           </>
         ) : (
-          <ul className="menu menu-horizontal px-1">
-  
-      <li tabIndex={0}>
-        <a>
-        <FaUserAlt className="mr-3 userProfile" />
-      
-            
-        </a>
-        <ul className="p-2 bg-[#03C988]">
-            <li><a> <Link to="/login" className="mr-3 dasboard">
-              Login{" "}
-            </Link></a></li>
-            <li className="center bg-black"><a><button
+          <FaUserAlt className="mr-3 userProfile" />
+        )}
+
+        <button
           className="text-xl ml-3"
           onClick={() => dispatch(toggleDarkMode())}
         >
-          {mode ? <FaToggleOn/> : <FaToggleOff/>}
-        </button></a></li>
-        </ul>
-      </li>
-     
-    </ul>
-        )}
-
-        
-      </ul>
+          {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>}
+        </button>
+      </div>
       <button className="nav-btn" onClick={showNavbar}>
         <FaBars />
       </button>
