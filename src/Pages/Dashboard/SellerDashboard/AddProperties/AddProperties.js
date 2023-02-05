@@ -54,6 +54,7 @@ const AddProperties = () => {
         const property = {
             seller_name: user?.displayName,
             seller_email: user?.email,
+            seller_img: user?.photoURL,
             img1: imageUrl1,
             img2: imageUrl2,
             img3: imageUrl3,
