@@ -36,18 +36,15 @@ import { toast } from 'react-hot-toast';
 
 const SingleApartment = () => {
   const [owner, setOwner] = useState([])
- 
+
   const { user } = useContext(AuthContext);
   const { address, bathrooms, bedrooms, category,
-    city, contact, country, description, img1,seller_img,seller_name,seller_email,
+    city, contact, country, description, img1, seller_img, seller_name, seller_email,
     img2, img3, price, sqft, status, year, zip, date,
     _id } = useLoaderData();
 
   const [added, setAdded] = useState(false);
-
-  // const handleClick = () => {
-    
-  // };
+  
 
   const handleWishList = id => {
     setAdded(true);
@@ -55,12 +52,16 @@ const SingleApartment = () => {
       userName: user?.displayName,
       email: user?.email,
       propertyId: id,
+      seller_name,
       address,
       img1,
+      img2,
       category,
       country,
       price,
-      added
+      description,
+      added,
+      date
     };
 
     console.log(wishData);
