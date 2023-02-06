@@ -14,8 +14,23 @@ import PropertyDetails from './PropertyDetails';
 
 
 const AllProperty = () => {
-  // const [category, setCategory] = useState([]);
-  const [search, setSearch] = useState([]);
+  const [Luxury, setLuxury] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/properties/property/Luxury')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setLuxury(data);
+      })
+  }, []);
+  // const searchItem = properties.filter((item) => {
+
+  const luxuryData = Luxury.find((item) => {
+    console.log(item.category);
+    return item.category;
+  })
+
 
 
 
@@ -43,16 +58,16 @@ const AllProperty = () => {
 
 
 
-  const searchItem = properties.filter((item) => {
-    if (search === "") {
-      console.log(item.category
-      );
-      return item.category;
-    }
-    // else if (item.category.toLowerCase().includes(search.toLocaleLowerCase())) {
-    //   return item.category
-    // }
-  });
+  // const searchItem = properties.filter((item) => {
+  //   if (search === "") {
+  //     console.log(item.category
+  //     );
+  //     return item.category;
+  //   }
+  // else if (item.category.toLowerCase().includes(search.toLocaleLowerCase())) {
+  //   return item.category
+  // }
+  // });
 
   // console.log('searchedItem', searchItem)
 
@@ -93,12 +108,13 @@ const AllProperty = () => {
           </div>
           <form className='searchProperty'>
             <input className='' type="text" placeholder='Search Category'
-              onChange={event => setSearch(event.target.value)}
+            // onChange={event => setSearch(event.target.value)}
 
             />
 
 
             <select name="" id=""
+              // onClick={() => (luxuryData)}
             // onChange={handleCategoryChange}
             >
 
@@ -136,365 +152,12 @@ const AllProperty = () => {
 
 
 
-              {/* <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href="#"><FaFileImage></FaFileImage></a></li>
-                    <li><a href="#"><FaRegEye></FaRegEye></a></li>
-                    <li><a href="#"><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274] headlineSingleContent'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                  
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div> */}
 
 
 
-              {/* <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property4} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href=""><FaFileImage></FaFileImage></a></li>
-                    <li><a href=""><FaRegEye></FaRegEye></a></li>
-                    <li><a href=""><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div>
-              <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property2} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href=""><FaFileImage></FaFileImage></a></li>
-                    <li><a href=""><FaRegEye></FaRegEye></a></li>
-                    <li><a href=""><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div>
-              <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property3} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href=""><FaFileImage></FaFileImage></a></li>
-                    <li><a href=""><FaRegEye></FaRegEye></a></li>
-                    <li><a href=""><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div>
-              <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property4} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href=""><FaFileImage></FaFileImage></a></li>
-                    <li><a href=""><FaRegEye></FaRegEye></a></li>
-                    <li><a href=""><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div>
-              <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property5} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href=""><FaFileImage></FaFileImage></a></li>
-                    <li><a href=""><FaRegEye></FaRegEye></a></li>
-                    <li><a href=""><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div>
-              <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property6} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href=""><FaFileImage></FaFileImage></a></li>
-                    <li><a href=""><FaRegEye></FaRegEye></a></li>
-                    <li><a href=""><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div>
-              <div className='propertyCard '>
-                <div className='propertyCardImgIcons'>
-                  <img src={property9} alt="" />
-                  <ul className="propertyIcons">
-                    <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
-                    <li><a href="#"><FaHeart></FaHeart></a></li>
-                    <li><a href=""><FaFileImage></FaFileImage></a></li>
-                    <li><a href=""><FaRegEye></FaRegEye></a></li>
-                    <li><a href=""><FaCarSide></FaCarSide></a></li>
-                  </ul>
-                </div>
-                <div className="propertyPrice px-5 ">
-                  <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$25,35,559.00</span>
-                </div>
-                <div className='peroperyCardContent mt-5'>
-                  <div className='singleContent'>
-                    <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
-                    <span>5.0 </span>
-                    <span>(30 Reviews)</span>
-                  </div>
-                  <button className='bg-[#004274] text-white px-3 rounded py-1'>Residentails</button>
-                </div>
-                <h2 className='my-3 text-xl font-bold text-[#004274]'>Ready Resort For Sell </h2>
-                <div className='propertySpace'>
-                  <span><FaWarehouse></FaWarehouse></span>
-                  <span>03</span>
-                  <span><FaBed></FaBed></span>
-                  <span>03</span>
-                  <span><FaBorderNone></FaBorderNone></span>
-                  <span>600 Sq Ft </span>
-                  <span><FaCarSide></FaCarSide></span>
-                        <span>03</span>
-                </div>
-                <div className='reviews mt-5'>
-                  <div className='flex'>
-                    <img src={ibrahim} alt="" />
-                    <span className='mt-5'>Ibrahim Sikder</span>
-                  </div>
-                  <div className='mt-5 viewDetails'>
-                    <Link to='/singleapartment'><span >View Details </span></Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
-                  </div>
-                </div>
-              </div> */}
 
-            </div>
-            <div>
+
+
 
             </div>
           </div>
