@@ -33,7 +33,7 @@ const SignUp = () => {
         //upload image into imgbb
         const formData = new FormData();
         formData.append('image', image);
-        const url = `https://api.imgbb.com/1/upload?key=87c47e4a9562b277d4d4cdd9c60b2681`;
+        const url = `https://api.imgbb.com/1/upload?key=5fe8f21565e313f421a85537d88c8f49`;
         fetch(url, {
             method: 'POST',
             body: formData
@@ -45,10 +45,10 @@ const SignUp = () => {
                     name: name,
                     email: email,
                     image: data.data.display_url,
-                    user: user
+                    role: user
                 }
                 //storedata into mongodb
-                fetch('http://localhost:5000/users', {
+                fetch('https://havenly-server1.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -61,7 +61,7 @@ const SignUp = () => {
                         setCretedUserEmail(email);
                         //accessToken
                         // getuserToken(email)
-                        toast.success('user added successfully')
+                        // toast.success('user added successfully')
                     })
 
                 //create user
@@ -88,7 +88,7 @@ const SignUp = () => {
 
         // const getuserToken = email => {
         //     //getUser token
-        //     fetch(`http://localhost:5000/jwt?email=${email}`)
+        //     fetch(`https://havenly-server1.vercel.app/jwt?email=${email}`)
         //         .then(res => res.json())
         //         .then(data => {
         //             if (data.accessToken) {
@@ -125,9 +125,9 @@ const SignUp = () => {
     return (
         <div className='grid border grid-cols-1 sm:grid-cols-2  w-full '>
             <div>
-                <img src={LoginImage} className="w-full h-full object-cover" alt="" />
+                <img src='https://i.postimg.cc/Ghn6D5Jh/photo-1568605114967-8130f3a36994.jpg' className="w-full h-full object-cover" alt="" />
             </div>
-            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900'>
+            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900  mt-24'>
                 <div className='mb-8 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
                     <p className='text-sm  text-gray-400'>
@@ -156,8 +156,8 @@ const SignUp = () => {
                     <div>
 
                         <select name="user" id="" className='my-2 text-xl font-semibold'>
-                            <option value="Seller">Seller</option>
-                            <option value="Bayer">Bayer</option>
+                            <option value="seller">Seller</option>
+                            <option value="buyer">Buyer</option>
                         </select>
 
 

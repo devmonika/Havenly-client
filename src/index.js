@@ -7,7 +7,7 @@ import AuthProvider from './contexts/AuthProvider';
 import { Provider } from 'react-redux';
 import { Toaster } from 'react-hot-toast'
 import { store } from './app/store';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 

@@ -6,8 +6,23 @@ import SignUp from "../../Pages/Login/SignUp/SignUp";
 import Contact from "../../Pages/Contact/Contact";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
+import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AboutDetails from "../../Pages/About/AboutDetails";
+import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/AddProperties";
+import Profile from "../../Pages/Dashboard/Profile/Profile";
+import AllProperty from "../../Pages/Porperty/AllProperty";
+import SingleApartment from "../../Pages/Porperty/DetialsProperty/SingleApartment";
+import MyProperties from "../../Pages/Dashboard/SellerDashboard/MyProperties/MyProperties";
+import WishList from "../../Pages/Dashboard/BuyerDashboard/WishList/WishList";
+
+
+
+
 
 
 export const router = createBrowserRouter([
@@ -35,22 +50,70 @@ export const router = createBrowserRouter([
         path: "/reviews",
         element: <Reviews></Reviews>
       },
+      {
+        path: "/about",
+        element: <AboutDetails></AboutDetails>
+      },
+      {
+        path: '/apartments',
+        element: <AllProperty></AllProperty>
+
+      },
+      {
+        path: '/singleapartment/:id',
+        element: <SingleApartment></SingleApartment>,
+        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
+      },
     ],
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
       },
-    ],
+      {
+        path: "/dashboard/allsellers",
+        element: <AllSeller></AllSeller>
+      },
+      {
+        path: "/dashboard/allbuyers",
+        element: <AllBuyer></AllBuyer>
+      },
+      {
+        path: "/dashboard/reporteditems",
+        element: <ReportedItems></ReportedItems>
+      },
+      {
+        path: "/dashboard/addproperties",
+        element: <AddProperties></AddProperties>
+      },
+      {
+        path: "/dashboard/myproperties",
+        element: <MyProperties></MyProperties>
+      },
+      {
+        path: "/dashboard/wishlist",
+        element: <WishList></WishList>
+      },
+      {
+        path: "/dashboard/profile",
+        element: <Profile></Profile>,
+
+      },
+
+
+
+    ]
   },
-  {
-    path: "*",
-    element: <ErrorPage></ErrorPage>,
-  },
+
+
 ]);
 
 export default router;

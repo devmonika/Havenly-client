@@ -1,0 +1,283 @@
+/* .detailsProperty{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    
+}
+.detialsRight img{
+    grid-column-start:  span 2 / span 2;;
+}
+ */
+ /*
+ Swiper 
+ 
+ */
+
+ #app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper img{
+    width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-img img{
+    width: 100%;
+    height: 280px;
+}
+
+ .fullHeight{
+    width:100%;
+    object-fit: cover;
+    margin: auto;
+    height:100vh;
+ }
+ /* .image_Gallery{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+ } */
+.image_Gallery_left{
+    width: 60%;
+    height: auto;
+}
+.image_Gallery_left img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.image_Gallery_Right{
+    width:40%;
+    display: flex;
+}
+.image_Gallery_Right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detailsProperty{
+    display: flex;
+    width: 100%;
+    padding: 30px;
+}
+.detailsPropertyLeft{
+    width:65%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: auto;
+    padding: 30px;
+}
+.detialsPropertyRight{
+    width:30%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding:30px
+
+}
+.detailsIcons{
+    display: flex;
+
+}
+.detailsIcons div{
+    margin-right:30px;
+}
+.detailsIcons div span{
+    color:#206497;
+}
+.topDetialsProperty{
+    display: flex;
+    justify-content: space-between;
+}
+.priceIcons{
+    display: flex;
+
+}
+.priceIcons span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    width: 35px;
+    height:35px;
+    line-height:35px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    border:1px solid #ddd;
+    color: #004274;
+}
+
+.propertyHeadline{
+    position: relative;
+    margin-bottom: 30px;
+}
+.propertyHeadline::before{
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 2px;
+    background-color: #004274;
+    left: 0;
+    top:45px;
+
+
+}
+
+table td{
+    border:1px solid #ddd;
+    padding: 30px;
+    margin:5px;
+    border-spacing: 1em 1em;
+    text-align: center;
+    color: #004274;
+    font-weight: bold;
+}
+table tr{
+    margin-bottom:10px;
+    border-spacing: 2 1em;
+}
+
+table {
+    width: 800px;
+    margin: 50px auto;
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+    border-collapse: separate;
+    border-spacing: 0 7px;
+   
+  }
+  .anemities div span{
+    margin-right: 30px;
+    color:#004274
+  }
+  .anemities div span .icons{
+    display: inline;
+    color: #004274;
+  }
+ .jonDetails{
+    display: flex;
+    padding: 10px 20px;
+ }
+
+ .socialIcons{
+    display: flex;
+    
+ }
+.socialIcons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right:10px;
+    width: 30px;
+    height: 30px;
+    border:1px solid #ddd;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.latestListings{
+    display: flex;
+    margin-top:30px
+}
+.latestListings img{
+    margin-right: 30px;
+}
+
+.resortDetails{
+    display: inline;
+}
+
+
+
+
+
+@media only screen and (max-width:768px){
+
+    .detailsProperty{
+        display: block;
+    }
+    .image_Gallery{
+        display: block;
+        background:red;
+     }
+     .image_Gallery_left{
+        width: 100%;
+    }
+     .image_Gallery_left img{
+        width: 200% !important;
+       
+    }
+    .image_Gallery_Right{
+        width:100%;
+        display: block;
+    }
+    .detialsPropertyRight{
+        width:100%;
+        padding:30px
+    
+    }
+    .detailsPropertyLeft{
+        width:100%;
+    }
+    table {
+        width: 100%;
+        margin: 30px auto;
+        border-collapse: separate;
+        border-spacing: 0 7px;
+       
+      }
+      table td{
+        padding: 15px;
+        margin:5px;
+        border-spacing: 1em 1em;
+        text-align: center;
+        color: #004274;
+        font-weight: bold;
+    }
+}

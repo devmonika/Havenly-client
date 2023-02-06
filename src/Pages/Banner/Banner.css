@@ -1,8 +1,10 @@
 #app { height: 100% }
 html,
-body {
-  position: relative;
-  height: 100%;
+:root {
+	--mainColor: #224265;
+	--mainColorLight: #fff;
+	--secondaryColor: #DB8C23;
+	
 }
 
 body {
@@ -12,7 +14,14 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+  position: relative;
+  height: 100vh;
+  width:100%;
 }
+.banner{
+    position:relative;
+}
+
 
 .swiper {
   width: 100%;
@@ -45,26 +54,27 @@ body {
     content: '';
     width: 100%;
     height: 100%;
-    background:#00000073;
+    background:rgba(28, 125, 166, 0.6);
     left:0;
     bottom: 0;
     right: 0;
     z-index: 11;
 }
-.swiper-slide img {
-    display: block;
+  .swiper-slide img {
     width: 100%;
-    height: 100vh;
     object-fit: cover;
-    position: relative;
-    z-index: 1;
-  }
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+ 
 .slideContent{
     position: absolute;
     text-align: left;
+    margin-left:100px;
     width: 1000px;
     color:#fff;
-    z-index: 12;
+    z-index:99 !important;
     height: auto;
     top:50%;
     left:50%;
@@ -82,8 +92,24 @@ body {
         font-size: 18px;
         line-height: 28px;
     }
+    .slideContent button:first-child:hover{
+        background:var(--secondaryColor);
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+}
+    .slideContent button:last-child:hover{
+        background:var(--mainColor);
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+    }
 .swiper-button-next, .swiper-button-prev{
-    background:#224265;
+    background:var(--mainColor);
     color: white !important;
     font-size: 20px !important;
     width: 42px !important;
@@ -112,6 +138,16 @@ body {
     font-weight: bold !important;
     color: #fff !important;
 }
+
+/* .swiper-wrapper{
+    transform: translate3d(0px, 0px, 0px) !important;
+    transition-duration: 0ms;
+    -webkit-transform: translate3d(0px, 0px, 0px) !important;
+    -moz-transform: translate3d(0px, 0px, 0px) !important;
+    -ms-transform: translate3d(0px, 0px, 0px) !important;
+    -o-transform: translate3d(0px, 0px, 0px) !important;
+} */
+
 @media only screen and (max-width: 992px){
     .slideContent{
         width: 500px;
@@ -129,17 +165,18 @@ body {
         padding: 8px 18px ;
         margin-top: 0px;
     }
+    
+
 }
 
-@media only screen and (max-width: 756px){
+@media only screen and (max-width: 768px){
     .slideContent{
-        width: 350px;
-        
+        width: 400px;
+        margin: 0 auto;     
     }
     .slideContent h2{
-        font-size:21px;
+        font-size:18px;
         margin-bottom: 3px;
-        color: #09BE51;
         font-weight: bold;
     }
     .slideContent p{
@@ -158,8 +195,62 @@ body {
         padding: 5px 15px ;
         margin-top: 0px;
     }
-    .slideBtn{
-        margin-top: 8px;
+    .slideBtn {
+        margin-top: 18px;
+        text-align: left;
+    }
+
+}
+@media only screen and (max-width: 500px){
+    .slideContent{
+        width: 300px;
+        text-align: center;
+        margin: auto;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        background:var(--mainColor);
+        color: white !important;
+        font-size: 10px !important;
+        width: 25px !important;
+        height:25px !important;
+        padding: 5px;
+    }
+    .slideContent h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+    .slideContent p{
+        font-size: 15px ;
+        line-height: 17px;
+        text-align: center;
+        margin: 20px 0px;
+    }
+    .slideContent button{
+        padding: 3px 10px ;
+        font-size: 10px;
+    }
+    .slideBtn {
+        margin-top: 18px;
+        text-align: center;
+    }
+   
+
+}
+
+@media only screen and (max-width: 300px){
+    .slideContent {
+        width: 300px;
+        text-align: center;
+        margin: auto;
+    }
+    .slideContent p {
+        line-height: 20px;
+        text-align: center;
+        width: 207px;
+        margin: 20px auto;
+    }
+    .slideContent button {
+        font-size: 15px;
     }
 
 }

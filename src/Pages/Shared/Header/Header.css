@@ -3,14 +3,14 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Titillium Web", sans-serif;
-	/* overflow-x: hidden; */
+	
 }
 
 :root {
-	--mainColor: #FFFFFF;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #224265;
-	--textColor: #black;
+	--mainColor: #224265;
+	--mainColorLight: #fff;
+	--secondaryColor: #DB8C23;
+	
 }
 
 header {
@@ -19,9 +19,39 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	/* background-color: var(--mainColor);
-	color: var(--textColor); */
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	background:rgba(28, 125, 166, 0.4);
+	/* background:#1C82AD; */
+	color:var(--mainColorLight);
+	/* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	width: 100%;
+	z-index: 99;
+}
+.logo{
+	margin-left:-15px !important;
+}
+.darkIcon{
+	width:35px;
+}
+.dasboard{
+	font-size:18px
+}
+header nav a{
+	font-size: 18px;
+	font-weight: bold;
+}
+.sticky{
+	background-color: #03C988;
+	color:#fff;
+	height:60px;
+	transition: .3s;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
 }
 
 nav a {
@@ -32,6 +62,17 @@ nav a {
 
 nav a:hover {
 	color: var(--secondaryColor);
+}
+.logo{
+    margin-left: -3px;
+   
+}
+.logo a img {
+    width:100px;
+   
+}
+.logo a{
+    color: var(--mainColorLight) !important;
 }
 
 header .nav-btn {
@@ -51,6 +92,10 @@ nav {
 	display: flex;
 	align-items: center;
 }
+.userInfo p{
+    font-size: 16px;
+    font-weight: bold;
+}
 
 @media only screen and (max-width: 1024px) {
 	header .nav-btn {
@@ -60,7 +105,7 @@ nav {
 
 	header nav {
 		position: fixed;
-		top: 0;
+		top: -9px;
 		left: 0;
 		height: 100%;
 		width: 100%;
@@ -69,12 +114,31 @@ nav {
 		align-items: center;
 		justify-content: center;
 		gap: .5rem;
-		background-color:#28C667;
+		/* background-color:#224265; */
 		transition: 1s;
 		transform: translateY(-100vh);
-        color:#fff;
+		color:#fff;
+        font-size: 16px;
 		z-index: 10;
-	}
+		-webkit-transform: translateY(-100vh);
+		-moz-transform: translateY(-100vh);
+		-ms-transform: translateY(-100vh);
+		-o-transform: translateY(-100vh);
+		height:100vh;
+}
+header nav a{
+		text-align: left !important;
+		color:#fff;
+		font-size: 16px;
+		transition: 1s;
+		transform: translateY(50%);
+		color:#fff;
+		z-index: 10;
+		-webkit-transform: translateY(50%);
+		-moz-transform: translateY(50%);
+		-ms-transform: translateY(50%);
+		-o-transform: translateY(50%);
+}
 
 	header .responsive_nav {
 		transform: none;
@@ -84,9 +148,69 @@ nav {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
+        font-size: 25px;
 	}
 
 	nav a {
 		font-size: 1.5rem;
 	}
 }
+@media only screen and (max-width: 768px){
+	.showBtn{
+		margin-right: 0px;
+	}
+    .logo{
+        margin-left: 0px;
+    }
+	.darkIcon{
+		width:35px;
+	}
+	
+}
+@media only screen and (max-width: 500px){
+	.hiddenUser{
+		display:none;
+	}
+   
+	.logo h3{
+		font-size: 22px;
+	}
+	.logo img{
+		width: 50px;
+	}
+	.userInfo{
+		margin-right:0px;
+	}
+	.showBtn{
+		margin-right: -30px;
+	}
+	header nav {
+		/* top:-60px; */
+		height:100vh;
+	}
+	
+	
+}
+@media only screen and (max-width:300px){
+	header nav {
+		position: fixed;
+		top: -250px;
+		left: -52px;
+		
+}
+header .nav-btn {
+	margin-top: 9px;
+	font-size: 21px;	
+}
+nav .nav-close-btn {
+	top: 17rem;
+    right: 5.3rem;
+}
+.userProfile{
+	display: none;
+}
+
+
+
+}
+
