@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AllProperty.css';
 import propertys from '../../images/propery-bg.jpg';
 import { FaSistrix } from "react-icons/fa";
@@ -12,6 +12,23 @@ import Loading from '../Shared/Footer/Loading/Loading';
 const AllProperty = () => {
   const [category, setCategory] = useState('Residential');
   const [search, setSearch] = useState([]);
+  const [Luxury, setLuxury] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/properties/property/Luxury')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setLuxury(data);
+      })
+  }, []);
+  // const searchItem = properties.filter((item) => {
+
+  const luxuryData = Luxury.find((item) => {
+    console.log(item.category);
+    return item.category;
+  })
+
 
 
   const { data: properties = [], refetch, isLoading } = useQuery({
