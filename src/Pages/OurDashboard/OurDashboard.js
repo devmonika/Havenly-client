@@ -1,6 +1,6 @@
 import React from 'react';
 // import './OurDashBoard.css';
-import { FaHouseDamage, FaGripHorizontal, FaBookmark, FaUserAlt,FaScribd, FaSearch, FaStripeS} from "react-icons/fa";
+import { FaHouseDamage, FaGripHorizontal, FaChartLine, FaBookmark, FaHandHoldingUsd, FaUserAlt,FaScribd, FaSearch,FaUsers, FaStripeS} from "react-icons/fa";
 import dolar from '../../images/dolar2.jpg';
 import user from '../../images/user.png';
 import bar from '../../images/bar.jpg';
@@ -24,7 +24,7 @@ import {
     Cell,
   PieChart,
 } from 'recharts';
-
+import './OurDashBoard.css'
 
 
 
@@ -155,53 +155,45 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
                    </div> */}
                     <div className="nameWrap downWrap py-5 px-3 mb-5">
                         <div className="value">
-                          <div className="valueWrap">
+                          <div className="valueWrap firstCard">
                           <div className="leftValue">
-                          <div className=''>Value</div>
-                          <span className='text-black font-bold text-xl'>$50,000</span>
-                          <span className='bg-[#D1FAE5] p-1 rounded ml-3'>+4.4%</span>
+                          <div className='text-xl font-bold'>Total Sell </div>
+                          <span className=' font-bold text-2xl font-bold'>$50,000</span>
+                          <span className=' p-1 rounded ml-3'>+4.4%</span>
                          </div>
                          <div className="valueRight">
-                            <img src={dolar} alt="" />
+                            {/* <img src={dolar} alt="" /> */}
+                            <FaHandHoldingUsd className='text-5xl'/>
                          </div>
                           </div>
                         </div>
                         <div className="value">
-                          <div className="valueWrap">
+                          <div className="valueWrap secondCard">
                           <div className="leftValue">
-                          <div>Value</div>
-                          <span className='text-black font-bold text-xl'>$80,550</span>
-                          <span className='bg-[#D1FAE5] p-1 rounded ml-3'>+7.8%</span>
+                          <div className='text-xl font-bold'>Total orders</div>
+                          <span className=' font-bold text-2xl font-bold'>$80,550</span>
+                          <span className=' p-1 rounded ml-3'>+7.8%</span>
                          </div>
                          <div className="valueRight">
-                            <img src={user} alt="" />
+                            {/* <img src={user} alt="" /> */}
+                            <FaUsers className='text-5xl'/>
                          </div>
                           </div>
                         </div>
                         <div className="value">
-                          <div className="valueWrap">
+                          <div className="valueWrap thirdCard">
                           <div className="leftValue">
-                          <div>Value</div>
-                          <span className='text-black font-bold text-xl'>$65,000</span>
-                          <span className='bg-[#D1FAE5] p-1 rounded ml-3'>+5.9%</span>
+                          <div className='text-xl font-bold'>Visualy online</div>
+                          <span className=' font-bold text-2xl font-bold'>$65,000</span>
+                          <span className=' p-1 rounded ml-3'>+5.9%</span>
                          </div>
                          <div className="valueRight">
-                            <img src={bar} alt="" />
+                            {/* <img src={bar} alt="" /> */}
+                            <FaChartLine className='text-5xl'/>
                          </div>
                           </div>
                         </div>
-                        <div className="value">
-                          <div className="valueWrap">
-                          <div className="leftValue">
-                          <div>Value</div>
-                          <span className='text-black font-bold text-xl'>$99,000</span>
-                          <span className='bg-[#D1FAE5] p-1 rounded ml-3'>+3.4%</span>
-                         </div>
-                         <div className="valueRight">
-                            <img src={ticket} alt="" />
-                         </div>
-                          </div>
-                        </div>
+                      
                    </div>
                    <div className="chart">
                    
@@ -230,26 +222,26 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     <h2 className='text-xl centerText font-bold text-[#6D28D9]'>Appartments Rent Chart </h2>
                     </div>
                     <div className="pieChart">
-                    <PieChart width={400} height={400}>
-      <Pie
-        data={data01}
-        dataKey="value"
-        cx={200}
-        cy={200}
-        outerRadius={100}
-        fill="#8884d8"
-      />
-      <Pie
-        data={data02}
-        dataKey="value"
-        cx={200}
-        cy={200}
-        innerRadius={100}
-        outerRadius={120}
-        fill="#82ca9d"
-        label
-      />
-    </PieChart>
+              <PieChart width={400} height={400}>
+             <Pie
+              data={data01}
+              dataKey="value"
+              cx={200}
+              cy={200}
+              outerRadius={100}
+              fill="#8884d8"
+            />
+            <Pie
+              data={data02}
+              dataKey="value"
+              cx={200}
+              cy={200}
+              innerRadius={100}
+              outerRadius={120}
+              fill="#82ca9d"
+              label
+            />
+              </PieChart> 
     <h2 className='text-xl centerText center font-bold text-[#6D28D9]'>All Viewer Chart </h2>
                     </div>
                    </div>
