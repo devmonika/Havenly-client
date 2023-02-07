@@ -18,7 +18,7 @@ const ReportedItems = () => {
 
     return (
         <div className='grid md:grid-cols-2 gap-2  '>
-            
+
             {/* {
                 reports.map(report => <div
                     report={report} key={report._id}
@@ -34,7 +34,7 @@ const ReportedItems = () => {
                     report={report}
                     key={report._id}
                     className="card w-96 bg-base-100 shadow-xl mt-24 border border-green-500 " >
-                       
+
                     <div className="card-body ">
                         <div className=" justify-center">
                             {/* <button className="btn btn-square btn-sm">
@@ -42,6 +42,7 @@ const ReportedItems = () => {
                             </button> */}
                         </div>
                         <p className='text-xl'>{report.report}</p>
+                        <p></p>
                     </div>
                 </div>)
             }
