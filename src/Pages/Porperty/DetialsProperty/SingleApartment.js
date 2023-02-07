@@ -48,12 +48,12 @@ const SingleApartment = () => {
   const [added, setAdded] = useState(false);
 
 
-  useEffect(() => {
-    const storedState = localStorage.getItem('addedToWishlist');
-    if (storedState === 'true') {
-      setAdded(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedState = localStorage.getItem('addedToWishlist');
+  //   if (storedState === 'true') {
+  //     setAdded(true);
+  //   }
+  // }, []);
 
   const handleWishList = id => {
     localStorage.setItem('addedToWishlist', 'true');
@@ -93,7 +93,6 @@ const SingleApartment = () => {
         else {
           toast.error(data.message);
         }
-        setAdded(true);
       });
   }
 
