@@ -4,10 +4,10 @@ import home from "../../../src/assetes/home.png";
 // import loc1 from '../../../src/assetes/loc1.png'
 import loc2 from "../../../src/assetes/reduction.png";
 import men from "../../../src/assetes/support.png";
-
+import './About'
 const About = () => {
   return (
-    <div className="max-w-[1240px] mx-auto my-10 mt-5 lg:-mt-24">
+    <div className=" centerAbout max-w-[1240px] mx-auto my-10 mt-5 lg:mt-24 text-center">
       <h3 className="text-center text-2xl font-semibold mb-8 text-primary">
         About Us
       </h3>
@@ -16,9 +16,9 @@ const About = () => {
 
         {/* about right side*/}
         <div>
-          <div>
+          <div className="aboutContent">
             <div className="">
-              <h2 className="text-left text-5xl font-bold mb-8 leading-[60px]">
+              <h2 className="text-left sm:text-center text-5xl font-bold mb-8 leading-[60px]">
                 Dream Living Spaces
                 <br /> Setting New Build
               </h2>

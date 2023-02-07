@@ -4,7 +4,7 @@ import Iframe from "react-iframe";
 import { useSelector } from "react-redux";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { siteName } from "../../App";
-
+import './Contact.css'
 window.onbeforeunload = () => {
   for (const form of document.getElementsByTagName("form")) {
     form.reset();
@@ -33,7 +33,7 @@ const Contact = () => {
         }}
       >
         <div className="relative grid lg:grid-cols-2 sm:grid-cols-1 gap-4 items-center w-full h-full justify-center md:p-8 p-0">
-          <div className="text-white lg:ml-10 p-5">
+          <div className="text-white contactConent lg:ml-10 p-5">
             <span className="font-bold text-4xl">
               <span className="text-lime">Looking</span> For More?
             </span>
