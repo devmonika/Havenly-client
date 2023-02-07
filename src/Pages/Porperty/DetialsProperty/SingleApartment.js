@@ -28,11 +28,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { FaMapMarkerAlt, FaCalendarMinus, FaEye, FaInfinity, FaRegHeart, FaLongArrowAltRight, FaFacebook, FaLinkedinIn, FaInstagramSquare } from "react-icons/fa";
-import { HiCheck } from "react-icons/hi";
+import { HiCheck, HiOutlineAnnotation } from "react-icons/hi";
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
+import ReportedModal from '../ReportedModal';
 
 
 const SingleApartment = () => {
@@ -194,6 +195,13 @@ const SingleApartment = () => {
                 <td>${price}</td>
               </tr>
             </table>
+            <div>
+              <h2>Reported items</h2>
+              <label htmlFor="booking-modal">
+                <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
+              </label>
+
+            </div>
 
             {/* <div className="location mt-5">
               <h2 className='propertyHeadline text-2xl text-[#004274] '> Locations </h2>
@@ -205,6 +213,9 @@ const SingleApartment = () => {
                 <img src={tour} alt="" />
                 </div> */}
           </div>
+          <ReportedModal></ReportedModal>
+
+
         </div>
         <div className="detialsPropertyRight">
           <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
