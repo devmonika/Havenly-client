@@ -93,7 +93,7 @@ const SignUp = () => {
     }
 
     // save user function into database 
-    //extra try
+   
 
     const saveUser = (name, email, photoURL, role) => {
         const users = {
@@ -122,7 +122,7 @@ const SignUp = () => {
         signInWithGoogle()
             .then(result => {
 
-                //extra try
+              
                 const user = result.user;
                 setSignUpEmail(user?.email);
                 saveUser(user?.displayName, user?.email, user?.photoURL, 'buyer');

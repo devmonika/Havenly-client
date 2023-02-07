@@ -17,6 +17,8 @@ import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/A
 import Profile from "../../Pages/Dashboard/Profile/Profile";
 import AllProperty from "../../Pages/Porperty/AllProperty";
 import SingleApartment from "../../Pages/Porperty/DetialsProperty/SingleApartment";
+import MyProperties from "../../Pages/Dashboard/SellerDashboard/MyProperties/MyProperties";
+import WishList from "../../Pages/Dashboard/BuyerDashboard/WishList/WishList";
 
 
 
@@ -60,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path: '/singleapartment/:id',
         element: <SingleApartment></SingleApartment>,
-        loader: ({ params }) => fetch(` http://localhost:5000/properties/${params.id}`)
+        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
       },
       {
         path: "*",
@@ -91,6 +93,14 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/addproperties",
         element: <AddProperties></AddProperties>
+      },
+      {
+        path: "/dashboard/myproperties",
+        element: <MyProperties></MyProperties>
+      },
+      {
+        path: "/dashboard/wishlist",
+        element: <WishList></WishList>
       },
       {
         path: "/dashboard/profile",

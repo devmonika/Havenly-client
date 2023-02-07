@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -28,16 +28,62 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { FaMapMarkerAlt, FaCalendarMinus, FaEye, FaInfinity, FaRegHeart, FaLongArrowAltRight, FaFacebook, FaLinkedinIn, FaInstagramSquare } from "react-icons/fa";
+import { HiCheck, HiOutlineAnnotation } from "react-icons/hi";
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
+import ReportedModal from '../ReportedModal';
 
 
 const SingleApartment = () => {
+  const [owner, setOwner] = useState([])
+
+  const { user } = useContext(AuthContext);
   const { address, bathrooms, bedrooms, category,
-    city, contact, country, description, img1,
+    city, contact, country, description, img1, seller_img, seller_name, seller_email,
     img2, img3, price, sqft, status, year, zip, date,
     _id } = useLoaderData();
 
+  const [added, setAdded] = useState(false);
 
+  // const handleClick = () => {
+
+  // };
+
+  const handleWishList = id => {
+    setAdded(true);
+    const wishData = {
+      userName: user?.displayName,
+      email: user?.email,
+      propertyId: id,
+      address,
+      img1,
+      category,
+      country,
+      price,
+      added
+    };
+
+    console.log(wishData);
+
+    fetch("https://havenly-server-new.vercel.app/wishlist", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem('accessToken')}`
+      },
+      body: JSON.stringify(wishData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Added to wishlist");
+        }
+        else {
+          toast.error(data.message);
+        }
+      })
+  }
 
   return (
     <div>
@@ -99,7 +145,11 @@ const SingleApartment = () => {
               <h3 className='text-[#004274] text-3xl'>${price}</h3>
               <div className="priceIcons">
                 <span> <FaInfinity></FaInfinity> </span>
-                <span> <FaRegHeart></FaRegHeart> </span>
+                {added ? (
+                  <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
+                ) : (
+                  <button onClick={() => handleWishList(_id)}><span> <FaRegHeart></FaRegHeart> </span></button>
+                )}
               </div>
             </div>
           </div>
@@ -133,6 +183,13 @@ const SingleApartment = () => {
                 <td>${price}</td>
               </tr>
             </table>
+            <div>
+              <h2>Reported items</h2>
+              <label htmlFor="booking-modal">
+                <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
+              </label>
+
+            </div>
 
             {/* <div className="location mt-5">
               <h2 className='propertyHeadline text-2xl text-[#004274] '> Locations </h2>
@@ -144,14 +201,15 @@ const SingleApartment = () => {
                 <img src={tour} alt="" />
                 </div> */}
           </div>
+          <ReportedModal></ReportedModal>
         </div>
         <div className="detialsPropertyRight">
           <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
           <div className="">
             <div className="jonDetails">
-              <img className='mr-5' src={jon} alt="" />
+              <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
               <div className=''>
-                <h3 className='text-[#004274] text-2xl font-bold '>Jane Cooper </h3>
+                <h3 className='text-[#004274] text-2xl font-bold '>{seller_name} </h3>
                 <a href="" className='my-3 underline block'>Vew Website </a>
                 <div className='socialIcons'>
                   <a href=""> <FaFacebook></FaFacebook> </a>

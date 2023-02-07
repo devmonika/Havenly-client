@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header style={{
-      background: mode ? "#18191A" : "white",
+      background: mode ? "#2B2C30" : "white",
       color: mode ? "white" : "black",
     }}>
       <div>

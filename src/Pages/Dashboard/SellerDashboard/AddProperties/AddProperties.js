@@ -54,6 +54,7 @@ const AddProperties = () => {
         const property = {
             seller_name: user?.displayName,
             seller_email: user?.email,
+            seller_img: user?.photoURL,
             img1: imageUrl1,
             img2: imageUrl2,
             img3: imageUrl3,
@@ -119,7 +120,7 @@ const AddProperties = () => {
         }
     });
     return (
-        <div>
+        <div className='mt-20'>
             <div className="min-h-screen p-6 flex items-center justify-center">
                 <div className="container max-w-screen-lg mx-auto">
                     <div>
@@ -244,7 +245,7 @@ const AddProperties = () => {
                                                     })}
                                                 />
                                             </div>
-
+//i am
                                             <div className="md:col-span-2">
                                                 <label>Images3</label>
                                                 <input
