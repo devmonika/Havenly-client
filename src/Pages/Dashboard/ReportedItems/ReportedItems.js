@@ -42,7 +42,7 @@ const ReportedItems = () => {
                             </button> */}
                         </div>
                         <p className='text-xl'>{report.report}</p>
-                        <p></p>
+                        {/* <p></p> */}
                     </div>
                 </div>)
             }

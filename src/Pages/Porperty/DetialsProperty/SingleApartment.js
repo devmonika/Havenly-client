@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -32,6 +32,7 @@ import { HiCheck, HiOutlineAnnotation } from "react-icons/hi";
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { useQuery } from '@tanstack/react-query';
 import ReportedModal from '../ReportedModal';
 
 
@@ -46,21 +47,31 @@ const SingleApartment = () => {
 
   const [added, setAdded] = useState(false);
 
-  // const handleClick = () => {
 
-  // };
+  useEffect(() => {
+    const storedState = localStorage.getItem('addedToWishlist');
+    if (storedState === 'true') {
+      setAdded(true);
+    }
+  }, []);
 
   const handleWishList = id => {
+    localStorage.setItem('addedToWishlist', 'true');
     setAdded(true);
     const wishData = {
       userName: user?.displayName,
       email: user?.email,
       propertyId: id,
+      seller_name,
+      seller_img,
       address,
       img1,
+      img2,
       category,
       country,
       price,
+      description,
+      date,
       added
     };
 
@@ -82,7 +93,8 @@ const SingleApartment = () => {
         else {
           toast.error(data.message);
         }
-      })
+        setAdded(true);
+      });
   }
 
   return (
@@ -202,6 +214,8 @@ const SingleApartment = () => {
                 </div> */}
           </div>
           <ReportedModal></ReportedModal>
+
+
         </div>
         <div className="detialsPropertyRight">
           <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
@@ -210,11 +224,11 @@ const SingleApartment = () => {
               <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
               <div className=''>
                 <h3 className='text-[#004274] text-2xl font-bold '>{seller_name} </h3>
-                <a href="" className='my-3 underline block'>Vew Website </a>
+                <a href="#a" className='my-3 underline block'>Vew Website </a>
                 <div className='socialIcons'>
-                  <a href=""> <FaFacebook></FaFacebook> </a>
-                  <a href=""> <FaLinkedinIn></FaLinkedinIn> </a>
-                  <a href=""> <FaInstagramSquare></FaInstagramSquare> </a>
+                  <a href="#b"> <FaFacebook></FaFacebook> </a>
+                  <a href="#c"> <FaLinkedinIn></FaLinkedinIn> </a>
+                  <a href="#d"> <FaInstagramSquare></FaInstagramSquare> </a>
                 </div>
               </div>
             </div>
