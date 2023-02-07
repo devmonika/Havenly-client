@@ -1,0 +1,157 @@
+
+.leftSideBar{
+    background:#F3F4F6;
+    padding:20px 10px;
+}
+.leftSideBar div{
+    
+    width: 100%;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color:#6D28D9;
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.dashBoardBtn{
+    background: #6D28D9;
+    width: 100%;
+    color: #fff;
+    padding:10px 0px;
+    margin-top:200px;
+}
+.nameWrap{
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+
+}
+.projectName h2{
+    color:#6D28D9;
+    font-size: 25px;
+    font-weight: bold;
+}
+.iconsWrap span{
+    color:#6D28D9;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    line-height:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right:5px;
+}
+.iconsWrap span img {
+    max-width: 30px;
+    border-radius: 50%;
+}
+.downWrap{
+    background:#F3F4F6;
+}
+.valueWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    background:#FFFFFF;
+    width:310px;
+    padding:50px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius:16px;
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    -ms-border-radius:16px;
+    -o-border-radius:16px;
+    color:#fff;
+}
+.firstCard{
+    background: #FB9CAB;
+    color:#fff;
+    
+}
+.fourCard{
+background: #3398E8;
+ color:#fff;
+}
+.secondCard{
+ background: #3398E8;
+ color:#fff;
+}
+.thirdCard{
+    background:#39D1BB;
+    color:#fff;
+}
+.valueRight img{
+    width:50px;
+}
+.value{
+    display: flex;
+    margin-right:5px;
+}
+.chart{
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+}
+.pieChart{
+    margin-top:18px;
+}
+.centerText{
+    text-align:center;
+    margin-top:10px;
+}
+
+@media only screen and (max-width:768px){
+    .ourDashboard{
+        display: block;
+    }
+    .chart{
+        display: block;
+       
+    }
+    .value{
+        display: block;
+      
+    }
+
+    .downWrap{
+        display: block;
+        text-align: center;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    .valueWrap{
+        margin: 15px auto;
+        width: 100%;
+        text-align:left;
+    }
+    .chart{
+        text-align: center;
+    }
+    .pieChart {
+        text-align: center;
+        justify-content: center;
+        display: block;
+        margin-left:40px;
+        
+    }
+    .chart {
+        text-align: center;
+        justify-content: center;
+        display: grid;
+    }
+    .dashBoardBtn{
+        margin-top:
+        20px;
+    }
+}
