@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path: '/singleapartment/:id',
         element: <SingleApartment></SingleApartment>,
-        loader: ({ params }) => fetch(` http://localhost:5000/properties/${params.id}`)
+        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
       },
       {
         path: "*",

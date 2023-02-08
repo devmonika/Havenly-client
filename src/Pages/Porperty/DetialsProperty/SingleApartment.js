@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -28,44 +28,56 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { FaMapMarkerAlt, FaCalendarMinus, FaEye, FaInfinity, FaRegHeart, FaLongArrowAltRight, FaFacebook, FaLinkedinIn, FaInstagramSquare } from "react-icons/fa";
-import { HiCheck } from "react-icons/hi";
+import { HiCheck, HiOutlineAnnotation } from "react-icons/hi";
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { useQuery } from '@tanstack/react-query';
+import ReportedModal from '../ReportedModal';
 
 
 const SingleApartment = () => {
   const [owner, setOwner] = useState([])
- 
+
   const { user } = useContext(AuthContext);
   const { address, bathrooms, bedrooms, category,
-    city, contact, country, description, img1,seller_img,seller_name,seller_email,
+    city, contact, country, description, img1, seller_img, seller_name, seller_email,
     img2, img3, price, sqft, status, year, zip, date,
     _id } = useLoaderData();
 
   const [added, setAdded] = useState(false);
 
-  // const handleClick = () => {
-    
-  // };
+
+  // useEffect(() => {
+  //   const storedState = localStorage.getItem('addedToWishlist');
+  //   if (storedState === 'true') {
+  //     setAdded(true);
+  //   }
+  // }, []);
 
   const handleWishList = id => {
+    localStorage.setItem('addedToWishlist', 'true');
     setAdded(true);
     const wishData = {
       userName: user?.displayName,
       email: user?.email,
       propertyId: id,
+      seller_name,
+      seller_img,
       address,
       img1,
+      img2,
       category,
       country,
       price,
+      description,
+      date,
       added
     };
 
     console.log(wishData);
 
-    fetch("http://localhost:5000/wishlist", {
+    fetch("https://havenly-server-new.vercel.app/wishlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,7 +93,7 @@ const SingleApartment = () => {
         else {
           toast.error(data.message);
         }
-      })
+      });
   }
 
   return (
@@ -182,6 +194,13 @@ const SingleApartment = () => {
                 <td>${price}</td>
               </tr>
             </table>
+            <div>
+              <h2>Reported items</h2>
+              <label htmlFor="booking-modal">
+                <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
+              </label>
+
+            </div>
 
             {/* <div className="location mt-5">
               <h2 className='propertyHeadline text-2xl text-[#004274] '> Locations </h2>
@@ -193,6 +212,9 @@ const SingleApartment = () => {
                 <img src={tour} alt="" />
                 </div> */}
           </div>
+          <ReportedModal></ReportedModal>
+
+
         </div>
         <div className="detialsPropertyRight">
           <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
@@ -201,11 +223,11 @@ const SingleApartment = () => {
               <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
               <div className=''>
                 <h3 className='text-[#004274] text-2xl font-bold '>{seller_name} </h3>
-                <a href="" className='my-3 underline block'>Vew Website </a>
+                <a href="#a" className='my-3 underline block'>Vew Website </a>
                 <div className='socialIcons'>
-                  <a href=""> <FaFacebook></FaFacebook> </a>
-                  <a href=""> <FaLinkedinIn></FaLinkedinIn> </a>
-                  <a href=""> <FaInstagramSquare></FaInstagramSquare> </a>
+                  <a href="#b"> <FaFacebook></FaFacebook> </a>
+                  <a href="#c"> <FaLinkedinIn></FaLinkedinIn> </a>
+                  <a href="#d"> <FaInstagramSquare></FaInstagramSquare> </a>
                 </div>
               </div>
             </div>

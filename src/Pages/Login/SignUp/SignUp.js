@@ -10,6 +10,12 @@ import useToken from '../../../hooks/useToken';
 const SignUp = () => {
     const { createUser, updateUserProfile, verifyEmail, signInWithGoogle, } = useContext(AuthContext);
 
+    //extra try
+    const [signUpEmail, setSignUpEmail] = useState('');
+    console.log(signUpEmail);
+
+
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathName || '/';
@@ -47,7 +53,7 @@ const SignUp = () => {
                     image: data.data.display_url,
                     role: user
                 }
-                //storedata into mongodb
+                // storedata into mongodb
                 fetch('https://havenly-server1.vercel.app/users', {
                     method: 'POST',
                     headers: {
@@ -82,31 +88,51 @@ const SignUp = () => {
                     .catch(error => console.log(error))
 
 
-            })
-
-
-
-        // const getuserToken = email => {
-        //     //getUser token
-        //     fetch(`https://havenly-server1.vercel.app/jwt?email=${email}`)
-        //         .then(res => res.json())
-        //         .then(data => {
-        //             if (data.accessToken) {
-        //                 localStorage.setItem('accessToken', data.accessToken)
-        //                 navigate('/');
-        //             }
-        //         })
-        // }
-
-
-
+            });
 
     }
+
+    // save user function into database 
+   
+
+    const saveUser = (name, email, photoURL, role) => {
+        const users = {
+            name,
+            email,
+            photoURL,
+            role
+        };
+        fetch('http://localhost:5000/signup', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(users)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setSignUpEmail(email);
+            })
+            .catch(err => console.log(err));
+
+    };
+
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-                console.log(result.user);
+
+              
+                const user = result.user;
+                setSignUpEmail(user?.email);
+                saveUser(user?.displayName, user?.email, user?.photoURL, 'buyer');
+
+                toast.success('Congratulation. Sign Up complete.');
+
+                console.log(result.user.displayName, result.user.email, result.user.photoURL);
+
+
+
                 navigate(from, { replace: true });
 
             })
@@ -190,6 +216,8 @@ const SignUp = () => {
                     <div className=' mb-4'>
                         <button
                             onClick={handleGoogleSignIn}
+
+
                             aria-label='Log in with Google'
                             className='p-3 rounded-sm'
                         >

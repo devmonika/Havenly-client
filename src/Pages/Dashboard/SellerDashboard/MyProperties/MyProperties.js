@@ -6,7 +6,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider';
 const MyProperties = () => {
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/properties/myproperty?email=${user?.email}`;
+    const url = `https://havenly-server-new.vercel.app/properties/myproperty?email=${user?.email}`;
     const { data: properties = [], refetch } = useQuery({
         queryKey: ['properties'],
         queryFn: async () => {
@@ -19,7 +19,7 @@ const MyProperties = () => {
     console.log(properties);
 
     const handleDeleteProduct = property => {
-        fetch(`http://localhost:5000/property/${property._id}`, {
+        fetch(`https://havenly-server-new.vercel.app/property/${property._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
