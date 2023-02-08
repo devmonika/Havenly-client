@@ -5,15 +5,15 @@ import { MdEditCalendar } from "react-icons/md";
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
-    const[userInfo, setuserInfo] = useState([]);
+    const [userInfo, setuserInfo] = useState([]);
     console.log(userInfo)
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`https://havenly-server-new.vercel.app/user?email=${user?.email}`)
-        .then(res => res.json())
-        .then(data => setuserInfo(data[0]))
-    },[user?.email]);
-    return ( 
+            .then(res => res.json())
+            .then(data => setuserInfo(data[0]))
+    }, [user?.email]);
+    return (
         <div>
             <div className='border-t-indigo-500 border-4 mt-2 border-x-0 border-b-0 py-10 bg-white shadow-2xl'>
                 <div className=' flex justify-center items-center  mt-4'>
@@ -23,8 +23,8 @@ const Profile = () => {
                 </div>
                 <div className='text-center mt-2'>
                     <h5 className='my-2 text-3xl font-semibold text-primary uppercase mt-3'>{userInfo.name}</h5>
-                    
-                    <p className='my-2 leading-8'>responsible for building customer relationships <br/> and developing business with existing and prospective customers <span><MdEditCalendar></MdEditCalendar></span> </p>
+
+                    <p className='my-2 leading-8'>responsible for building customer relationships <br /> and developing business with existing and prospective customers <span><MdEditCalendar></MdEditCalendar></span> </p>
                     <h5 className='my-2'>{userInfo.email}</h5>
                     <h5>{user?.phoneNumber}</h5>
                 </div>
@@ -93,7 +93,7 @@ const Profile = () => {
                     </form>
                     <div className='md:col-span-5 text-center mt-2'>
                         <div>
-                            <input type="submit" value="submit" className='bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-bold py-2 px-6 rounded'/>
+                            <input type="submit" value="submit" className='bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-bold py-2 px-6 rounded' />
                         </div>
 
                     </div>
