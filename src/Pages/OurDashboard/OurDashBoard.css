@@ -104,9 +104,10 @@ background: #3398E8;
     display: flex;
     align-items: center;
     justify-content: center !important;
+    padding:50px 10px;
 }
-.pieChart{
-    margin-top:18px;
+.pieChart {
+    margin-top: -87px;
 }
 .centerText{
     text-align:center;
@@ -119,11 +120,17 @@ background: #3398E8;
     }
     .chart{
         display: block;
-       
+        padding:0px 100px;
+    }
+    .barChart{
+        padding:0px 50px;
     }
     .value{
         display: block;
       
+    }
+    .pieChart {
+        margin-top: -10px;
     }
 
     .downWrap{
@@ -137,9 +144,7 @@ background: #3398E8;
         width: 100%;
         text-align:left;
     }
-    .chart{
-        text-align: center;
-    }
+ 
     .pieChart {
         text-align: center;
         justify-content: center;
@@ -151,9 +156,19 @@ background: #3398E8;
         text-align: center;
         justify-content: center;
         display: grid;
+        place-items: center;
     }
     .dashBoardBtn{
         margin-top:
         20px;
+    }
+}
+@media only screen and (max-width:400px){
+    .chart{
+        display: block;
+        padding:0px 50px;
+    }
+    .barChart{
+        padding:0px 50px;
     }
 }

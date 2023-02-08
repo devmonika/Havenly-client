@@ -24,6 +24,7 @@ import {
     Cell,
   PieChart,
   BarChart,
+  ResponsiveContainer
 } from 'recharts';
 
 import './OurDashBoard.css'
@@ -128,7 +129,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
       <div>User</div>
       <div>Reviewer</div>
      </div>
-      <button className='dashBoardBtn'>Customize</button>
+      <button className='dashBoardBtn'>Setting</button>
     </div>
                 </div>
                 <div className="dashBoardRight  col-span-9">
@@ -200,25 +201,27 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
                    <div className="chart px-5">
                    
                     <div className="barChart">
+                    
                     <BarChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="pv" fill="#8884d8" />
-      <Bar dataKey="uv" fill="#82ca9d" />
-    </BarChart>
+                      width={500}
+                    height={300}
+                    data={data}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5
+                     }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <Tooltip />
+                      <Legend />
+                      <Bar dataKey="pv" fill="#8884d8" />
+                      <Bar dataKey="uv" fill="#82ca9d" />
+                    </BarChart>
+                 
     <h2 className='text-xl centerText font-bold text-[#6D28D9]'>Appartments Rent Chart </h2>
                     </div>
                     <div className="pieChart">
