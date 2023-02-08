@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header style={{
-      background: mode ? "#18191A" : "white",
+      background: mode ? "#2B2C30" : "white",
       color: mode ? "white" : "black",
     }}>
       <div>
@@ -94,7 +94,13 @@ const Header = () => {
           <>
             <img
               src={user.photoURL}
-              className="w-12 h-12  rounded-2xl"
+
+              style={{
+                width:"50px",
+                height:"50px",
+                borderRadius:"50%"
+              }}
+              // className="w-12 h-12  rounded-2xl"
               alt=""
             />
           </>

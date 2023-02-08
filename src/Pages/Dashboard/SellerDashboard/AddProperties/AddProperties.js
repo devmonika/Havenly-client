@@ -120,7 +120,7 @@ const AddProperties = () => {
         }
     });
     return (
-        <div>
+        <div className='mt-20'>
             <div className="min-h-screen p-6 flex items-center justify-center">
                 <div className="container max-w-screen-lg mx-auto">
                     <div>
@@ -245,7 +245,7 @@ const AddProperties = () => {
                                                     })}
                                                 />
                                             </div>
-
+//i am
                                             <div className="md:col-span-2">
                                                 <label>Images3</label>
                                                 <input
