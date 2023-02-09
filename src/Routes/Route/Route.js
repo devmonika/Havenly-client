@@ -19,6 +19,7 @@ import AllProperty from "../../Pages/Porperty/AllProperty";
 import SingleApartment from "../../Pages/Porperty/DetialsProperty/SingleApartment";
 import MyProperties from "../../Pages/Dashboard/SellerDashboard/MyProperties/MyProperties";
 import WishList from "../../Pages/Dashboard/BuyerDashboard/WishList/WishList";
+import BuyerReviews from "../../Pages/Dashboard/BuyerDashboard/BuyerReviews/BuyerReviews";
 
 
 
@@ -101,6 +102,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/wishlist",
         element: <WishList></WishList>
+      },
+      {
+        path: "/dashboard/myreviews",
+        element: <BuyerReviews></BuyerReviews>
       },
       {
         path: "/dashboard/profile",
