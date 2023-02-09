@@ -6,6 +6,10 @@ import { FaCheckCircle } from "react-icons/fa";
 const Profile = () => {
     const { user } = useContext(AuthContext);
     const [userInfo, setuserInfo] = useState([]);
+    const [users, setUser] = useState({
+      name: "",
+      image: ""
+    });
     console.log(userInfo)
 
     useEffect(() => {
@@ -13,6 +17,36 @@ const Profile = () => {
             .then(res => res.json())
             .then(data => setuserInfo(data[0]))
     }, [user?.email]);
+
+
+    const handleChange = e => {
+      setuserInfo({ ...userInfo, [e.target.name]: e.target.value });
+    };
+
+
+    const handleSubmit = async e => {
+      e.preventDefault();
+      try {
+        const res = await fetch(`https://havenly-server-new.vercel.app/user?email=${user?.email}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(userInfo)
+        });
+        console.log(await res.json());
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+
+
+
+
+
+
+
     return (
         <div>
 
