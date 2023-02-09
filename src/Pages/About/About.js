@@ -1,13 +1,12 @@
 import React from "react";
 import about from "../../../src/assetes/about.png";
 import home from "../../../src/assetes/home.png";
-// import loc1 from '../../../src/assetes/loc1.png'
 import loc2 from "../../../src/assetes/reduction.png";
 import men from "../../../src/assetes/support.png";
 
 const About = () => {
   return (
-    <div className="max-w-[1240px] mx-auto my-10 mt-5 lg:-mt-24">
+    <div className="max-w-[1240px] mx-auto my-10  lg:mt-24">
       <h3 className="text-center text-2xl font-semibold mb-8 text-primary">
         About Us
       </h3>
