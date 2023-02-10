@@ -1,9 +1,11 @@
 import { async } from '@firebase/util';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useContext, useEffect, useState } from 'react';
+import { ErrorIcon } from 'react-hot-toast';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
-const Checkout = ({ data, grandTotal }) => {
+const Checkout = ({data, grandTotal}) => {
     const {user} = useContext(AuthContext)
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('')
@@ -12,22 +14,30 @@ const Checkout = ({ data, grandTotal }) => {
     const [clientSecret, setClientSecret] = useState("");
     const stripe = useStripe();
     const elements = useElements();
-    const { category, seller_email, price, _id } = data;
+    // const data = useLoaderData()
+    const { category, seller_email, price, _id, city } = data;
     // console.log(user)
 
-    useEffect(() => {
-        // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                // authorization: `bearer ${localStorage.getItem('accessToken')}`
-            },
-            body: JSON.stringify({ price })
-        })
-            .then((res) => res.json())
-            .then((data) => setClientSecret(data.clientSecret));
-    }, [price]);
+    
+
+    try {
+        useEffect(() => {
+            // Create PaymentIntent as soon as the page loads
+            fetch("http://localhost:5000/create-payment-intent", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                    // authorization: `bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify({price})
+            })
+                .then((res) => res.json())
+                .then((data) => setClientSecret(data.clientSecret));
+        }, [price]);
+    } catch (error) {
+
+    }
+
 
 
     const handleSubmit = async (event) => {
@@ -62,7 +72,7 @@ const Checkout = ({ data, grandTotal }) => {
                     card: card,
                     billing_details: {
                         name: category,
-                        email: seller_email
+                        email: user?.email
 
                     },
                 },
@@ -82,7 +92,11 @@ const Checkout = ({ data, grandTotal }) => {
             // grandTotal,
             transactionId: paymentIntent.id,
             buyer_email: user?.email,
-            booking_id: _id
+            booking_id: _id,
+            category: category,
+            city: city,
+            date: new Date()
+
 
         }
         fetch('http://localhost:5000/payments',{
@@ -95,12 +109,13 @@ const Checkout = ({ data, grandTotal }) => {
         })
         .then(res => res.json())
         .then(data=>{
-            console.log('data',data)
+           
             if(data.insertedId){
+                console.log('data',data)
                 setSuccess('Congrats! your payment completed');
                 setTransactionId(paymentIntent.id)
             }
-        })
+        });
       }
 
       setProcessing(false)
