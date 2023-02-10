@@ -20,6 +20,12 @@ import AllProperty from "../../Pages/Porperty/AllProperty";
 import SingleApartment from "../../Pages/Porperty/DetialsProperty/SingleApartment";
 import MyProperties from "../../Pages/Dashboard/SellerDashboard/MyProperties/MyProperties";
 import WishList from "../../Pages/Dashboard/BuyerDashboard/WishList/WishList";
+import Payment from "../../Pages/Porperty/Payment/Payment";
+
+
+
+
+
 import BuyerReviews from "../../Pages/Dashboard/BuyerDashboard/BuyerReviews/BuyerReviews";
 
 export const router = createBrowserRouter([
@@ -59,6 +65,11 @@ export const router = createBrowserRouter([
       {
         path: '/singleapartment/:id',
         element: <SingleApartment></SingleApartment>,
+        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
+      },
+      {
+        path: '/payment/:id',
+        element: <Payment></Payment>,
         loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
       },
       {
