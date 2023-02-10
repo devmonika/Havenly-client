@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
-// import darkmood from '../../../images/light.png'
-// import darkmood2 from '../../../images/night.png'
+import darkmood from '../../../images/light.png'
+import darkmood2 from '../../../images/night.png'
 import {
   FaBars,
   FaTimes,
@@ -128,30 +128,34 @@ const Header = () => {
           </>
         ) : (
          
-          <ul className="menu menu-horizontal bg-base-100">
+          <ul className="menu menu-horizontal">
           <li tabIndex={0}>
             <span>
-            <FaUserAlt className="mr-3 userProfile" />
+            <FaUserAlt className="mr-3 userProfile text-secondary text-2xl" title="login"/>
             </span>
-            <ul className="bg-base-100">
-              <li><a>
+            <ul style={{
+      background: mode ? "#2B2C30" : "white",
+      color: mode ? "white" : "black",
+    }}>
+              <li>
               <Link to="/dashboard" className="mr-3 dasboard">
               Dashboard
             </Link>
-              </a></li>
-              <li><a>
+              </li>
+              <li>
               <Link to="/login" className="mr-3 dasboard">
               Login{" "}
             </Link>
-              </a></li>
-              <li><a>
+             </li>
+              <li>
               <button
           className="text-xl ml-3"
           onClick={() => dispatch(toggleDarkMode())}
         >
-          {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>}
+          {/* {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>} */}
+          {mode ? <MdDarkMode className='text-3xl'></MdDarkMode>  : <MdWbSunny  className='text-3xl'></MdWbSunny>}
         </button>
-              </a></li>
+             </li>
             </ul>
           </li>
       </ul>
