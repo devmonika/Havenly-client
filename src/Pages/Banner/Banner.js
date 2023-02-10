@@ -71,7 +71,7 @@ const Banner = () => {
                 <button className="bg-secondary px-8 py-3 mr-3">
                   Apartments
                 </button>
-                <button className="bg-primary px-8 py-3">Contact Us</button>
+                {/* <button className="bg-primary px-8 py-3">Contact Us</button> */}
               </div>
             </div>
           </SwiperSlide>
@@ -86,7 +86,7 @@ const Banner = () => {
                 <button className="bg-secondary px-8 py-3 mr-3">
                   Apartments
                 </button>
-                <button className="bg-primary px-8 py-3">Contact Us</button>
+                {/* <button className="bg-primary px-8 py-3">Contact Us</button> */}
               </div>
             </div>
           </SwiperSlide>
