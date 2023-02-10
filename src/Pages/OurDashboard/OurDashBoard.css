@@ -16,7 +16,8 @@
     font-weight: bold;
     margin-bottom: 5px;
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(117, 101, 101, 0.12) 0px 5px 15px;
+    
 }
 .dashBoardBtn{
     background: #6D28D9;
@@ -24,6 +25,7 @@
     color: #fff;
     padding:10px 0px;
     margin-top:200px;
+    
 }
 .nameWrap{
     display: flex;
@@ -102,9 +104,10 @@ background: #3398E8;
     display: flex;
     align-items: center;
     justify-content: center !important;
+    padding:50px 10px;
 }
-.pieChart{
-    margin-top:18px;
+.pieChart {
+    margin-top: -87px;
 }
 .centerText{
     text-align:center;
@@ -117,11 +120,17 @@ background: #3398E8;
     }
     .chart{
         display: block;
-       
+        padding:0px 100px;
+    }
+    .barChart{
+        padding:0px 50px;
     }
     .value{
         display: block;
       
+    }
+    .pieChart {
+        margin-top: -10px;
     }
 
     .downWrap{
@@ -135,9 +144,7 @@ background: #3398E8;
         width: 100%;
         text-align:left;
     }
-    .chart{
-        text-align: center;
-    }
+ 
     .pieChart {
         text-align: center;
         justify-content: center;
@@ -149,9 +156,19 @@ background: #3398E8;
         text-align: center;
         justify-content: center;
         display: grid;
+        place-items: center;
     }
     .dashBoardBtn{
         margin-top:
         20px;
+    }
+}
+@media only screen and (max-width:400px){
+    .chart{
+        display: block;
+        padding:0px 50px;
+    }
+    .barChart{
+        padding:0px 50px;
     }
 }
