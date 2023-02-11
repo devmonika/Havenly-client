@@ -15,7 +15,7 @@ const ReportedModal = () => {
         }
 
 
-        fetch('http://localhost:5000/report', {
+        fetch('https://havenly-server-seven.vercel.app/report', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

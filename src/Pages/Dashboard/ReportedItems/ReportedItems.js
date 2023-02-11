@@ -6,7 +6,7 @@ const ReportedItems = () => {
     const { data: reports = [], isLoading, refetch } = useQuery({
         queryKey: ['reports'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/report');
+            const res = await fetch('https://havenly-server-seven.vercel.app/report');
             const data = await res.json();
             return data;
         }

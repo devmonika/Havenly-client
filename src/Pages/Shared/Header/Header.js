@@ -11,7 +11,7 @@ import {
   FaUserAlt,
 } from "react-icons/fa";
 import "./Header.css";
-import logo from "../../../assetes/logo.png";
+import logo from "../../../assetes/logor.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../../../app/features/darkModeSlice";
@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <header style={{
-      background: mode ? "#2B2C30" : "white",
+      background: mode ? "#161C2D" : "white",
       color: mode ? "white" : "black",
     }}>
       <div>

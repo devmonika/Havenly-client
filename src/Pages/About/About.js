@@ -1,13 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import about from "../../../src/assetes/about.png";
 import home from "../../../src/assetes/home.png";
 import loc2 from "../../../src/assetes/reduction.png";
 import men from "../../../src/assetes/support.png";
 
 const About = () => {
+  const { mode } = useSelector((state) => state.darkMode);
   return (
+    
     <div className="max-w-[1240px] mx-auto my-10  lg:mt-24">
-      <h3 className="text-center text-2xl font-semibold mb-8 text-primary">
+      <h3 className="text-center text-2xl font-semibold mb-8"style={{
+      color: mode ? "#808183" : "#161C2D",
+    }}>
         About Us
       </h3>
       <div className="grid gap-10 grid-cols-1 lg:grid-cols-2 px-10 lg:px-0">

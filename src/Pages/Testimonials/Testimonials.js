@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Testimonials = () => {
+  const { mode } = useSelector((state) => state.darkMode);
   return (
     <div>
       <div className="text-center py-10 mb-10">
@@ -12,7 +14,7 @@ const Testimonials = () => {
         </h1>
         <div className="px-8 lg:px-0 text-gray-700 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto gap-8 group">
           <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
-            <div className="bg-white block rounded-lg shadow-lg h-full">
+            <div className="bg-[#16A34A] block rounded-lg shadow-lg h-full text-white" >
               <div className="relative overflow-hidden bg-no-repeat bg-cover">
                 <img
                   src="https://i.postimg.cc/C5bnSN0L/477973067.jpg"
@@ -28,7 +30,7 @@ const Testimonials = () => {
                   viewBox="0 0 1440 320"
                 >
                   <path
-                    fill="#fff"
+                    fill="#16A34A"
                     d="M0,96L48,128C96,160,192,224,288,240C384,256,480,224,576,213.3C672,203,768,213,864,202.7C960,192,1056,160,1152,128C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                   ></path>
                 </svg>
@@ -148,7 +150,7 @@ const Testimonials = () => {
             </div>
           </div>
           <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
-            <div className="bg-white block rounded-lg shadow-lg h-full">
+          <div className="bg-[#161C2D] block rounded-lg shadow-lg h-full" style={{ color:mode? "#808183" : "white"}}>
               <div className="relative overflow-hidden bg-no-repeat bg-cover">
                 <img
                   src="https://i.postimg.cc/636qZXCR/Professional-Headshot-Poses-Blog-Post-7.jpg"
@@ -164,7 +166,7 @@ const Testimonials = () => {
                   viewBox="0 0 1440 320"
                 >
                   <path
-                    fill="#fff"
+                    fill="#161C2D"
                     d="M0,96L48,128C96,160,192,224,288,240C384,256,480,224,576,213.3C672,203,768,213,864,202.7C960,192,1056,160,1152,128C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                   ></path>
                 </svg>
@@ -284,7 +286,7 @@ const Testimonials = () => {
             </div>
           </div>
           <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
-            <div className="bg-white block rounded-lg shadow-lg h-full">
+          <div className="bg-[#161C2D] block rounded-lg shadow-lg h-full" style={{ color:mode? "#808183" : "white"}}>
               <div className="relative overflow-hidden bg-no-repeat bg-cover">
                 <img
                   src="https://i.postimg.cc/R074GDvR/Adobe-Stock-94026210-1-e1492095156447.jpg"
@@ -300,7 +302,7 @@ const Testimonials = () => {
                   viewBox="0 0 1440 320"
                 >
                   <path
-                    fill="#fff"
+                    fill="#161C2D"
                     d="M0,96L48,128C96,160,192,224,288,240C384,256,480,224,576,213.3C672,203,768,213,864,202.7C960,192,1056,160,1152,128C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                   ></path>
                 </svg>

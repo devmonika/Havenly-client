@@ -28,7 +28,7 @@ const WishList = () => {
     return (
         <div className='mt-28'>
             <div>
-                <h3 className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-secondary to-pink-600 text-3xl my-8 text-center'>My Favorites: {wishlist.length}</h3>
+                <h3 className='font-extrabold  text-primary text-3xl my-8 text-center'>My Favorites</h3>
             </div>
             <section className="container mx-auto p-10 md:p-20 antialiased grid grid-cols-1">
                 {

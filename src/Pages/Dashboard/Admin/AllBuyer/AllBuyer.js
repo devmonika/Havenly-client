@@ -7,14 +7,14 @@ const AllBuyer = () => {
   const { data: buyers = [], refetch } = useQuery({
     queryKey: ["buyers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users/buyers");
+      const res = await fetch("https://havenly-server-seven.vercel.app/users/buyers");
       const data = await res.json();
       return data;
     },
   });
 
   const handleDeleteBuyer = (id, name) => {
-    fetch(`http://localhost:5000/buyers/${id}`, {
+    fetch(`https://havenly-server-seven.vercel.app/buyers/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,

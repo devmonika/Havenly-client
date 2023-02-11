@@ -5,7 +5,7 @@ const PopulerPlacesCard = ({ place }) => {
   const { city, propertyNumber, img } = place;
   return (
     <div className="">
-      <div className="lg:rounded-l-lg flex lg:flex-row flex-col items-center lg:gap-8 bg-primary transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:bg-secondary duration-150">
+      <div className="lg:rounded-l-lg flex lg:flex-row flex-col items-center lg:gap-8 bg-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:bg-primary duration-150">
         <Link to='#' className="w-full lg:w-60">
           <img
             className="object-cover h-36 lg:w-60 w-full lg:rounded-l-lg"
