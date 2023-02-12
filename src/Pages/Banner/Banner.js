@@ -4,15 +4,24 @@ import "./Banner.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
-import slide from "../../images/slide2.jpg";
-import slide2 from "../../images/slide1.jpg";
-import slider from "../../images/5.jpg";
-import slide3 from "../../images/slider3.jpg";
-import slide4 from "../../images/slider4.jpg";
+import { Pagination,Autoplay, Navigation } from "swiper";
+import slide from "../../images/banner.jpg";
+import slide2 from "../../images/banner2.jpg";
+import slider from "../../images/banner3.jpg";
+import slide3 from "../../images/banner4.jpg";
+import slide4 from "../../images/banner5.jpg";
+import slide5 from "../../images/banner6.jpg";
+import slide6 from "../../images/banner7.jpg";
 import whateShapp from "../../images/whatshap.jpg";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 const Banner = () => {
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
   return (
     <div className="banner">
       {/* <div className="liveChate"><a href="https://wa.me/01825445033"><img src={whateShapp} alt="" /></a></div> */}
@@ -21,16 +30,17 @@ const Banner = () => {
         <Swiper
           loop={true}
           autoplay={{
-            delay: 200,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           slidesPerView={1}
           pagination={{
             el: ".swiper-pagination",
           }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
+          
+        modules={[Autoplay, Pagination, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        className="mySwiper"
         >
           <SwiperSlide>
             <img src={slide} alt="" />
@@ -71,12 +81,42 @@ const Banner = () => {
                 <button className="bg-secondary px-8 py-3 mr-3">
                   Apartments
                 </button>
-                <button className="bg-primary px-8 py-3">Contact Us</button>
+                {/* <button className="bg-primary px-8 py-3">Contact Us</button> */}
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <img src={slide4} alt="" />
+            <div className="slideContent">
+              <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
+              <p className="text-xl ">
+                Where You can rent your prefer houses at budget friendly rate.
+              </p>
+              <div className="mt-5">
+                <button className="bg-secondary px-8 py-3 mr-3">
+                  Apartments
+                </button>
+                {/* <button className="bg-primary px-8 py-3">Contact Us</button> */}
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={slide5} alt="" />
+            <div className="slideContent">
+              <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
+              <p className="text-xl ">
+                Where You can rent your prefer houses at budget friendly rate.
+              </p>
+              <div className="mt-5">
+                <button className="bg-secondary px-8 py-3 mr-3">
+                  Apartments
+                </button>
+                <button className="bg-primary px-8 py-3">Contact Us</button>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={slide6} alt="" />
             <div className="slideContent">
               <h2 className="text-3xl font-bold mb-3 ">WELCOME TO HAVENLY!</h2>
               <p className="text-xl ">

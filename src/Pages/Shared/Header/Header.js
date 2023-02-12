@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../../../app/features/darkModeSlice";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import { MdWbSunny, MdDarkMode } from "react-icons/md";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
@@ -70,18 +71,12 @@ const Header = () => {
       <div>
         {user?.uid ? (
           <>
-            <Link to="/dashboard" className="mr-3 dasboard">
-              Dashboard
-            </Link>
-            <button onClick={handleLogOut} className="mr-3 font-bold dasboard">
-              Logout
-            </button>
+           
+            
           </>
         ) : (
           <>
-            <Link to="/login" className="mr-3 dasboard">
-              Login{" "}
-            </Link>
+           
           </>
         )}
 
@@ -92,28 +87,77 @@ const Header = () => {
         )} */}
         {user?.photoURL ? (
           <>
+           
+          <ul className="menu menu-horizontal">
+          <li tabIndex={0}>
+            <span>
             <img
               src={user.photoURL}
 
               style={{
-                width:"50px",
-                height:"50px",
+                width:"40px",
+                height:"40px",
                 borderRadius:"50%"
               }}
               // className="w-12 h-12  rounded-2xl"
               alt=""
             />
+            </span>
+            <ul className="bg-[#3398E8] text-white">
+              <li><a>
+              <Link to="/dashboard" className="mr-3 dasboard">
+              Dashboard
+            </Link>
+              </a></li>
+              <li><a>
+                 <button onClick={handleLogOut} className="mr-3 font-bold dasboard">
+              Logout
+            </button>
+              </a></li>
+              <li><a>
+              <button
+          className="text-xl ml-3"
+          onClick={() => dispatch(toggleDarkMode())}
+        >
+          {mode ? <MdDarkMode className='text-3xl'></MdDarkMode> : <MdWbSunny  className=' text-3xl'></MdWbSunny>}
+        </button>
+              </a></li>
+            </ul>
+          </li>
+      </ul>
           </>
         ) : (
-          <FaUserAlt className="mr-3 userProfile" />
-        )}
-
-        <button
+         
+          <ul className="menu menu-horizontal bg-base-100">
+          <li tabIndex={0}>
+            <span>
+            <FaUserAlt className="mr-3 userProfile" />
+            </span>
+            <ul className="bg-base-100">
+              <li><a>
+              <Link to="/dashboard" className="mr-3 dasboard">
+              Dashboard
+            </Link>
+              </a></li>
+              <li><a>
+              <Link to="/login" className="mr-3 dasboard">
+              Login{" "}
+            </Link>
+              </a></li>
+              <li><a>
+              <button
           className="text-xl ml-3"
           onClick={() => dispatch(toggleDarkMode())}
         >
           {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>}
         </button>
+              </a></li>
+            </ul>
+          </li>
+      </ul>
+        )}
+
+       
       </div>
       <button className="nav-btn" onClick={showNavbar}>
         <FaBars />
