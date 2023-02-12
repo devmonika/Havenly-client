@@ -102,7 +102,7 @@ const SignUp = () => {
             photoURL,
             role
         };
-        fetch('http://localhost:5000/signup', {
+        fetch('https://havenly-server-seven.vercel.app/signup', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

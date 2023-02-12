@@ -7,17 +7,6 @@ import latest from '../../../images/latest.jpg';
 import latest2 from '../../../images/latest2.jpg';
 import latest3 from '../../../images/latest3.jpg';
 import latest4 from '../../../images/latest4.jpg';
-import latest5 from '../../../images/latest5.jpg';
-import slide from '../../../images/1.jpg';
-import slide2 from '../../../images/2.jpg';
-import slide3 from '../../../images/3.jpg';
-import slide4 from '../../../images/4.jpg';
-import slide5 from '../../../images/5.jpg';
-import slide6 from '../../../images/6.jpg';
-import slide7 from '../../../images/7.jpg';
-import slide8 from '../../../images/8.jpg';
-import slide9 from '../../../images/9.jpg';
-import slide10 from '../../../images/10.jpg';
 import jon from '../../../images/jon.jpg';
 import tour from '../../../images/tour.jpg';
 import map from '../../../images/map.png';
@@ -40,10 +29,12 @@ const SingleApartment = () => {
   const [owner, setOwner] = useState([])
 
   const { user } = useContext(AuthContext);
+  const details = useLoaderData();
+
   const { address, bathrooms, bedrooms, category,
     city, contact, country, description, img1, seller_img, seller_name, seller_email,
     img2, img3, price, sqft, status, year, zip, date,
-    _id } = useLoaderData();
+    _id } = details;
 
   const [added, setAdded] = useState(false);
 
@@ -155,6 +146,8 @@ const SingleApartment = () => {
             <div className="detialsPrice">
               <h3 className='text-[#004274] text-3xl'>${price}</h3>
               <div className="priceIcons">
+                
+                <Link to={`/payment/${_id}`}><button className='btn btn-sm mx-2 btn-secondary'>Book Now</button></Link>
                 <span> <FaInfinity></FaInfinity> </span>
                 {added ? (
                   <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
