@@ -15,7 +15,7 @@ const AllProperty = () => {
   const [Luxury, setLuxury] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/properties/property/Luxury')
+    fetch('https://havenly-server-seven.vercel.app/properties/property/Luxury')
       .then(res => res.json())
       .then(data => {
         console.log(data);

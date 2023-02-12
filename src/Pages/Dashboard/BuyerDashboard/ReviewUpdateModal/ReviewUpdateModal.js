@@ -13,7 +13,7 @@ const ReviewUpdateModal = ({reviewItems,reload,setReload}) => {
           ratings,reviews
         } 
 
-        fetch(`http://localhost:5000/reviews/${_id}`,{
+        fetch(`https://havenly-server-seven.vercel.app/reviews/${_id}`,{
           method:"PATCH",
           headers:{
             'content-type':"application/json"

@@ -58,9 +58,10 @@ const AllSeller = () => {
 
     return (
         <div>
-            <h2 className='text-left text-3xl font-semibold pt-28 ml-10 text-secondary'>All Sellers</h2>
+            <p className='text-left text-3xl mt-40 font-semibold ml-10 text-secondary'>All Sellers</p>
             <div className="overflow-x-auto">
-                <table className="table w-full text-center">
+            
+                <table className="table w-full text-center bg-primary">
                     <thead>
                         <tr> 
                             <th>No</th>

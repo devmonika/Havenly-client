@@ -7,8 +7,8 @@ import image from "../../../assetes/contact_hero.jpg";
 const Footer = () => {
   return (
     <footer
-      className="text-white"
-      style={{ background: `url(${image})`, backgroundSize: "cover" }}
+      className="text-white bg-primary"
+      // style={{ background: `url(${image})`, backgroundSize: "cover" }}
     >
       <div className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-24  justify-evenly   gap-8 ">
         <div className="">

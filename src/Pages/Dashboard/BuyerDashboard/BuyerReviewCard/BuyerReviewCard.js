@@ -9,7 +9,7 @@ const BuyerReviewCard = ({reviewItems ,reload,setReload}) => {
   const handleDelete = (id) =>{
     const proceed = window.confirm("Are you sure")
     if(proceed){
-      fetch(`http://localhost:5000/reviews/${id}`,
+      fetch(`https://havenly-server-seven.vercel.app/reviews/${id}`,
       {method:'DELETE'})
       .then(res => res.json())
       .then(data => {

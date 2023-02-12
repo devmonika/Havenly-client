@@ -14,7 +14,7 @@ const BuyerReviews = () => {
     const {user} = useContext(AuthContext)
    
     useEffect(()=>{
-        fetch(`http://localhost:5000/review?email=${user?.email}`)
+        fetch(`https://havenly-server-seven.vercel.app/review?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setItems(data))
     },[user?.email,reload])
