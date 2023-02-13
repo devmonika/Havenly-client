@@ -27,6 +27,8 @@ import Payment from "../../Pages/Porperty/Payment/Payment";
 
 
 import BuyerReviews from "../../Pages/Dashboard/BuyerDashboard/BuyerReviews/BuyerReviews";
+import SellerAbout from "../../Pages/Porperty/DetialsProperty/SellerAbout";
+import PasswordSetting from "../../Pages/Dashboard/SettingsUser/PasswordSetting";
 
 export const router = createBrowserRouter([
   {
@@ -60,6 +62,11 @@ export const router = createBrowserRouter([
       {
         path: '/apartments',
         element: <AllProperty></AllProperty>
+
+      },
+      {
+        path: '/seller-about',
+        element: <SellerAbout></SellerAbout>
 
       },
       {
@@ -129,6 +136,11 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/profile",
         element: <Profile></Profile>,
+
+      },
+      {
+        path: "/dashboard/settings",
+        element: <PasswordSetting></PasswordSetting>,
 
       },
 
