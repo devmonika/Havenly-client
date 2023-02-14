@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { FaArrowRight, FaBed, FaBorderNone, FaCarSide, FaFileImage, FaHeart, FaMapMarkerAlt, FaRegEye, FaStar, FaWarehouse } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 import ibrahim from '../../images/ibrahim.png';
 import SingleApartment from './DetialsProperty/SingleApartment';
 
 const PropertyDetails = ({ property, searchItem }) => {
-
+    const {user} = useContext(AuthContext)
     const { address, bathrooms, bedrooms, category,
         city, contact, country, desdcription, img1,
         img2, img3, price, sqft, status, year, zip, date,
-        _id } = property;
+        seller_img, _id } = property;
     // console.log(property)
 
     return (
@@ -49,7 +51,7 @@ const PropertyDetails = ({ property, searchItem }) => {
             </div>
             <div className='reviews mt-5'>
                 <div className='flex'>
-                    <img src={ibrahim} alt="" />
+                    <img src={seller_img} alt="" className='w-[100px] h=[200px]' />
                     <span className='mt-5'>Ibrahim Sikder</span>
                 </div>
                 <div className='mt-5 viewDetails'>

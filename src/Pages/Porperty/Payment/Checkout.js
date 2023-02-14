@@ -16,18 +16,18 @@ const Checkout = ({data, grandTotal}) => {
     const elements = useElements();
     // const data = useLoaderData()
     const { category, seller_email, price, _id, city } = data;
-    // console.log(user)
+    console.log(user)
 
     
 
     try {
         useEffect(() => {
             // Create PaymentIntent as soon as the page loads
-            fetch("https://havenly-server-seven.vercel.app/create-payment-intent", {
+            fetch("http://localhost:5000/create-payment-intent", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
-                    // authorization: `bearer ${localStorage.getItem('accessToken')}`
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify({price})
             })
@@ -99,7 +99,7 @@ const Checkout = ({data, grandTotal}) => {
 
 
         }
-        fetch('https://havenly-server-seven.vercel.app/payments',{
+        fetch('http://localhost:5000/payments',{
             method: 'POST',
             headers:{
                 'content-type':'application/json',
