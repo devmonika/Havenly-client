@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast';
 
 
 
-const BuyerReviewCard = ({reviewItems ,reload,setReload}) => {
+const BuyerReviewCard = ({reviewItems ,reload,setReload, handleReviewEdit}) => {
     const { _id, reviewer, reviewerImage, reviews, ratings } = reviewItems;
    // Delete review
   const handleDelete = (id) =>{
@@ -20,7 +20,10 @@ const BuyerReviewCard = ({reviewItems ,reload,setReload}) => {
       })
     }
   }
-
+const handleEdit = id =>{
+  handleReviewEdit(id);
+  document.getElementById("review-update-modal").checked=true;
+}
     return (
         <div>
         <div className="container mt-20 flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-300 shadow-lg dark:shadow-[#949494] transform duration-500 hover:-translate-y-2 cursor-pointer group">
@@ -52,7 +55,7 @@ const BuyerReviewCard = ({reviewItems ,reload,setReload}) => {
             <p>{reviews}</p>
           </div>
           <div className="flex justify-end gap-3 mt-5">
-            <div>
+            {/* <div>
               <label
                 htmlFor="review-update-modal"
                 className="btn flex p-2.5 bg-primary mt-3 rounded hover:rounded-xl transition-all duration-200 text-white"
@@ -73,7 +76,8 @@ const BuyerReviewCard = ({reviewItems ,reload,setReload}) => {
                 </svg>
                 Edit
               </label>
-            </div>
+            </div> */}
+            <button onClick={()=>handleEdit(_id)}>edit</button>
             <div>
               <button onClick={() => handleDelete(_id)} className="btn p-2.5 bg-primary mt-3 rounded hover:rounded-xl transition-all duration-200 text-white">
                 Delete

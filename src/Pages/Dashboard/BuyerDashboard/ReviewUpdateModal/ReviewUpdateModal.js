@@ -1,8 +1,9 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
 
-const ReviewUpdateModal = ({reviewItems,reload,setReload}) => {
-    const {_id,ratings,reviews} = reviewItems
+const ReviewUpdateModal = ({reload,setReload,singleReview}) => {
+  
+    const {_id,ratings,reviews} = singleReview;
     const handleModalSubmit = (e) =>{
         e.preventDefault()
         const form = e.target
@@ -26,6 +27,7 @@ const ReviewUpdateModal = ({reviewItems,reload,setReload}) => {
                 toast.success('Review Updated Successfully');
                 form.reset();
                 setReload(reload + 1)
+                document.getElementById("review-update-modal").checked=false;
             }
         })
     }
@@ -75,7 +77,7 @@ const ReviewUpdateModal = ({reviewItems,reload,setReload}) => {
                 type="submit"
                 className="btn"
               >
-                Submit
+                Update
               </button>
             </div>
           </form>
