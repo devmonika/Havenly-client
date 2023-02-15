@@ -15,7 +15,7 @@ const PropertyDetails = ({ property, searchItem }) => {
     return (
         <div className='propertyCard '>
             <div className='propertyCardImgIcons'>
-                <img src={img1} alt="" />
+                <img className='h-[300px]' src={img1} alt="" />
                 <ul className="propertyIcons">
                     <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
                     <li><a href="#"><FaHeart></FaHeart></a></li>
