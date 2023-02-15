@@ -66,7 +66,7 @@ const AllProperty = () => {
   //   return <Loading></Loading>
   // }
 
-  console.log(category);
+  // console.log(category);
 
   return (
     <HelmetProvider>

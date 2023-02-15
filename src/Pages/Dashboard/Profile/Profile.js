@@ -7,6 +7,8 @@ import { FaCheckCircle } from "react-icons/fa";
 const Profile = () => {
     const { user } = useContext(AuthContext);
     const [userInfo, setuserInfo] = useState([]);
+    const [loading, setloading] = useState(false);
+    const [refetch, setrefetch] = useState(0);
     // console.log(userInfo)
     // const [users, setUser] = useState({
     //   name: "",
@@ -15,54 +17,64 @@ const Profile = () => {
     // console.log(userInfo)
 
     useEffect(() => {
-        fetch(`https://havenly-server-new.vercel.app/user?email=${user?.email}`)
+        fetch(`http://localhost:5000/user?email=${user?.email}`)
             .then(res => res.json())
-            .then(data => setuserInfo(data[0]))
-    }, [user?.email]);
+            .then(data => {
+              setuserInfo(data[0])
+              console.log("me")
+            })
+    }, [user?.email, refetch]);
 
     const handleUpdateAbout = (e) =>{
       e.preventDefault();
+      setloading(true)
       const form = e.target;
       const name = form.name.value;
       const about = form.about.value;
-      const user = {
-        name,about
-      } 
-      fetch('https://localhost:5000/users', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(result => {
-                        console.log(result);
-                        // setCretedUserEmail(email);
-                        //accessToken
-                        // getuserToken(email)
-                        alert('userinso added successfully')
-                    })
+      const image = form.image.files[0];
+     
 
-      fetch(`https://localhost:5000/user/${user?._id}`,{
-        method:"PATCH",
-        headers:{
-          'content-type':"application/json"
-        },
-        body:JSON.stringify(user)
-      })
-      .then(res => res.json())
-      .then(data => {
-          if(data.modifiedCount > 0){
-              alert('UserInfo Updated Successfully');
-              form.reset();
-              // setReload(reload + 1)
-              // document.getElementById("review-update-modal").checked=false;
-          }
-      })
+      const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=5fe8f21565e313f421a85537d88c8f49`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => {
+     
+                const userimage = data.data.display_url
+                const person = {
+                  name,about,image:userimage
+                } 
+               
+              fetch(`http://localhost:5000/user/${user?.email}`,{
+                method:"PATCH",
+                headers:{
+                  'content-type':"application/json",
+                  authorization: `bearer ${localStorage.getItem("accessToken")}`,
+                },
+                body:JSON.stringify(person)
+              })
+              .then(res => res.json())
+              .then(data => {
+                  if(data.modifiedCount > 0){
+                      alert('UserInfo Updated Successfully');
+                      form.reset();
+                      setloading(false)
+                      setrefetch(refetch + 1)
+                      // document.getElementById("review-update-modal").checked=false;
+                  }
+                  console.log("house")
+                  
+              })
+
+               
+            });
   }
 
-
+console.log(user)
     return (
         <div>
 
@@ -89,7 +101,7 @@ const Profile = () => {
         </div>
         <div class="hidden md:block text-white">
           <h1 class="font-semibold">{userInfo.name}</h1>
-          <span>Travel, Nature and Music</span>
+          <span>{userInfo.about}</span>
           <p>Lorem ipsum dolor sit amet consectetur</p>
         </div>
 
@@ -143,7 +155,7 @@ const Profile = () => {
           </div>
           <div class="mt-6">
             <span class="block w-full rounded-md shadow-sm">
-              <button class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-secondary border border-transparent rounded-md hover:bg-primary focus:outline-none transition duration-150 ease-in-out mb-24">Update</button>
+              <button disabled={loading} class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-secondary border border-transparent rounded-md hover:bg-primary focus:outline-none transition duration-150 ease-in-out mb-24 ">Update</button>
             </span>
           </div>
         </form>
