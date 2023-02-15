@@ -127,22 +127,22 @@ const SingleApartment = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-        <img className='fullHeight' src={property} alt="" />
+        <img className='fullHeight' src={slide} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <img className='fullHeight' src={property2} alt="" />
+        <img className='fullHeight' src={slide2} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <img className='fullHeight' src={property3} alt="" />
+        <img className='fullHeight' src={slide3} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <img className='fullHeight' src={property4} alt="" />
+        <img className='fullHeight' src={slide5} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <img className='fullHeight' src={property4} alt="" />
+        <img className='fullHeight' src={slide6} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <img className='fullHeight' src={property4} alt="" />
+        <img className='fullHeight' src={slide7} alt="" />
         </SwiperSlide>
         <SwiperSlide>
         <img className='fullHeight' src={property4} alt="" />
@@ -221,7 +221,14 @@ const SingleApartment = () => {
                 {added ? (
                   <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
                 ) : (
+                 <>
                   <button onClick={() => handleWishList(_id)}><span> <FaRegHeart></FaRegHeart> </span></button>
+                  <span className="tooltip" data-tip="Reported Items">
+                  <label htmlFor="booking-modal">
+                <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
+              </label>
+                  </span>
+                 </>
                 )}
               </div>
             </div>
@@ -256,13 +263,13 @@ const SingleApartment = () => {
                 <td>${price}</td>
               </tr>
             </table>
-            <div>
+            {/* <div>
               <h2>Reported items</h2>
               <label htmlFor="booking-modal">
                 <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
               </label>
 
-            </div>
+            </div> */}
 
             {/* <div className="location mt-5">
               <h2 className='propertyHeadline text-2xl text-[#004274] '> Locations </h2>

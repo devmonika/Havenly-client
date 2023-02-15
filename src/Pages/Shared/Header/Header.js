@@ -6,6 +6,7 @@ import slider2 from '../../../images/3.jpg';
 import slider3 from '../../../images/4.jpg';
 import slider4 from '../../../images/5.jpg';
 import slider5 from '../../../images/7.jpg';
+import login from '../../../images/login6.png';
 import { Link } from 'react-router-dom';
 import {
   FaBars,
@@ -111,7 +112,8 @@ const showNavbar = () => {
           <ul className="menu menu-horizontal">
       <li tabIndex={0}>
       <div className='mr-[110px] user'>
-        <FaUserAlt className="mr-3 userProfile text-secondary text-2xl" title="login"/>
+        {/* <FaUserAlt className="mr-3 userProfile text-secondary text-2xl" title="login"/> */}
+        <img className="mr-3 userProfile text-secondary text-2xl w-[35px] rounded-full" src={login} alt="" />
         </div>
         <ul className="p-2 bg-black text-white">
         <li>
@@ -119,16 +121,16 @@ const showNavbar = () => {
               Login{" "}
             </Link>
              </li>
-             <li><a>
+             <li>
               <button
-          className="text-xl ml-3"
+          className="text-xl"
           onClick={() => dispatch(toggleDarkMode())}
         >
           {/* {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>} */}
           {mode ? <MdDarkMode className='text-3xl'></MdDarkMode>  : <MdWbSunny  className='text-3xl'></MdWbSunny>}
         </button>
              
-              </a></li>
+             </li>
         </ul>
       </li>
     </ul>

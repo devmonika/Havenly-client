@@ -248,16 +248,25 @@ nav ul li a{
 	.menu-horizontal {
 		margin-right: -227px;
 	}
+	.user{
+		margin-right:-15px !important
+	}
 }
 
 @media only screen and (max-width:500px){
 	.menu-horizontal {
 		margin-right: -40px;
 	}
+	.user{
+		margin-right:-40px !important
+	}
 }
 
-@media only screen and (max-width:300px){
+@media only screen and (max-width:400px){
 	.menu-horizontal {
 		margin-right: -10px;
+	}
+	.user{
+		margin-right:-36px !important
 	}
 }
