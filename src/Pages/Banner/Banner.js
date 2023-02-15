@@ -50,7 +50,7 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today!<br/> Discover a Wide Range of Rentals to Suit Your Needs
               </p>
               <div className="mt-5 slideBtn">
-              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+              <Link to="/apartments"><button className="bg-gradient-to-r from-secondary to-success px-8 py-3 mr-3">Apartments</button></Link>
                 {/* <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link> */}
               </div>
             </div>
@@ -65,7 +65,7 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today!<br/> Discover a Wide Range of Rentals to Suit Your Needs
               </p>
               <div className="mt-5 slideBtn">
-              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+              <Link to="/apartments"><button className="bg-gradient-to-r from-secondary to-success px-8 py-3 mr-3">Apartments</button></Link>
                 {/* <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link> */}
               </div>
             </div>
@@ -80,7 +80,7 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today!<br/> Discover a Wide Range of Rentals to Suit Your Needs
               </p>
               <div className="mt-5 slideBtn">
-              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+              <Link to="/apartments"><button className="bg-gradient-to-r from-secondary to-success px-8 py-3 mr-3">Apartments</button></Link>
                 {/* <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link> */}
               </div>
             </div>
@@ -95,7 +95,7 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today!<br/> Discover a Wide Range of Rentals to Suit Your Needs
               </p>
               <div className="mt-5 slideBtn">
-              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+              <Link to="/apartments"><button className="bg-gradient-to-r from-secondary to-success px-8 py-3 mr-3">Apartments</button></Link>
                 {/* <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link> */}
               </div>
             </div>
@@ -110,7 +110,7 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today!<br/> Discover a Wide Range of Rentals to Suit Your Needs
               </p>
               <div className="mt-5 slideBtn">
-              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+              <Link to="/apartments"><button className="bg-gradient-to-r from-secondary to-success px-8 py-3 mr-3">Apartments</button></Link>
                 {/* <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link> */}
               </div>
             </div>
@@ -125,7 +125,7 @@ const Banner = () => {
                 Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today!<br/> Discover a Wide Range of Rentals to Suit Your Needs
               </p>
               <div className="mt-5 slideBtn">
-              <Link to="/apartments"><button className="bg-secondary px-8 py-3 mr-3">Apartments</button></Link>
+              <Link to="/apartments"><button className="bg-gradient-to-r from-secondary to-success px-8 py-3 mr-3">Apartments</button></Link>
                 {/* <Link to="/contactus"><button className="bg-primary px-8 py-3">Contact Us</button></Link> */}
               </div>
             </div>
