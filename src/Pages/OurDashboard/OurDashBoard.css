@@ -30,7 +30,7 @@
 .nameWrap{
     display: flex;
     justify-content: space-between;
-    background: #FFFFFF;
+
 
 }
 .projectName h2{
@@ -57,9 +57,7 @@
     max-width: 30px;
     border-radius: 50%;
 }
-.downWrap{
-    background:#F3F4F6;
-}
+
 .valueWrap{
     display: flex;
     align-items: center;
