@@ -292,7 +292,7 @@ const SingleApartment = () => {
               <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
               <div className=''>
                 <h3 className='text-[#004274] text-2xl font-bold '>{seller_name} </h3>
-                <a href="#a" className='my-3 underline block'>Vew Website </a>
+                <Link to="/seller-about" className='my-3 underline block'>Vew Details </Link>
                 <div className='socialIcons'>
                   <a href="#b"> <FaFacebook></FaFacebook> </a>
                   <a href="#c"> <FaLinkedinIn></FaLinkedinIn> </a>

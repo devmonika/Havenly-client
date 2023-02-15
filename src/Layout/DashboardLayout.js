@@ -27,6 +27,7 @@ const DashboardLayout = () => {
                         <li><Link to='/dashboard/addproperties'className='shadow-md'>Add Property</Link></li>
                         <li><Link to='/dashboard/myproperties'className='shadow-md'>My Property</Link></li>
                         <li><Link to='/dashboard/profile'className='shadow-md'>Profile</Link></li>
+                        <li><Link to='/dashboard/settings'className='shadow-md'>Settings</Link></li>
                     </ul>
                 </div>
             </div>

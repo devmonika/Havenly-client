@@ -8,9 +8,9 @@ import ReviewUpdateModal from '../ReviewUpdateModal/ReviewUpdateModal';
 
 const BuyerReviews = () => {
   const [items,setItems] = useState([])
+  const [singleReview,setSingleReview] = useState({})
+  
     const [reload,setReload] = useState(0)
-    // const [updateReview,setUpdateReview] = useState('')
-    // const [updateReviewLoading,setUpdateReviewLoading] = useState(false)
     const {user} = useContext(AuthContext)
    
     useEffect(()=>{
@@ -20,17 +20,23 @@ const BuyerReviews = () => {
     },[user?.email,reload])
 
     
-
+    const handleReviewEdit = id =>{
+        console.log(id)
+        const findItem = items.find(itemsId => itemsId._id === id);
+        console.log(findItem)
+        setSingleReview(findItem);
+    }
     return (
         <div className='mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16 lg:grid-cols-2 p-5'>
             {
                 items.map((reviewItems) =>
                  <div>
-                     <BuyerReviewCard  key={reviewItems._id}  reviewItems={reviewItems} reload={reload} setReload={setReload}></BuyerReviewCard>
-                     <ReviewUpdateModal reviewItems={reviewItems} reload={reload} setReload={setReload}></ReviewUpdateModal>
+                     <BuyerReviewCard  key={reviewItems._id}  reviewItems={reviewItems} reload={reload} setReload={setReload} handleReviewEdit={handleReviewEdit}></BuyerReviewCard>
+                     
                  </div>
                 )
             }
+            <ReviewUpdateModal singleReview={singleReview}   reload={reload} setReload={setReload}></ReviewUpdateModal>
         </div>
     );
 };
