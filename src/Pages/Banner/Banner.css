@@ -72,13 +72,12 @@ body {
 .slideContent{
     position: absolute;
     text-align: center;
-    margin-left:100px;
     width: 1000px;
     color:#fff;
     z-index:99 !important;
     height: auto;
-    top:55%;
-    left:43%;
+    top:50%;
+    left:50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -172,13 +171,15 @@ body {
 
 @media only screen and (max-width: 768px){
     .slideContent{
-        width: 400px;
-        margin: 0 auto;     
+        width: 100%;
+        margin: auto;
+        text-align: center !important; 
     }
     .slideContent h2{
         font-size:18px;
-        margin-bottom: 3px;
+        margin-bottom: 0px;
         font-weight: bold;
+        margin-bottom:5px;
     }
     .slideContent p{
         font-size: 16px;
@@ -195,18 +196,21 @@ body {
     .slideContent button{
         padding: 5px 15px ;
         margin-top: 0px;
+        text-align: center;
     }
     .slideBtn {
         margin-top: 18px;
-        text-align: left;
+        text-align: center;
     }
 
 }
 @media only screen and (max-width: 500px){
     .slideContent{
-        width: 300px;
-        text-align: center;
-        margin: auto;
+        width: 100%;
+        padding:0px 20px;
+    }
+    .slideContent h2{
+        margin-bottom: -15px;
     }
     .swiper-button-next, .swiper-button-prev{
         background:var(--mainColor);
@@ -227,11 +231,11 @@ body {
         margin: 20px 0px;
     }
     .slideContent button{
-        padding: 3px 10px ;
-        font-size: 10px;
+        padding: 5px 15px ;
+        font-size: 15px;
     }
     .slideBtn {
-        margin-top: 18px;
+        margin-top: 15px;
         text-align: center;
     }
    
