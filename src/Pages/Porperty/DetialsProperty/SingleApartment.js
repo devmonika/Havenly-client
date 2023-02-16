@@ -40,7 +40,7 @@ const SingleApartment = () => {
 
   const [added, setAdded] = useState(false);
 
-  // implement redux to show right images
+  // get data with redux and show the recently uploaded image in the Right side
   const uploadDatas = useSelector((state) => (state.uploadData.uploadData));
   console.log(uploadDatas);
   const dispatch = useDispatch();
