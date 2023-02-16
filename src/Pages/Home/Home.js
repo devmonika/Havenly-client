@@ -7,6 +7,7 @@ import PopulerPlaces from "../PopulerPlacesCard/PopulerPlaces";
 import Cta from "../Cta/Cta";
 import HouseCards from "../HouseCards/HouseCards";
 import Testimonials from "../Testimonials/Testimonials";
+import RecentlyAdded from "../RecentlyAdded/RecentlyAdded";
 const Home = () => {
   return (
     <HelmetProvider>
@@ -14,10 +15,11 @@ const Home = () => {
         <title>Home - {siteName}</title>
       </Helmet>
       <div>
-        
+
         <Banner></Banner>
         <About></About>
         <HouseCards></HouseCards>
+        <RecentlyAdded></RecentlyAdded>
         <Cta></Cta>
         <PopulerPlaces></PopulerPlaces>
         <Testimonials></Testimonials>
