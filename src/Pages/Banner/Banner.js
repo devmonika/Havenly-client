@@ -10,7 +10,6 @@ import slider from "../../images/01.jpg";
 import slide4 from "../../images/05.jpg";
 import slide5 from "../../images/03.jpg";
 import slide6 from "../../images/07.jpg";
-import whateShapp from "../../images/whatshap.jpg";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 const Banner = () => {
