@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useContext } from 'react';
-import { FaArrowRight, FaBed, FaBorderNone, FaCarSide, FaFileImage, FaHeart, FaMapMarkerAlt, FaRegEye, FaStar, FaWarehouse } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaArrowRight, FaBed, FaBorderNone, FaCarSide, FaFileImage, FaHeart, FaMapMarkerAlt, FaRegEye, FaStar, FaWarehouse } from 'react-icons/fa'; import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-import ibrahim from '../../images/ibrahim.png';
-import SingleApartment from './DetialsProperty/SingleApartment';
 
-const PropertyDetails = ({ property, searchItem }) => {
-    const {user} = useContext(AuthContext)
+const AdvertiseDetails = ({ property }) => {
+
+    const { user } = useContext(AuthContext)
     const { address, bathrooms, bedrooms, category,
         city, contact, country, desdcription, img1,
         img2, img3, price, sqft, status, year, zip, date,
         seller_img, _id } = property;
     // console.log(property)
 
+
     return (
         <div className='propertyCard '>
             <div className='propertyCardImgIcons'>
-                <img className='h-[300px]' src={img1} alt="" />
+                <img src={img1} alt="" className='h-[220px] w-[100%]' />
                 <ul className="propertyIcons">
                     <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
                     <li><a href="#"><FaHeart></FaHeart></a></li>
@@ -25,10 +24,12 @@ const PropertyDetails = ({ property, searchItem }) => {
                     <li><a href="#"><FaRegEye></FaRegEye></a></li>
                     {/* <li><a href="#"><FaCarSide></FaCarSide></a></li> */}
                 </ul>
+
             </div>
             <div className="propertyPrice px-5 ">
-                <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>$ {price}</span>
+                <span className='bg-[#FF8C35] text-white text-center py-2 rounded font-bold px-3'>${price}</span>
             </div>
+
             <div className='peroperyCardContent mt-5'>
                 <div className='singleContent'>
                     <span><FaStar className='text-[#FF8C35]'></FaStar> </span>
@@ -46,7 +47,7 @@ const PropertyDetails = ({ property, searchItem }) => {
                 <span><FaBorderNone></FaBorderNone></span>
                 <span>{sqft} </span>
                 {/* <span><FaCarSide></FaCarSide></span>
-                <span>03</span> */}
+            <span>03</span> */}
 
             </div>
             <div className='reviews mt-5'>
@@ -64,4 +65,4 @@ const PropertyDetails = ({ property, searchItem }) => {
     );
 };
 
-export default PropertyDetails;
+export default AdvertiseDetails;

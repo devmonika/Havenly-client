@@ -31,6 +31,8 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
 import ReportedModal from '../ReportedModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUploadData } from '../../../app/features/uploadDataSlice';
 
 // Import Swiper styles
 import "swiper/css";
@@ -49,11 +51,20 @@ const SingleApartment = () => {
   const details = useLoaderData();
 
   const { address, bathrooms, bedrooms, category,
-    city, contact, country, description, img1, seller_img, seller_name, seller_email,
-    img2, img3, price, sqft, status, year, zip, date,
+    city, contact, country, description, img1, seller_img, seller_name, seller_email, img2, img3, price, sqft, status, year, zip, date,
     _id } = details;
 
   const [added, setAdded] = useState(false);
+
+  // get data with redux and show the recently uploaded image in the Right side
+  const uploadDatas = useSelector((state) => (state.uploadData.uploadData));
+  console.log(uploadDatas);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUploadData())
+  }, [])
+
+
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -61,12 +72,6 @@ const SingleApartment = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  // useEffect(() => {
-  //   const storedState = localStorage.getItem('addedToWishlist');
-  //   if (storedState === 'true') {
-  //     setAdded(true);
-  //   }
-  // }, []);
 
   const handleWishList = id => {
     localStorage.setItem('addedToWishlist', 'true');
@@ -215,7 +220,7 @@ const SingleApartment = () => {
             <div className="detialsPrice">
               <h3 className='text-[#004274] text-3xl'>${price}</h3>
               <div className="priceIcons">
-                
+
                 <Link to={`/payment/${_id}`}><button className='btn btn-sm mx-2 btn-secondary'>Book Now</button></Link>
                 <span> <FaInfinity></FaInfinity> </span>
                 {added ? (
@@ -271,6 +276,7 @@ const SingleApartment = () => {
 
             </div> */}
 
+
             {/* <div className="location mt-5">
               <h2 className='propertyHeadline text-2xl text-[#004274] '> Locations </h2>
               <img src={map} alt="map" />
@@ -285,6 +291,11 @@ const SingleApartment = () => {
 
 
         </div>
+
+
+
+
+        {/* Right side */}
         <div className="detialsPropertyRight">
           <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
           <div className="">
@@ -305,41 +316,54 @@ const SingleApartment = () => {
 
           <div className="listingHead">
             <h2 className='propertyHeadline text-2xl text-[#004274] '> Latest Listings </h2>
-            <div className="latestListings">
+            {
+              uploadDatas?.map(data => <div className="latestListings" data={data} key={data._id}>
+                {/* <img src={latest} alt="" />  */}
+                <img src={data.img1} alt="" className='w-[100px] h-[100px] rounded-md' />
+                <div>
+
+                  <h3 className='font-bold text-[#004274]'>Ready Resort for Sell</h3>
+                  <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> {data.city} </div>
+                  <div className='text-[#004274]'>${data.price}/ yr </div>
+                </div>
+              </div>)
+            }
+
+            {/* <div className="latestListings">
               <img src={latest} alt="" />
               <div>
                 <h3 className='font-bold text-[#004274]'>Ready Resort for Sell</h3>
                 <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> New Jersey </div>
                 <div className='text-[#004274]'>$25,235.00 / yr </div>
               </div>
-            </div>
-            <div className="latestListings">
+            </div> */}
+            {/* <div className="latestListings">
               <img src={latest2} alt="" />
               <div>
                 <h3 className='font-bold text-[#004274]'>Apartment For Sale</h3>
                 <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Home Town </div>
                 <div className='text-[#004274]'>$25,235.00 / yr </div>
               </div>
-            </div>
-            <div className="latestListings">
+            </div> */}
+            {/* <div className="latestListings">
               <img src={latest3} alt="" />
               <div>
                 <h3 className='font-bold text-[#004274]'>Fortune Condo Town</h3>
                 <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Zexton Twon </div>
                 <div className='text-[#004274]'>$25,235.00 / yr </div>
               </div>
-            </div>
-            <div className="latestListings">
+            </div> */}
+            {/* <div className="latestListings">
               <img src={latest4} alt="" />
               <div>
                 <h3 className='font-bold text-[#004274]'>Condo For Rent</h3>
                 <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span>Water Lilli  </div>
                 <div className='text-[#004274]'>$25,235.00 / yr </div>
               </div>
-            </div>
-            {/* <div className="latestListings">
-              <img src={latest5} alt="" />
             </div> */}
+            {/* <div className="latestListings">
+              {/* <img src={latest5} alt="" /> */}
+            {/* </div> */}
           </div>
         </div>
       </div>

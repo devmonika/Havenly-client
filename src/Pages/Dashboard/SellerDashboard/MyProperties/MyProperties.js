@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const MyProperties = () => {
@@ -61,7 +62,8 @@ const MyProperties = () => {
                                     </div>
                                 </div></td>
                                 <td>${property.price}</td>
-                                <td><button className='btn btn-xs btn-primary text-white'>Advertise</button></td>
+                                <td> <Link to={`/dashboard/PromotePayment/${property._id}`}><button className='btn btn-xs btn-primary'>Advertise</button></Link></td>
+                                {/* <Link to={`/payment/${_id}`}><button className='btn btn-xs btn-primary'>Advertise</button></Link> */}
                                 <td>
                                     <button className="btn btn-xs btn-outline btn-accent">{property.status}</button>
                                 </td>
