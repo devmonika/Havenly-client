@@ -25,10 +25,11 @@ import Payment from "../../Pages/Porperty/Payment/Payment";
 
 
 
-
 import BuyerReviews from "../../Pages/Dashboard/BuyerDashboard/BuyerReviews/BuyerReviews";
 import SellerAbout from "../../Pages/Porperty/DetialsProperty/SellerAbout";
 import PasswordSetting from "../../Pages/Dashboard/SettingsUser/PasswordSetting";
+import PromotePayment from "../../Pages/Dashboard/SellerDashboard/PaymentForPromote/PromotePayment";
+import Advertise from "../../Pages/Advertise/Advertise";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +63,11 @@ export const router = createBrowserRouter([
       {
         path: '/apartments',
         element: <AllProperty></AllProperty>
+
+      },
+      {
+        path: '/advertise',
+        element: <Advertise></Advertise>
 
       },
       {
@@ -124,6 +130,11 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/myproperties",
         element: <MyProperties></MyProperties>
+      },
+      {
+        path: "/dashboard/PromotePayment/:id",
+        element: <PromotePayment></PromotePayment>,
+        loader: ({ params }) => fetch(`http://localhost:5000/properties/${params.id}`)
       },
       {
         path: "/dashboard/wishlist",
