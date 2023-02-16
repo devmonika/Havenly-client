@@ -1,12 +1,12 @@
-import { async } from '@firebase/util';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useContext, useEffect, useState } from 'react';
-import { ErrorIcon } from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
-import { AuthContext } from '../../../contexts/AuthProvider';
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../../../contexts/AuthProvider';
 
-const Checkout = ({ data, grandTotal }) => {
-    const { user } = useContext(AuthContext)
+const PromoteCheckout = ({data}) => {
+    const {user} = useContext(AuthContext)
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('')
     const [processing, setProcessing] = useState(false)
@@ -17,8 +17,6 @@ const Checkout = ({ data, grandTotal }) => {
     // const data = useLoaderData()
     const { category, seller_email, price, _id, city } = data;
     // console.log(user)
-
-
 
     try {
         useEffect(() => {
@@ -36,8 +34,7 @@ const Checkout = ({ data, grandTotal }) => {
         }, [price]);
     } catch (error) {
 
-    }
-
+    } // end payementIntent
 
 
     const handleSubmit = async (event) => {
@@ -91,16 +88,15 @@ const Checkout = ({ data, grandTotal }) => {
                 price,
                 // grandTotal,
                 transactionId: paymentIntent.id,
-                buyer_email: user?.email,
-                seller_email:seller_email,
+                seller_email: seller_email,
                 booking_id: _id,
                 category: category,
                 city: city,
                 date: new Date()
 
-
             }
-            fetch('http://localhost:5000/payments', {
+
+            fetch('http://localhost:5000/promote/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -112,7 +108,7 @@ const Checkout = ({ data, grandTotal }) => {
                 .then(data => {
 
                     if (data.insertedId) {
-                        console.log('data', data)
+                        // console.log('data', data)
                         setSuccess('Congrats! your payment completed');
                         setTransactionId(paymentIntent.id)
                     }
@@ -146,7 +142,7 @@ const Checkout = ({ data, grandTotal }) => {
                 />
                 <button className='btn btn-sm mt-4 btn-primary'
                     type="submit" disabled={!stripe || !clientSecret || processing}>
-                    Place Order
+                    Pay
                 </button>
             </form>
             <p className='text-red-500'>{cardError}</p>
@@ -160,4 +156,4 @@ const Checkout = ({ data, grandTotal }) => {
     );
 };
 
-export default Checkout;
+export default PromoteCheckout;

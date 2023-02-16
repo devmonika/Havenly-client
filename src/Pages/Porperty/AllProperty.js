@@ -11,37 +11,14 @@ import Loading from "../Shared/Footer/Loading/Loading";
 import Search from "../../components/Search";
 
 const AllProperty = () => {
-  const [category, setCategory] = useState("Residential");
-  // const [search, setSearch] = useState([]);
-  // const [Luxury, setLuxury] = useState([]);
+  const [category, setCategory] = useState('Residential');
+  const [search, setSearch] = useState([]);
 
-  // const { query, searchLocation } = useGlobalContext();
 
-  // useEffect(() => {
-  //   fetch("https://havenly-server-seven.vercel.app/properties/property/Luxury")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setLuxury(data);
-  //     });
-  // }, []);
-  // const searchItem = properties.filter((item) => {
-
-  // const luxuryData = Luxury.find((item) => {
-  //   console.log(item.category);
-  //   return item.category;
-  // });
-
-  const {
-    data: properties = [],
-    refetch,
-    isLoading,
-  } = useQuery({
-    queryKey: ["property", category],
+  const { data: properties = [], refetch, isLoading } = useQuery({
+    queryKey: ['property', category],
     queryFn: async () => {
-      const res = await fetch(
-        `https://havenly-server-new.vercel.app/properties/property/${category}`
-      );
+      const res = await fetch(`http://localhost:5000/properties/property/${category}`);
       const data = await res.json();
       return data;
     },
@@ -68,12 +45,9 @@ const AllProperty = () => {
   const handleCategoryChange = (event) => {
     event.preventDefault();
     setCategory(event.target.value);
-    // refetch(`https://havenly-server-new.vercel.app/properties/property/${category}`);
+
     refetch();
   };
-  // if (isLoading) {
-  //   return <Loading></Loading>
-  // }
 
   // console.log(category);
 

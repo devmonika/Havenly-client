@@ -1,23 +1,19 @@
+// import React from 'react';
 import React, { useState } from 'react';
-import { useContext } from 'react';
 import { FaArrowRight, FaBed, FaBorderNone, FaCarSide, FaFileImage, FaHeart, FaMapMarkerAlt, FaRegEye, FaStar, FaWarehouse } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider';
 import ibrahim from '../../images/ibrahim.png';
-import SingleApartment from './DetialsProperty/SingleApartment';
 
-const PropertyDetails = ({ property, searchItem }) => {
-    const {user} = useContext(AuthContext)
+const SingleUploadApartment = ({ single }) => {
     const { address, bathrooms, bedrooms, category,
         city, contact, country, desdcription, img1,
         img2, img3, price, sqft, status, year, zip, date,
-        seller_img, _id } = property;
-    // console.log(property)
-
+        _id } = single;
+    console.log(single);
     return (
-        <div className='propertyCard '>
+        <div className='propertyCard rounded-xl'>
             <div className='propertyCardImgIcons'>
-                <img className='h-[300px]' src={img1} alt="" />
+                <img src={img1} alt="" className='rounded-lg' />
                 <ul className="propertyIcons">
                     <li><a href="#"><FaMapMarkerAlt></FaMapMarkerAlt></a></li>
                     <li><a href="#"><FaHeart></FaHeart></a></li>
@@ -45,18 +41,18 @@ const PropertyDetails = ({ property, searchItem }) => {
                 <span>{bedrooms}</span>
                 <span><FaBorderNone></FaBorderNone></span>
                 <span>{sqft} </span>
-                {/* <span><FaCarSide></FaCarSide></span>
-                <span>03</span> */}
+                <span><FaCarSide></FaCarSide></span>
+                <span>03</span>
 
             </div>
             <div className='reviews mt-5'>
                 <div className='flex'>
-                    <img src={seller_img} alt="" className='w-[100px] h=[200px]' />
+                    <img src={ibrahim} alt="" />
                     <span className='mt-5'>Ibrahim Sikder</span>
                 </div>
                 <div className='mt-5 viewDetails'>
-                    <Link to={`/singleapartment/${_id}`}> <span>View Details </span> </Link>
-                    <span className='mt-1'><FaArrowRight></FaArrowRight></span>
+                    {/* <Link to={`/singleapartment/${_id}`}> <span>View Details </span> </Link>
+                    <span className='mt-1'><FaArrowRight></FaArrowRight></span> */}
                 </div>
             </div>
 
@@ -64,4 +60,4 @@ const PropertyDetails = ({ property, searchItem }) => {
     );
 };
 
-export default PropertyDetails;
+export default SingleUploadApartment;

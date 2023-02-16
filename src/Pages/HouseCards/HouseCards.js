@@ -16,7 +16,7 @@ const HouseCards = () => {
 
 
     })
-    console.log(categories)
+    // console.log(categories)
 
 
 
@@ -49,7 +49,7 @@ const HouseCards = () => {
                     }
 
 
-                  
+
                 </div>
             </div>
             <div className="md:mt-12 mt-20 px-8 lg:px-0 flex justify-center">
