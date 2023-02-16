@@ -7,6 +7,7 @@ import PopulerPlaces from "../PopulerPlacesCard/PopulerPlaces";
 import Cta from "../Cta/Cta";
 import HouseCards from "../HouseCards/HouseCards";
 import Testimonials from "../Testimonials/Testimonials";
+import Advertise from "../Advertise/Advertise";
 const Home = () => {
   return (
     <HelmetProvider>
@@ -20,6 +21,7 @@ const Home = () => {
         <HouseCards></HouseCards>
         <Cta></Cta>
         <PopulerPlaces></PopulerPlaces>
+        <Advertise></Advertise>
         <Testimonials></Testimonials>
       </div>
     </HelmetProvider>

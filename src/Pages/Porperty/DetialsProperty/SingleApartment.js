@@ -32,8 +32,7 @@ const SingleApartment = () => {
   const details = useLoaderData();
 
   const { address, bathrooms, bedrooms, category,
-    city, contact, country, description, img1, seller_img, seller_name, seller_email,
-    img2, img3, price, sqft, status, year, zip, date,
+    city, contact, country, description, img1, seller_img, seller_name, seller_email, img2, img3, price, sqft, status, year, zip, date,
     _id } = details;
 
   const [added, setAdded] = useState(false);
