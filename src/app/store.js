@@ -3,7 +3,7 @@ import darkModeReducer from './features/darkModeSlice';
 
 import uploadDataReducer from './features/uploadDataSlice'
 
-
+//create reducer
 const reducer={
     darkMode: darkModeReducer,
     
