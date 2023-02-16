@@ -21,11 +21,6 @@ import SingleApartment from "../../Pages/Porperty/DetialsProperty/SingleApartmen
 import MyProperties from "../../Pages/Dashboard/SellerDashboard/MyProperties/MyProperties";
 import WishList from "../../Pages/Dashboard/BuyerDashboard/WishList/WishList";
 import Payment from "../../Pages/Porperty/Payment/Payment";
-
-
-
-
-
 import BuyerReviews from "../../Pages/Dashboard/BuyerDashboard/BuyerReviews/BuyerReviews";
 import SellerAbout from "../../Pages/Porperty/DetialsProperty/SellerAbout";
 import PasswordSetting from "../../Pages/Dashboard/SettingsUser/PasswordSetting";
@@ -60,24 +55,28 @@ export const router = createBrowserRouter([
         element: <AboutDetails></AboutDetails>,
       },
       {
-        path: '/apartments',
-        element: <AllProperty></AllProperty>
-
+        path: "/apartments",
+        element: <AllProperty></AllProperty>,
       },
       {
-        path: '/seller-about',
-        element: <SellerAbout></SellerAbout>
-
+        path: "/seller-about",
+        element: <SellerAbout></SellerAbout>,
       },
       {
-        path: '/singleapartment/:id',
+        path: "/singleapartment/:id",
         element: <SingleApartment></SingleApartment>,
-        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            ` https://havenly-server-new.vercel.app/properties/${params.id}`
+          ),
       },
       {
-        path: '/payment/:id',
+        path: "/payment/:id",
         element: <Payment></Payment>,
-        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            ` https://havenly-server-new.vercel.app/properties/${params.id}`
+          ),
       },
       {
         path: "*",
@@ -123,30 +122,25 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/myproperties",
-        element: <MyProperties></MyProperties>
+        element: <MyProperties></MyProperties>,
       },
       {
         path: "/dashboard/wishlist",
-        element: <WishList></WishList>
+        element: <WishList></WishList>,
       },
       {
         path: "/dashboard/myreviews",
-        element: <BuyerReviews></BuyerReviews>
+        element: <BuyerReviews></BuyerReviews>,
       },
       {
         path: "/dashboard/profile",
         element: <Profile></Profile>,
-
       },
       {
         path: "/dashboard/settings",
         element: <PasswordSetting></PasswordSetting>,
-
       },
-
-
-
-    ]
+    ],
   },
 
   {
