@@ -4,19 +4,19 @@ import "./Banner.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination,Autoplay, Navigation } from "swiper";
-import slider from '../../images/01.jpg';
-import slider2 from '../../images/3.jpg';
-import slider3 from '../../images/4.jpg';
-import slider4 from '../../images/5.jpg';
-import slider5 from '../../images/7.jpg';
+import { Pagination, Autoplay, Navigation } from "swiper";
+import slider from "../../images/01.jpg";
+import slider2 from "../../images/02.jpeg";
+import slider3 from "../../images/03.jpg";
+import slider4 from "../../images/04.jpg";
+import slider5 from "../../images/05.jpg";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 const Banner = () => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
