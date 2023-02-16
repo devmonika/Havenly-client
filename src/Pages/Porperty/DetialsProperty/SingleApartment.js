@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef  } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -7,6 +7,14 @@ import latest from '../../../images/latest.jpg';
 import latest2 from '../../../images/latest2.jpg';
 import latest3 from '../../../images/latest3.jpg';
 import latest4 from '../../../images/latest4.jpg';
+import slide from '../../../images/1.jpg';
+import slide2 from '../../../images/2.jpg';
+import slide3 from '../../../images/3.jpg';
+import slide4 from '../../../images/4.jpg';
+import slide5 from '../../../images/5.jpg';
+import slide6 from '../../../images/6.jpg';
+import slide7 from '../../../images/7.jpg';
+import slide8 from '../../../images/8.jpg';
 import jon from '../../../images/jon.jpg';
 import tour from '../../../images/tour.jpg';
 import map from '../../../images/map.png';
@@ -15,7 +23,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay, FreeMode, Scrollbar, Mousewheel, } from "swiper";
 import { FaMapMarkerAlt, FaCalendarMinus, FaEye, FaInfinity, FaRegHeart, FaLongArrowAltRight, FaFacebook, FaLinkedinIn, FaInstagramSquare } from "react-icons/fa";
 import { HiCheck, HiOutlineAnnotation } from "react-icons/hi";
 import { Link, useLoaderData } from 'react-router-dom';
@@ -26,6 +34,15 @@ import ReportedModal from '../ReportedModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUploadData } from '../../../app/features/uploadDataSlice';
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+//swiper cube 
+import "swiper/css/effect-cube";
+
+// import required modules
+import { EffectCube } from "swiper";
 
 const SingleApartment = () => {
   const [owner, setOwner] = useState([])
@@ -34,8 +51,7 @@ const SingleApartment = () => {
   const details = useLoaderData();
 
   const { address, bathrooms, bedrooms, category,
-    city, contact, country, description, img1, seller_img, seller_name, seller_email,
-    img2, img3, price, sqft, status, year, zip, date,
+    city, contact, country, description, img1, seller_img, seller_name, seller_email, img2, img3, price, sqft, status, year, zip, date,
     _id } = details;
 
   const [added, setAdded] = useState(false);
@@ -49,6 +65,12 @@ const SingleApartment = () => {
   }, [])
 
 
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
 
 
   const handleWishList = id => {
@@ -94,44 +116,91 @@ const SingleApartment = () => {
 
   return (
     <div>
-      <div className='propertyTop'>
-        <img className='fullHeight' src={img1} alt="" />
-        <div className=''>
+      <div>
+        <>
+      <Swiper
+        effect={"cube"}
+        grabCursor={true}
+        cubeEffect={{
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        }}
+        pagination={true}
+        modules={[EffectCube, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+        <img className='fullHeight' src={slide} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img className='fullHeight' src={slide2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img className='fullHeight' src={slide3} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img className='fullHeight' src={slide5} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img className='fullHeight' src={slide6} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img className='fullHeight' src={slide7} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <img className='fullHeight' src={property4} alt="" />
+        </SwiperSlide>
+      </Swiper>
+    </>
+        <div>
 
           <div className="slider-img">
-
             <>
-              <Swiper
-
-                slidesPerView={4}
-                autoplay={{
-                  delay: 500,
-                  disableOnInteraction: true,
-                }}
-                centeredSlides={true}
-                spaceBetween={30}
-                grabCursor={true}
-                pagination={{
-                  clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper"
-              >
-                <SwiperSlide>
-                  <img src={img1} alt="" />
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={15}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        loop={true}
+        autoplay={{
+          delay: 500,
+          disableOnInteraction: false,
+        }}
+       
+        modules={[Autoplay, Pagination, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+                  <img src={slide} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src={img2} alt="" />
+                <img src={slide2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src={img3} alt="" />
+                <img src={slide3} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src={img1} alt="" />
+                <img src={slide4} alt="" />
                 </SwiperSlide>
-
-              </Swiper>
-            </>
+                <SwiperSlide>
+                <img src={slide5} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img src={slide6} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img src={slide7} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img src={slide8} alt="" />
+                </SwiperSlide>
+      </Swiper>
+    </>
 
           </div>
         </div>
@@ -157,7 +226,14 @@ const SingleApartment = () => {
                 {added ? (
                   <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
                 ) : (
+                 <>
                   <button onClick={() => handleWishList(_id)}><span> <FaRegHeart></FaRegHeart> </span></button>
+                  <span className="tooltip" data-tip="Reported Items">
+                  <label htmlFor="booking-modal">
+                <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
+              </label>
+                  </span>
+                 </>
                 )}
               </div>
             </div>
@@ -192,13 +268,13 @@ const SingleApartment = () => {
                 <td>${price}</td>
               </tr>
             </table>
-            <div>
+            {/* <div>
               <h2>Reported items</h2>
               <label htmlFor="booking-modal">
                 <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
               </label>
 
-            </div>
+            </div> */}
 
 
             {/* <div className="location mt-5">
@@ -227,7 +303,7 @@ const SingleApartment = () => {
               <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
               <div className=''>
                 <h3 className='text-[#004274] text-2xl font-bold '>{seller_name} </h3>
-                <a href="#a" className='my-3 underline block'>Vew Website </a>
+                <Link to="/seller-about" className='my-3 underline block'>Vew Details </Link>
                 <div className='socialIcons'>
                   <a href="#b"> <FaFacebook></FaFacebook> </a>
                   <a href="#c"> <FaLinkedinIn></FaLinkedinIn> </a>
