@@ -7,6 +7,8 @@ import PopulerPlaces from "../PopulerPlacesCard/PopulerPlaces";
 import Cta from "../Cta/Cta";
 import HouseCards from "../HouseCards/HouseCards";
 import Testimonials from "../Testimonials/Testimonials";
+import RecentlyAdded from "../RecentlyAdded/RecentlyAdded";
+import Advertise from "../Advertise/Advertise";
 import OurDashboard from "../OurDashboard/OurDashboard";
 const Home = () => {
   return (
@@ -19,8 +21,10 @@ const Home = () => {
         <Banner></Banner>
         <About></About>
         <HouseCards></HouseCards>
+        <RecentlyAdded></RecentlyAdded>
         <Cta></Cta>
         <PopulerPlaces></PopulerPlaces>
+        <Advertise></Advertise>
         <Testimonials></Testimonials>
       </div>
     </HelmetProvider>
