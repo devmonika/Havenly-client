@@ -4,12 +4,12 @@ import SingleUploadApartment from './SingleUploadApartment';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {  getUploadData } from '../../app/features/uploadDataSlice';
+import { getUploadData } from '../../app/features/uploadDataSlice';
 
 const RecentlyAdded = () => {
 
 
-    
+    //get data with redux
     const uploadDatas = useSelector((state) => (state.uploadData.uploadData));
     // console.log(uploadDatas);
 
@@ -29,7 +29,7 @@ const RecentlyAdded = () => {
                 <div className='singleProperty'>
                     <div className='leftSide mr-[16px]'>
 
-                     
+
                         {
                             uploadDatas?.map(single => <SingleUploadApartment
                                 key={single._id}
