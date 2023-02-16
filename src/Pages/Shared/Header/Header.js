@@ -74,8 +74,8 @@ const showNavbar = () => {
               src={user.photoURL}
 
               style={{
-                width:"60px",
-                height:"60px",
+                width:"97px",
+                height:"85px",
                 borderRadius:"50%",
                 objectFit:'cover'
               }}
@@ -153,11 +153,11 @@ const showNavbar = () => {
           <img src={slider4} alt="slider" />
           <img src={slider5} alt="slider" />
           <div className="bannerContent text-white center ">
-            <h2 className='text-white font-bold text-3xl mb-3 uppercase text-center '>Welcome to havenly !</h2>
+            <h2 className='text-white font-bold text-3xl mb-3 uppercase text-center '>Welcome to <span className='text-secondary'>havenly !</span></h2>
             <p className='text-xl text-center leading-8 w-full '>Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today ! <br className='break' />
               Discover a Wide Range of Rentals to Suit Your Needs
             </p>
-            <Link to="/apartments"><button className="hover:bg-secondary ease-in-out bg-[#161C2D] text-center center px-8 font-bold text-xl py-3 mt-3 ">Apartments</button></Link>
+            <Link to="/apartments"><button className="hover:bg-primary ease-in-out bg-secondary text-center center px-8 font-bold text-xl py-3 mt-3 ">Apartments</button></Link>
           </div>
         </div>
       </header>
