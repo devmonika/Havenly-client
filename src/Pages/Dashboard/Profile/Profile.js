@@ -135,7 +135,7 @@ console.log(user)
             <label for="email" class="block text-sm font-medium leading-5"> Name </label>
 
             <div class="mt-1 rounded-md shadow-sm">
-              <input id="text" name="name" type="text" required autofocus class="appearance-none block w-full px-3 py-2 border border-secondary rounded-md placeholder-gray-400 transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+              <input id="text" name="name" type="text"  autofocus class="appearance-none block w-full px-3 py-2 border border-secondary rounded-md placeholder-gray-400 transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
             </div>
           </div>
 
@@ -143,14 +143,14 @@ console.log(user)
             <label for="password" class="block text-sm font-medium text-gray-700 leading-5"> image </label>
 
             <div class="mt-1 rounded-md shadow-sm">
-              <input id="text" type="file" name="image" required class="appearance-none block w-full px-3 py-2 border border-secondary rounded-md placeholder-gray-400 transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+              <input id="text" type="file" name="image"  class="appearance-none block w-full px-3 py-2 border border-secondary rounded-md placeholder-gray-400 transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
             </div>
           </div>
           <div class="mt-6">
             <label for="password" class="block text-sm font-medium text-gray-700 leading-5"> About </label>
 
             <div class="mt-1 rounded-md shadow-sm">
-              <textarea id="text" type="text" name="about" required class="appearance-none block w-full px-3 py-2 border border-secondary rounded-md placeholder-gray-400 transition duration-150 ease-in-out sm:text-sm sm:leading-5"></textarea>
+              <textarea id="text" type="text" name="about"  class="appearance-none block w-full px-3 py-2 border border-secondary rounded-md placeholder-gray-400 transition duration-150 ease-in-out sm:text-sm sm:leading-5"></textarea>
             </div>
           </div>
           <div class="mt-6">
