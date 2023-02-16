@@ -1,9 +1,8 @@
 import React, { useContext, useRef } from "react";
 import "./Header.css";
 import logo from "../../../assetes/logor.png";
-
-import login from "../../../images/login6.png";
-import { Link } from "react-router-dom";
+import login from '../../../images/login6.png';
+import { Link } from 'react-router-dom';
 import {
   FaBars,
   FaTimes,

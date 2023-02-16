@@ -49,7 +49,7 @@ const AllProperty = () => {
     refetch();
   };
 
-  console.log(category);
+  // console.log(category);
 
   return (
     <HelmetProvider>
