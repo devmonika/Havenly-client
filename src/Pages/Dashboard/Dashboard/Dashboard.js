@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaHouseDamage,
   FaGripHorizontal,
@@ -38,8 +38,25 @@ import {
 } from "recharts";
 
 import "../../OurDashboard/OurDashBoard.css";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthProvider";
+import { useState } from "react";
 const Dashboard = () => {
   const [expanded, setExpanded] = React.useState(false);
+  const [salesData, setSalesData] = useState([]);
+  // const { price } = sellerData;
+  const { user } = useContext(AuthContext);
+  useEffect(() => {
+    fetch(`http://localhost:5000/payment?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setSalesData(data));
+  }, [user?.email]);
+
+  const totalSalse = parseInt(
+    salesData.reduce((total, { price }) => total + parseInt(price), 0)
+  );
+  // const sum = parseInt(totalSalse);
+
   const data = [
     {
       name: "Page A",
@@ -138,7 +155,7 @@ const Dashboard = () => {
       <div className="dashBoardRight  col-span-9">
         <div className="nameWrap px-3 py-3">
           <div className="projectName">
-            <h2>Seller Dashboard </h2>
+            <h2>Seller Dashboard</h2>
           </div>
           <div className="dashBoardIcons">
             <div className="iconsWrap flex">
@@ -164,8 +181,7 @@ const Dashboard = () => {
             <div className="valueWrap firstCard">
               <div className="leftValue">
                 <div className="text-xl font-bold">Total Sell </div>
-                <span className="text-2xl font-bold">$50,000</span>
-                <span className=" p-1 rounded ml-3">+4.4%</span>
+                <span className="text-2xl font-bold">{totalSalse} $</span>
               </div>
               <div className="valueRight">
                 {/* <img src={dolar} alt="" /> */}
@@ -177,8 +193,7 @@ const Dashboard = () => {
             <div className="valueWrap secondCard">
               <div className="leftValue">
                 <div className="text-xl font-bold">Total orders</div>
-                <span className=" font-bold text-2xl font-bold">$80,550</span>
-                <span className=" p-1 rounded ml-3">+7.8%</span>
+                <span className=" text-2xl font-bold">{salesData.length}</span>
               </div>
               <div className="valueRight">
                 {/* <img src={user} alt="" /> */}
@@ -252,6 +267,14 @@ const Dashboard = () => {
             </h2>
           </div>
         </div>
+      </div>
+      {/*  */}
+      <div>
+        {salesData.map((data) => (
+          <>
+            <p>{data.length}</p>
+          </>
+        ))}
       </div>
     </div>
   );

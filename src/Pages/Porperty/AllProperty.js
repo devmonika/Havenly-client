@@ -103,7 +103,7 @@ const AllProperty = () => {
                 ></PropertyDetails>
               ))}
             </div>
-            <div></div>
+            <div></div>   
           </div>
         </div>
       </div>
