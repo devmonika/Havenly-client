@@ -7,7 +7,7 @@ export const getUploadData = createAsyncThunk(
     'uploadData/getUploadData',
     async () => {
 
-        const response = await fetch('http://localhost:5000/recentlyUploadedData')
+        const response = await fetch('https://havenly-s.vercel.app/recentlyUploadedData')
         const format = await response.json();
         // console.log(format)
         return format;

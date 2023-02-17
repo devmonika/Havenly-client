@@ -3,9 +3,11 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
-const PromoteCheckout = ({data}) => {
+const PromoteCheckout = ({data, grandTotal}) => {
     const {user} = useContext(AuthContext)
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('')
@@ -14,6 +16,7 @@ const PromoteCheckout = ({data}) => {
     const [clientSecret, setClientSecret] = useState("");
     const stripe = useStripe();
     const elements = useElements();
+    const navigate = useNavigate();
     // const data = useLoaderData()
     const { category, seller_email, price, _id, city } = data;
     // console.log(user)
@@ -21,7 +24,7 @@ const PromoteCheckout = ({data}) => {
     try {
         useEffect(() => {
             // Create PaymentIntent as soon as the page loads
-            fetch("http://localhost:5000/create-payment-intent", {
+            fetch("https://havenly-s.vercel.app/create-payment-intent", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -96,7 +99,7 @@ const PromoteCheckout = ({data}) => {
 
             }
 
-            fetch('http://localhost:5000/promote/payments', {
+            fetch('https://havenly-s.vercel.app/promote/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -106,11 +109,13 @@ const PromoteCheckout = ({data}) => {
             })
                 .then(res => res.json())
                 .then(data => {
-
+                    console.log(data)
                     if (data.insertedId) {
                         // console.log('data', data)
                         setSuccess('Congrats! your payment completed');
                         setTransactionId(paymentIntent.id)
+                        toast.success('Congrats! your payment successfully completed')
+                        navigate('/dashboard/myproperties')
                     }
                 });
         }

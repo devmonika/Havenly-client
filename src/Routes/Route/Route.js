@@ -8,7 +8,7 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import AllSeller from "../../Pages/Dashboard/Admin/AllSeller/AllSeller";
 import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer/AllBuyer";
-import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems/ReportedItems";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -134,7 +134,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/PromotePayment/:id",
         element: <PromotePayment></PromotePayment>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/properties/${params.id}`),
+          fetch(`https://havenly-s.vercel.app/properties/${params.id}`),
       },
       {
         path: "/dashboard/wishlist",

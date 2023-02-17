@@ -26,30 +26,56 @@ const PromotePayment = () => {
 
 
     let total = parseFloat(price);
-    let commission =parseFloat (total * 0.02);
-    // let grandTotal = (total + commission).toFixed(2)
+    let commission = parseFloat(total * 0.02);
+    let grandTotal = (commission).toFixed(2)
     // // let total = grandTotal.toString();
     // console.log(grandTotal);
 
     return (
         <div className=' grid gap-4 grid-cols-1 md:grid-cols-2 justify-items-center content-center w-auto h-full m-auto '>
-            <div className=''>
+            <div className='mt-10'>
                 <h2 className='text-2xl font-semibold'>Get premium service</h2>
-                <p className='text-lg'>Please pay <strong>${price}</strong> For Promote your Product</p>
+                <p className='text-lg'>Please pay <strong>${grandTotal}</strong> For Promote your Product</p>
                 <div className='w-100 my-6'>
                     <Elements stripe={stripePromise}>
                         <PromoteCheckout
                             data={data}
-                            commission={commission}
+                            grandTotal={grandTotal}
                         />
                     </Elements>
                 </div>
             </div>
 
-            <div className='cart'>
+            {/* <div className='cart'>
                 <h3 className='text-2xl'>Payment for promote</h3>
                 <p>Subtotal: ${price}</p>
                 <p>Comission: ${commission}</p>
+            </div> */}
+
+            <div className="card w-96 bg-base-100 shadow-xl ">
+                <figure><img src={img1} alt="Shoes" className='w-full rounded' /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">
+                        {category}
+                        <div className="badge badge-secondary">NEW</div>
+                    </h2>
+                    <div className='flex justify-between'>
+                        <div>
+                            <p>Total</p>
+                            <p>Commission 2%</p>
+                        </div>
+                        <div>
+                            <p>${total}</p>
+                            <p>${commission}</p>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div className="card-actions flex justify-between">
+                        <p>GrandTotal</p>
+                        <p className='text-right'>${grandTotal}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import React from 'react';
 import SingleUploadApartment from './SingleUploadApartment';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import './RecentlyAdded.css'
 import { getUploadData } from '../../app/features/uploadDataSlice';
 import { FaStar } from 'react-icons/fa';
 
@@ -34,7 +34,9 @@ const RecentlyAdded = () => {
                                     key={data._id}
                                 >
                                     <figure className=''>
-                                        <img src={data.img1} alt="car!" className='w-full h-[250px]' />
+                                        <img src={data.img1} alt="car!" className='w-full h-[250px] 
+                        
+                            '  />
                                     </figure>
                                     <h2 className='mt-4 mb-0 ml-2 text-2xl'>House {data.status}</h2>
                                     <div className="card-body">
@@ -52,6 +54,8 @@ const RecentlyAdded = () => {
                                                 <h2 className='ml-4'>{data.seller_name
                                                 }</h2>
                                             </div>
+
+
                                         </div>
                                     </div>
                                 </div>)
@@ -62,6 +66,9 @@ const RecentlyAdded = () => {
                 </div>
             </div>
         </div>
+
+
+
 
     );
 }

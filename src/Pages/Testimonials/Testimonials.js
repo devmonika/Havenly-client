@@ -9,7 +9,7 @@ const Testimonials = () => {
   const { data: testimonials = [], refetch } = useQuery({
     queryKey: ["testimonials"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/testimonial");
+      const res = await fetch("https://havenly-s.vercel.app/testimonial");
       const data = await res.json();
       return data;
     },
@@ -18,7 +18,7 @@ const Testimonials = () => {
   return (
     <div>
       <div className="text-center py-10 mb-10">
-        <h1 className="text-xl text-primary font-bold text-center mb-4">
+        <h1 className="text-xl text-secondary font-bold text-center mb-4">
           Reviews
         </h1>
         <h1 className="text-4xl w-96 mx-auto leading-normal font-bold mb-12">

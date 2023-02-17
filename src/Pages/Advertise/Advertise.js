@@ -12,7 +12,7 @@ const Advertise = () => {
     const { data: properties = [], refetch, isLoading } = useQuery({
         queryKey: ['property'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/premium/properties`);
+            const res = await fetch(`https://havenly-s.vercel.app/premium/properties`);
             const data = await res.json();
             return data;
         }
@@ -21,8 +21,8 @@ const Advertise = () => {
 
     return (
 
-        <div className='mt-5'>
-            
+        <div className='mb-24'>
+                <h2 className='text-center text-4xl font-bold leading-normal mt-4 mb-10'>Features Apertments</h2>
             {/* card section start here  */}
             {isLoading && <Loading></Loading>}
             <div className="wrapProperty">
@@ -40,6 +40,7 @@ const Advertise = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

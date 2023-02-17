@@ -31,7 +31,7 @@ const Banner = () => {
             <p className='text-xl text-center leading-8 w-full '>Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today ! <br className='break' />
               Discover a Wide Range of Rentals to Suit Your Needs
             </p>
-            <Link to="/apartments"><button className="hover:bg-secondary ease-in-out bg-[#161C2D] text-center center px-8 font-bold text-xl py-3 mt-3 ">Apartments</button></Link>
+            <Link to="/apartments"><button className="hover:bg-primary ease-in-out bg-secondary text-center center px-8 font-bold text-xl py-3 mt-3 ">Apartments</button></Link>
           </div>
         </div>
   );

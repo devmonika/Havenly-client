@@ -108,7 +108,7 @@
     margin-right:30px;
 }
 .detailsIcons div span{
-    color:#206497;
+    /* color:#206497; */
 }
 .topDetialsProperty{
     display: flex;
@@ -157,7 +157,7 @@ table td{
     margin:5px;
     border-spacing: 1em 1em;
     text-align: center;
-    color: #004274;
+    /* color: #004274; */
     font-weight: bold;
 }
 table tr{

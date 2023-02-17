@@ -17,7 +17,7 @@ const Profile = () => {
     // console.log(userInfo)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user?email=${user?.email}`)
+        fetch(`https://havenly-s.vercel.app/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
               setuserInfo(data[0])
@@ -49,7 +49,7 @@ const Profile = () => {
                   name,about,image:userimage
                 } 
                
-              fetch(`http://localhost:5000/user/${user?.email}`,{
+              fetch(`https://havenly-s.vercel.app/user/${user?.email}`,{
                 method:"PATCH",
                 headers:{
                   'content-type':"application/json",

@@ -46,29 +46,29 @@ const ReviewUpdateModal = ({reload,setReload,singleReview}) => {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold text-center m-2">
+          <h3 className="text-lg font-bold text-center text-black m-2">
             Update your review
           </h3>
           <form onSubmit={handleModalSubmit}  className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-3 text-sm">
-              <label className="block text-sm">Ratings</label>
+              <label className="block text-sm text-black">Ratings</label>
               <input
                 type="number"
                 name="ratings"
                 defaultValue={ratings}
                 placeholder="Rate our Service Out of 5"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                className="w-full px-4 py-3 rounded-md text-black border border-secondary"
               />
             </div>
 
             <div className="space-y-3 text-sm">
-              <label className="block text-sm">Reviews</label>
+              <label className="block text-sm text-black">Reviews</label>
               <textarea
                 type="text"
                 name="reviews"
                 defaultValue={reviews}
                 placeholder="Give your valuable review"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-green-400"
+                className="w-full px-4 py-3 rounded-md text-black border border-secondary"
               />
             </div>
             <div className="modal-action">

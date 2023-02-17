@@ -23,6 +23,8 @@ const BuyerReviews = () => {
     setSingleReview(findItem);
   };
   return (
+    <div>
+      <h1 className="mt-20 font-extrabold text-secondary text-3xl text-center">All Reviews</h1>
     <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16 lg:grid-cols-2 p-5">
       {items.map((reviewItems) => (
         <div>
@@ -40,6 +42,7 @@ const BuyerReviews = () => {
         reload={reload}
         setReload={setReload}
       ></ReviewUpdateModal>
+    </div>
     </div>
   );
 };

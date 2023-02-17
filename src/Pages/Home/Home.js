@@ -23,7 +23,7 @@ const Home = () => {
         <HouseCards></HouseCards>
         <RecentlyAdded></RecentlyAdded>
         <Cta></Cta>
-        <PopulerPlaces></PopulerPlaces>
+        {/* <PopulerPlaces></PopulerPlaces> */}
         <Advertise></Advertise>
         <Testimonials></Testimonials>
       </div>
