@@ -21,8 +21,8 @@ const Advertise = () => {
 
     return (
 
-        <div>
-                <h2 className='text-center text-4xl font-bold leading-normal mt-4 mb-10'>Apartments</h2>
+        <div className='mb-24'>
+                <h2 className='text-center text-4xl font-bold leading-normal mt-4 mb-10'>Features Apertments</h2>
             {/* card section start here  */}
             {isLoading && <Loading></Loading>}
             <div className="wrapProperty">
