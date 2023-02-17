@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       className="text-white bg-primary"
-      // style={{ background: `url(${image})`, backgroundSize: "cover" }}
+    // style={{ background: `url(${image})`, backgroundSize: "cover" }}
     >
       <div className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-24  justify-evenly   gap-8 ">
         <div className="">
@@ -23,23 +23,23 @@ const Footer = () => {
           <h2 className="text-2xl text-start">Useful Links</h2>
           <ul className="mt-3">
             <li className="text-start ">
-              <Link to="#">Blog</Link>
+              <Link to="/">Home</Link>
             </li>
             <br />
             <li className="text-start ">
-              <Link to="#">Success</Link>
+              <Link to="/apartments">Apartments</Link>
             </li>
             <br />
             <li className="text-start">
-              <Link to="#">Terms and Conditions</Link>
+              <Link to="/reviews">Reviews</Link>
             </li>
             <br />
             <li className="text-start">
-              <Link to="#">Privacy & App Privacy Policy</Link>
+              <Link to="/about">About us</Link>
             </li>
             <br />
             <li className="text-start">
-              <Link to="/contactus">Contact us</Link>
+              <Link to="/contactus">Contact Us</Link>
             </li>
             <br />
           </ul>
