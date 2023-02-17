@@ -44,11 +44,11 @@ const AllSeller = () => {
 
   return (
     <div>
-      <h2 className="text-left text-3xl font-semibold my-10 ml-10 text-secondary">
-        All Sellers
-      </h2>
+      <div>
+        <h3 className='mt-20 font-extrabold text-secondary text-3xl text-center'>Landlords: {sellers.length}</h3>
+      </div>
       <div className="overflow-x-auto">
-        <table className="table w-full text-center">
+        <table className="table w-full text-black text-center">
           <thead>
             <tr>
               <th>No.</th>

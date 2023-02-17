@@ -8,8 +8,12 @@ import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { store } from "./app/store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import { useEffect } from "react";
+import ReactGA from "react-ga";
 const queryClient = new QueryClient();
+
+ReactGA.initialize(process.env.googleAnalitics);
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,9 +21,11 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <Provider store={store}>
-          <Toaster />
-          <App />
-        </Provider>
+          
+            <Toaster />
+            <App />
+          </Provider>
+       
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>
