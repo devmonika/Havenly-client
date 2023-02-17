@@ -11,6 +11,8 @@ const AddProperties = () => {
     const [imageUrl1, setImageUrl1] = useState("");
     const [imageUrl2, setImageUrl2] = useState("");
     const [imageUrl3, setImageUrl3] = useState("");
+    const [imageUrl4, setImageUrl4] = useState("");
+    const [imageUrl5, setImageUrl5] = useState("");
 
     // catch input value by using useRef hook
     const addressRef = useRef();
@@ -58,6 +60,8 @@ const AddProperties = () => {
             img1: imageUrl1,
             img2: imageUrl2,
             img3: imageUrl3,
+            img4: imageUrl4,
+            img5: imageUrl5,
             address: addressRef.current.value,
             category: categoryRef.current.value,
             description: descriptionRef.current.value,
@@ -198,7 +202,7 @@ const AddProperties = () => {
                                             </div>
 
                                             <div className="md:col-span-5">
-                                                <label>Images</label>
+                                                <label>Image 1</label>
                                                 <input
                                                     onChange={(e) => imageUploadHandler(e, setImageUrl1)}
                                                     type="file"
@@ -209,7 +213,7 @@ const AddProperties = () => {
                                                 />
                                             </div>
                                             <div className="md:col-span-5">
-                                                <label>Images</label>
+                                                <label>Image 2</label>
                                                 <input
                                                     onChange={(e) => imageUploadHandler(e, setImageUrl2)}
                                                     type="file"
@@ -220,7 +224,7 @@ const AddProperties = () => {
                                                 />
                                             </div>
                                             <div className="md:col-span-5">
-                                                <label>Images</label>
+                                                <label>Image 3</label>
                                                 <input
                                                     onChange={(e) => imageUploadHandler(e, setImageUrl3)}
                                                     type="file"
@@ -230,36 +234,28 @@ const AddProperties = () => {
                                                     className="file-input file-input-primary w-full"
                                                 />
                                             </div>
-
-                                            {/* <div className="md:col-span-3">
-                                                <label>Images2</label>
+                                            <div className="md:col-span-5">
+                                                <label>Image 4</label>
                                                 <input
+                                                    onChange={(e) => imageUploadHandler(e, setImageUrl4)}
                                                     type="file"
                                                     multiple={true}
                                                     accept="image/*"
                                                     placeholder="Upload Images"
                                                     className="file-input file-input-primary w-full"
-                                                    onChange={handleImageChange}
-                                                    {...register("image2", {
-                                                        required: true
-                                                    })}
                                                 />
                                             </div>
-//i am
-                                            <div className="md:col-span-2">
-                                                <label>Images3</label>
+                                            <div className="md:col-span-5">
+                                                <label>Image 5</label>
                                                 <input
+                                                    onChange={(e) => imageUploadHandler(e, setImageUrl5)}
                                                     type="file"
                                                     multiple={true}
                                                     accept="image/*"
                                                     placeholder="Upload Images"
                                                     className="file-input file-input-primary w-full"
-                                                    onChange={handleImageChange}
-                                                    {...register("image3", {
-                                                        required: true
-                                                    })}
                                                 />
-                                            </div> */}
+                                            </div>
 
                                             <div className="md:col-span-5">
                                                 <label htmlFor="description">Description</label>
@@ -333,7 +329,7 @@ const AddProperties = () => {
 
                                             <div className="md:col-span-5 text-right">
                                                 <div className="inline-flex items-end">
-                                                    <input className="bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-bold py-2 px-4 rounded" type="submit" value="Add Properties" />
+                                                    <input className="bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary text-white font-bold py-2 px-4 rounded" type="submit" value="Add Properties" />
                                                 </div>
                                             </div>
                                         </form>
