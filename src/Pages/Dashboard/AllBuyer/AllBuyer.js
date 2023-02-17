@@ -35,9 +35,8 @@ const AllBuyer = () => {
   return (
     <div>
       <h2 className="text-left text-3xl font-semibold absolute mt-24 ml-10 text-secondary">
-        All Buyers
+        All Buyers: {buyers.length}
       </h2>
-
       <div className="overflow-x-auto">
         <table className="table w-full text-center">
           <thead>
