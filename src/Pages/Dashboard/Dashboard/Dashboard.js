@@ -155,7 +155,7 @@ const Dashboard = () => {
       <div className="dashBoardRight  col-span-9">
         <div className="nameWrap px-3 py-3">
           <div className="projectName">
-            <h2>Seller Dashboard</h2>
+            <h2 className="text-secondary">Seller Dashboard</h2>
           </div>
           <div className="dashBoardIcons">
             <div className="iconsWrap flex">
@@ -237,7 +237,7 @@ const Dashboard = () => {
               <Bar dataKey="uv" fill="#82ca9d" />
             </BarChart>
 
-            <h2 className="text-xl centerText font-bold text-[#6D28D9]">
+            <h2 className="text-xl centerText font-bold text-secondary">
               Appartments Rent Chart{" "}
             </h2>
           </div>
@@ -262,7 +262,7 @@ const Dashboard = () => {
                 label
               />
             </PieChart>
-            <h2 className="text-xl centerText center font-bold text-[#6D28D9]">
+            <h2 className="text-xl centerText center font-bold text-secondary">
               All Viewer Chart{" "}
             </h2>
           </div>

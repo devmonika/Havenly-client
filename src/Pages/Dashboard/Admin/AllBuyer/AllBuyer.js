@@ -33,10 +33,10 @@ const AllBuyer = () => {
   return (
     <div>
       <div>
-        <h3 className='mt-20 font-extrabold text-secondary text-3xl text-center'>All Buyers: {buyers.length}</h3>
+        <h3 className='mt-20 font-extrabold text-secondary text-3xl text-center'>Customers: {buyers.length}</h3>
       </div>
       <div className="overflow-x-auto">
-        <table className="table w-full text-center">
+        <table className="table w-full text-black text-center">
           <thead>
             <tr>
               <th>No.</th>

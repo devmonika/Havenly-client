@@ -36,7 +36,7 @@ const WishListCard = ({ wish, refetch }) => {
                     <h1 className="text-2xl font-semibold text-gray-800 mt-4">
                         {address}
                     </h1>
-                    <p className="text-xl text-gray-400 mt-2 leading-relaxed">
+                    <p className="text-xl  mt-2 leading-relaxed">
                         {description?.slice(0, 100)}...
                     </p>
                 </div>

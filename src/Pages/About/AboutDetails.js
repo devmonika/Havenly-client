@@ -18,7 +18,7 @@ const AboutDetails = () => {
                     </div>
                 <div className='max-w-[1240px] mx-auto my-10'>
                     
-                    <h2 className='text-center text-5xl font-semibold mb-16 text-primary '>Overview</h2>
+                    <h2 className='text-center text-5xl font-semibold mb-16 text-secondary '>Overview</h2>
 
                     <div className='grid gap-8 grid-cols-1 md:grid-cols-2 justify-items-center content-center mx-8'>
                         <img src='https://i.ibb.co/GdD9ktf/about-img.jpg' alt="about" className='' />
@@ -26,7 +26,7 @@ const AboutDetails = () => {
                         {/* about details right side start here*/}
                         <div className='flex flex-col justify-center items-center '>
                             <div className='' >
-                                <h3 className='text-xl text-primary font-bold text-left mb-4'>WHO WE ARE!</h3>
+                                <h3 className='text-xl text-secondary font-bold text-left mb-4'>WHO WE ARE!</h3>
                                 <h2 className='text-4xl font-bold text-left px-8  mb-5 lg:px-0 mode:text-white'>
                                     30 YEARS OF<br /> LEADERSHIP IN REAL<br /> ESTATE SECTOR
                                 </h2>
@@ -42,19 +42,19 @@ const AboutDetails = () => {
                     <div className='grid gap-8 grid-cols-1 md:grid-cols-4 mt-16 mx-8 text-center'>
                         <div>
                             <h2 className='text-5xl mb-4 font-semibold text-secondary'>51</h2>
-                            <p className='text-2xl text-primary'>COMPLETED <br/> PROJECTS</p>
+                            <p className='text-2xl text-white'>COMPLETED <br/> PROJECTS</p>
                         </div>
                         <div>
                             <h2 className='text-5xl mb-4 font-semibold text-secondary'>30</h2>
-                            <p className='text-2xl text-primary'>UNDER <br/> CONSTRUCTION</p>
+                            <p className='text-2xl text-white'>UNDER <br/> CONSTRUCTION</p>
                         </div>
                         <div>
                             <h2 className='text-5xl mb-4 font-semibold text-secondary'>17</h2>
-                            <p className='text-2xl text-primary'>PROJECTS <br/> UNDERWAY</p>
+                            <p className='text-2xl text-white'>PROJECTS <br/> UNDERWAY</p>
                         </div>
                         <div>
                             <h2 className='text-5xl mb-4 font-semibold text-secondary'>46</h2>
-                            <p className='text-2xl text-primary'>JOINT VENTURES <br/> COMPLETED</p>
+                            <p className='text-2xl text-white'>JOINT VENTURES <br/> COMPLETED</p>
                         </div>
 
                     </div>

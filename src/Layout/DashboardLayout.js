@@ -5,11 +5,14 @@ import Header from "../Pages/Shared/Header/Header";
 const DashboardLayout = () => {
   return (
     <div>
-      <Header></Header>
+      
 
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
+        <div className="bg-primary h-20">
+          <Link to='/' className="text-xl text-white ml-16 pt-10">Home</Link>
+        </div>
           <Outlet></Outlet>
           {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
         </div>
@@ -23,12 +26,12 @@ const DashboardLayout = () => {
             </li>
             <li>
               <Link to="/dashboard/allsellers" className="shadow-md">
-                All Seller
+                Landlords
               </Link>
             </li>
             <li>
               <Link to="/dashboard/allbuyers" className="shadow-md">
-                All Buyers
+                Customers
               </Link>
             </li>
             <li>
@@ -38,7 +41,7 @@ const DashboardLayout = () => {
             </li>
             <li>
               <Link to="/dashboard/wishlist" className="shadow-md">
-                Wishlist
+                My Favourite Items
               </Link>
             </li>
             <li>
