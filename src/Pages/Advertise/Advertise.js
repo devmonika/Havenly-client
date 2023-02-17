@@ -21,8 +21,8 @@ const Advertise = () => {
 
     return (
 
-        <div className='mt-5'>
-            
+        <div>
+                <h2 className='text-center text-4xl font-bold leading-normal mt-4 mb-10'>Apartments</h2>
             {/* card section start here  */}
             {isLoading && <Loading></Loading>}
             <div className="wrapProperty">
@@ -40,6 +40,7 @@ const Advertise = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

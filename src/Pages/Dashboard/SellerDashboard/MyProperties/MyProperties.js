@@ -7,7 +7,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider';
 const MyProperties = () => {
     const { user } = useContext(AuthContext);
 
-    const url = `https://havenly-server-new.vercel.app/properties/myproperty?email=${user?.email}`;
+    const url = `http://localhost:5000/properties/myproperty?email=${user?.email}`;
     const { data: properties = [], refetch } = useQuery({
         queryKey: ['properties'],
         queryFn: async () => {
@@ -16,7 +16,6 @@ const MyProperties = () => {
             return data;
         }
     });
-
     console.log(properties);
 
     const handleDeleteProduct = property => {
@@ -62,8 +61,16 @@ const MyProperties = () => {
                                     </div>
                                 </div></td>
                                 <td>${property.price}</td>
-                                <td> <Link to={`/dashboard/PromotePayment/${property._id}`}><button className='btn btn-xs btn-primary'>Advertise</button></Link></td>
-                                {/* <Link to={`/payment/${_id}`}><button className='btn btn-xs btn-primary'>Advertise</button></Link> */}
+
+                                {
+                                  
+                                    property?.isPremium?
+                                    <td> <Link to='#'><button className='btn btn-xs btn-secondary'>Advertised</button></Link></td>
+                                    :                                 
+                                    <td> <Link to={`/dashboard/PromotePayment/${property._id}`}><button className='btn btn-xs btn-primary'>Advertise</button></Link></td>
+                                    
+                                }
+
                                 <td>
                                     <button className="btn btn-xs btn-outline btn-accent">{property.status}</button>
                                 </td>
