@@ -4,7 +4,7 @@ const TestimonialsCard = ({ testimonial, refetch }) => {
     const { reviewer, reviewerImage, reviews, ratings } = testimonial;
     return (
         <div className="mb-6 lg:mb-0 cursor-pointer group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 duration-500">
-            <div className="bg-[#16A34A] block rounded-lg shadow-lg h-full text-white" >
+            <div className="bg-secondary block rounded-lg shadow-lg h-full text-white" >
                 <div className="relative overflow-hidden bg-no-repeat bg-cover">
                     <img
                         src={reviewerImage}
@@ -20,7 +20,7 @@ const TestimonialsCard = ({ testimonial, refetch }) => {
                         viewBox="0 0 1440 320"
                     >
                         <path
-                            fill="#16A34A"
+                            fill="#62C370"
                             d="M0,96L48,128C96,160,192,224,288,240C384,256,480,224,576,213.3C672,203,768,213,864,202.7C960,192,1056,160,1152,128C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                         ></path>
                     </svg>
