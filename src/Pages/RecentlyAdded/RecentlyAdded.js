@@ -3,7 +3,7 @@ import React from 'react';
 import SingleUploadApartment from './SingleUploadApartment';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import './RecentlyAdded.css'
 import { getUploadData } from '../../app/features/uploadDataSlice';
 import { FaStar } from 'react-icons/fa';
 
@@ -30,14 +30,14 @@ const RecentlyAdded = () => {
         <div>
             
             <div className="mt-24">
-            <h1 className='text-4xl font-bold text-center px-8 lg:px-0 mode:text-white mb-3 '>Recently Uploaded Apartment</h1>
+            <h1 className='text-4xl font-bold text-center px-8 lg:px-0 mode:text-white mb-10 '>Recently Uploaded Apartment</h1>
                 <div className=''>
                 
                     <div className=''>
             {/* <h2 className='text-center text-2xl mb-4'>Recently Uploaded Apartment</h2> */}
-            <div className='mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center'>
+            <div className=' recentlyUploaded'>
                 {
-                    uploadDatas?.map(data => <div className="card w-96 glass " data={data}
+                    uploadDatas?.map(data => <div className="card w-96 mb-8 glass  " data={data}
                         key={data._id}
                     >
                         <figure className=''>
@@ -72,7 +72,7 @@ const RecentlyAdded = () => {
 
 </div>
 </div>
-</div>
+        </div>
 
 
 
