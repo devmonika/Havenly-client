@@ -30,7 +30,7 @@ const Cta = () => {
             <div className="md:mt-12 mt-20">
               <Link
                 to="/contactus"
-                className="text-base font-bold leading-4 text-primary bg-secondary sm:w-auto w-full rounded p-4 focus:outline-none hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                className="text-base font-bold leading-4 text-primary bg-gradient-to-r from-secondary to-success sm:w-auto w-full rounded p-4 focus:outline-none hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-white"
               >
                 Contact Us
               </Link>
