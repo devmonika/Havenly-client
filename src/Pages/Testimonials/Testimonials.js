@@ -14,7 +14,7 @@ const Testimonials = () => {
       return data;
     },
   });
-  console.log(testimonials);
+
   return (
     <div>
       <div className="text-center py-10 mb-10">
