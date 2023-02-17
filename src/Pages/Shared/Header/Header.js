@@ -22,7 +22,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const handleLogOut = () => {
     logout()
-      .then(() => {})
+      .then(() => { })
       .catch((error) => console.error(error));
   };
 
@@ -44,11 +44,13 @@ const Header = () => {
       <header>
         <div className="navbar">
           <div>
-            <img
-              src={logo}
-              alt="logo"
-              className="h-32 lg:h-52 mt-16 logo mb-7 lg:mb-0 "
-            />
+            <Link to='/'>
+              <img
+                src={logo}
+                alt="logo"
+                className="h-32 lg:h-52 mt-16 logo mb-7 lg:mb-0 "
+              />
+              </Link>
           </div>
           <nav className="mr-[100px] navItems" ref={navRef}>
             <ul>
@@ -76,8 +78,8 @@ const Header = () => {
                   <img
                     src={user.photoURL}
                     style={{
-                      width: "60px",
-                      height: "60px",
+                      width: "80px",
+                      height: "70px",
                       borderRadius: "50%",
                       objectFit: "cover",
                     }}
