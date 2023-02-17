@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import PropertyDetails from "./PropertyDetails";
 import Loading from "../Shared/Footer/Loading/Loading";
 // import { useGlobalContext } from "../../contexts/SearchProvider";
-import Search from "../../components/Search";
+// import Search from "../../components/Search";
 
 const AllProperty = () => {
   const [category, setCategory] = useState('Residential');
@@ -75,7 +75,7 @@ const AllProperty = () => {
             />
           </form> */}
           {/* Location input End */}
-          <Search></Search>
+          {/* <Search></Search> */}
           <form className="mb-3">
             <select
               className="select select-bordered w-full max-w-xs"
