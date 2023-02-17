@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import PropertyDetails from "./PropertyDetails";
 import Loading from "../Shared/Footer/Loading/Loading";
 // import { useGlobalContext } from "../../contexts/SearchProvider";
-import Search from "../../components/Search";
+// import Search from "../../components/Search";
 
 const AllProperty = () => {
   const [category, setCategory] = useState('Residential');
@@ -18,7 +18,7 @@ const AllProperty = () => {
   const { data: properties = [], refetch, isLoading } = useQuery({
     queryKey: ['property', category],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/properties/property/${category}`);
+      const res = await fetch(`https://havenly-server-new.vercel.app/properties/property/${category}`);
       const data = await res.json();
       return data;
     },
@@ -75,7 +75,7 @@ const AllProperty = () => {
             />
           </form> */}
           {/* Location input End */}
-          <Search></Search>
+          {/* <Search></Search> */}
           <form className="">
             <select
               className="select select-bordered w-full max-w-xs"
