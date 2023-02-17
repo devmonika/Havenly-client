@@ -18,7 +18,7 @@ const AllProperty = () => {
   const { data: properties = [], refetch, isLoading } = useQuery({
     queryKey: ['property', category],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/properties/property/${category}`);
+      const res = await fetch(`https://havenly-server-new.vercel.app/properties/property/${category}`);
       const data = await res.json();
       return data;
     },
@@ -76,7 +76,7 @@ const AllProperty = () => {
           </form> */}
           {/* Location input End */}
           <Search></Search>
-          <form className="">
+          <form className="mb-3">
             <select
               className="select select-bordered w-full max-w-xs"
               name=""

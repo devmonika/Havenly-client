@@ -13,16 +13,13 @@ const Search = () => {
   };
 
   return (
-    <div className="flex flex-row justify-around items-center gap-2">
+    <div className="flex flex-row mb-3 flex-wrap justify-around items-center gap-2">
       <input
         className="input input-bordered"
         type="text"
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
-      <button className="btn btn-primary" onClick={handleSearch}>
-        Search
-      </button>
     </div>
   );
 };

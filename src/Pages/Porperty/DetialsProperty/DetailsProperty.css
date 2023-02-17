@@ -101,6 +101,7 @@
 }
 .detailsIcons{
     display: flex;
+    flex-wrap: wrap;
 
 }
 .detailsIcons div{
@@ -184,6 +185,7 @@ table {
  .jonDetails{
     display: flex;
     padding: 10px 20px;
+    flex-wrap: wrap;
  }
 
  .socialIcons{
@@ -224,8 +226,10 @@ table {
 @media only screen and (max-width:768px){
 
     .detailsProperty{
-        display: block;
+        display: block !important;
     }
+
+
     .image_Gallery{
         display: block;
         background:red;
@@ -264,4 +268,30 @@ table {
         color: #004274;
         font-weight: bold;
     }
+
+}
+@media only screen and (max-width:500px){
+    .topDetialsProperty{
+        display: block;
+
+    }
+    .detialsPrice{
+        margin-top:15px;
+    }
+    table {
+        width: 100%;
+       
+      }
+      table td{
+        padding: 10px;
+        margin:5px;
+    }
+    table tr{
+        display: flex;
+        flex-wrap: wrap;
+     }
+}
+
+@media only screen and (max-width:300px){
+  
 }

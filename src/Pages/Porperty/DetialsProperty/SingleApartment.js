@@ -209,7 +209,7 @@ const SingleApartment = () => {
         <div className="detailsPropertyLeft">
           <div className="topDetialsProperty">
             <div className="detailsLeft">
-              <h2 className='text-3xl mb-5 font-bold text-[#004274]'>{status} </h2>
+              <h2 className='text-3xl mb-5 font-bold text-secondary'>{status} </h2>
               <div className='detailsIcons'>
                 <div> <span><FaCalendarMinus></FaCalendarMinus></span> July 2,2022 </div>
                 <div> <span><FaEye></FaEye></span> Review: 240 </div>
@@ -218,11 +218,10 @@ const SingleApartment = () => {
               </div>
             </div>
             <div className="detialsPrice">
-              <h3 className='text-[#004274] text-3xl'>${price}</h3>
+              <h3 className='text-[#004274] text-3xl mb-5'>${price}</h3>
               <div className="priceIcons">
 
                 <Link to={`/payment/${_id}`}><button className='btn btn-sm mx-2 btn-secondary'>Book Now</button></Link>
-                <span> <FaInfinity></FaInfinity> </span>
                 {added ? (
                   <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
                 ) : (
