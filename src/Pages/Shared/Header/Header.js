@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
 import "./Header.css";
-import logo from "../../../assetes/logor.png";
+import logo from "../../../assetes/h.png";
 import login from '../../../images/login6.png';
 import { Link } from 'react-router-dom';
 import {
@@ -48,7 +48,7 @@ const Header = () => {
               <img
                 src={logo}
                 alt="logo"
-                className="h-32 lg:h-52 mt-16 logo mb-7 lg:mb-0 "
+                className="h-16 lg:h-16 mx-32 logo mb-7 lg:mb-0 "
               />
               </Link>
           </div>

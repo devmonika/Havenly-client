@@ -8,7 +8,7 @@ const GetSellsData = () => {
   const { user } = useContext(AuthContext);
   const [salesData, setSalesData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/payment?email=${user?.email}`)
+    fetch(`https://havenly-s.vercel.app/payment?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setSalesData(data));
   });

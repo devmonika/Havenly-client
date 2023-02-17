@@ -47,7 +47,7 @@ const Dashboard = () => {
   // const { price } = sellerData;
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/payment?email=${user?.email}`)
+    fetch(`https://havenly-s.vercel.app/payment?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setSalesData(data));
   }, [user?.email]);

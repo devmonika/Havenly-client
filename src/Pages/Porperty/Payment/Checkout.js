@@ -23,7 +23,7 @@ const Checkout = ({ data, grandTotal }) => {
     try {
         useEffect(() => {
             // Create PaymentIntent as soon as the page loads
-            fetch("http://localhost:5000/create-payment-intent", {
+            fetch("https://havenly-s.vercel.app/create-payment-intent", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -100,7 +100,7 @@ const Checkout = ({ data, grandTotal }) => {
 
 
             }
-            fetch('http://localhost:5000/payments', {
+            fetch('https://havenly-s.vercel.app/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

@@ -134,7 +134,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/PromotePayment/:id",
         element: <PromotePayment></PromotePayment>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/properties/${params.id}`),
+          fetch(`https://havenly-s.vercel.app/properties/${params.id}`),
       },
       {
         path: "/dashboard/wishlist",

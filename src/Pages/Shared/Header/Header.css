@@ -243,7 +243,8 @@ nav ul li a{
 		font-size:18px;
 	}
 	.logo{
-		margin-left:-55px;
+		margin-left: 16px;
+    	margin-top: 27px;
 	}
 	.bannerContent button{
 		font-size: 20px !important;
