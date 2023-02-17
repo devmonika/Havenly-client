@@ -76,7 +76,7 @@ const AllProperty = () => {
           </form> */}
           {/* Location input End */}
           {/* <Search></Search> */}
-          <form className="mb-3">
+          <form className="">
             <select
               className="select select-bordered w-full max-w-xs"
               name=""
