@@ -81,7 +81,6 @@ const Header = () => {
                       borderRadius: "50%",
                       objectFit: "cover",
                     }}
-                    // className="w-12 h-12  rounded-2xl"
                     alt=""
                   />
                   <ul className="p-2 bg-black text-white">
@@ -108,7 +107,6 @@ const Header = () => {
                           className="text-xl ml-3"
                           onClick={() => dispatch(toggleDarkMode())}
                         >
-                          {/* {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>} */}
                           {mode ? (
                             <MdDarkMode className="text-3xl"></MdDarkMode>
                           ) : (
@@ -126,7 +124,6 @@ const Header = () => {
               <ul className="menu menu-horizontal">
                 <li tabIndex={0}>
                   <div className="mr-[110px] user">
-                    {/* <FaUserAlt className="mr-3 userProfile text-secondary text-2xl" title="login"/> */}
                     <img
                       className="mr-3 userProfile text-secondary text-2xl w-[35px] rounded-full"
                       src={login}
@@ -144,7 +141,6 @@ const Header = () => {
                         className="text-xl"
                         onClick={() => dispatch(toggleDarkMode())}
                       >
-                        {/* {mode ? <img src={darkmood2} className='darkIcon' ></img> : <img src={darkmood} className='darkIcon' ></img>} */}
                         {mode ? (
                           <MdDarkMode className="text-3xl"></MdDarkMode>
                         ) : (

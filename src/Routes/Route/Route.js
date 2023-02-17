@@ -61,14 +61,12 @@ export const router = createBrowserRouter([
         element: <AllProperty></AllProperty>,
       },
       {
-        path: '/advertise',
-        element: <Advertise></Advertise>
-
+        path: "/advertise",
+        element: <Advertise></Advertise>,
       },
       {
-        path: '/seller-about',
-        element: <SellerAbout></SellerAbout>
-
+        path: "/seller-about",
+        element: <SellerAbout></SellerAbout>,
       },
       {
         path: "/singleapartment/:id",
@@ -135,7 +133,8 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/PromotePayment/:id",
         element: <PromotePayment></PromotePayment>,
-        loader: ({ params }) => fetch(`http://localhost:5000/properties/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/properties/${params.id}`),
       },
       {
         path: "/dashboard/wishlist",
