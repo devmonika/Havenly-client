@@ -21,7 +21,7 @@ const Contact = () => {
     <div
       className="min-h-screen bg-base-100"
       style={{
-        background: mode ? "#18191A" : "white",
+        background: mode ? "#1E293B" : "white",
         color: mode ? "white" : "black",
       }}
     >
@@ -66,7 +66,7 @@ const Contact = () => {
         </div>
         {/* From start */}
         <div className="rounded-lg justify-self-center">
-          <h2 className="text-xl text-center font-bold text-primary my-5">
+          <h2 className="text-xl text-center font-bold text-secondary my-5">
             Feel free to Contact Us
           </h2>
           <form
@@ -119,7 +119,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <input
-              className="btn btn-primary bg-gradient-to-r from-lime to-black text-white w-full mt-4"
+              className="btn btn-primary bg-secondary text-white w-full mt-4"
               value="Send"
               type="submit"
             />

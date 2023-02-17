@@ -211,14 +211,14 @@ const SingleApartment = () => {
             <div className="detailsLeft">
               <h2 className='text-3xl mb-5 font-bold text-secondary'>{status} </h2>
               <div className='detailsIcons'>
-                <div> <span><FaCalendarMinus></FaCalendarMinus></span> July 2,2022 </div>
-                <div> <span><FaEye></FaEye></span> Review: 240 </div>
-                <div><span><FaMapMarkerAlt></FaMapMarkerAlt></span>{address}</div>
+                <div> <span><FaCalendarMinus className='text-secondary'></FaCalendarMinus></span> July 2,2022 </div>
+                <div> <span><FaEye className='text-secondary'></FaEye></span> Review: 240 </div>
+                <div><span><FaMapMarkerAlt className='text-secondary'></FaMapMarkerAlt></span>{address}</div>
 
               </div>
             </div>
             <div className="detialsPrice">
-              <h3 className='text-[#004274] text-3xl mb-5'>${price}</h3>
+              <h3 className='text-secondary text-3xl mb-5'>${price}</h3>
               <div className="priceIcons">
 
                 <Link to={`/payment/${_id}`}><button className='btn btn-sm mx-2 btn-secondary'>Book Now</button></Link>
@@ -226,10 +226,10 @@ const SingleApartment = () => {
                   <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
                 ) : (
                  <>
-                  <button onClick={() => handleWishList(_id)}><span> <FaRegHeart></FaRegHeart> </span></button>
+                  <button onClick={() => handleWishList(_id)}><span> <FaRegHeart className='text-green-700'></FaRegHeart> </span></button>
                   <span className="tooltip" data-tip="Reported Items">
                   <label htmlFor="booking-modal">
-                <HiOutlineAnnotation className='text-2xl'>Report</HiOutlineAnnotation>
+                <HiOutlineAnnotation className='text-2xl text-green-700'>Report</HiOutlineAnnotation>
               </label>
                   </span>
                  </>
@@ -238,10 +238,10 @@ const SingleApartment = () => {
             </div>
           </div>
           <div className="detailsPropertyAbout mt-16">
-            <h2 className='propertyHeadline text-3xl text-[#004274] '>About This Listing</h2>
+            <h2 className='propertyHeadline text-3xl text-secondary '>About This Listing</h2>
             <p>{description}</p>
-            <h2 className='propertyHeadline mt-5 text-3xl text-[#004274] '>Property Type</h2>
-            <table>
+            <h2 className='propertyHeadline mt-5 text-3xl text-secondary '>Property Type</h2>
+            <table className='text-secondary'>
               <tr>
                 <td>Property ID:</td>
                 <td>HZ29</td>
@@ -277,12 +277,12 @@ const SingleApartment = () => {
 
 
             {/* <div className="location mt-5">
-              <h2 className='propertyHeadline text-2xl text-[#004274] '> Locations </h2>
+              <h2 className='propertyHeadline text-2xl text-secondary '> Locations </h2>
               <img src={map} alt="map" />
             </div> */}
             {/*               
                 <div className="Tours mt-5">
-                <h2 className='propertyHeadline text-2xl text-[#004274] '> 360 Virtual Tour </h2> 
+                <h2 className='propertyHeadline text-2xl text-secondary '> 360 Virtual Tour </h2> 
                 <img src={tour} alt="" />
                 </div> */}
           </div>
@@ -296,12 +296,12 @@ const SingleApartment = () => {
 
         {/* Right side */}
         <div className="detialsPropertyRight">
-          <h2 className='propertyHeadline text-2xl text-[#004274] '> Contact Listing Owner </h2>
+          <h2 className='propertyHeadline text-2xl text-secondary '> Contact Listing Owner </h2>
           <div className="">
             <div className="jonDetails">
               <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
               <div className=''>
-                <h3 className='text-[#004274] text-2xl font-bold '>{seller_name} </h3>
+                <h3 className='text-secondary text-2xl font-bold '>{seller_name} </h3>
                 <Link to="/seller-about" className='my-3 underline block'>Vew Details </Link>
                 <div className='socialIcons'>
                   <a href="#b"> <FaFacebook></FaFacebook> </a>
@@ -314,16 +314,16 @@ const SingleApartment = () => {
           <p className='mt-10'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiumt site be doloremque laudantium.</p>
 
           <div className="listingHead">
-            <h2 className='propertyHeadline text-2xl text-[#004274] '> Latest Listings </h2>
+            <h2 className='propertyHeadline text-2xl text-secondary '> Latest Listings </h2>
             {
               uploadDatas?.map(data => <div className="latestListings" data={data} key={data._id}>
                 {/* <img src={latest} alt="" />  */}
                 <img src={data.img1} alt="" className='w-[100px] h-[100px] rounded-md' />
                 <div>
 
-                  <h3 className='font-bold text-[#004274]'>Ready Resort for Sell</h3>
-                  <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> {data.city} </div>
-                  <div className='text-[#004274]'>${data.price}/ yr </div>
+                  <h3 className='font-bold text-secondary'>Ready Resort for Sell</h3>
+                  <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> {data.city} </div>
+                  <div className='text-secondary'>${data.price}/ yr </div>
                 </div>
               </div>)
             }
@@ -331,33 +331,33 @@ const SingleApartment = () => {
             {/* <div className="latestListings">
               <img src={latest} alt="" />
               <div>
-                <h3 className='font-bold text-[#004274]'>Ready Resort for Sell</h3>
-                <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> New Jersey </div>
-                <div className='text-[#004274]'>$25,235.00 / yr </div>
+                <h3 className='font-bold text-secondary'>Ready Resort for Sell</h3>
+                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> New Jersey </div>
+                <div className='text-secondary'>$25,235.00 / yr </div>
               </div>
             </div> */}
             {/* <div className="latestListings">
               <img src={latest2} alt="" />
               <div>
-                <h3 className='font-bold text-[#004274]'>Apartment For Sale</h3>
-                <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Home Town </div>
-                <div className='text-[#004274]'>$25,235.00 / yr </div>
+                <h3 className='font-bold text-secondary'>Apartment For Sale</h3>
+                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Home Town </div>
+                <div className='text-secondary'>$25,235.00 / yr </div>
               </div>
             </div> */}
             {/* <div className="latestListings">
               <img src={latest3} alt="" />
               <div>
-                <h3 className='font-bold text-[#004274]'>Fortune Condo Town</h3>
-                <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Zexton Twon </div>
-                <div className='text-[#004274]'>$25,235.00 / yr </div>
+                <h3 className='font-bold text-secondary'>Fortune Condo Town</h3>
+                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Zexton Twon </div>
+                <div className='text-secondary'>$25,235.00 / yr </div>
               </div>
             </div> */}
             {/* <div className="latestListings">
               <img src={latest4} alt="" />
               <div>
-                <h3 className='font-bold text-[#004274]'>Condo For Rent</h3>
-                <div className='my-3 text-[#004274]'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span>Water Lilli  </div>
-                <div className='text-[#004274]'>$25,235.00 / yr </div>
+                <h3 className='font-bold text-secondary'>Condo For Rent</h3>
+                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span>Water Lilli  </div>
+                <div className='text-secondary'>$25,235.00 / yr </div>
               </div>
             </div> */}
             {/* <div className="latestListings">

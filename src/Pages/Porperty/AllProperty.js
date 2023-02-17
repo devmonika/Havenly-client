@@ -78,7 +78,7 @@ const AllProperty = () => {
           {/* <Search></Search> */}
           <form className="">
             <select
-              className="select select-bordered w-full max-w-xs"
+              className="select select-bordered w-full max-w-xs text-black"
               name=""
               id=""
               onChange={handleCategoryChange}

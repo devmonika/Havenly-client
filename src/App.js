@@ -10,7 +10,7 @@ function App() {
     <div
       style={{
         background: mode ? "#1E293B" : "white",
-        color: mode ? "#808183" : "black",
+        color: mode ? "white" : "black",
       }}
     >
       <RouterProvider router={router}></RouterProvider>

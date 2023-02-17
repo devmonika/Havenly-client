@@ -29,7 +29,7 @@ const RecentlyAdded = () => {
 
         <div>
             
-            <div className="wrapProperty">
+            {/* <div className="wrapProperty">
             
                 <div className='singleProperty'>
                 <h1 className='text-4xl font-bold text-center px-8 lg:px-0 mode:text-white mb-3 '>Recently Uploaded Apartment</h1>
@@ -71,7 +71,7 @@ const RecentlyAdded = () => {
         </div>
 
 </div>
-</div>
+</div> */}
 </div>
 
 

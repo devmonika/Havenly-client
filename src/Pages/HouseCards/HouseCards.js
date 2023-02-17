@@ -22,7 +22,7 @@ const HouseCards = () => {
 
     return (
         <div className=" min-h-screen mt-24">
-            <p className='text-xl text-primary font-bold text-center mb-4'>Options</p>
+            <p className='text-xl text-secondary font-bold text-center mb-4'>Options</p>
             <h1 className='text-4xl font-bold text-center px-8 lg:px-0 mode:text-white'>House For Rent!</h1>
 
             <div className="max-w-screen-xl mx-auto px-4 pt-16">

@@ -10,7 +10,7 @@ const PopulerPlaces = () => {
   }, []);
   return (
     <div className="p-8">
-      <h1 className="text-xl text-primary font-bold text-center mb-4">
+      <h1 className="text-xl text-secondary font-bold text-center mb-4">
         Popular Places
       </h1>
       <p className="text-center text-4xl font-bold leading-normal">

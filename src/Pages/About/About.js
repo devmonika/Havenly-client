@@ -11,7 +11,7 @@ const About = () => {
     
     <div className="max-w-[1240px] mx-auto my-10  lg:mt-24">
       <h3 className="text-center text-2xl font-semibold mb-8"style={{
-      color: mode ? "#808183" : "#161C2D",
+      color: mode ? "white" : "#161C2D",
     }}>
         About Us
       </h3>
