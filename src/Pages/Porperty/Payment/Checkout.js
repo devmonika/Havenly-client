@@ -16,7 +16,7 @@ const Checkout = ({ data, grandTotal }) => {
     const elements = useElements();
     // const data = useLoaderData()
     const { category, seller_email, price, _id, city } = data;
-    // console.log(user)
+    console.log(grandTotal)
 
 
 
@@ -88,8 +88,8 @@ const Checkout = ({ data, grandTotal }) => {
 
             // store payment info in the database
             const payment = {
-                price,
-                // grandTotal,
+                // price,
+                grandTotal,
                 transactionId: paymentIntent.id,
                 buyer_email: user?.email,
                 seller_email:seller_email,
