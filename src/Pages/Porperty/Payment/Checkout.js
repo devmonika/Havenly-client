@@ -29,11 +29,11 @@ const Checkout = ({ data, grandTotal }) => {
                     "content-type": "application/json",
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 },
-                body: JSON.stringify({ price })
+                body: JSON.stringify({ grandTotal })
             })
                 .then((res) => res.json())
                 .then((data) => setClientSecret(data.clientSecret));
-        }, [price]);
+        }, [grandTotal]);
     } catch (error) {
 
     }
