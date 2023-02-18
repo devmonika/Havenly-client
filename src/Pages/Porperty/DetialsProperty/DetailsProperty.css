@@ -101,13 +101,14 @@
 }
 .detailsIcons{
     display: flex;
+    flex-wrap: wrap;
 
 }
 .detailsIcons div{
     margin-right:30px;
 }
 .detailsIcons div span{
-    color:#206497;
+    /* color:#206497; */
 }
 .topDetialsProperty{
     display: flex;
@@ -156,7 +157,7 @@ table td{
     margin:5px;
     border-spacing: 1em 1em;
     text-align: center;
-    color: #004274;
+    /* color: #004274; */
     font-weight: bold;
 }
 table tr{
@@ -184,6 +185,7 @@ table {
  .jonDetails{
     display: flex;
     padding: 10px 20px;
+    flex-wrap: wrap;
  }
 
  .socialIcons{
@@ -224,8 +226,10 @@ table {
 @media only screen and (max-width:768px){
 
     .detailsProperty{
-        display: block;
+        display: block !important;
     }
+
+
     .image_Gallery{
         display: block;
         background:red;
@@ -264,4 +268,30 @@ table {
         color: #004274;
         font-weight: bold;
     }
+
+}
+@media only screen and (max-width:500px){
+    .topDetialsProperty{
+        display: block;
+
+    }
+    .detialsPrice{
+        margin-top:15px;
+    }
+    table {
+        width: 100%;
+       
+      }
+      table td{
+        padding: 10px;
+        margin:5px;
+    }
+    table tr{
+        display: flex;
+        flex-wrap: wrap;
+     }
+}
+
+@media only screen and (max-width:300px){
+  
 }

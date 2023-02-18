@@ -20,7 +20,7 @@ const ReviewCard = ({ review }) => {
                     <span className="text-xl font-bold">{ratings}</span>
                 </div>
             </div>
-            <div className="p-4 space-y-2 text-sm text-gray-500">
+            <div className="p-4 space-y-2 text-sm">
                 <p>{reviews}</p>
             </div>
         </div>

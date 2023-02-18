@@ -13,7 +13,7 @@
 .sticky{
 	/* background-color: #191E2D !important; */
 	position:fixed;
-	background:#161C2D;
+	background:#161c2dc7;
 	top:0 !important;
 	color:#fff !important;
 	height:60px;
@@ -156,19 +156,23 @@ nav ul li a{
 }
 
 
-@media only screen and (max-width:992px){
+@media only screen and (max-width:1024px){
 	.navbar{
 		display: flex;
-		justify-content: space-around;	
-	}
-	.logo{
-		margin-left:-50px;
+		justify-content: space-around;
+		align-items:center;
 	}
 	.user{
 		margin-right:-115px !important
 	}
+	.logo {
+		margin-left: -88px;
+	}
 	.navItems{
 		display:block;
+	}
+	.menu-horizontal {
+		margin-right: -290px;
 	}
 	.humberger{
 		display: block;
@@ -212,6 +216,7 @@ nav ul li a{
 	-ms-transition: all .7s ease;
 	-o-transition: all .7s ease;
 	-webkit-transition: all .7s ease;
+	z-index: 999;
 }
 
 .navItems ul li {
@@ -237,6 +242,10 @@ nav ul li a{
 		line-height:28px;
 		font-size:18px;
 	}
+	.logo{
+		margin-left: 16px;
+    	margin-top: 27px;
+	}
 	.bannerContent button{
 		font-size: 20px !important;
 		padding:5px 15px;
@@ -245,8 +254,9 @@ nav ul li a{
 	.break{
 		display: none;
 	}
+
 	.menu-horizontal {
-		margin-right: -227px;
+		margin-right: 114px;
 	}
 	.user{
 		margin-right:-15px !important

@@ -11,11 +11,11 @@ const About = () => {
     
     <div className="max-w-[1240px] mx-auto my-10  lg:mt-24">
       <h3 className="text-center text-2xl font-semibold mb-8"style={{
-      color: mode ? "#808183" : "#161C2D",
+      color: mode ? "white" : "#161C2D",
     }}>
         About Us
       </h3>
-      <div className="grid gap-10 grid-cols-1 lg:grid-cols-2 px-10 lg:px-0">
+      <div className="grid gap-10 grid-cols-1 md:grid-cols-2 px-10 lg:px-0">
         <img src={about} alt="about" className="" />
 
         {/* about right side*/}
@@ -34,7 +34,7 @@ const About = () => {
             </div>
 
             <div className="flex felx-row border-4 p-4 mb-8 hover:shadow-2xl transition duration-300 hover:border-primary ">
-              <img src={home} alt="" className="w-[70px] h-[70px] mr-4" />
+              <img src={home} alt="" className="w-[70px]  h-[70px] mr-4 " />
               <div>
                 <h2 className="text-left text-2xl font-bold mb-2">
                   The Perfect Residency

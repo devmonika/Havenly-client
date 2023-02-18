@@ -8,7 +8,7 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import AllSeller from "../../Pages/Dashboard/Admin/AllSeller/AllSeller";
 import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer/AllBuyer";
-import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems/ReportedItems";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -21,10 +21,6 @@ import SingleApartment from "../../Pages/Porperty/DetialsProperty/SingleApartmen
 import MyProperties from "../../Pages/Dashboard/SellerDashboard/MyProperties/MyProperties";
 import WishList from "../../Pages/Dashboard/BuyerDashboard/WishList/WishList";
 import Payment from "../../Pages/Porperty/Payment/Payment";
-
-
-
-
 import BuyerReviews from "../../Pages/Dashboard/BuyerDashboard/BuyerReviews/BuyerReviews";
 import SellerAbout from "../../Pages/Porperty/DetialsProperty/SellerAbout";
 import PasswordSetting from "../../Pages/Dashboard/SettingsUser/PasswordSetting";
@@ -61,29 +57,32 @@ export const router = createBrowserRouter([
         element: <AboutDetails></AboutDetails>,
       },
       {
-        path: '/apartments',
-        element: <AllProperty></AllProperty>
-
+        path: "/apartments",
+        element: <AllProperty></AllProperty>,
       },
       {
-        path: '/advertise',
-        element: <Advertise></Advertise>
-
+        path: "/advertise",
+        element: <Advertise></Advertise>,
       },
       {
-        path: '/seller-about',
-        element: <SellerAbout></SellerAbout>
-
+        path: "/seller-about",
+        element: <SellerAbout></SellerAbout>,
       },
       {
-        path: '/singleapartment/:id',
+        path: "/singleapartment/:id",
         element: <SingleApartment></SingleApartment>,
-        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            ` https://havenly-server-new.vercel.app/properties/${params.id}`
+          ),
       },
       {
-        path: '/payment/:id',
+        path: "/payment/:id",
         element: <Payment></Payment>,
-        loader: ({ params }) => fetch(` https://havenly-server-new.vercel.app/properties/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            ` https://havenly-server-new.vercel.app/properties/${params.id}`
+          ),
       },
       {
         path: "*",
@@ -129,35 +128,31 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/myproperties",
-        element: <MyProperties></MyProperties>
+        element: <MyProperties></MyProperties>,
       },
       {
         path: "/dashboard/PromotePayment/:id",
         element: <PromotePayment></PromotePayment>,
-        loader: ({ params }) => fetch(`http://localhost:5000/properties/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`https://havenly-s.vercel.app/properties/${params.id}`),
       },
       {
         path: "/dashboard/wishlist",
-        element: <WishList></WishList>
+        element: <WishList></WishList>,
       },
       {
         path: "/dashboard/myreviews",
-        element: <BuyerReviews></BuyerReviews>
+        element: <BuyerReviews></BuyerReviews>,
       },
       {
         path: "/dashboard/profile",
         element: <Profile></Profile>,
-
       },
       {
         path: "/dashboard/settings",
         element: <PasswordSetting></PasswordSetting>,
-
       },
-
-
-
-    ]
+    ],
   },
 
   {

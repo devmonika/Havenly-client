@@ -4,7 +4,7 @@ import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import Loading from '../../Shared/Footer/Loading/Loading';
 import Checkout from './Checkout';
-
+import propertys from "../../../images/propery-bg.jpg";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 // console.log(stripePromise)
@@ -32,7 +32,14 @@ const Payment = () => {
     console.log(grandTotal);
 
     return (
-        <div className=' grid gap-4 grid-cols-1 md:grid-cols-2 justify-items-center content-center w-auto h-full m-auto border-2 p-5 mb-10 mt-24'>
+        <div>
+            <div className="property">
+          <img src={propertys} alt="" />
+          <div className="propertyContent">
+            <h2>Payment For Apartment</h2>
+          </div>
+        </div>
+        <div className=' grid gap-4 grid-cols-1 md:grid-cols-2 justify-items-center content-center w-auto h-full border-2 p-5 mb-10'>
             <div className='mt-10'>
                 <h2 className='text-2xl'>Payment For Apartment</h2>
                 <p className='text-lg'>Please pay <strong>${grandTotal}</strong> for your apartment</p>
@@ -74,6 +81,7 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

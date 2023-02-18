@@ -8,10 +8,9 @@ import { useQuery } from '@tanstack/react-query';
 const AllSeller = () => {
     const { user } = useContext(AuthContext);
 
-
-    const {data: sellers = [], refetch} = useQuery({
+    const { data: sellers = [], refetch } = useQuery({
         queryKey: ['seller'],
-        queryFn: async ()=>{
+        queryFn: async () => {
             const res = await fetch('https://havenly-server1.vercel.app/users/sellers');
             const data = await res.json();
             return data;
@@ -19,51 +18,54 @@ const AllSeller = () => {
         }
     });
 
-    const handleDeleteSeller= (id, name) =>{
-        fetch(`https://havenly-server1.vercel.app/users/${id}`,{
+    const handleDeleteSeller = (id, name) => {
+        fetch(`https://havenly-server1.vercel.app/users/${id}`, {
             method: 'DELETE',
-            headers:{
-              authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res => res.json())
-        .then(data =>{
-            if (data.deletedCount > 0){
-                toast.success(`${name} is delete successfully`)
-                refetch();
-            }
-            console.log(data);
-        })
-    }
-        
-    const handleVerify = email =>{
-        fetch (`https://havenly-server1.vercel.app/users/admin/${email}`,{
-           method: 'PUT',
             headers: {
-             authorization: `bearer ${localStorage.getItem('accessToken')}`
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
         })
-        .then(res=>res.json())
-        .then(data=>{
-            if(data.result.modifiedCount > 0){
-                toast.success('verify seller successfull')
-                refetch();
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success(`${name} is delete successfully`)
+                    refetch();
+                }
+                console.log(data);
+            })
+    }
+
+    const handleVerify = email => {
+        fetch(`https://havenly-server1.vercel.app/users/admin/${email}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
-            console.log(data);      
-     
-        });
-     };
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.result.modifiedCount > 0) {
+                    toast.success('verify seller successfull')
+                    refetch();
+                }
+                console.log(data);
+
+            });
+    };
 
 
 
     return (
         <div>
-            <p className='text-left text-3xl mt-40 font-semibold ml-10 text-secondary'>All Sellers</p>
+            {/* <p className='text-left text-3xl mt-40 font-semibold ml-10 text-secondary'>All Sellers</p> */}
+            {/* <div>
+                <h3 className='mt-20 font-extrabold text-secondary text-3xl text-center'>All Sellers</h3>
+            </div> */}
             <div className="overflow-x-auto">
-            
+
                 <table className="table w-full text-center bg-primary">
                     <thead>
-                        <tr> 
+                        <tr>
                             <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -86,8 +88,8 @@ const AllSeller = () => {
                                 </td> */}
 
                                 <td>
-                    <button onClick={()=>handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>
-                </td> 
+                                    <button onClick={() => handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>
+                                </td>
 
                             </tr>)
                         }

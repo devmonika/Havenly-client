@@ -16,13 +16,13 @@ const HouseCards = () => {
 
 
     })
-    console.log(categories)
+    // console.log(categories)
 
 
 
     return (
         <div className=" min-h-screen mt-24">
-            <p className='text-xl text-primary font-bold text-center mb-4'>Options</p>
+            <p className='text-xl text-secondary font-bold text-center mb-4'>Options</p>
             <h1 className='text-4xl font-bold text-center px-8 lg:px-0 mode:text-white'>House For Rent!</h1>
 
             <div className="max-w-screen-xl mx-auto px-4 pt-16">
@@ -41,7 +41,7 @@ const HouseCards = () => {
                                     </div>
                                     <div className="h-1/2">
                                         <p className="text-white pb-4 opacity-0 transition duration-500 group-hover:opacity-100"> Salvador plans to build a Bitcoin city at the base of a volcano, with the cryptocurrency used to fund the project.</p>
-                                        <button className="bg-white text-black text-sm px-3 py-1 font-semibold opacity-0 transition duration-500 group-hover:opacity-100 border-2 border-white focus:border-black focus:bg-gray-300">Read More</button>
+                                       
                                     </div>
                                 </div>
                             </Link>
@@ -49,7 +49,7 @@ const HouseCards = () => {
                     }
 
 
-                  
+
                 </div>
             </div>
             <div className="md:mt-12 mt-20 px-8 lg:px-0 flex justify-center">

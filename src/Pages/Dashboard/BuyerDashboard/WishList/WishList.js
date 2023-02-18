@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 import WishListCard from './WishListCard/WishListCard';
 
@@ -28,7 +27,7 @@ const WishList = () => {
     return (
         <div className='mt-28'>
             <div>
-                <h3 className='font-extrabold  text-primary text-3xl my-8 text-center'>My Favorites</h3>
+                <h3 className='font-extrabold text-secondary text-3xl my-8 text-center'>My Favorites</h3>
             </div>
             <section className="container mx-auto p-10 md:p-20 antialiased grid grid-cols-1">
                 {

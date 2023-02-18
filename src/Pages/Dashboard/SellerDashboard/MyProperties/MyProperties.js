@@ -7,7 +7,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider';
 const MyProperties = () => {
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/properties/myproperty?email=${user?.email}`;
+    const url = `https://havenly-s.vercel.app/properties/myproperty?email=${user?.email}`;
     const { data: properties = [], refetch } = useQuery({
         queryKey: ['properties'],
         queryFn: async () => {
