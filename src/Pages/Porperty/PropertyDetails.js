@@ -45,8 +45,7 @@ const PropertyDetails = ({ property, searchItem }) => {
                 <span>{bedrooms}</span>
                 <span><FaBorderNone></FaBorderNone></span>
                 <span>{sqft} </span>
-                {/* <span><FaCarSide></FaCarSide></span>
-                <span>03</span> */}
+                
 
             </div>
             <div className='reviews mt-5'>
@@ -54,8 +53,8 @@ const PropertyDetails = ({ property, searchItem }) => {
                     <img src={seller_img} alt="" className='w-[100px] h=[200px]' />
                     <span className='mt-5 ml-3'>Ibrahim Sikder</span>
                 </div>
-                <div className='mt-5 viewDetails'>
-                    <Link className='btn bg-secondary p-1 text-white' to={`/singleapartment/${_id}`}> <span>View Details </span> </Link>
+                <div className='mt-5 viewDetails '>
+                    <Link className='bg-secondary text-white px-3 py-2 rounded btn' to={`/singleapartment/${_id}`}><button className='uppercase'>View Details </button></Link>
                    
                 </div>
             </div>

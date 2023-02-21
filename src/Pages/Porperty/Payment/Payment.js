@@ -24,9 +24,9 @@ const Payment = () => {
 
 
 
-    const total = parseInt(price);
-    const commission = parseInt(price * 0.05);
-    const tax = parseInt(price * 0.08);
+    let total = parseInt(price);
+    let commission = parseInt(price * 0.05);
+    let tax = parseInt(price * 0.08);
     let grandTotal = (total + tax + commission).toFixed(2)
     // // let total = grandTotal.toString();
     console.log(grandTotal);

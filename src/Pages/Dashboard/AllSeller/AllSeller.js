@@ -83,9 +83,6 @@ const AllSeller = () => {
                                 <td>{seller.user}</td>
                                 <td><button onClick={() => handleVerify(seller.email)} className='btn btn-xs btn-primary'>{seller?.isVerified === 'verified' ? 'Verified' : 'Verify Seller'} </button></td>
 
-                                {/* <td>
-                                    <button className='btn btn-xs btn-warning'>Delete</button>
-                                </td> */}
 
                                 <td>
                                     <button onClick={() => handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>

@@ -13,7 +13,6 @@ import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AboutDetails from "../../Pages/About/AboutDetails";
-import MyOrders from "../../Pages/Dashboard/Buyers/MyOrders/MyOrders";
 import AddProperties from "../../Pages/Dashboard/SellerDashboard/AddProperties/AddProperties";
 import Profile from "../../Pages/Dashboard/Profile/Profile";
 import AllProperty from "../../Pages/Porperty/AllProperty";
@@ -26,6 +25,7 @@ import SellerAbout from "../../Pages/Porperty/DetialsProperty/SellerAbout";
 import PasswordSetting from "../../Pages/Dashboard/SettingsUser/PasswordSetting";
 import PromotePayment from "../../Pages/Dashboard/SellerDashboard/PaymentForPromote/PromotePayment";
 import Advertise from "../../Pages/Advertise/Advertise";
+import MyOrders from "../../Pages/Dashboard/BuyerDashboard/MyOrders/MyOrders";
 
 export const router = createBrowserRouter([
   {
@@ -115,10 +115,6 @@ export const router = createBrowserRouter([
         element: <ReportedItems></ReportedItems>,
       },
       {
-        path: "/dashboard/myOrders",
-        element: <MyOrders></MyOrders>,
-      },
-      {
         path: "/dashboard/myWishList",
         element: <WishList></WishList>,
       },
@@ -135,6 +131,10 @@ export const router = createBrowserRouter([
         element: <PromotePayment></PromotePayment>,
         loader: ({ params }) =>
           fetch(`https://havenly-s.vercel.app/properties/${params.id}`),
+      },
+      {
+        path: "/dashboard/myOrders",
+        element: <MyOrders></MyOrders>
       },
       {
         path: "/dashboard/wishlist",
