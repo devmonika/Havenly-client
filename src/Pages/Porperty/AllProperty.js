@@ -20,7 +20,7 @@ const AllProperty = () => {
     refetch,
     isLoading,
   } = useQuery({
-    queryKey: ["property"],
+    queryKey: ["property", selectedCategory],
     queryFn: async () => {
       const res = await fetch(
         `https://havenly-server-new.vercel.app/properties`
