@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./AllProperty.css";
 import propertys from "../../images/propery-bg.jpg";
-import { FaSistrix } from "react-icons/fa";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { siteName } from "../../App";
 import { useQuery } from "@tanstack/react-query";
@@ -15,11 +14,7 @@ const AllProperty = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const {
-    data: apartments = [],
-    refetch,
-    isLoading,
-  } = useQuery({
+  const { data: apartments = [], isLoading } = useQuery({
     queryKey: ["property", selectedCategory],
     queryFn: async () => {
       const res = await fetch(
