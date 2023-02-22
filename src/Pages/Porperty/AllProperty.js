@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import PropertyDetails from "./PropertyDetails";
 import Loading from "../Shared/Footer/Loading/Loading";
 import Search from "../../components/Search";
+import { motion, AnimatePresence } from "framer-motion";
 // import { useGlobalContext } from "../../contexts/SearchProvider";
 // import Search from "../../components/Search";
 
@@ -67,19 +68,21 @@ const AllProperty = () => {
 
         {/* card section start here  */}
         {isLoading && <Loading></Loading>}
-        <div className="wrapProperty">
-          <div className="singleProperty">
-            <div className="leftSide mt-20 mr-[16px]">
-              {filteredApartments.map((property) => (
-                <PropertyDetails
-                  key={property._id}
-                  property={property}
-                ></PropertyDetails>
-              ))}
+        <motion.div layout className="wrapProperty">
+          <AnimatePresence>
+            <div className="singleProperty">
+              <div className="leftSide mt-20 mr-[16px]">
+                {filteredApartments.map((property) => (
+                  <PropertyDetails
+                    key={property._id}
+                    property={property}
+                  ></PropertyDetails>
+                ))}
+              </div>
+              <div></div>
             </div>
-            <div></div>
-          </div>
-        </div>
+          </AnimatePresence>
+        </motion.div>
       </div>
     </HelmetProvider>
   );
