@@ -23,10 +23,10 @@ const RecentlyAdded = () => {
 
     return (
         <div>
-            <div className="wrapProperty">
-                <div className='singleProperty'>
+            <div className="mt-24">
+                <div className=''>
                     <h1 className='text-4xl font-bold text-center px-8 lg:px-0 mode:text-white mb-3 '>Recently Uploaded Apartment</h1>
-                    <div className='leftSide mr-[16px]'>
+                    <div className=''>
                         <h2 className='text-center text-2xl mb-4'>Recently Uploaded Apartment</h2>
                         <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-8 max-w-screen-xl mx-auto px-4  '>
                             {

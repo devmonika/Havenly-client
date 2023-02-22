@@ -40,7 +40,7 @@ const AllProperty = () => {
     } else {
       return (
         apartment.category === selectedCategory &&
-        apartment.city.toLowerCase().includes(searchTerm.toLowerCase())
+        apartment.address.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
   });
