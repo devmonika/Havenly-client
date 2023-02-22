@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import ibrahim from "../../images/ibrahim.png";
 import SingleApartment from "./DetialsProperty/SingleApartment";
+import { motion } from "framer-motion";
 
 const PropertyDetails = ({ property }) => {
   const { user } = useContext(AuthContext);
@@ -44,7 +45,13 @@ const PropertyDetails = ({ property }) => {
   // console.log(property)
 
   return (
-    <div className="propertyCard">
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{duration: 0.5}}
+      className="propertyCard">
       <div className="propertyCardImgIcons mb-5">
         <img className="h-[300px]" src={img1} alt="" />
         <ul className="propertyIcons">
@@ -125,7 +132,7 @@ const PropertyDetails = ({ property }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
