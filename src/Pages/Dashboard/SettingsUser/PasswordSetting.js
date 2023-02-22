@@ -18,7 +18,7 @@ const PasswordSetting = () => {
     const confirmPassword = form.confirmPassword.value;
     // console.log(email, currentPassword, newPassword, confirmPassword)
   }
-  //reset password
+  //reset password functionality
   const handleResetPassword = () => {
     resetPassword(userEmail)
       .then(() => {
