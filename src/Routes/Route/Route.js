@@ -8,7 +8,7 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import AllSeller from "../../Pages/Dashboard/Admin/AllSeller/AllSeller";
 import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer/AllBuyer";
-import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems/ReportedItems";
+// import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Reviews from "../../Pages/Reviews/Reviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -26,6 +26,7 @@ import SellerAbout from "../../Pages/Porperty/DetialsProperty/SellerAbout";
 import PasswordSetting from "../../Pages/Dashboard/SettingsUser/PasswordSetting";
 import PromotePayment from "../../Pages/Dashboard/SellerDashboard/PaymentForPromote/PromotePayment";
 import Advertise from "../../Pages/Advertise/Advertise";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 
 export const router = createBrowserRouter([
   {
