@@ -27,6 +27,7 @@ const AddProperties = () => {
     const bedroomsRef = useRef();
     const bathroomsRef = useRef();
     const statusRef = useRef();
+    const parkingRef = useRef();
     const contactRef = useRef();
 
     // Handle Image Upload (image upload by api in imgBB)
@@ -74,6 +75,7 @@ const AddProperties = () => {
             bedrooms: bedroomsRef.current.value,
             bathrooms: bathroomsRef.current.value,
             status: statusRef.current.value,
+            parking: parkingRef.current.value,
             contact: contactRef.current.value,
             date: new Date()
         };
@@ -109,6 +111,7 @@ const AddProperties = () => {
                 bathroomsRef.current.value = "";
                 statusRef.current.value = "";
                 contactRef.current.value = "";
+                parkingRef.current.value = "";
             }
         } catch (error) {
             console.log("err", error);
@@ -311,6 +314,14 @@ const AddProperties = () => {
 
                                             </div>
 
+                                            <div className="md:col-span-2">
+                                                <label htmlFor="contact">Car Parking</label>
+                                                <div className="h-10 flex border border-gray-200 rounded items-center mt-1">
+                                                    <input type="number" name="parking" id="parking" placeholder="Parking" className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                                                        ref={parkingRef}
+                                                    />
+                                                </div>
+                                            </div>
                                             <div className="md:col-span-2">
                                                 <label htmlFor="contact">Contact</label>
                                                 <div className="h-10 flex border border-gray-200 rounded items-center mt-1">
