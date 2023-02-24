@@ -96,6 +96,8 @@ const SingleApartment = () => {
 
     console.log(wishData);
 
+
+
     fetch("https://havenly-server-new.vercel.app/wishlist", {
       method: "POST",
       headers: {
@@ -287,7 +289,11 @@ const SingleApartment = () => {
                 <img src={tour} alt="" />
                 </div> */}
           </div>
-          <ReportedModal></ReportedModal>
+          <ReportedModal
+            // reportData={reportData}
+            details={details}
+
+          ></ReportedModal>
 
 
         </div>

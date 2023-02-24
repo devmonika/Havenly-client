@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../contexts/AuthProvider';
 
-const ReportedModal = () => {
+const ReportedModal = ({ details }) => {
+    const { user } = useContext(AuthContext);
+    // console.log(user)
+    const { address, category, country, price, img1, date, seller_name, seller_img, seller_email } = details;
+
+    console.log(details);
+    // const { 
+    //     // userName: user?.displayName,
+    //     // email: user?.email,
+    //     propertyId: id
+    //     seller_name,
+    //     seller_img,
+    //     address,
+    //     img1,
+    //     img2,
+    //     category,
+    //     country,
+    //     price,
+    //     description,
+    //     date, } = details
 
     const handleModalSubmit = event => {
 
@@ -11,7 +31,12 @@ const ReportedModal = () => {
         console.log(report);
         form.reset();
         const reportData = {
-            report
+            report,
+            address,
+            userName: user?.displayName,
+            email: user?.email,
+
+            category, country, price, img1, date, seller_name, seller_img, seller_email
         }
 
 
@@ -55,7 +80,7 @@ const ReportedModal = () => {
                             <textarea
                                 type="text"
                                 name="report"
-                                placeholder="Give your valuable review"
+                                placeholder="Give your valuable report"
                                 className="w-full px-4 py-3 rounded-md green:border-green-700 green:bg-gray-100 dark:text-green-900 focus:dark:border-green-400"
                             />
                         </div>

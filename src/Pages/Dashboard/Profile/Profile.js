@@ -9,19 +9,14 @@ const Profile = () => {
     const [userInfo, setuserInfo] = useState([]);
     const [loading, setloading] = useState(false);
     const [refetch, setrefetch] = useState(0);
-    // console.log(userInfo)
-    // const [users, setUser] = useState({
-    //   name: "",
-    //   image: ""
-    // });
-    // console.log(userInfo)
+    
 
     useEffect(() => {
         fetch(`https://havenly-s.vercel.app/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
               setuserInfo(data[0])
-              console.log("me")
+              
             })
     }, [user?.email, refetch]);
 
@@ -74,7 +69,7 @@ const Profile = () => {
             });
   }
 
-console.log(user)
+
     return (
         <div>
 

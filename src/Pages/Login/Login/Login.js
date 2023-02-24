@@ -36,6 +36,9 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error);
+                toast.error(error.message);
+
+
                 setLoading(false)
             })
 
@@ -48,7 +51,10 @@ const Login = () => {
                 navigate(from, { replace: true });
 
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err);
+
+            })
     }
 
     //reset password
@@ -57,7 +63,11 @@ const Login = () => {
             .then(() => {
                 toast.success('Please check your email for reset password')
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message);
+                setLoading(false);
+            })
     }
 
     return (
@@ -132,7 +142,7 @@ const Login = () => {
                         </button>
 
                     </div>
-                    
+
                 </div>
                 <div>
                     <p className='px-6 text-sm text-center text-gray-400'>Don't have an account yet? {' '}

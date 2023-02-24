@@ -5,7 +5,7 @@ import { ErrorIcon } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
-const Checkout = ({ data, grandTotal }) => {
+const Checkout = ({ data }) => {
     const { user } = useContext(AuthContext)
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('')
@@ -14,10 +14,13 @@ const Checkout = ({ data, grandTotal }) => {
     const [clientSecret, setClientSecret] = useState("");
     const stripe = useStripe();
     const elements = useElements();
-    // const data = useLoaderData()
     const { category, seller_email, price, _id, city, img1 } = data;
     // console.log(typeof(grandTotal))
     // console.log(typeof(price))
+    let total = parseInt(price);
+    let commission = parseInt(price * 0.05);
+    let tax = parseInt(price * 0.08);
+    const grandTotal = parseInt((total + tax + commission).toFixed(2))
     
 
     try {

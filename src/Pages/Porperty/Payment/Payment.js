@@ -27,7 +27,7 @@ const Payment = () => {
     let total = parseInt(price);
     let commission = parseInt(price * 0.05);
     let tax = parseInt(price * 0.08);
-    let grandTotal = (total + tax + commission).toFixed(2)
+    let grandTotal = parseInt((total + tax + commission).toFixed(2))
     // // let total = grandTotal.toString();
     console.log(grandTotal);
 
@@ -47,7 +47,7 @@ const Payment = () => {
                     <Elements stripe={stripePromise}>
                         <Checkout
                             data={data}
-                            grandTotal={grandTotal}
+                            // grandTotal={grandTotal}
                         />
                     </Elements>
                 </div>
