@@ -10,6 +10,8 @@ import Testimonials from "../Testimonials/Testimonials";
 import RecentlyAdded from "../RecentlyAdded/RecentlyAdded";
 import Advertise from "../Advertise/Advertise";
 import OurDashboard from "../OurDashboard/OurDashboard";
+import Login2 from "../Login/Login2";
+import SignUp2 from "../Login/SignUp2";
 const Home = () => {
   return (
     <HelmetProvider>
@@ -19,6 +21,8 @@ const Home = () => {
       <div>
         {/* <OurDashboard></OurDashboard> */}
         <Banner></Banner>
+        {/* <SignUp2></SignUp2> */}
+        {/* <Login2></Login2> */}
         <About></About>
         <HouseCards></HouseCards>
         <RecentlyAdded></RecentlyAdded>
