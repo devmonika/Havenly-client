@@ -1,55 +1,57 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./AllProperty.css";
 import propertys from "../../images/propery-bg.jpg";
-import { FaSistrix } from "react-icons/fa";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { siteName } from "../../App";
 import { useQuery } from "@tanstack/react-query";
 import PropertyDetails from "./PropertyDetails";
 import Loading from "../Shared/Footer/Loading/Loading";
+import Search from "../../components/Search";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 // import { useGlobalContext } from "../../contexts/SearchProvider";
 // import Search from "../../components/Search";
 
 const AllProperty = () => {
-  const [category, setCategory] = useState('Residential');
-  const [search, setSearch] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(2);
+  const [count, setCount] = useState(0);
+  const [apartments, setApartments] = useState([])
 
 
-  const { data: properties = [], refetch, isLoading } = useQuery({
-    queryKey: ['property', category],
-    queryFn: async () => {
-      const res = await fetch(`https://havenly-server-new.vercel.app/properties/property/${category}`);
-      const data = await res.json();
-      return data;
-    },
-  });
 
-  // const searchItem = properties.filter((item) => {
-  //   if (search === "") {
-  //     console.log(item.category);
-  //     return item.category;
-  //   }
-  // });
+  useEffect(()=>{
+    const url = `http://localhost:5000/properties?page=${page}&size=${size}`;
+    fetch(url)
+    .then(res=> res.json())
+    .then(data =>{
+      setCount(data.count);
+      setApartments(data.properties)
+    })
+  },[page, size, selectedCategory])
 
-  const { data: categories = [] } = useQuery({
-    queryKey: ["categories"],
-    queryFn: async () => {
-      const res = await fetch(
-        "https://havenly-server-new.vercel.app/categories"
-      );
-      const data = await res.json();
-      return data;
-    },
-  });
+  const pages = Math.ceil(count / size);
 
-  const handleCategoryChange = (event) => {
-    event.preventDefault();
-    setCategory(event.target.value);
-
-    refetch();
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
-  // console.log(category);
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const filteredApartments = apartments.filter((apartment) => {
+    if (selectedCategory === "all") {
+      return apartment.address.toLowerCase().includes(searchTerm.toLowerCase());
+    } else {
+      return (
+        apartment.category === selectedCategory &&
+        apartment.address.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+  });
 
   return (
     <HelmetProvider>
@@ -63,48 +65,48 @@ const AllProperty = () => {
             <h2>Apartments</h2>
           </div>
         </div>
-        <div className="flex flex-row gap-10 items-center justify-center relative mb-10 mt-16 searchWrap">
-          {/* Location input */}
-          {/* <form onSubmit={(e) => e.preventDefault()}>
-            <input
-              className="input input-bordered w-full max-w-xs"
-              type="text"
-              value={query}
-              placeholder="Search Location"
-              onChange={(event) => searchLocation(event.target.value)}
-            />
-          </form> */}
-          {/* Location input End */}
-          {/* <Search></Search> */}
-          <form className="">
-            <select
-              className="select select-bordered w-full max-w-xs text-black"
-              name=""
-              id=""
-              onChange={handleCategoryChange}
-            >
-              {categories.map((category) => (
-                <option key={category._id} value={category.categoryName}>
-                  {category.categoryName}
-                </option>
-              ))}
-            </select>
-          </form>
-        </div>
+        {/* Search component start */}
+        <Search
+          handleSearchTermChange={handleSearchTermChange}
+          handleCategoryChange={handleCategoryChange}
+          searchTerm={searchTerm}
+          selectedCategory={selectedCategory}
+        ></Search>
+        {/* Search component end */}
+
         {/* card section start here  */}
-        {isLoading && <Loading></Loading>}
-        <div className="wrapProperty">
-          <div className="singleProperty">
-            <div className="leftSide mr-[16px]">
-              {properties.map((property) => (
-                <PropertyDetails
-                  key={property._id}
-                  property={property}
-                ></PropertyDetails>
-              ))}
+        {/* {isLoading && <Loading></Loading>} */}
+        <motion.div layout className="wrapProperty">
+          <AnimatePresence>
+            <div className="singleProperty">
+              <div className="leftSide mt-20 mr-[16px]">
+                {filteredApartments.map((property) => (
+                  <PropertyDetails
+                    key={property._id}
+                    property={property}
+                  ></PropertyDetails>
+                ))}
+              </div>
             </div>
-            <div></div>   
-          </div>
+          </AnimatePresence>
+        </motion.div>
+        <div className='pagination ml-20 my-10'>
+          <p>Currently selested page: {page} and size:{size}</p>
+          {
+            [...Array(pages).keys()].map(number => <button
+              key={number}
+              className={page === number ? 'selected' : ''}
+              onClick={() => setPage(number)}
+            >
+              {number+1}
+            </button>)
+          }
+          <select onChange={event => setSize(event.target.value)} >
+            <option value="2">2</option>
+            <option value="4" selected>4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+          </select>
         </div>
       </div>
     </HelmetProvider>

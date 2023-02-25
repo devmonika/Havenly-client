@@ -35,12 +35,13 @@ const MyProperties = () => {
     };
     return (
         <div className='mt-32'>
+           
             <h2 className="text-3xl text-center mb-4">All Apertment List: {properties.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>No</th>
                             <th>Property</th>
                             <th>Image</th>
                             <th>Price</th>
@@ -53,7 +54,7 @@ const MyProperties = () => {
                         {
                             properties &&
                             properties?.map((property, i) => <tr key={property._id}>
-                                <th>{i + 1}</th>
+                                <td>{i + 1}</td>
                                 <td className='text-rose-700 font-semibold'>{property.address}</td>
                                 <td><div className="avatar">
                                     <div className="w-24 rounded-xl">

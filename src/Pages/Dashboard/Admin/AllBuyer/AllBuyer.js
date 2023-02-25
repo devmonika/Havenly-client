@@ -14,7 +14,7 @@ const AllBuyer = () => {
   });
 
   const handleDeleteBuyer = (id, name) => {
-    fetch(`https://havenly-server-seven.vercel.app/buyers/${id}`, {
+    fetch(`https://havenly-server-seven.vercel.app/users/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -22,7 +22,7 @@ const AllBuyer = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deleteCount > 0) {
+        if (data.acknowledged) {
           toast.success(`${name}`, "is delete successfuly");
           refetch();
         }
@@ -33,7 +33,7 @@ const AllBuyer = () => {
   return (
     <div>
       <div>
-        <h3 className='mt-20 font-extrabold text-secondary text-3xl text-center'>Customers: {buyers.length}</h3>
+        <h3 className='mt-20 font-extrabold text-secondary text-3xl text-center'>Customers</h3>
       </div>
       <div className="overflow-x-auto">
         <table className="table w-full text-black text-center">

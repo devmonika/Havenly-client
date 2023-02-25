@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef  } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -85,6 +85,7 @@ const SingleApartment = () => {
       address,
       img1,
       img2,
+      img3,
       category,
       country,
       price,
@@ -94,6 +95,8 @@ const SingleApartment = () => {
     };
 
     console.log(wishData);
+
+
 
     fetch("https://havenly-server-new.vercel.app/wishlist", {
       method: "POST",
@@ -118,89 +121,89 @@ const SingleApartment = () => {
     <div>
       <div>
         <>
-      <Swiper
-        effect={"cube"}
-        grabCursor={true}
-        cubeEffect={{
-          shadow: true,
-          slideShadows: true,
-          shadowOffset: 20,
-          shadowScale: 0.94,
-        }}
-        pagination={true}
-        modules={[EffectCube, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-        <img className='fullHeight' src={slide} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide2} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide3} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide5} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide6} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide7} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={property4} alt="" />
-        </SwiperSlide>
-      </Swiper>
-    </>
+          <Swiper
+            effect={"cube"}
+            grabCursor={true}
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+            }}
+            pagination={true}
+            modules={[EffectCube, Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <img className='fullHeight' src={img1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={img2} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={img3} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={img1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={img2} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={img3} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={img1} alt="" />
+            </SwiperSlide>
+          </Swiper>
+        </>
         <div>
 
           <div className="slider-img">
             <>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={15}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        loop={true}
-        autoplay={{
-          delay: 500,
-          disableOnInteraction: false,
-        }}
-       
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-                  <img src={slide} alt="" />
+              <Swiper
+                slidesPerView={4}
+                spaceBetween={15}
+                freeMode={true}
+                pagination={{
+                  clickable: true,
+                }}
+                loop={true}
+                autoplay={{
+                  delay: 500,
+                  disableOnInteraction: false,
+                }}
+
+                modules={[Autoplay, Pagination, Navigation]}
+                onAutoplayTimeLeft={onAutoplayTimeLeft}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <img src={img1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide2} alt="" />
+                  <img src={img2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide3} alt="" />
+                  <img src={img3} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide4} alt="" />
+                  <img src={img1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide5} alt="" />
+                  <img src={img2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide6} alt="" />
+                  <img src={img3} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide7} alt="" />
+                  <img src={img1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide8} alt="" />
+                  <img src={img2} alt="" />
                 </SwiperSlide>
-      </Swiper>
-    </>
+              </Swiper>
+            </>
 
           </div>
         </div>
@@ -225,14 +228,14 @@ const SingleApartment = () => {
                 {added ? (
                   <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
                 ) : (
-                 <>
-                  <button onClick={() => handleWishList(_id)}><span> <FaRegHeart className='text-green-700'></FaRegHeart> </span></button>
-                  <span className="tooltip" data-tip="Reported Items">
-                  <label htmlFor="booking-modal">
-                <HiOutlineAnnotation className='text-2xl text-green-700'>Report</HiOutlineAnnotation>
-              </label>
-                  </span>
-                 </>
+                  <>
+                    <button onClick={() => handleWishList(_id)}><span> <FaRegHeart className='text-green-700'></FaRegHeart> </span></button>
+                    <span className="tooltip" data-tip="Reported Items">
+                      <label htmlFor="booking-modal">
+                        <HiOutlineAnnotation className='text-2xl text-green-700'>Report</HiOutlineAnnotation>
+                      </label>
+                    </span>
+                  </>
                 )}
               </div>
             </div>
@@ -286,7 +289,11 @@ const SingleApartment = () => {
                 <img src={tour} alt="" />
                 </div> */}
           </div>
-          <ReportedModal></ReportedModal>
+          <ReportedModal
+            // reportData={reportData}
+            details={details}
+
+          ></ReportedModal>
 
 
         </div>
