@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef  } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import property from '../../../images/property10.jpg';
 import property2 from '../../../images/property12.jpg';
 import property3 from '../../../images/property13.jpg';
@@ -43,6 +43,7 @@ import "swiper/css/effect-cube";
 
 // import required modules
 import { EffectCube } from "swiper";
+import CallingOwner from './CallingOwner';
 
 const SingleApartment = () => {
   const [owner, setOwner] = useState([])
@@ -85,6 +86,7 @@ const SingleApartment = () => {
       address,
       img1,
       img2,
+      img3,
       category,
       country,
       price,
@@ -94,6 +96,8 @@ const SingleApartment = () => {
     };
 
     console.log(wishData);
+
+
 
     fetch("https://havenly-server-new.vercel.app/wishlist", {
       method: "POST",
@@ -118,89 +122,89 @@ const SingleApartment = () => {
     <div>
       <div>
         <>
-      <Swiper
-        effect={"cube"}
-        grabCursor={true}
-        cubeEffect={{
-          shadow: true,
-          slideShadows: true,
-          shadowOffset: 20,
-          shadowScale: 0.94,
-        }}
-        pagination={true}
-        modules={[EffectCube, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-        <img className='fullHeight' src={slide} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide2} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide3} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide5} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide6} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={slide7} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className='fullHeight' src={property4} alt="" />
-        </SwiperSlide>
-      </Swiper>
-    </>
+          <Swiper
+            effect={"cube"}
+            grabCursor={true}
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+            }}
+            pagination={true}
+            modules={[EffectCube, Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <img className='fullHeight' src={slide} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={slide2} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={slide3} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={slide4} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={slide5} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={slide6} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='fullHeight' src={slide7} alt="" />
+            </SwiperSlide>
+          </Swiper>
+        </>
         <div>
 
           <div className="slider-img">
             <>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={15}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        loop={true}
-        autoplay={{
-          delay: 500,
-          disableOnInteraction: false,
-        }}
-       
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-                  <img src={slide} alt="" />
+              <Swiper
+                slidesPerView={4}
+                spaceBetween={15}
+                freeMode={true}
+                pagination={{
+                  clickable: true,
+                }}
+                loop={true}
+                autoplay={{
+                  delay: 500,
+                  disableOnInteraction: false,
+                }}
+
+                modules={[Autoplay, Pagination, Navigation]}
+                onAutoplayTimeLeft={onAutoplayTimeLeft}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <img src={img1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide2} alt="" />
+                  <img src={img2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide3} alt="" />
+                  <img src={img3} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide4} alt="" />
+                  <img src={img1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide5} alt="" />
+                  <img src={img2} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide6} alt="" />
+                  <img src={img3} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide7} alt="" />
+                  <img src={img1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide8} alt="" />
+                  <img src={img2} alt="" />
                 </SwiperSlide>
-      </Swiper>
-    </>
+              </Swiper>
+            </>
 
           </div>
         </div>
@@ -225,14 +229,14 @@ const SingleApartment = () => {
                 {added ? (
                   <button><span> <HiCheck className='text-green-700'></HiCheck> </span></button>
                 ) : (
-                 <>
-                  <button onClick={() => handleWishList(_id)}><span> <FaRegHeart className='text-green-700'></FaRegHeart> </span></button>
-                  <span className="tooltip" data-tip="Reported Items">
-                  <label htmlFor="booking-modal">
-                <HiOutlineAnnotation className='text-2xl text-green-700'>Report</HiOutlineAnnotation>
-              </label>
-                  </span>
-                 </>
+                  <>
+                    <button onClick={() => handleWishList(_id)}><span> <FaRegHeart className='text-green-700'></FaRegHeart> </span></button>
+                    <span className="tooltip" data-tip="Reported Items">
+                      <label htmlFor="booking-modal">
+                        <HiOutlineAnnotation className='text-2xl text-green-700'>Report</HiOutlineAnnotation>
+                      </label>
+                    </span>
+                  </>
                 )}
               </div>
             </div>
@@ -286,7 +290,11 @@ const SingleApartment = () => {
                 <img src={tour} alt="" />
                 </div> */}
           </div>
-          <ReportedModal></ReportedModal>
+          <ReportedModal
+            // reportData={reportData}
+            details={details}
+
+          ></ReportedModal>
 
 
         </div>
@@ -296,22 +304,8 @@ const SingleApartment = () => {
 
         {/* Right side */}
         <div className="detialsPropertyRight">
-          <h2 className='propertyHeadline text-2xl text-secondary '> Contact Listing Owner </h2>
-          <div className="">
-            <div className="jonDetails">
-              <img className='mr-5 h-20 w-20 rounded-full' src={seller_img} alt="" />
-              <div className=''>
-                <h3 className='text-secondary text-2xl font-bold '>{seller_name} </h3>
-                <Link to="/seller-about" className='my-3 underline block'>Vew Details </Link>
-                <div className='socialIcons'>
-                  <a href="#b"> <FaFacebook></FaFacebook> </a>
-                  <a href="#c"> <FaLinkedinIn></FaLinkedinIn> </a>
-                  <a href="#d"> <FaInstagramSquare></FaInstagramSquare> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p className='mt-10'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantiumt site be doloremque laudantium.</p>
+          <CallingOwner  details={details}></CallingOwner>
+          
 
           <div className="listingHead">
             <h2 className='propertyHeadline text-2xl text-secondary '> Latest Listings </h2>
@@ -328,41 +322,7 @@ const SingleApartment = () => {
               </div>)
             }
 
-            {/* <div className="latestListings">
-              <img src={latest} alt="" />
-              <div>
-                <h3 className='font-bold text-secondary'>Ready Resort for Sell</h3>
-                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> New Jersey </div>
-                <div className='text-secondary'>$25,235.00 / yr </div>
-              </div>
-            </div> */}
-            {/* <div className="latestListings">
-              <img src={latest2} alt="" />
-              <div>
-                <h3 className='font-bold text-secondary'>Apartment For Sale</h3>
-                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Home Town </div>
-                <div className='text-secondary'>$25,235.00 / yr </div>
-              </div>
-            </div> */}
-            {/* <div className="latestListings">
-              <img src={latest3} alt="" />
-              <div>
-                <h3 className='font-bold text-secondary'>Fortune Condo Town</h3>
-                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span> Zexton Twon </div>
-                <div className='text-secondary'>$25,235.00 / yr </div>
-              </div>
-            </div> */}
-            {/* <div className="latestListings">
-              <img src={latest4} alt="" />
-              <div>
-                <h3 className='font-bold text-secondary'>Condo For Rent</h3>
-                <div className='my-3 text-secondary'> <span> <FaMapMarkerAlt className='resortDetails'></FaMapMarkerAlt> </span>Water Lilli  </div>
-                <div className='text-secondary'>$25,235.00 / yr </div>
-              </div>
-            </div> */}
-            {/* <div className="latestListings">
-              {/* <img src={latest5} alt="" /> */}
-            {/* </div> */}
+           
           </div>
         </div>
       </div>

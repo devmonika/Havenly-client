@@ -157,25 +157,8 @@ const Dashboard = () => {
           <div className="projectName">
             <h2 className="text-secondary">Seller Dashboard</h2>
           </div>
-          <div className="dashBoardIcons">
-            <div className="iconsWrap flex">
-              {/* <span> <img src={notify} alt="" /> </span>
-                         <span><img src={setting} alt="" /> </span>
-                        <span> <img src={users} alt="" /> </span>                         */}
-            </div>
-          </div>
         </div>
-        {/* <div className="nameWrap downWrap py-5 px-3">
-                   <div className="projectName">
-                      <h2 className='text-black'>Dashboard</h2>
-                    </div>
-                    <div className="dashBoardIcons">
-                      <div className="iconsWrap flex">
-                      <button className="btn btn-secondary text-white bg-[#6D28D9]">View on Github</button>
-                        
-                      </div>
-                    </div>
-                   </div> */}
+       
         <div className="nameWrap downWrap py-5 px-3 mb-5">
           <div className="value">
             <div className="valueWrap firstCard">

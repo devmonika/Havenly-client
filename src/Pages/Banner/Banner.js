@@ -21,7 +21,7 @@ const Banner = () => {
   };
   return (
     <div className='banner'>
-          <img src={slider} alt="slider" />
+          <img src="https://i.postimg.cc/xCQLZN1h/06.jpg" alt="slider" />
           <img src={slider2} alt="slider" />
           <img src={slider3} alt="slider" />
           <img src={slider4} alt="slider" />

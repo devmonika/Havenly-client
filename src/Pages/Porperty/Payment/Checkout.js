@@ -5,7 +5,7 @@ import { ErrorIcon } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
-const Checkout = ({ data, grandTotal }) => {
+const Checkout = ({ data }) => {
     const { user } = useContext(AuthContext)
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('')
@@ -14,11 +14,14 @@ const Checkout = ({ data, grandTotal }) => {
     const [clientSecret, setClientSecret] = useState("");
     const stripe = useStripe();
     const elements = useElements();
-    // const data = useLoaderData()
-    const { category, seller_email, price, _id, city } = data;
-    console.log(grandTotal)
-
-
+    const { category, seller_email, price, _id, city, img1 } = data;
+    // console.log(typeof(grandTotal))
+    // console.log(typeof(price))
+    let total = parseInt(price);
+    let commission = parseInt(price * 0.05);
+    let tax = parseInt(price * 0.08);
+    const grandTotal = parseInt((total + tax + commission).toFixed(2))
+    
 
     try {
         useEffect(() => {
@@ -29,13 +32,13 @@ const Checkout = ({ data, grandTotal }) => {
                     "content-type": "application/json",
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 },
-                body: JSON.stringify({ price })
+                body: JSON.stringify({price})
             })
                 .then((res) => res.json())
                 .then((data) => setClientSecret(data.clientSecret));
         }, [price]);
     } catch (error) {
-
+        console.log({error : "not create payment intent"})
     }
 
 
@@ -88,8 +91,9 @@ const Checkout = ({ data, grandTotal }) => {
 
             // store payment info in the database
             const payment = {
-                // price,
-                grandTotal,
+                price,
+                // grandTotal,
+                img1,
                 transactionId: paymentIntent.id,
                 buyer_email: user?.email,
                 seller_email:seller_email,

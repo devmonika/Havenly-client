@@ -149,13 +149,13 @@ const SignUp = () => {
 
 
     return (
-        <div className='grid border grid-cols-1 sm:grid-cols-2  w-full '>
+        <div className='grid border grid-cols-1 sm:grid-cols-2  w-full bg-[#1E293B]'>
             <div>
                 <img src='https://i.postimg.cc/Ghn6D5Jh/photo-1568605114967-8130f3a36994.jpg' className="w-full h-full object-cover" alt="" />
             </div>
-            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900  mt-24'>
+            <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-[#1E293B] text-white-900  mt-24'>
                 <div className='mb-8 text-center'>
-                    <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
+                    <h1 className='my-3 text-4xl font-bold text-secondary'>Sign Up</h1>
                     <p className='text-sm  text-gray-400'>
                         Create a new Account
                     </p>
@@ -169,13 +169,13 @@ const SignUp = () => {
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text text-gray-400 ">Name</span>
                         </label>
                         <input type="name" name="name" placeholder="Your Name" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Select image</span>
+                            <span className="label-text text-gray-400">Select image</span>
                         </label>
                         <input type="file" name="image" placeholder="Select image" className="input input-bordered" />
                     </div>
@@ -190,27 +190,27 @@ const SignUp = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text text-gray-400">Email</span>
                         </label>
                         <input type="email" name="email" required placeholder="email" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="label-text text-gray-400">Password</span>
                         </label>
                         <input type="password" name="password" required placeholder="password" className="input input-bordered" />
                         <label className="label">
-                            <p className="label-text-alt link link-hover">Forgot password?</p>
+                            <p className="label-text-alt text-gray-400 link link-hover">Forgot password?</p>
                         </label>
                     </div>
                     <div className="form-control mt-4">
-                        <input className="btn bg-slate-600 " type="submit" value="SignUp" />
+                        <input className="btn  bg-secondary text-white" type="submit" value="SignUp" />
 
                     </div>
                 </form>
 
                 <div>
-                    <p className='text-center mt-4'>  Login with social accounts</p>
+                    <p className='text-center mt-4 text-gray-400'>  Login with social accounts</p>
                 </div>
                 <div className='flex justify-center  '>
                     <div className=' mb-4'>
@@ -219,7 +219,7 @@ const SignUp = () => {
 
 
                             aria-label='Log in with Google'
-                            className='p-3 rounded-sm'
+                            className='p-3 rounded-sm text-secondary'
                         >
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
@@ -256,7 +256,7 @@ const SignUp = () => {
                 </div>
                 <div>
                     <p className='px-6 text-sm text-center text-gray-400'>Already have an Login Please!!  {'   '}
-                        <Link to='/login' className='hover:underline text-gray-600'>Login</Link></p>
+                        <Link to='/login' className='hover:underline text-gray-400 '>Login</Link></p>
                 </div>
             </div>
         </div>
