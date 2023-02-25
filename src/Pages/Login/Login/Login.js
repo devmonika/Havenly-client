@@ -1,7 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import LoginImage from '../../../assetes/login.jpg';
+import LoginImage from '../../../images/01.jpg';
+import LoginImage1 from '../../../images/02.jpeg';
+import LoginImage11 from '../../../images/04.jpg';
+import LoginImage111 from '../../../images/03.jpg';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import useToken from '../../../hooks/useToken';
 
@@ -10,7 +13,8 @@ const Login = () => {
     const [userEmail, setUserEmail] = useState('');
     const [loginUserEmail, setLoginUserEmail] = useState('');
     const [token] = useToken(loginUserEmail);
-
+   
+  
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -60,11 +64,21 @@ const Login = () => {
             .catch(error => console.log(error))
     }
 
+
+   
     return (
         <div className='grid grid-cols-1  sm:grid-cols-2 h-screen w-full  '>
             <div>
                 <img src='https://i.postimg.cc/Ghn6D5Jh/photo-1568605114967-8130f3a36994.jpg' className="w-full h-full object-cover" alt="" />
             </div>
+           
+  
+
+
+
+
+
+
             <div className=' flex flex-col  p-6 rounded-md sm:p-10 bg-white text-white-900 mt-24'>
                 <div className='mb-8 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Login Now!</h1>
