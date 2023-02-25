@@ -27,6 +27,7 @@ const AllSeller = () => {
     },
   });
 
+    // verify seller start here
   const handleVerify = (email) => {
     fetch(`https://havenly-server.vercel.app/users/admin/${email}`, {
       method: "PUT",
@@ -38,6 +39,25 @@ const AllSeller = () => {
       .then((data) => {
         toast.success("verify seller successfull.");
         refetch();
+        console.log(data);
+      });
+  };
+
+  // handle delete seller 
+
+  const handleDeleteSeller = (id, name) => {
+    fetch(`https://havenly-server-seven.vercel.app/users/${id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success(`${name}`, "is delete successfuly");
+          refetch();
+        }
         console.log(data);
       });
   };
@@ -67,25 +87,24 @@ const AllSeller = () => {
                 <td>{seller.email}</td>
                 <td>{seller.user}</td>
                 <td>
-                  <button
+                  {
+                    seller?.isVerified?
+                    <button
+                    className="btn btn-xs btn-primary"
+                  >Verified</button>
+                    :
+                    <button
                     onClick={() => handleVerify(seller.email)}
                     className="btn btn-xs btn-primary"
-                  >
-                    {seller?.isVerified === "verified"
-                      ? "verified"
-                      : "verify seller"}{" "}
-                  </button>
+                  >Verify Seller</button>
+                  }
+                  
                 </td>
-
                 <td>
-                  <button className="btn btn-xs btn-warning">Delete</button>
-                </td>
-
-                {/* <td>
                     <button onClick={()=>handleDeleteSeller(seller._id, seller.name)} className='btn btn-xs btn-warning'>Delete</button>
-                </td>  */}
+                </td> 
               </tr>
-            ))}
+            ))};
           </tbody>
         </table>
       </div>

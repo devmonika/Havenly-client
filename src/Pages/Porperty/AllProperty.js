@@ -8,23 +8,31 @@ import PropertyDetails from "./PropertyDetails";
 import Loading from "../Shared/Footer/Loading/Loading";
 import Search from "../../components/Search";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 // import { useGlobalContext } from "../../contexts/SearchProvider";
 // import Search from "../../components/Search";
 
 const AllProperty = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(2);
+  const [count, setCount] = useState(0);
+  const [apartments, setApartments] = useState([])
 
-  const { data: apartments = [], isLoading } = useQuery({
-    queryKey: ["property", selectedCategory],
-    queryFn: async () => {
-      const res = await fetch(
-        `https://havenly-server-new.vercel.app/properties`
-      );
-      const data = await res.json();
-      return data;
-    },
-  });
+
+
+  useEffect(()=>{
+    const url = `http://localhost:5000/properties?page=${page}&size=${size}`;
+    fetch(url)
+    .then(res=> res.json())
+    .then(data =>{
+      setCount(data.count);
+      setApartments(data.properties)
+    })
+  },[page, size, selectedCategory])
+
+  const pages = Math.ceil(count / size);
 
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
@@ -67,7 +75,7 @@ const AllProperty = () => {
         {/* Search component end */}
 
         {/* card section start here  */}
-        {isLoading && <Loading></Loading>}
+        {/* {isLoading && <Loading></Loading>} */}
         <motion.div layout className="wrapProperty">
           <AnimatePresence>
             <div className="singleProperty">
@@ -79,10 +87,27 @@ const AllProperty = () => {
                   ></PropertyDetails>
                 ))}
               </div>
-              <div></div>
             </div>
           </AnimatePresence>
         </motion.div>
+        <div className='pagination ml-20 my-10'>
+          <p>Currently selested page: {page} and size:{size}</p>
+          {
+            [...Array(pages).keys()].map(number => <button
+              key={number}
+              className={page === number ? 'selected' : ''}
+              onClick={() => setPage(number)}
+            >
+              {number+1}
+            </button>)
+          }
+          <select onChange={event => setSize(event.target.value)} >
+            <option value="2">2</option>
+            <option value="4" selected>4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+          </select>
+        </div>
       </div>
     </HelmetProvider>
   );

@@ -81,6 +81,14 @@ const PropertyDetails = ({ property }) => {
       <span className="bg-secondary mt-5 text-black text-center py-2 rounded font-bold px-3">
         $ {price}
       </span>
+      
+          {
+                property?.isVerified?
+                <button className="btn btn-xs btn-info ml-52">Verified</button>
+                :                                 
+                <button className="btn btn-xs btn-info ml-52" disabled>Verified</button>       
+          }
+                    
       <div className="peroperyCardContent mt-5">
         <div className="singleContent">
           <span className="font-semibold text-primary bg-secondary px-2 w-auto rounded">

@@ -34,6 +34,18 @@
     -ms-transform:translate(-50%, -50%);
     -o-transform:translate(-50%, -50%);
 }
+
+.pagination button{
+    margin-left: 10px;
+}
+.pagination .selected{
+    background-color: goldenrod;
+    border: gold;
+    font-weight: bold;
+    width: 30px;
+    padding: 10px;
+    border-radius: 5px;
+}
 .searchProperty{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
