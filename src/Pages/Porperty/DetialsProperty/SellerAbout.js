@@ -6,7 +6,7 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 const SellerAbout = () => {
     const { user } = useContext(AuthContext);
     const [userInfo, setuserInfo] = useState([]);
-    const[sellerReviews, getSellerReview] = useState([])
+   const[sellerReviews, getSellerReview] = useState([])
     const [loading, setloading] = useState(false);
     const [refetch, setrefetch] = useState(0);
 

@@ -136,25 +136,25 @@ const SingleApartment = () => {
             className="mySwiper"
           >
             <SwiperSlide>
-              <img className='fullHeight' src={slide} alt="" />
+              <img className='fullHeight' src={img1} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='fullHeight' src={slide2} alt="" />
+              <img className='fullHeight' src={img2} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='fullHeight' src={slide3} alt="" />
+              <img className='fullHeight' src={img3} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='fullHeight' src={slide4} alt="" />
+              <img className='fullHeight' src={img1} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='fullHeight' src={slide5} alt="" />
+              <img className='fullHeight' src={img2} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='fullHeight' src={slide6} alt="" />
+              <img className='fullHeight' src={img3} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='fullHeight' src={slide7} alt="" />
+              <img className='fullHeight' src={img1} alt="" />
             </SwiperSlide>
           </Swiper>
         </>
