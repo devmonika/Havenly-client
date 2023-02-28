@@ -22,15 +22,15 @@ const AllProperty = () => {
 
 
 
-  useEffect(()=>{
+  useEffect(() => {
     const url = `http://localhost:5000/properties?page=${page}&size=${size}`;
     fetch(url)
-    .then(res=> res.json())
-    .then(data =>{
-      setCount(data.count);
-      setApartments(data.properties)
-    })
-  },[page, size, selectedCategory])
+      .then(res => res.json())
+      .then(data => {
+        setCount(data.count);
+        setApartments(data.properties)
+      })
+  }, [page, size, selectedCategory])
 
   const pages = Math.ceil(count / size);
 
@@ -90,8 +90,8 @@ const AllProperty = () => {
             </div>
           </AnimatePresence>
         </motion.div>
-        <div className='pagination ml-20 my-10'>
-          <p>Currently selested page: {page} and size:{size}</p>
+        <div className='pagination ml-20 my-28 text-center'>
+          <p>Currently selected page: {page} and size:{size}</p>
           {
             [...Array(pages).keys()].map(number => <button
               key={number}
@@ -101,7 +101,7 @@ const AllProperty = () => {
               {number+1}
             </button>)
           }
-          <select onChange={event => setSize(event.target.value)} >
+          <select className="ml-5" onChange={event => setSize(event.target.value)} >
             <option value="2">2</option>
             <option value="4" selected>4</option>
             <option value="6">6</option>

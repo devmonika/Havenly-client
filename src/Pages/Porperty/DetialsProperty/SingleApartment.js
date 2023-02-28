@@ -54,6 +54,9 @@ const SingleApartment = () => {
     city, contact, country, description, img1, seller_img, seller_name, seller_email, img2, img3, price, sqft, status, year, zip, date,
     _id } = details;
 
+  const intPrice = parseInt(price);
+  const formattedPrice = intPrice.toLocaleString();
+
   const [added, setAdded] = useState(false);
 
   // get data with redux and show the recently uploaded image in the Right side
@@ -93,9 +96,6 @@ const SingleApartment = () => {
       date,
       added
     };
-
-    console.log(wishData);
-
 
 
     fetch("https://havenly-server-new.vercel.app/wishlist", {
@@ -221,7 +221,7 @@ const SingleApartment = () => {
               </div>
             </div>
             <div className="detialsPrice">
-              <h3 className='text-secondary text-3xl mb-5'>${price}</h3>
+              <h3 className='text-secondary text-3xl mb-5'>${formattedPrice}</h3>
               <div className="priceIcons">
 
                 <Link to={`/payment/${_id}`}><button className='btn btn-sm mx-2 btn-secondary'>Book Now</button></Link>
@@ -267,7 +267,7 @@ const SingleApartment = () => {
                 <td>Year built:</td>
                 <td>{year}</td>
                 <td>Price </td>
-                <td>${price}</td>
+                <td>${formattedPrice}</td>
               </tr>
             </table>
             {/* <div>

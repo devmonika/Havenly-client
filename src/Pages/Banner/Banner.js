@@ -21,11 +21,11 @@ const Banner = () => {
   };
   return (
     <div className='banner'>
-          <img src={slider} alt="slider" />
-          <img src={slider2} alt="slider" />
-          <img src={slider3} alt="slider" />
-          <img src={slider4} alt="slider" />
-          <img src={slider5} alt="slider" />
+          <img src="https://i.postimg.cc/T357SFc5/01.jpg" alt="slider" />
+          <img src="https://i.postimg.cc/T357SFc5/01.jpg" alt="slider" />
+          <img src="https://i.postimg.cc/T357SFc5/01.jpg" alt="slider" />
+          <img src="https://i.postimg.cc/T357SFc5/01.jpg" alt="slider" />
+          <img src="https://i.postimg.cc/T357SFc5/01.jpg" alt="slider" />
           <div className="bannerContent text-white center ">
             <h2 className='text-white font-bold text-3xl mb-3 uppercase text-center '>Welcome to havenly !</h2>
             <p className='text-xl text-center leading-8 w-full '>Where You can rent your prefer houses at budget friendly rate. Find Your Dream Home Today ! <br className='break' />
