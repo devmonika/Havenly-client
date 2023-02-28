@@ -26,7 +26,8 @@ const RecentlyAdded = () => {
         <div>
             <div className="mt-24">
                 <div className=''>
-                    <h1 className='text-3xl font-bold text-center px-8 lg:px-0 mode:text-white mb-3 '>Recently Uploaded Apartment</h1>
+
+                    <h1 className='text-3xl font-bold text-center px-8 lg:px-0 mode:text-white mb-3'>Recently Uploaded Apartment</h1>
                     <div className=''>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-11/12 mb-24 mx-auto">
