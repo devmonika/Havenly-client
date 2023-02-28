@@ -44,28 +44,26 @@ const PropertyDetails = ({ property }) => {
   } = property;
   // console.log(property)
 
+  const intPrice = parseInt(price);
+  const formattedPrice = intPrice.toLocaleString();
+
   return (
     <motion.div
       layout
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
-      transition={{duration: 0.5}}
+      transition={{ duration: 0.5 }}
       className="propertyCard">
       <div className="propertyCardImgIcons mb-5">
         <img className="h-[300px]" src={img1} alt="" />
         <ul className="propertyIcons">
           <li>
             <a href="#">
-              <FaMapMarkerAlt></FaMapMarkerAlt>
-            </a>
-          </li>
-          <li>
-            <a href="#">
               <FaHeart></FaHeart>
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="#">
               <FaFileImage></FaFileImage>
             </a>
@@ -74,26 +72,26 @@ const PropertyDetails = ({ property }) => {
             <a href="#">
               <FaRegEye></FaRegEye>
             </a>
-          </li>
+          </li> */}
           {/* <li><a href="#"><FaCarSide></FaCarSide></a></li> */}
         </ul>
       </div>
       <span className="bg-secondary mt-5 text-black text-center py-2 rounded font-bold px-3">
-        $ {price}
+        $ {formattedPrice}
       </span>
-      
-          {
-                property?.isVerified?
-                <button className="btn btn-xs btn-info ml-52">Verified</button>
-                :                                 
-                <button className="btn btn-xs btn-info ml-52" disabled>Verified</button>       
-          }
-                    
+
+      {
+        property?.isVerified ?
+          <button className="btn btn-xs btn-info ml-52">Verified</button>
+          :
+          <button className="btn btn-xs btn-info ml-52" disabled>Verified</button>
+      }
+
       <div className="peroperyCardContent mt-5">
         <div className="singleContent">
-          <span className="font-semibold text-primary bg-secondary px-2 w-auto rounded">
+          <span className="font-semibold text-primary ">
             Location :{" "}
-            <span className="font-normal text-primary">{address}</span>
+            <span className="font-normal bg-warning w-auto rounded py-1 px-2 text-primary">{address}</span>
           </span>
         </div>
         <span className="font-bold px-2 bg-primary text-white rounded-md">

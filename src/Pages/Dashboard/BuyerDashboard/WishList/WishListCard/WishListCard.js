@@ -7,8 +7,6 @@ const WishListCard = ({ wish, refetch }) => {
     const intPrice = parseInt(price);
     const formattedPrice = intPrice.toLocaleString();
 
-    console.log(formattedPrice);
-
     const handleDeleteWishlist = wish => {
         fetch(`https://havenly-server-new.vercel.app/wishlist/${wish._id}`, {
             method: 'DELETE',
