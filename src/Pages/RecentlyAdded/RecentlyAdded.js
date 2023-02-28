@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './RecentlyAdded.css'
 import { getUploadData } from '../../app/features/uploadDataSlice';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const RecentlyAdded = () => {
 
@@ -25,42 +26,61 @@ const RecentlyAdded = () => {
         <div>
             <div className="mt-24">
                 <div className=''>
-                    <h1 className='text-4xl font-bold text-center px-8 lg:px-0 mode:text-white mb-3 '>Recently Uploaded Apartment</h1>
+
+                    <h1 className='text-3xl font-bold text-center px-8 lg:px-0 mode:text-white mb-3'>Recently Uploaded Apartment</h1>
                     <div className=''>
-                        <h2 className='text-center text-2xl mb-4'>Recently Uploaded Apartment</h2>
-                        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between items-center gap-4 max-w-screen-xl mx-auto px-4  '>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-11/12 mb-24 mx-auto">
+
+
                             {
-                                uploadDatas?.map(data => <div className="card w-full glass " data={data}
-                                    key={data._id}
-                                >
-                                    <figure className=''>
-                                        <img src={data.img1} alt="car!" className='w-full h-[250px] 
-                        
-                            '  />
-                                    </figure>
-                                    <h2 className='mt-4 mb-0 ml-2 text-2xl'>House {data.status}</h2>
-                                    <div className="card-body">
-                                        <div className='flex  text-start '>
-                                            <span><FaStar className='text-[#FF8C35]'></FaStar>   </span>
-                                            <span className='ml-2'>5.0 </span>
-                                            <span className='ml-2'>(30 Reviews)</span>
-                                        </div>
-                                        <div className="card-actions justify-start">
-                                            <div className='flex justify-center items-center '>
-                                                <figure>
-                                                    <img src={data.seller_img
-                                                    } alt="car!" className='w-[50px] h-[50px] rounded-[50%]' />
-                                                </figure>
-                                                <h2 className='ml-4'>{data.seller_name
-                                                }</h2>
+                                uploadDatas?.map(data => <div className="relative mx-auto w-full" data={data} key={data._id}>
+                                    <div className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full ">
+                                        <div className="shadow p-4 rounded-lg bg-white ">
+                                            <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                                                <div className="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full ">
+                                                    <div className="absolute inset-0 bg-black ">
+                                                        <img src={data.img1} alt="home" className='w-full h-full' />
+                                                    </div>
+                                                </div>
+
+
+
+
                                             </div>
+                                            <div className='flex  text-start mt-3'>
+                                                <span><FaStar className='text-[#FF8C35]'></FaStar>   </span>
+                                                <span className='ml-2'>5.0 </span>
+                                                <span className='ml-2'>(30 Reviews)</span>
+                                            </div>
+                                            <div class="flex items-center mt-6">
+                                                <div className="rounded-full w-8 h-8 md:w-10 md:h-10 bg-gray-200">
+                                                    <img src={data.seller_img} alt="house" class="w-full h-full  rounded-full" />
+
+                                                </div>
+                                                <p className="ml-2 line-clamp-1 text-gray-800 ">
+                                                    {data.seller_name}
+                                                </p>
+                                                <div class="ml-2">
+                                                    <Link className='bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary text-white font-bold py-2 px-2  rounded' to={`/singleapartment/${data._id}`}> <button >View Details </button></Link>
+
+
+                                                </div>
+
+
+
+                                            </div>
+
+
 
 
                                         </div>
                                     </div>
                                 </div>)
                             }
+
                         </div>
+
                     </div>
 
                 </div>
