@@ -84,7 +84,7 @@ nav ul li a{
 	position: absolute;
 	backface-visibility:hidden;
 	-webkit-backface-visibility:hidden;
-	opacity: 0;
+	opacity: 1;
 	transform:scale(1.4) rotate(5deg);
 	-webkit-transform:scale(1.4) rotate(5deg);
 	-moz-transform:scale(1.4) rotate(5deg);
@@ -149,7 +149,7 @@ nav ul li a{
 		-o-transform:scale(1) rotate(0)	;
 }
 50%{
-	opacity:0
+	opacity:0;
 }
 
 
